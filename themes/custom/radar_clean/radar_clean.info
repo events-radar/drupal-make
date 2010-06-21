@@ -1,0 +1,6 @@
+name = Radar Clean
+description = Radar custom clean theme.
+base theme = clean
+core = 6.x
+engine = phptemplate
+stylesheets[all][] = css/layout.css

@@ -1,0 +1,108 @@
+/* $Id: reset.css,v 1.1.2.11 2010/04/21 23:04:56 psynaptic Exp $ */
+
+/* Browser */
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+a img {
+  border: 0;
+}
+
+:focus { /* remember to define focus styles! */
+  outline: 0px;
+}
+
+select {
+  font-family: inherit;
+}
+
+/* Drupal */
+
+tbody,
+tbody th,
+tr.even,
+tr.odd {
+  border: none;
+}
+
+ul.links li {
+  padding-left: 0;
+}
+
+li.leaf,
+li.expanded,
+li.collapsed {
+  padding: 0;
+  margin: 0;
+}
+
+#autocomplete li {
+  margin: 0;
+}
+
+dd {
+  margin-left: 10px;
+}
+
+#views-ui-analyze-view-button input {
+  margin-top: 10px;
+}
+
+#node-admin-filter ul li,
+#user-admin-filter ul li {
+  list-style: none;
+}
+
+#node-admin-filter dl.multiselect .form-item,
+#user-admin-filter dl.multiselect .form-item {
+  height: 2.5em;
+}
+
+#node-admin-content .container-inline div,
+#user-admin-account .container-inline div {
+  display: block;
+}
+
+#node-admin-content #edit-operation-wrapper,
+#user-admin-account #edit-operation-wrapper {
+  float: left;
+  margin-right: 10px;
+}
+
+#node-admin-content .form-submit,
+#user-filter-form .form-submit,
+#user-admin-account .form-submit {
+  margin: 0;
+}
+
+.hierarchical-select select {
+  height: auto !important;
+}
+
+tr.content-add-new a.tabledrag-handle {
+  display: none;
+}
+
+#views-ui-edit-view-form {
+  margin-bottom: 30px;
+}
+
+form#views-ui-preview-form input#preview-submit {
+  margin: 15px 0 0;
+}
+
+.display-node li,
+#context-ui-form li {
+  list-style: none;
+  list-style-type: none;
+}
+
+#views-ajax-pad fieldset {
+  padding: 10px;
+  margin: 10px;
+}
+

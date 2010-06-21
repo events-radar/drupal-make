@@ -1,0 +1,184 @@
+/* $Id: color.css,v 1.1.2.5.2.10 2010/04/21 23:04:56 psynaptic Exp $ */
+
+/* Global */
+
+body {
+  background-color: #111;
+}
+
+body#tinymce {
+  background-color: #FFF;
+}
+
+body,
+table,
+td {
+  color: #fff;
+}
+
+input, textarea, select {
+  color: #111;
+}
+
+a:link {
+  color: #4DA2DE;
+}
+
+a:visited {
+  color: #899FAF;
+}
+
+a:hover {
+  color: #4DA2DE;
+}
+
+a:visited:hover {
+  color: #899FAF;
+}
+
+a:focus {
+  color: #fff;
+}
+
+tr.odd {
+  background-color: #161616;
+}
+
+tr.even {
+  background-color: #111;
+}
+
+th a:link,
+th a:visited {
+  color: #A9D3E6;
+}
+
+/* Fieldsets */
+
+div.collapsible h2.fieldset-title {
+  background-color: #222;
+}
+
+h2.fieldset-title,
+div.collapsed h2.fieldset-title {
+  background-color: #333;
+}
+
+div.fieldset-content,
+fieldset {
+  border: 1px solid #222;
+}
+
+/* Tabs */
+
+ul.tabs li a:link,
+ul.tabs li a:visited {
+  background-color: #333;
+  color: #AAABAA;
+}
+
+ul.tabs li a.active {
+  color: #FFF;
+}
+
+/* Messages */
+
+div.messages {
+  border: none;
+}
+
+.status {
+  background-color: #083A67;
+  color: #fff;
+}
+
+.help {
+  background-color: #005454;
+}
+
+.notice {
+  background-color: #2A291D;
+}
+
+div.error {
+  background-color: #FCC;
+  color: #333;
+  border: none;
+}
+
+tr.error {
+  background-color: #1C0000;
+  color: #FFF;
+}
+
+td.active {
+  background-color: #333;
+}
+
+div.ok, tr.ok {
+  color: #63EF7C;
+}
+
+div.warning, tr.warning {
+  color: #2F2B13;
+}
+
+/* Nodes */
+
+.submitted {
+  color: #777;
+}
+
+/* Comments */
+
+.comment {
+  border-bottom: 1px solid #161616;
+}
+
+/* Forms */
+
+.form-item input.error,
+.form-item textarea.error,
+.form-item select.error {
+  border: 2px solid #F88;
+}
+
+textarea,
+input.form-text,
+select {
+  border: 1px solid #ccc;
+}
+
+input.form-submit {
+  background-color: #333;
+  border: 1px solid #333;
+  color: #fff;
+}
+
+input.teaser-button {
+  background: #333;
+  color: #fff;
+  border: 1px solid #333;
+}
+
+.form-item .description {
+  color: #aaa;
+}
+
+.resizable-textarea .grippie {
+  background-color: #444;
+  border-color: #777;
+}
+
+/* Admin */
+
+div.admin-dependencies,
+div.admin-required {
+  color: #A3A3A3;
+}
+
+/* Modules */
+
+#admin-menu li li {
+  opacity: 1;
+}

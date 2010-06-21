@@ -1,0 +1,8 @@
+; $Id: clean_1kb.info,v 1.1.2.1 2009/12/31 17:22:57 psynaptic Exp $
+
+name = Clean 1KB
+description = 1KB CSS Grid version of Clean theme.
+base theme = clean
+core = 6.x
+engine = phptemplate
+stylesheets[all][] = css/layout.css

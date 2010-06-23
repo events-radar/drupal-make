@@ -306,6 +306,55 @@ function _radar_events_strongarm() {
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_mode_event';
+  $strongarm->value = '4';
+
+  $export['comment_default_mode_event'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_order_event';
+  $strongarm->value = '1';
+
+  $export['comment_default_order_event'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_per_page_event';
+  $strongarm->value = '50';
+
+  $export['comment_default_per_page_event'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_event';
+  $strongarm->value = '2';
+
+  $export['comment_event'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_form_location_event';
+  $strongarm->value = '0';
+
+  $export['comment_form_location_event'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_preview_event';
+  $strongarm->value = '1';
+
+  $export['comment_preview_event'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_subject_field_event';
+  $strongarm->value = '1';
+
+  $export['comment_subject_field_event'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'content_extra_weights_event';
   $strongarm->value = array(
     'title' => '-5',
@@ -321,5 +370,52 @@ function _radar_events_strongarm() {
   );
 
   $export['content_extra_weights_event'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_lock_node_event';
+  $strongarm->value = 0;
+
+  $export['i18n_lock_node_event'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_newnode_current_event';
+  $strongarm->value = 1;
+
+  $export['i18n_newnode_current_event'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_node_event';
+  $strongarm->value = '1';
+
+  $export['i18n_node_event'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_required_node_event';
+  $strongarm->value = 1;
+
+  $export['i18n_required_node_event'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'i18nsync_nodeapi_event';
+  $strongarm->value = array(
+    '0' => 'name',
+    '1' => 'status',
+    '2' => 'promote',
+    '3' => 'moderate',
+    '4' => 'sticky',
+    '5' => 'taxonomy',
+    '6' => 'comment',
+    '7' => 'field_image',
+    '8' => 'field_location',
+    '9' => 'field_location_text',
+    '10' => 'field_link',
+  );
+
+  $export['i18nsync_nodeapi_event'] = $strongarm;
   return $export;
 }

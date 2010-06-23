@@ -57,7 +57,7 @@ function _radar_groups_content_default_fields() {
       ),
       'default_value_php' => NULL,
       'label' => 'Homepage',
-      'weight' => '4',
+      'weight' => '5',
       'description' => '',
       'type' => 'link',
       'module' => 'link',
@@ -115,7 +115,7 @@ function _radar_groups_content_default_fields() {
       ),
       'default_value_php' => NULL,
       'label' => 'Location (map)',
-      'weight' => '2',
+      'weight' => '3',
       'description' => '',
       'type' => 'openlayers_wkt_widget',
       'module' => 'openlayers_cck',
@@ -165,10 +165,64 @@ function _radar_groups_content_default_fields() {
       ),
       'default_value_php' => NULL,
       'label' => 'Location (description)',
-      'weight' => '3',
+      'weight' => '4',
       'description' => '',
       'type' => 'text_textfield',
       'module' => 'text',
+    ),
+  );
+
+  // Exported field: field_logo
+  $fields[] = array(
+    'field_name' => 'field_logo',
+    'type_name' => 'group',
+    'display_settings' => array(
+      'label' => array(
+        'format' => 'above',
+        'exclude' => 0,
+      ),
+      'teaser' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'filefield',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'filefield',
+    'active' => '1',
+    'list_field' => '0',
+    'list_default' => 1,
+    'description_field' => '0',
+    'widget' => array(
+      'file_extensions' => 'png gif jpg jpeg',
+      'file_path' => 'group/logo',
+      'progress_indicator' => 'bar',
+      'max_filesize_per_file' => '',
+      'max_filesize_per_node' => '',
+      'max_resolution' => '0',
+      'min_resolution' => '0',
+      'alt' => '',
+      'custom_alt' => 1,
+      'title' => '',
+      'custom_title' => 0,
+      'title_type' => 'textfield',
+      'default_image' => NULL,
+      'use_default_image' => 0,
+      'label' => 'Logo or image',
+      'weight' => '1',
+      'description' => '',
+      'type' => 'imagefield_widget',
+      'module' => 'imagefield',
     ),
   );
 
@@ -177,6 +231,7 @@ function _radar_groups_content_default_fields() {
     t('Homepage'),
     t('Location (description)'),
     t('Location (map)'),
+    t('Logo or image'),
   );
 
   return $fields;

@@ -1,0 +1,4 @@
+; $Id: better_formats.info,v 1.1.2.2 2009/02/25 06:44:17 dragonwize Exp $
+name = Better Formats
+description = Enhances the core input format system by managing input format defaults and settings.
+core = 6.x

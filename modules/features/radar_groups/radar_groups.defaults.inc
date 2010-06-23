@@ -238,6 +238,18 @@ function _radar_groups_content_default_fields() {
 }
 
 /**
+ * Helper to implementation of hook_ctools_plugin_api().
+ */
+function _radar_groups_ctools_plugin_api() {
+  $args = func_get_args();
+  $module = array_shift($args);
+  $api = array_shift($args);
+  if ($module == "strongarm" && $api == "strongarm") {
+    return array("version" => 1);
+  }
+}
+
+/**
  * Helper to implementation of hook_user_default_permissions().
  */
 function _radar_groups_user_default_permissions() {
@@ -292,4 +304,32 @@ function _radar_groups_user_default_permissions() {
   );
 
   return $permissions;
+}
+
+/**
+ * Helper to implementation of hook_strongarm().
+ */
+function _radar_groups_strongarm() {
+  $export = array();
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'content_extra_weights_group';
+  $strongarm->value = array(
+    'title' => '-5',
+    'body_field' => '2',
+    'revision_information' => '8',
+    'author' => '7',
+    'options' => '9',
+    'comment_settings' => '10',
+    'menu' => '-3',
+    'og_description' => '-4',
+    'og_selective' => '0',
+    'og_register' => '6',
+    'og_directory' => '-1',
+    'og_language' => '-2',
+  );
+
+  $export['content_extra_weights_group'] = $strongarm;
+  return $export;
 }

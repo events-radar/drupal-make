@@ -238,6 +238,18 @@ function _radar_events_content_default_fields() {
 }
 
 /**
+ * Helper to implementation of hook_ctools_plugin_api().
+ */
+function _radar_events_ctools_plugin_api() {
+  $args = func_get_args();
+  $module = array_shift($args);
+  $api = array_shift($args);
+  if ($module == "strongarm" && $api == "strongarm") {
+    return array("version" => 1);
+  }
+}
+
+/**
  * Helper to implementation of hook_user_default_permissions().
  */
 function _radar_events_user_default_permissions() {
@@ -284,4 +296,30 @@ function _radar_events_user_default_permissions() {
   );
 
   return $permissions;
+}
+
+/**
+ * Helper to implementation of hook_strongarm().
+ */
+function _radar_events_strongarm() {
+  $export = array();
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'content_extra_weights_event';
+  $strongarm->value = array(
+    'title' => '-5',
+    'body_field' => '-3',
+    'revision_information' => '0',
+    'author' => '1',
+    'options' => '2',
+    'comment_settings' => '3',
+    'language' => '-1',
+    'translation' => '4',
+    'menu' => '-4',
+    'og_nodeapi' => '-2',
+  );
+
+  $export['content_extra_weights_event'] = $strongarm;
+  return $export;
 }

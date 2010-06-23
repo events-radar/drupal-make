@@ -10,6 +10,15 @@ function radar_groups_content_default_fields() {
 }
 
 /**
+ * Implementation of hook_ctools_plugin_api().
+ */
+function radar_groups_ctools_plugin_api() {
+  module_load_include('inc', 'radar_groups', 'radar_groups.defaults');
+  $args = func_get_args();
+  return call_user_func_array('_radar_groups_ctools_plugin_api', $args);
+}
+
+/**
  * Implementation of hook_node_info().
  */
 function radar_groups_node_info() {
@@ -25,4 +34,13 @@ function radar_groups_user_default_permissions() {
   module_load_include('inc', 'radar_groups', 'radar_groups.defaults');
   $args = func_get_args();
   return call_user_func_array('_radar_groups_user_default_permissions', $args);
+}
+
+/**
+ * Implementation of hook_strongarm().
+ */
+function radar_groups_strongarm() {
+  module_load_include('inc', 'radar_groups', 'radar_groups.defaults');
+  $args = func_get_args();
+  return call_user_func_array('_radar_groups_strongarm', $args);
 }

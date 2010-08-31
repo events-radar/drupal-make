@@ -1,0 +1,38 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+X-WR-CALNAME:Location iCal test feed
+METHOD:PUBLISH
+PRODID:-//None/1.0//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:location.example.com/1
+DTSTART;TZID=Pacific/Apia:20090131T193000
+DTEND;TZID=Pacific/Apia:20090131T203000
+DTSTAMP:20090131T043238Z
+CREATED:20090131T043208Z
+SUMMARY:Basic location
+DESCRIPTION:Basic location description 
+LOCATION:Text location
+END:VEVENT
+BEGIN:VEVENT
+UID:location.example.com/2
+DTSTART;TZID=Europe/Paris:20090101T190000
+DTEND;TZID=Europe/Paris:20090101T200000
+DTSTAMP:20090131T131111Z
+CREATED:20090131T131037Z
+SUMMARY:RFC example with altrep
+DESCRIPTION: Example from iCal RFC of a location with an alternative representation. This is also now used by upcoming.com
+LOCATION;ALTREP="http://xyzcorp.com/conf-rooms/f123.vcf":Conference Room - F123, Bldg. 002
+END:VEVENT
+BEGIN:VEVENT
+UID:location.example.com/3
+DTSTART:20090901T190000
+DTEND:20090901T200000
+DTSTAMP:20090831T141111Z
+CREATED:20090831T141111Z
+SUMMARY:Zvent location
+DESCRIPTION: Custom parameter
+LOCATION;X-CALCONNECT-LOCATION-ID=11365@zvents.com:Lupo's Heartbreak Hotel
+ 79 Washington St. Providence RI United States
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,6 @@
+; $Id: semanticviews.info,v 1.1.2.2 2009/10/11 12:54:46 bangpound Exp $
+name = Semantic Views
+description = Views 2 plugins for UI management of output markup
+core = 6.x
+dependencies[] = views
+package = Views

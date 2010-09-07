@@ -23,11 +23,6 @@ function radar_events_preprocess_views_view_fields__og_events__panel_pane_1(&$va
   $fields = $variables['row'];
   $rrule = $fields->{$fields->date_info->aliases['field_date_rrule']};
   $start = strtotime($fields->{$fields->date_info->aliases['field_date_value']});
-  static $here = FALSE;
-  if (! $here) {
-    dsm($variables['row']);
-    $here = TRUE;
-  }
 
   $variables['fields']['start'] = (object) array('content' => format_date($start, 'custom', 'H:i'));
 

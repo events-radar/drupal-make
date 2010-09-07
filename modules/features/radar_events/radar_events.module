@@ -1,3 +1,39 @@
 <?php
 
 include_once('radar_events.features.inc');
+
+function radar_events_theme($existing, $type, $theme, $path) {
+  return array(
+    'views_view_fields__og_events__panel_pane_1' => array(
+      'arguments' => array('view' => NULL, 'options' => Null, 'row' => Null),
+      'template' => 'views-view-fields--og-events--panel-pane-1',
+      'original hook' => 'views_view_fields',
+      'path' => $path . '/themes',
+      'type' => $type,
+      'preprocess functions' => array(
+        'template_preprocess',
+        'template_preprocess_views_view_fields',
+        'radar_events_preprocess_views_view_fields__og_events__panel_pane_1',
+      ),
+    ),
+  );
+}
+
+function radar_events_preprocess_views_view_fields__og_events__panel_pane_1(&$variables) {
+  $fields = $variables['row'];
+  $rrule = $fields->{$fields->date_info->aliases['field_date_rrule']};
+  $start = strtotime($fields->{$fields->date_info->aliases['field_date_value']});
+  static $here = FALSE;
+  if (! $here) {
+    dsm($variables['row']);
+    $here = TRUE;
+  }
+
+  $variables['fields']['start'] = (object) array('content' => format_date($start, 'custom', 'H:i'));
+
+  if (! empty($rrule)) {
+    $rrule_description = date_repeat_rrule_description($rrule);
+    $variables['fields']['rrule'] = (object) array('content' => theme_image(drupal_get_path('module', 'radar_events') . '/themes/repeat.png', $rrule_description, $rrule_description));
+  }
+
+}

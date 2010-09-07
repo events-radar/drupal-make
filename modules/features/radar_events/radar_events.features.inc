@@ -44,3 +44,12 @@ function radar_events_strongarm() {
   $args = func_get_args();
   return call_user_func_array('_radar_events_strongarm', $args);
 }
+
+/**
+ * Implementation of hook_views_default_views().
+ */
+function radar_events_views_default_views() {
+  module_load_include('inc', 'radar_events', 'radar_events.features.views');
+  $args = func_get_args();
+  return call_user_func_array('_radar_events_views_default_views', $args);
+}

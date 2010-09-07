@@ -6,6 +6,182 @@
 function _radar_events_content_default_fields() {
   $fields = array();
 
+  // Exported field: field_cost_amount
+  $fields[] = array(
+    'field_name' => 'field_cost_amount',
+    'type_name' => 'event',
+    'display_settings' => array(
+      'label' => array(
+        'format' => 'above',
+        'exclude' => 0,
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'number_decimal',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'number',
+    'active' => '1',
+    'prefix' => '',
+    'suffix' => '',
+    'min' => '0',
+    'max' => '',
+    'allowed_values' => '',
+    'allowed_values_php' => '',
+    'precision' => '10',
+    'scale' => '2',
+    'decimal' => '.',
+    'widget' => array(
+      'default_value' => array(
+        '0' => array(
+          'value' => '',
+          '_error_element' => 'default_value_widget][field_cost_amount][0][value',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Amount',
+      'weight' => '11',
+      'description' => 'A figure for cost (or donation) if appropriate.',
+      'type' => 'number',
+      'module' => 'number',
+    ),
+  );
+
+  // Exported field: field_cost_type
+  $fields[] = array(
+    'field_name' => 'field_cost_type',
+    'type_name' => 'event',
+    'display_settings' => array(
+      'label' => array(
+        'format' => 'above',
+        'exclude' => 0,
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'number_integer',
+    'required' => '1',
+    'multiple' => '0',
+    'module' => 'number',
+    'active' => '1',
+    'prefix' => '',
+    'suffix' => '',
+    'min' => '0',
+    'max' => '3',
+    'allowed_values' => '0 | Free
+1 | Donation
+2 | Cost',
+    'allowed_values_php' => '',
+    'widget' => array(
+      'default_value' => array(
+        '0' => array(
+          'value' => '',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Cost',
+      'weight' => '10',
+      'description' => '',
+      'type' => 'optionwidgets_buttons',
+      'module' => 'optionwidgets',
+    ),
+  );
+
+  // Exported field: field_date
+  $fields[] = array(
+    'field_name' => 'field_date',
+    'type_name' => 'event',
+    'display_settings' => array(
+      'label' => array(
+        'format' => 'above',
+        'exclude' => 0,
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'date',
+    'required' => '1',
+    'multiple' => '1',
+    'module' => 'date',
+    'active' => '1',
+    'granularity' => array(
+      'year' => 'year',
+      'month' => 'month',
+      'day' => 'day',
+      'hour' => 'hour',
+      'minute' => 'minute',
+    ),
+    'timezone_db' => '',
+    'tz_handling' => 'none',
+    'todate' => 'optional',
+    'repeat' => 1,
+    'repeat_collapsed' => '1',
+    'default_format' => 'medium',
+    'widget' => array(
+      'default_value' => 'blank',
+      'default_value_code' => '',
+      'default_value2' => 'same',
+      'default_value_code2' => '',
+      'input_format' => 'Y-m-d H:i:s',
+      'input_format_custom' => '',
+      'increment' => '1',
+      'text_parts' => array(),
+      'year_range' => '-3:+3',
+      'label_position' => 'above',
+      'label' => 'Date',
+      'weight' => '9',
+      'description' => '',
+      'type' => 'date_popup_repeat',
+      'module' => 'date',
+    ),
+  );
+
   // Exported field: field_image
   $fields[] = array(
     'field_name' => 'field_image',
@@ -228,6 +404,9 @@ function _radar_events_content_default_fields() {
 
   // Translatables
   array(
+    t('Amount'),
+    t('Cost'),
+    t('Date'),
     t('Image'),
     t('Links'),
     t('Location (description)'),
@@ -366,10 +545,25 @@ function _radar_events_strongarm() {
     'language' => '-1',
     'translation' => '4',
     'menu' => '-4',
+    'taxonomy' => '-3',
     'og_nodeapi' => '-2',
   );
 
   $export['content_extra_weights_event'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_date_only';
+  $strongarm->value = 'D j M';
+
+  $export['date_format_date_only'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_time_only';
+  $strongarm->value = 'H:i';
+
+  $export['date_format_time_only'] = $strongarm;
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;

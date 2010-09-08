@@ -1,0 +1,270 @@
+<?php
+// $Id: og_facets.module,v 1.1.4.3 2009/03/03 23:33:05 kingmoore Exp $
+
+
+/**
+ * @file
+ * Provides a facet for organic groups.
+ */
+
+require_once('./'. drupal_get_path('module', 'faceted_search') .'/faceted_search.inc');
+
+/**
+ * Implementation of hook_form_alter().
+ */
+function og_facets_form_faceted_search_edit_form_alter(&$form, $form_state) {
+
+  $env = $form['env']['#value'];
+  
+  $form['og_facets'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Organic Group Facet options'),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+    '#weight' => 10,
+  );
+  
+  $types = array();
+  foreach (og_get_types('group') as $type) {
+    $types[$type] = $type;
+  }  
+  if (count($types)) {
+    $form['og_facets']['og_facets_excluded_types'] = array(
+      '#type' => 'checkboxes',
+      '#title' => t('Group types to exclude from the Organic Group facet'),
+      '#description' => t('Groups of the checked types will not appear in the facet. Note that this setting is not a filter for search results; content from excluded groups can still be searchable through other facets or from text searches.'),
+      '#options' => $types,
+      '#default_value' => og_facets_excluded_types($env),
+    );
+  }
+  else {
+    $form['og_facets']['og_facets_help'] = array(
+      '#type' => 'markup',
+      '#value' => '<p>'. t('No organic group types are currently available.') .'</p>',
+    );
+  }
+}
+
+/**
+ * Implementation of hook_faceted_search_collect().
+ */
+function og_facets_faceted_search_collect(&$facets, $domain, $env, $selection, $arg = NULL) {
+  switch ($domain) {
+    case 'facets':
+      // If the og facet is allowed.
+      if (!isset($selection) || isset($selection['og'][1])) {     
+        $excluded_types = og_facets_excluded_types($env);
+        $facets[] = new og_facets($excluded_types);
+      }
+      break;
+
+    case 'text':
+      // If the og facet is allowed.
+      if (!isset($selection) || isset($selection['og'][1])) {
+        // Scan the search text for a 'og:gid' token, and extract a
+        // facet from it.
+        if ($gid = search_query_extract($arg, 'og')) {
+          if (is_numeric($gid)) {
+            $excluded_types = og_facets_excluded_types($env);
+            if ($name = og_facets_get_group_name($env, $gid, $excluded_types)) {
+              // Create a facet with the group found in the search text as the
+              // active category.
+              $facets[] = new og_facets($excluded_types, $gid, $name);
+            }
+          }
+          // Remove the parsed token from the search text.
+          $arg = search_query_insert($arg, 'og');
+        }
+      }
+      return $arg;
+
+    case 'node':
+      // If the og facet is allowed.
+      if ($arg->og_groups && (!isset($selection) || isset($selection['og'][1]))) {
+        $excluded_types = og_facets_excluded_types($env);
+        foreach ($arg->og_groups as $gid) {
+          if ($name = og_facets_get_group_name($env, $gid, $excluded_types)) {
+            // Create a facet with the group as the active category.
+            $facets[] = new og_facets($excluded_types, $gid, $name);
+          }
+        }
+      }
+      break;
+  }
+}
+
+/**
+ * Return the name of a group.
+ *
+ * @return The group's name, or FALSE if not found or if the group's type is not
+ * allowed in the facet.
+ */
+function og_facets_get_group_name($env, $gid, $excluded_types = array()) {
+  if (count($excluded_types)) {
+    return db_result(db_query('SELECT n.title FROM {node} n WHERE n.nid = %d AND NOT n.type IN (\''. implode('\', \'', $excluded_types) .'\')', $gid));
+  }
+  else {
+    return db_result(db_query('SELECT n.title FROM {node} n WHERE n.nid = %d', $gid));
+  }
+}
+
+/**
+ * Returns an array with the types that should not be used in faceted searches.
+ */
+function og_facets_excluded_types($env) {
+
+  $excluded_types = $env->settings['og_facets_excluded_types'];
+  if(count($excluded_types)){
+    return array_diff($env->settings['og_facets_excluded_types'], array(0));
+  }
+
+  return array();
+}
+
+/**
+ * Implementation of hook_faceted_search_init().
+ */
+function og_facets_faceted_search_init(&$env) {
+  $env->settings['og_facets_excluded_types'] = array();
+} 
+
+/**
+ * A facet for organic groups. 
+ */
+class og_facets extends faceted_search_facet {
+
+  var $_excluded_types;
+  
+  /**
+   * Constructor. Optionally assigns the active user of the facet.
+   */
+  function og_facets($excluded_types = array(), $gid = 0, $name = '') {
+    $active_path = array();
+    if ($gid && $name) {
+      $active_path[] = new og_facets_category($gid, $name);
+    }
+    parent::faceted_search_facet('og', $active_path);
+    $this->_excluded_types = $excluded_types;
+  }
+
+  function get_id() {
+    return 1; // This module provides only one facet.
+  }
+
+  function get_label() {
+    return t('Group');
+  }
+
+  /**
+   * Returns the available sort options for this facet.
+   */
+  function get_sort_options() {
+    $options = parent::get_sort_options();
+    $options['name'] = t('Name');
+    return $options;
+  }
+
+  /**
+   * Handler for the 'count' sort criteria.
+   */
+  function build_sort_query_count(&$query) {
+    $query->add_orderby('count', 'DESC');
+    $query->add_orderby('og_name', 'ASC'); //TD
+  }
+
+  /**
+   * Handler for the 'name' sort criteria.
+   */
+  function build_sort_query_name(&$query) {
+    $query->add_orderby('og_name', 'ASC');
+  }
+
+  /**
+   * Returns the search text for this facet, taking into account this facet's
+   * active path.
+   */
+  function get_text() {
+    if ($category = $this->get_active_category()) {
+      return $category->_gid;
+    }
+    return '';
+  }
+
+  /**
+   * Updates a query for retrieving the root categories of this facet and their
+   * associated nodes within the current search results. 
+   *
+   * @param $query
+   *   The query object to update.
+   *
+   * @return
+   *   FALSE if this facet can't have root categories.
+   */
+  function build_root_categories_query(&$query) {
+    $query->add_table('og_ancestry', 'nid', 'n', 'nid', 'oga');
+    $query->add_table('node', 'nid', 'oga', 'group_nid', 'og_node');
+    $query->add_field('og_node', 'nid', 'og_nid');
+    $query->add_field('og_node', 'title', 'og_name');
+    $query->add_groupby('og_nid');
+    if (count($this->_excluded_types)) {
+      $query->add_where('NOT og_node.type IN (\''. implode('\', \'', $this->_excluded_types) .'\')');
+    }
+    return TRUE;
+  }
+
+  /**
+   * This factory method creates categories given query results that include the
+   * fields selected in get_root_categories_query() or get_subcategories_query().
+   *
+   * @param $results
+   *   $results A database query result resource.
+   *
+   * @return
+   *   Array of categories.
+   */
+  function build_categories($results) {
+    $categories = array();
+    while ($result = db_fetch_object($results)) {
+      $categories[] = new og_facets_category($result->og_nid, $result->og_name, $result->count);
+    }
+    return $categories;
+  }
+}
+
+/**
+ * A node-type based facet category.
+ */
+class og_facets_category extends faceted_search_category {
+  var $_gid = 0;
+  var $_name = '';
+  
+  function og_facets_category($gid, $name, $count = NULL) {
+    parent::faceted_search_category($count);
+    $this->_gid = $gid;
+    $this->_name = $name;
+  }
+
+  /**
+   * Return the label of this category.
+   *
+   * @param $html
+   *   TRUE when HTML is allowed in the label, FALSE otherwise. Checking this
+   *   flag allows implementors to provide a rich-text label if desired, and an
+   *   alternate plain text version for cases where HTML cannot be used. The
+   *   implementor is responsible to ensure adequate security filtering.
+   */
+  function get_label($html = FALSE) {
+    return check_plain($this->_name);
+  }
+
+  /**
+   * Updates a query for selecting nodes matching this category.
+   *
+   * @param $query
+   *   The query object to update.
+   */
+  function build_results_query(&$query) {
+    $query->add_table('og_ancestry', 'nid', 'n', 'nid', 'oga');
+    $query->add_where('oga.group_nid = %d', $this->_gid);
+  }
+}

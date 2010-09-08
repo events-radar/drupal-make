@@ -1,0 +1,10 @@
+; $Id: og_facets.info,v 1.1.4.1 2009/02/25 05:30:24 kingmoore Exp $
+name = Organic Group Facets
+description = "Provides a facet for organic groups."
+core = 6.x
+dependencies[] = faceted_search
+dependencies[] = search
+dependencies[] = og
+package = Faceted Search
+
+

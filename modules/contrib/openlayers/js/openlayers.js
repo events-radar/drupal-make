@@ -161,8 +161,19 @@ Drupal.openlayers = {
    * @param openlayers OpenLayers Map Object
    */
   'addLayers': function(map, openlayers) {
+
+    var sorted = [];
     for (var name in map.layers) {
+      sorted.push({'name': name, 'weight': map.layers[name].weight });
+    };
+    sorted.sort(function(a, b) {
+      var x = a.weight; var y = b.weight;
+      return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+    });
+
+    for (var i=0; i<sorted.length; ++i) {
       var layer;      
+      var name = sorted[i].name;
       var options = map.layers[name];
       
       // Add reference to our layer ID

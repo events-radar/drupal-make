@@ -20,10 +20,12 @@
 function _openlayers_layers_process($layers = array(), &$map = array()) {
   $layer_data = array();
 
+  $weight = 0;
   foreach ($layers as $layer) {
     if ($layer_object = openlayers_layer_load($layer)) {
       $layer_object->render($map);
       $layer_object->data['title'] = $layer_object->title;
+      $layer_object->data['weight'] = ++$weight;
       $layer_data[$layer_object->name] = $layer_object->data;
     }
   }

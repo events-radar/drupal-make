@@ -97,13 +97,16 @@ function theme_openlayers_ui_presets_form_layers($form) {
     unset($form['layer_switcher'][$key]['#title']);
 
     $row[] = drupal_render($form['layers']['overlaylabels'][$key]);
+    $row[] = drupal_render($form['layer_weight'][$key]); 
     $row[] = drupal_render($form['layers']['overlays'][$key]);
     $row[] = drupal_render($form['layer_activated'][$key]);
     $row[] = drupal_render($form['layer_switcher'][$key]);
     $row[] = drupal_render($form['layer_styles'][$key]);
-    $rows[] = $row;
+    $rows[] = array( 'data' => $row, 'class' => 'draggable' );
   }
-  $output .= theme('table', array(t('Overlay layers'), t('Enabled'), t('Activated'), t('In Switcher'), t('Style')), $rows);
+  $output .= theme('table', array(t('Overlay layers'), t('Weight'), t('Enabled'), t('Activated'), t('In Switcher'), t('Style')), $rows, array('id' => 'overlay-layer-table'));
+
+  drupal_add_tabledrag('overlay-layer-table', 'order', 'sibling', 'layer-weight');
   $output .= drupal_render($form);
   return $output;
 }

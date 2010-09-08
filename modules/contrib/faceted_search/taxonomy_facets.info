@@ -1,0 +1,10 @@
+; $Id: taxonomy_facets.info,v 1.8 2009/01/04 19:32:04 davidlesieur Exp $
+name = Taxonomy Facets
+description = "Provides facets based on taxonomy."
+dependencies[] = taxonomy
+dependencies[] = search
+dependencies[] = faceted_search
+package = Faceted Search
+core = 6.x
+php = 5.1
+

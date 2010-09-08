@@ -1,0 +1,7 @@
+; $Id: date_facets_format.info,v 1.2 2008/08/26 04:28:10 davidlesieur Exp $
+name = Date Facets Format
+description = "Provides formatting options for date-based facets."
+dependencies[] = faceted_search
+package = Faceted Search
+core = 6.x
+

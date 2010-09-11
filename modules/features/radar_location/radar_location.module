@@ -1,0 +1,3 @@
+<?php
+
+include_once('radar_location.features.inc');

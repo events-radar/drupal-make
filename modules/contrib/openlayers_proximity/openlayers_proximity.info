@@ -1,7 +1,0 @@
-; $Id: openlayers_proximity.info,v 1.1.2.1 2010/07/24 10:20:10 antoniodemarco Exp $
-
-name = OpenLayers Proximity
-description = Geographical proximity search for the OpenLayers module.
-core = 6.x
-package = OpenLayers
-dependencies[] = openlayers

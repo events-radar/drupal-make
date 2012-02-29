@@ -1,8 +1,0 @@
-Drupal sites directory: radar.squat.net
-
-Place in, or symlink, in DocumentRoot/sites directory. Modules and
-themes are either checked out as CVS from drupal.org or if developed
-in git added as submodules. To get the code for the submodules run
-> git submodule init
-> git submodule update
-from the top git directory.

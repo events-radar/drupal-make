@@ -1,6 +1,0 @@
-; $Id: geotaxonomy.info,v 1.1.2.1 2009/10/16 17:34:13 alexb Exp $
-name = Geo Taxonomy
-description = "Stores geographical lat/lon data per taxonomy term. Provides Feeds and FeedAPI import functionality."
-dependencies[] = taxonomy
-package = Taxonomy
-core = 6.x

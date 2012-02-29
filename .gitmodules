@@ -1,9 +1,0 @@
-[submodule "themes/contrib/tao"]
-  path = themes/contrib/tao
-  url = git://github.com/developmentseed/tao.git
-[submodule "themes/contrib/rubik"]
-  path = themes/contrib/rubik
-  url = git://github.com/developmentseed/rubik.git
-[submodule "modules/contrib/active_translation"]
-  path = modules/contrib/active_translation
-  url = git://git.iskra.net/drupal/contrib/active_translation.git

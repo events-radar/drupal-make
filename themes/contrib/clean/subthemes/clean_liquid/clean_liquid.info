@@ -1,7 +1,0 @@
-; $Id: clean_liquid.info,v 1.1.2.1.2.1 2009/12/10 12:35:27 psynaptic Exp $
-
-name = Clean Liquid
-description = Liquid version of Clean theme.
-base theme = clean
-core = 6.x
-stylesheets[all][] = css/layout.css

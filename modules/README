@@ -1,7 +1,0 @@
-contrib  - Contributory modules http://drupal.org/project/modules
-           Generally these are downloaded (with CVS) from drupal.org
-           Modules developed in git are included as submodules.
-custom   - Hand rolled special modules.
-devel    - Development helper modules - excluded from git check in.
-features - Modules created with http://drupal.org/project/features
-           Primarily containing views, panels, content types and settings.

@@ -1,7 +1,0 @@
-/* $Id: ie-lt8.css,v 1.1.2.1 2009/12/29 15:26:24 psynaptic Exp $ */
-
-/* Fixes for IE < 8 */
-
-input.form-submit {
-  padding: 1px;
-}

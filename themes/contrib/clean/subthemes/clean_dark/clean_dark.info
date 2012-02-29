@@ -1,8 +1,0 @@
-; $Id: clean_dark.info,v 1.1.2.1.2.2 2010/03/14 10:48:58 psynaptic Exp $
-
-name = Clean Dark
-description = Dark version of Clean theme.
-base theme = clean
-core = 6.x
-engine = phptemplate
-stylesheets[all][] = css/color.css

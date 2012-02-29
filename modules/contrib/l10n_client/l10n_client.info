@@ -1,6 +1,0 @@
-; $Id: l10n_client.info,v 1.5 2009/03/12 15:29:40 goba Exp $
-name = Localization client
-description = Provides on-page localization
-dependencies[] = locale
-core = 6.x
-package = Multilanguage

@@ -131,14 +131,20 @@ projects[admin_menu][subdir] = "contrib"
 projects[better_exposed_filters][subdir] = "contrib"
 projects[inline_entity_form][subdir] = "contrib"
 
+projects[message][subdir] = "contrib"
+projects[message][version] = "1.9"
+
 ; Migrate
 projects[migrate][subdir] = "migrate"
 projects[migrate_extras][subdir] = "migrate"
 
-; Devel
+; Themes
+projects[adaptivetheme][type] = "theme"
+
+;
+;; Devel
+;
 projects[devel][subdir] = "devel"
 projects[devel_themer][subdir] = "devel"
 projects[schema][subdir] = "devel"
-
-; Themes
-projects[adaptivetheme][type] = "theme"
+projects[diff][subdir] = "devel"

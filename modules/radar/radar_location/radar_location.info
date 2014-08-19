@@ -1,0 +1,17 @@
+name = Radar location
+core = 7.x
+package = Radar
+version = 7.x-1.0-alpha1
+project = radar_location
+dependencies[] = addressfield
+dependencies[] = features
+dependencies[] = field_collection
+dependencies[] = geofield
+dependencies[] = openlayers
+features[features_api][] = api:2
+features[field_base][] = field_address
+features[field_base][] = field_geo
+features[field_base][] = field_location
+features[field_instance][] = field_collection_item-field_location-field_address
+features[field_instance][] = field_collection_item-field_location-field_geo
+project path = sites/all/modules/features

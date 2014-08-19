@@ -1,0 +1,108 @@
+<?php
+/**
+ * @file
+ * Alterations for the location field collection.
+ */
+
+/**
+ * Implements hook_field_create_instance().
+ *
+ * Enforce our default_value_function callback on the event instance.
+ */
+function radar_location_field_create_instance($instance) {
+  if ($instance['field_name'] == 'field_location' && $instance['bundle'] == 'event') {
+    $instance['default_value_function'] = 'radar_location_field_collection_prepopulate';
+    field_update_instance($instance);
+  }
+}
+
+/**
+ * Implements hook_field_update_instance().
+ *
+ * @see radar_location_field_create_instance().
+ */
+function radar_location_field_update_instance($instance, $prior_instance) {
+  if ($instance['field_name'] == 'field_location' && $instance['bundle'] == 'event') {
+    if (empty($instance['default_value_function'])) {
+      $instance['default_value_function'] = 'radar_location_field_collection_prepopulate';
+      field_update_instance($instance);
+    }
+  }
+}
+
+/**
+ * Default value callback.
+ *
+ * Uses entityreference_prepopulate for og_group_ref field to retrieve group which
+ * event is being posted from, to the retrieve any field collection location(s)
+ * that it has.
+ *
+ * @see radar_location_field_create_instance().
+ */
+function radar_location_field_collection_prepopulate($entity_type, $entity, $field, $instance, $langcode) {
+  $items = array();
+  // reuse values inserted by entityreference_prepopulate.
+  $instance['settings']['behaviors']['prepopulate']['status'] = TRUE;
+  $field['field_name'] = 'og_group_ref';
+  if ($ids = entityreference_prepopulate_get_values($field, $instance)) {
+    foreach ($ids as $nid) {
+      $node = node_load($nid);
+      // @todo correct access to language code.
+      $values[$nid] = $node->field_location['und'];
+    }
+    if (!empty($values)) {
+      // @todo there will be a function for this.
+      foreach ($values as $value) {
+        $items = array_merge($items, $value);
+      }
+    }
+  }
+  return $items;
+}
+
+/**
+ * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ *
+ * Change callbacks for geofield geocoding; so that we can get the address
+ * field out of the field collection.
+ */
+function radar_location_field_widget_geofield_openlayers_form_alter(&$element, &$form_state, $context) {
+  foreach ($element as &$row) {
+    if (isset($row['use_geocoder'])) {
+      $row['use_geocoder']['#submit'] = array('radar_location_openlayers_use_geocoder_submit');
+    }
+  }
+}
+
+/**
+ * Overrides openlayers_use_geocoder_submit().
+ *
+ * @see radar_location_field_widget_geofield_openlayers_form_alter().
+ */
+function radar_location_openlayers_use_geocoder_submit($form, &$form_state) {
+  $button = $form_state['triggering_element'];
+
+  // Go one level up in the form, to the widgets container.
+  $element = drupal_array_get_nested_value($form, array_slice($button['#array_parents'], 0, -1));
+  $field_name = $element['#field_name'];
+  $langcode = $element['#language'];
+  $delta = $element['#delta'];
+  $parents = $element['#field_parents'];
+  // The collection is the parent of the button, but also the field.
+  // This is then used to get the value to geocode when
+  // gecoder_widget_get_field_value is called.
+  $collection_value =& drupal_array_get_nested_value($form_state['input'], $parents);
+
+  // Set the widget value based on geocoding results.
+  $field_state = field_form_get_state($parents, $field_name, $langcode, $form_state);
+  $geocoder_field = $field_state['instance']['widget']['settings']['geocoder_field'];
+  if ($field_value = geocoder_widget_get_field_value($element['#entity_type'], $field_state['instance'], NULL, $collection_value[$geocoder_field][$langcode])) {
+    geophp_load();
+    $geometry = geoPHP::load($field_value[$langcode][$delta]['geom']);
+    $field_value[$langcode][$delta]['geom'] = $geometry->out('wkt'); // OpenLayers can only use WKT, so translate
+    $field_value[$langcode][$delta]['input_format'] = 'wkt';
+    // Override the field's value in the 'input' array to substitute the new
+    // field value for the one that was submitted.
+    drupal_array_set_nested_value($form_state, array_merge(array('values'), $parents, array($field_name)), $field_value);
+  }
+}

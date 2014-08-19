@@ -1,0 +1,84 @@
+name = Radar
+description = Radar group calendaring system.
+
+core = 7.x
+
+; Core modules (standard)
+dependencies[] = block
+dependencies[] = translation
+dependencies[] = contextual
+dependencies[] = dashboard
+dependencies[] = dblog
+dependencies[] = field
+dependencies[] = field_sql_storage
+dependencies[] = field_ui
+dependencies[] = file
+dependencies[] = filter
+dependencies[] = help
+dependencies[] = image
+dependencies[] = list
+dependencies[] = locale
+dependencies[] = menu
+dependencies[] = node
+dependencies[] = openid
+dependencies[] = options
+dependencies[] = path
+dependencies[] = rdf
+dependencies[] = search
+dependencies[] = taxonomy
+dependencies[] = text
+
+; Basic additions
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = strongarm
+dependencies[] = libraries
+dependencies[] = entity
+dependencies[] = entity_token
+dependencies[] = views
+dependencies[] = views_ui
+dependencies[] = redirect
+dependencies[] = pathauto
+dependencies[] = token
+dependencies[] = views_bulk_operations
+
+; Admin Menu
+dependencies[] = admin_menu
+
+; Additional fields
+dependencies[] = addressfield
+dependencies[] = email
+dependencies[] = link
+dependencies[] = geofield
+
+; Multilingual
+dependencies[] = entity_translation
+dependencies[] = i18n_block
+dependencies[] = i18n_field
+dependencies[] = i18n
+dependencies[] = i18n_menu
+dependencies[] = i18n_node
+dependencies[] = i18n_select
+dependencies[] = i18n_path
+dependencies[] = i18n_string
+dependencies[] = i18n_taxonomy
+dependencies[] = i18n_translation
+dependencies[] = i18n_variable
+dependencies[] = i18nviews
+
+; Organic Groups
+dependencies[] = entityreference
+dependencies[] = og
+dependencies[] = og_access
+dependencies[] = og_field_access
+dependencies[] = og_language
+dependencies[] = og_node_link
+dependencies[] = og_ui
+dependencies[] = og_views
+
+; iCal parser
+dependencies[] = date
+dependencies[] = date_ical
+dependencies[] = job_scheduler 
+dependencies[] = feeds
+; and additional fields

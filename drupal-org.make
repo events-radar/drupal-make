@@ -23,6 +23,10 @@ projects[geophp][subdir] = "contrib"
 projects[geocoder][subdir] = "contrib"
 ; mapping
 projects[openlayers][subdir] = "contrib"
+; Broken makefile library path, prevents makefile finishing.
+projects[openlayers][type] = "module"
+projects[openlayers][download][url] = "git://git.drupal.org/project/openlayers.git"
+projects[openlayers][download][revision] = "ccee1d33289f297f27345f3a19c45c00d468d2b4"
 projects[leaflet][subdir] = "contrib"
 libraries[leaflet][type] = "libraries"
 libraries[leaflet][download][type] = "file"
@@ -53,6 +57,10 @@ projects[phone][subdir] = "contrib"
 projects[entity_translation][subdir] = "contrib"
 projects[i18n][subdir] = "contrib"
 projects[i18nviews][subdir] = "contrib"
+; No release availabel.
+projects[i18nviews][type] = "module"
+projects[i18nviews][download][url] = "git://git.drupal.org/project/i18nviews.git"
+projects[i18nviews][download][revision] = "26bd52c4664b0fec8155273f0c0f3ab8a5a2ef66"
 ;
 projects[languageassign][subdir] = "contrib"
 

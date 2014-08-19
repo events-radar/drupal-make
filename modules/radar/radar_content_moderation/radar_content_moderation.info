@@ -1,8 +1,7 @@
 name = Radar Content moderation
 description = Radar Content moderation
 core = 7.x
-package = Radar - Building Blocks
-version = 7.x-3.13+3-dev
+package = Radar
 project = radar
 dependencies[] = comment
 dependencies[] = ctools

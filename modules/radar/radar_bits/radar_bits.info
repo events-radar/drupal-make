@@ -1,4 +1,4 @@
 name = Radar Bits
 description = Pulled out individual code to clue radar.
 core = 7.x
-package = Radar - Building blocks
+package = Radar

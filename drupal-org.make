@@ -14,6 +14,8 @@ projects[views][subdir] = "contrib"
 projects[redirect][subdir] = "contrib"
 projects[pathauto][subdir] = "contrib"
 projects[token][subdir] = "contrib"
+projects[variable][subdir] = "contrib"
+projects[variable][version] = "2.5"
 
 ; views extension
 projects[views_litepager][subdir] = "contrib"

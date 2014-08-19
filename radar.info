@@ -41,6 +41,9 @@ dependencies[] = redirect
 dependencies[] = pathauto
 dependencies[] = token
 dependencies[] = views_bulk_operations
+dependencies[] = variable
+dependencies[] = variable_realm
+dependencies[] = variable_store
 
 ; Admin Menu
 dependencies[] = admin_menu

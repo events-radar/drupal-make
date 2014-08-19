@@ -1,0 +1,85 @@
+<?php
+/**
+ * @file
+ * Code for the Radar Topics feature.
+ */
+
+/**
+* Implements hook_system_info_alter().
+*/
+function radar_topics_system_info_alter(&$info, $file, $type) {
+  // Radar Topics dynamically adds field_topics to content types that implement
+  // radar_topics_field. We must add a corresponding line for each field
+  // instance to radar_topics.info so that Features is aware of the instance
+  // and can sucessfully revert the field_instance component back to its
+  // default state.
+  if ($file->name == 'radar_topics') {
+    $radar_topics_entity_types = radar_topics_get_entity_types_with_topics();
+    if (!empty($radar_topics_entity_types)) {
+      foreach ($radar_topics_entity_types as $entity_type => $bundles) {
+        foreach(array_keys($bundles) as $bundle) {
+          $info['features']['field_instance'][] = "$entity_type-$bundle-field_topics";
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter();
+ */
+function radar_topics_form_node_form_alter(&$form, &$form_state) {
+  if (isset($form['field_topics'])) {
+    $form['topics_wrapper'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Topics'),
+      '#collapsible' => TRUE,
+      '#collapsed' => FALSE,
+      '#group' => 'additional_settings',
+      '#weight' => -15,
+    );
+    $form['topics_wrapper']['field_topics'] = $form['field_topics'];
+    $form['field_topics'] = array('#language' => NULL);
+    $form['#attached']['js'][] = drupal_get_path('module', 'radar_topics') . '/js/radar_topics.js';
+  }
+}
+
+/**
+ * Returns an array of entity types that are enabled via Radar.
+ */
+function radar_topics_get_entity_types_with_topics() {
+  // Find all Radar Entity integrations.
+  $radar_entity_integrations = radar_entity_integration_info();
+  if (empty($radar_entity_integrations)) {
+    return array();
+  }
+
+  foreach ($radar_entity_integrations as $entity_type => $integration) {
+    foreach ($integration as $bundle => $options) {
+      if (isset($options['exclude_topics']) && $options['exclude_topics'] == TRUE) {
+        unset($radar_entity_integrations[$entity_type][$bundle]);
+      }
+    }
+    // If an entity type has no integrations, don't return it.
+    if (empty($radar_entity_integrations[$entity_type])) {
+      unset($radar_entity_integrations[$entity_type]);
+    }
+  }
+
+  return $radar_entity_integrations;
+}
+
+/**
+ * Implements hook_features_pipe_alter().
+ */
+function radar_topics_features_pipe_alter(&$pipe, $data, $export) {
+  if (!empty($pipe['field_instance'])) {
+    foreach ($pipe['field_instance'] as $delta => $value) {
+      $args = explode('-', $value);
+      $field_name = $args[2];
+      if ($field_name == 'field_topics') {
+        unset($pipe['field_instance'][$delta]);
+      }
+    }
+  }
+}

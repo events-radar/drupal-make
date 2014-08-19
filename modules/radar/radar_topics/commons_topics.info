@@ -1,0 +1,13 @@
+name = Radar Topics
+core = 7.x
+package = Radar - Building blocks
+version = 7.x-3.13+3-dev
+project = radar
+dependencies[] = features
+dependencies[] = taxonomy
+datestamp = 1401441895
+features[features_api][] = api:2
+features[field_base][] = field_topics
+features[field_instance][] = node-event-field_topics
+features[field_instance][] = node-group-field_topics
+features[taxonomy][] = topics

@@ -107,8 +107,8 @@ projects[radioactivity][version] = "2.9"
 projects[flag][subdir] = "contrib"
 projects[flag][version] = "3.5"
 
-projects[flag_abuse] = "contib"
-projects[flag_abuse] = "2.0"
+projects[flag_abuse][subdir] = "contrib"
+projects[flag_abuse][version] = "2.0"
 
 ; Search - @TODO
 projects[search_api][subdir] = "contrib"

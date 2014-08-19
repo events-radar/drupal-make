@@ -2,7 +2,9 @@
 core = 7.x
 api = 2
 
-; Basic additions
+;
+;; Basic additions
+;
 projects[ctools][subdir] = "contrib"
 projects[entity][subdir] = "contrib"
 projects[features][subdir] = "contrib"
@@ -12,26 +14,53 @@ projects[views][subdir] = "contrib"
 projects[redirect][subdir] = "contrib"
 projects[pathauto][subdir] = "contrib"
 projects[token][subdir] = "contrib"
+
+; views extension
+projects[views_litepager][subdir] = "contrib"
+projects[views_litepager][version] = "3.0"
+
+projects[views_load_more][subdir] = "contrib"
+projects[views_load_more][version] = "1.2"
+
 projects[views_bulk_operations][subdir] = "contrib"
 
+;
 ;; address and location
+;
+
 ;fields
 projects[addressfield][subdir] = "contrib"
 projects[geofield][subdir] = "contrib"
 ; requirements
 projects[geophp][subdir] = "contrib"
 projects[geocoder][subdir] = "contrib"
-; mapping
+
+;
+;; mapping
+;
+
+; openlayers for admin backend
 projects[openlayers][subdir] = "contrib"
 ; Broken makefile library path, prevents makefile finishing.
 projects[openlayers][type] = "module"
 projects[openlayers][download][url] = "git://git.drupal.org/project/openlayers.git"
 projects[openlayers][download][revision] = "ccee1d33289f297f27345f3a19c45c00d468d2b4"
+
+projects[proj4js][subdir] = "contrib"
+projects[proj4js][version] = "1.2"
+
+; leaflet for front end.
 projects[leaflet][subdir] = "contrib"
 libraries[leaflet][type] = "libraries"
 libraries[leaflet][download][type] = "file"
 libraries[leaflet][download][url] = "http://leaflet-cdn.s3.amazonaws.com/build/leaflet-0.7.3.zip"
 projects[leaflet_geojson][subdir] = "contrib"
+
+; location combined field, and autopopulation of location.
+projects[field_collection][subdir] = "contrib"
+projects[field_collection][version] = "1.0-beta7"
+projects[entityreference_prepopulate][subdir] = "contrib"
+projects[entityreference_prepopulate][version] = "1.5"
 
 ;; date
 ; field
@@ -70,6 +99,16 @@ projects[og_views][subdir] = "contrib"
 projects[og_create_perms][subdir] = "contrib"
 projects[og_language][subdir] = "contrib"
 projects[og_node_link][subdir] = "contrib"
+; @todo this one's from the commons root, don't know if we'll use
+projects[radioactivity][subdir] = "contrib"
+projects[radioactivity][version] = "2.9"
+
+; contrib moderation
+projects[flag][subdir] = "contrib"
+projects[flag][version] = "3.5"
+
+projects[flag_abuse] = "contib"
+projects[flag_abuse] = "2.0"
 
 ; Search - @TODO
 projects[search_api][subdir] = "contrib"

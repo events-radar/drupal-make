@@ -61,8 +61,6 @@ projects[i18nviews][subdir] = "contrib"
 projects[i18nviews][type] = "module"
 projects[i18nviews][download][url] = "git://git.drupal.org/project/i18nviews.git"
 projects[i18nviews][download][revision] = "26bd52c4664b0fec8155273f0c0f3ab8a5a2ef66"
-;
-projects[languageassign][subdir] = "contrib"
 
 ; Organic groups
 projects[entityreference][subdir] = "contrib"

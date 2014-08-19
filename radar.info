@@ -85,3 +85,12 @@ dependencies[] = date_ical
 dependencies[] = job_scheduler 
 dependencies[] = feeds
 ; and additional fields
+
+; Radar features
+dependencies[] = radar_bits
+dependencies[] = radar_body
+dependencies[] = radar_content_moderation
+dependencies[] = radar_event
+dependencies[] = radar_groups
+dependencies[] = radar_location
+dependencies[] = radar_topics

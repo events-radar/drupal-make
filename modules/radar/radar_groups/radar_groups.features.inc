@@ -83,11 +83,12 @@ function radar_groups_node_info() {
     'group' => array(
       'name' => t('Group'),
       'base' => 'node_content',
-      'description' => t('Squat, location, action group, city.'),
+      'description' => t('Who is organizing something, or where is something organized? Squat, location, action group, collective, city, region etc.'),
       'has_title' => '1',
-      'title_label' => t('Group name'),
+      'title_label' => t('Name'),
       'help' => '',
     ),
   );
+  drupal_alter('node_info', $items);
   return $items;
 }

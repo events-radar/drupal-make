@@ -1,0 +1,12 @@
+name = Radar Languages
+description = Provides languages 
+core = 7.x
+package = Radar
+version = 7.x-1.0-alpha1
+project = radar_languages
+dependencies[] = features
+dependencies[] = locale
+features[features_api][] = api:2
+features[language][] = de
+features[language][] = en
+features[language][] = nl

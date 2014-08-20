@@ -1,0 +1,11 @@
+name = Radar Admin settings
+description = Provides admin settings such as text formats, admin role etc
+core = 7.x
+package = Radar
+version = 7.x-1.0-alpha1
+project = radar_admin_ssettings
+dependencies[] = features
+dependencies[] = filter
+features[features_api][] = api:2
+features[filter][] = plain_text
+features[user_role][] = administrator

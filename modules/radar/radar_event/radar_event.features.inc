@@ -21,11 +21,12 @@ function radar_event_node_info() {
     'event' => array(
       'name' => t('Event'),
       'base' => 'node_content',
-      'description' => '',
+      'description' => t('What is happening when? '),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
     ),
   );
+  drupal_alter('node_info', $items);
   return $items;
 }

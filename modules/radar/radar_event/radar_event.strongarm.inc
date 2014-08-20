@@ -35,14 +35,14 @@ function radar_event_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_event';
-  $strongarm->value = '2';
+  $strongarm->value = '1';
   $export['comment_event'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_form_location_event';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['comment_form_location_event'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -68,13 +68,29 @@ function radar_event_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '-5',
+          'weight' => '0',
+        ),
+        'path' => array(
+          'weight' => '13',
+        ),
+        'redirect' => array(
+          'weight' => '14',
+        ),
+        'language' => array(
+          'weight' => '12',
         ),
       ),
       'display' => array(),
     ),
   );
   $export['field_bundle_settings_node__event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'language_content_type_event';
+  $strongarm->value = '4';
+  $export['language_content_type_event'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -110,7 +126,7 @@ function radar_event_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_event';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['node_submitted_event'] = $strongarm;
 
   return $export;

@@ -27,7 +27,7 @@ function radar_location_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'addressfield',
         'settings' => array(
           'format_handlers' => array(
@@ -73,13 +73,57 @@ function radar_location_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'geofield',
+        'label' => 'hidden',
+        'module' => 'leaflet',
         'settings' => array(
-          'data' => 'full',
+          'height' => 400,
+          'icon' => array(
+            'html' => '',
+            'htmlClass' => '',
+            'iconAnchor' => array(
+              'x' => '',
+              'y' => '',
+            ),
+            'iconSize' => array(
+              'x' => '',
+              'y' => '',
+            ),
+            'iconUrl' => '',
+            'popupAnchor' => array(
+              'x' => '',
+              'y' => '',
+            ),
+            'shadowAnchor' => array(
+              'x' => '',
+              'y' => '',
+            ),
+            'shadowUrl' => '',
+          ),
+          'leaflet_map' => '',
+          'popup' => array(
+            'show' => '',
+            'text' => '',
+          ),
+          'vector_display' => array(
+            'clickable' => 1,
+            'color' => '',
+            'dashArray' => '',
+            'fill' => 1,
+            'fillColor' => '',
+            'fillOpacity' => '',
+            'opacity' => '',
+            'stroke' => 1,
+            'stroke_override' => 0,
+            'weight' => '',
+          ),
+          'zoom' => array(
+            'initialZoom' => '',
+            'maxZoom' => 19,
+            'minZoom' => 1,
+          ),
         ),
-        'type' => 'geofield_wkt',
-        'weight' => 1,
+        'type' => 'geofield_leaflet',
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'field_collection_item',
@@ -132,11 +176,11 @@ function radar_location_field_default_field_instances() {
     'description' => 'Additional information on how to find or access this location.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'field_collection_item',

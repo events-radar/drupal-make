@@ -8,6 +8,7 @@ dependencies[] = addressfield
 dependencies[] = features
 dependencies[] = field_collection
 dependencies[] = geofield
+dependencies[] = leaflet
 dependencies[] = openlayers
 dependencies[] = text
 features[features_api][] = api:2

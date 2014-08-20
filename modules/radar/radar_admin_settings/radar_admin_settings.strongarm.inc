@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * radar_admin_ssettings.strongarm.inc
+ * radar_admin_settings.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function radar_admin_ssettings_strongarm() {
+function radar_admin_settings_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();

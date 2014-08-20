@@ -4,4 +4,4 @@
  * Code for the Radar Admin settings feature.
  */
 
-include_once 'radar_admin_ssettings.features.inc';
+include_once 'radar_admin_settings.features.inc';

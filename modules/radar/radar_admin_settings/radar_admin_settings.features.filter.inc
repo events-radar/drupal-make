@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * radar_admin_ssettings.features.filter.inc
+ * radar_admin_settings.features.filter.inc
  */
 
 /**
  * Implements hook_filter_default_formats().
  */
-function radar_admin_ssettings_filter_default_formats() {
+function radar_admin_settings_filter_default_formats() {
   $formats = array();
 
   // Exported format: Plain text.

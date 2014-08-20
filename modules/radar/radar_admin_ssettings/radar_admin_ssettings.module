@@ -1,5 +1,7 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the Radar Admin settings feature.
  */
+
+include_once 'radar_admin_ssettings.features.inc';

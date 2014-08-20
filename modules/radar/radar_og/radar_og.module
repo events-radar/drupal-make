@@ -110,8 +110,6 @@ function radar_og_entity_view($entity, $type, $view_mode, $langcode) {
  * Alter the privacy settings fields.
  */
 function radar_og_form_node_form_alter(&$form, &$form_state) {
-}
-/*
   $groups = og_get_all_group_bundle();
 
   if (isset($groups['node']) && in_array($form_state['node']->type, array_keys($groups['node']))) {
@@ -142,7 +140,7 @@ function radar_og_form_node_form_alter(&$form, &$form_state) {
  * After build callback for the group node form.
  *
  * Display the private content checkbox inside the privacy settings field.
- *
+ */
 function radar_og_form_group_node_after_build($form, $form_state) {
   $form['field_og_subscribe_settings'][LANGUAGE_NONE]['approval']['#suffix'] = render($form['field_og_access_default_value']);
 
@@ -156,7 +154,7 @@ function radar_og_form_group_node_after_build($form, $form_state) {
  *   The OG role object of which the permissions are being changed.
  * @param $permissions
  *   The anonymous user permissions of the group.
- *
+ */
 function _radar_og_update_group_permissions($role, $permissions) {
   $updated_roles = &drupal_static(__FUNCTION__);
   if (!empty($updated_roles[$role->rid])) {

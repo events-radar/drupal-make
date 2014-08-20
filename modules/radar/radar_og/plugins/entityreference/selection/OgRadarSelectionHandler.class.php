@@ -17,7 +17,7 @@ class OgRadarSelectionHandler extends OgSelectionHandler {
   public function getReferencableEntities($match = NULL, $match_operator = 'CONTAINS', $limit = 0) {
     $options = array();
     $entity_type = $this->field['settings']['target_type'];
-    list(,, $create_bundle) = entity_extract_ids($this->entity_type, $this->entity);
+    $create_bundle = $this->field['instance']['bundle'];
 
     $query = $this->buildEntityFieldQuery($match, $match_operator);
     if ($limit > 0) {

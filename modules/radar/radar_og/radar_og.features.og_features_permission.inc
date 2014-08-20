@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * radar_groups.features.og_features_permission.inc
+ * radar_og.features.og_features_permission.inc
  */
 
 /**
  * Implements hook_og_features_default_permissions().
  */
-function radar_groups_og_features_default_permissions() {
+function radar_og_og_features_default_permissions() {
   $permissions = array();
 
   // Exported og permission: 'user:user:subscribe'

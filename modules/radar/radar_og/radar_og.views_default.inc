@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * radar_groups.views_default.inc
+ * radar_og.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function radar_groups_views_default_views() {
+function radar_og_views_default_views() {
   $export = array();
 
   $view = new view();
@@ -228,6 +228,26 @@ function radar_groups_views_default_views() {
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['path'] = 'node/%/contributors';
+  $translatables['radar_contributors_group'] = array(
+    t('Master'),
+    t('Group contributors'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('OG membership from user'),
+    t('All'),
+    t('group teaser'),
+    t('Recent contributors'),
+    t('[picture]<span>[name]</span>'),
+    t('View panes'),
+    t('group homepage'),
+    t('Contributors'),
+    t('Page'),
+    t('Contributors to %1'),
+  );
   $export['radar_contributors_group'] = $view;
 
   $view = new view();
@@ -448,11 +468,12 @@ function radar_groups_views_default_views() {
       'label' => '',
     ),
   );
-  /* Field: Broken/missing handler */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['label'] = '';
+  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 1;
   /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -658,11 +679,12 @@ function radar_groups_views_default_views() {
       'label' => '',
     ),
   );
-  /* Field: Broken/missing handler */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['label'] = '';
+  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 1;
   /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -775,11 +797,12 @@ function radar_groups_views_default_views() {
   $handler->display->display_options['empty']['area_text_custom']['empty'] = TRUE;
   $handler->display->display_options['empty']['area_text_custom']['content'] = 'All groups are updated. <a class="use-ajax" href="update/toggle">Remove group update message</a>';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Broken/missing handler */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['label'] = '';
+  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 1;
   /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -825,10 +848,36 @@ function radar_groups_views_default_views() {
   $handler->display->display_options['menu']['weight'] = '10';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $translatables['radar_group_moderation'] = array(
+    t('Master'),
+    t('Radar Group Moderation'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('author'),
+    t('Update Actions'),
+    t('Title'),
+    t('User'),
+    t('Updated'),
+    t('Operations'),
+    t('Active'),
+    t('Proposed'),
+    t('Published Groups'),
+  );
   $export['radar_group_moderation'] = $view;
 
   $view = new view();
-  $view->name = 'radar_groups_contributors';
+  $view->name = 'radar_og_contributors';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'users';
@@ -916,14 +965,28 @@ function radar_groups_views_default_views() {
   $handler->display->display_options['pane_title'] = 'Contributors (Site-wide)';
   $handler->display->display_options['pane_category']['name'] = 'Radar';
   $handler->display->display_options['pane_category']['weight'] = '0';
-  $export['radar_groups_contributors'] = $view;
+  $translatables['radar_og_contributors'] = array(
+    t('Master'),
+    t('Contributors'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('OG membership from user'),
+    t('Content pane'),
+    t('Contributors (Site-wide)'),
+    t('Radar'),
+  );
+  $export['radar_og_contributors'] = $view;
 
   $view = new view();
-  $view->name = 'radar_groups_directory';
+  $view->name = 'radar_og_directory';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'radar_groups_directory';
+  $view->human_name = 'radar_og_directory';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -951,11 +1014,12 @@ function radar_groups_views_default_views() {
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'No groups have been created yet.';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
-  /* Field: Broken/missing handler */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['label'] = '';
+  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 1;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -968,7 +1032,7 @@ function radar_groups_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Group (group_group) */
+  /* Filter criterion: Field: Group (group_group) */
   $handler->display->display_options['filters']['group_group_value']['id'] = 'group_group_value';
   $handler->display->display_options['filters']['group_group_value']['table'] = 'field_data_group_group';
   $handler->display->display_options['filters']['group_group_value']['field'] = 'group_group_value';
@@ -1007,10 +1071,32 @@ function radar_groups_views_default_views() {
   $handler->display->display_options['pane_category']['name'] = 'Radar';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['inherit_panels_path'] = '1';
-  $export['radar_groups_directory'] = $view;
+  $translatables['radar_og_directory'] = array(
+    t('Master'),
+    t('Groups'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('No groups have been created yet.'),
+    t('Limit to'),
+    t('Feed'),
+    t('Content pane'),
+    t('Radar'),
+  );
+  $export['radar_og_directory'] = $view;
 
   $view = new view();
-  $view->name = 'radar_groups_recent_content';
+  $view->name = 'radar_og_recent_content';
   $view->description = 'Shows titles of the 5 most recent pieces of content in a group.';
   $view->tag = 'Radar';
   $view->base_table = 'node';
@@ -1043,13 +1129,14 @@ function radar_groups_views_default_views() {
   $handler->display->display_options['fields']['type']['label'] = '';
   $handler->display->display_options['fields']['type']['exclude'] = TRUE;
   $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
-  /* Field: Broken/missing handler */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['label'] = '';
   $handler->display->display_options['fields']['title_field']['element_class'] = 'type-[type]';
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 1;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -1084,10 +1171,24 @@ function radar_groups_views_default_views() {
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $export['radar_groups_recent_content'] = $view;
+  $translatables['radar_og_recent_content'] = array(
+    t('Master'),
+    t('Radar Groups: Recent content'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Nobody has contributed any site content yet.'),
+    t('OG membership from node'),
+    t('All'),
+    t('Block'),
+  );
+  $export['radar_og_recent_content'] = $view;
 
   $view = new view();
-  $view->name = 'radar_groups_user_groups';
+  $view->name = 'radar_og_user_groups';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'og_membership';
@@ -1134,21 +1235,22 @@ function radar_groups_views_default_views() {
     'image_style' => 'thumbnail',
     'image_link' => 'content',
   );
-  /* Field: Broken/missing handler */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['relationship'] = 'og_membership_related_node_group';
   $handler->display->display_options['fields']['title_field']['label'] = '';
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
-  /* Field: Content: Group */
+  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 1;
+  /* Field: Field: Group */
   $handler->display->display_options['fields']['group_group']['id'] = 'group_group';
   $handler->display->display_options['fields']['group_group']['table'] = 'field_data_group_group';
   $handler->display->display_options['fields']['group_group']['field'] = 'group_group';
   $handler->display->display_options['fields']['group_group']['relationship'] = 'og_membership_related_node_group';
   $handler->display->display_options['fields']['group_group']['label'] = '';
   $handler->display->display_options['fields']['group_group']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['group_group']['type'] = 'radar_groups_group_subscribe';
+  $handler->display->display_options['fields']['group_group']['type'] = 'radar_og_group_subscribe';
   $handler->display->display_options['fields']['group_group']['settings'] = array(
     'field_name' => '0',
   );
@@ -1180,7 +1282,28 @@ function radar_groups_views_default_views() {
       'label' => 'OG membership: Entity id',
     ),
   );
-  $export['radar_groups_user_groups'] = $view;
+  $translatables['radar_og_user_groups'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('This person hasn\'t contributed to any groups yet.'),
+    t('Group node from OG membership'),
+    t('All'),
+    t('Content pane'),
+    t('View panes'),
+  );
+  $export['radar_og_user_groups'] = $view;
 
   return $export;
 }

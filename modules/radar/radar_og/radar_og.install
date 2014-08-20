@@ -3,16 +3,16 @@
 /**
 * Don't display group node author's avatar on the group node.
 */
-function radar_groups_update_3100() {
-  features_revert(array('radar_groups' => array('variable')));
+function radar_og_update_3100() {
+  features_revert(array('radar_og' => array('variable')));
   return array();
 }
 /**
 * Grant users the "group organizer" role after she's created a group.
 */
-function radar_groups_update_3101() {
+function radar_og_update_3101() {
   // We've updated the og_group_manager_default_rids_node_group variable.
-  features_revert(array('radar_groups' => array('variable')));
+  features_revert(array('radar_og' => array('variable')));
   return array();
 }
 
@@ -20,7 +20,7 @@ function radar_groups_update_3101() {
 * Ensure that the anonymous users is not listed as a group member,
 * per http://drupal.org/node/1910874.
 */
-function radar_groups_update_3102() {
+function radar_og_update_3102() {
   $delete = db_delete('og_users_roles')
     ->condition('uid', 0, '=')
     ->execute();
@@ -31,8 +31,8 @@ function radar_groups_update_3102() {
 * Grant authenticated users permission to create group nodes
 * per http://drupal.org/node/1936714.
 */
-function radar_groups_update_3103() {
-  features_revert(array('radar_groups' => array('user_permission')));
+function radar_og_update_3103() {
+  features_revert(array('radar_og' => array('user_permission')));
   return array();
 }
 
@@ -40,8 +40,8 @@ function radar_groups_update_3103() {
 * Grant authenticated users permission to create group nodes
 * per http://drupal.org/node/1936714.
 */
-function radar_groups_update_3104() {
-  features_revert(array('radar_groups' => array('field_base', 'field_instance')));
+function radar_og_update_3104() {
+  features_revert(array('radar_og' => array('field_base', 'field_instance')));
   return array();
 }
 
@@ -49,7 +49,7 @@ function radar_groups_update_3104() {
  * Change the OG Organizer role back to Administrator member.
  * See http://drupal.org/node/1940150 for more information.
  */
-function radar_groups_update_3105() {
+function radar_og_update_3105() {
   $result = db_update('og_role')
     ->fields(array('name' => 'administrator member'))
     ->condition('rid', 3, '=')
@@ -61,9 +61,9 @@ function radar_groups_update_3105() {
  * Update contributor view to show the titles per the interactive prototype.
  * (http://drupal.org/node/1821808).
  */
-function radar_groups_update_3106() {
+function radar_og_update_3106() {
   $revert = array(
-      'radar_groups' => array('views_view'),
+      'radar_og' => array('views_view'),
   );
   features_revert($revert);
   return array();
@@ -72,7 +72,7 @@ function radar_groups_update_3106() {
 /**
  * Give group owners the organizer role for their own group
  */
-function radar_groups_update_3107() {
+function radar_og_update_3107() {
   // Ensure that the group creator is also listed as an organizer.
   $group_nodes = db_select('node', 'n')
     ->fields('n', array('nid', 'uid'))
@@ -98,9 +98,9 @@ function radar_groups_update_3107() {
  * Update the og_group_ref and group privacy fields per
  * http://drupal.org/node/1961296.
  */
-function radar_groups_update_3108() {
+function radar_og_update_3108() {
   $revert = array(
-    'radar_groups' => array('field_instance', 'views_view'),
+    'radar_og' => array('field_instance', 'views_view'),
   );
   features_revert($revert);
   return array();
@@ -111,11 +111,11 @@ function radar_groups_update_3108() {
  * disable the deprecated Radar Group Privacy module
  * per https://drupal.org/node/1961296.
  */
-function radar_groups_update_3109() {
+function radar_og_update_3109() {
   // Radar Group Privacy was deprecated in https://drupal.org/node/1961296.
   module_disable('radar_group_privacy', TRUE);
   $revert = array(
-    'radar_groups' => array('field_base', 'field_instance'),
+    'radar_og' => array('field_base', 'field_instance'),
   );
   features_revert($revert);
   return array();
@@ -125,23 +125,23 @@ function radar_groups_update_3109() {
  * Update the og group filter inside views per
  * http://drupal.org/node/2037417.
  */
-function radar_groups_update_3110() {
+function radar_og_update_3110() {
   $revert = array(
-    'radar_groups' => array('views_view'),
+    'radar_og' => array('views_view'),
   );
   features_revert($revert);
   return array();
 }
 
 /**
- * Set radar_groups to display need update message for those upgrading from 3.2
+ * Set radar_og to display need update message for those upgrading from 3.2
  * and revert the view to add the update display
  * See https://drupal.org/node/2059857#comment-7733465
  */
-function radar_groups_update_3111() {
-  variable_set('radar_groups_needs_update', TRUE);
+function radar_og_update_3111() {
+  variable_set('radar_og_needs_update', TRUE);
   $revert = array(
-    'radar_groups' => array('views_view'),
+    'radar_og' => array('views_view'),
   );
   features_revert($revert);
   // Ensure that the menu callback from our new Views display is active.
@@ -153,11 +153,11 @@ function radar_groups_update_3111() {
  * Update the og group filter inside views per
  * http://drupal.org/node/2037417.
  */
-function radar_groups_update_3112() {
+function radar_og_update_3112() {
   $revert = array(
     'radar_radioactivity' => array('views_view'),
     'radar_activity_streams' => array('views_view'),
-    'radar_groups' => array('views_view'),
+    'radar_og' => array('views_view'),
     'radar_polls' => array('views_view'),
     'radar_posts' => array('views_view'),
     'radar_wikis' => array('views_view'),
@@ -170,9 +170,9 @@ function radar_groups_update_3112() {
 /**
  * Standardize Browsing Widget views.
  */
-function radar_groups_update_3113() {
+function radar_og_update_3113() {
   $revert = array(
-    'radar_groups' => array('views_view'),
+    'radar_og' => array('views_view'),
   );
   features_revert($revert);
   return array();
@@ -181,9 +181,9 @@ function radar_groups_update_3113() {
 /**
  * Display sticky content at top of lists.
  */
-function radar_groups_update_3114() {
+function radar_og_update_3114() {
   $revert = array(
-    'radar_groups' => array('views_view'),
+    'radar_og' => array('views_view'),
   );
   features_revert($revert);
   return array();
@@ -192,9 +192,9 @@ function radar_groups_update_3114() {
 /**
  * Add empty text to Radar Groups views.
  */
-function radar_groups_update_3115() {
+function radar_og_update_3115() {
   $revert = array(
-    'radar_groups' => array('views_view'),
+    'radar_og' => array('views_view'),
   );
   features_revert($revert);
   return array();
@@ -203,9 +203,9 @@ function radar_groups_update_3115() {
 /**
  * Improve the browsing widget empty text.
  */
-function radar_groups_update_3116() {
+function radar_og_update_3116() {
   $revert = array(
-    'radar_groups' => array('views_view'),
+    'radar_og' => array('views_view'),
   );
   features_revert($revert);
   return array();
@@ -214,9 +214,9 @@ function radar_groups_update_3116() {
 /**
  * Replace the title attribute with the title field in view displays.
  */
-function radar_groups_update_3117() {
+function radar_og_update_3117() {
   $revert = array(
-    'radar_groups' => array('views_view'),
+    'radar_og' => array('views_view'),
   );
   features_revert($revert);
   return array();
@@ -225,9 +225,9 @@ function radar_groups_update_3117() {
 /**
  * Revert the contributors view to use new markup.
  */
-function radar_groups_update_3118() {
+function radar_og_update_3118() {
   $revert = array(
-    'radar_groups' => array('views_view'),
+    'radar_og' => array('views_view'),
   );
   features_revert($revert);
   return array();
@@ -236,9 +236,9 @@ function radar_groups_update_3118() {
 /**
  * Ensure that permissions to subscribe to user groups are properly set.
  */
-function radar_groups_update_3119() {
+function radar_og_update_3119() {
   $revert = array(
-    'radar_groups' => array('og_features_permission'),
+    'radar_og' => array('og_features_permission'),
   );
   features_revert($revert);
   return array();

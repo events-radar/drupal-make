@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * radar_groups.features.inc
+ * radar_og.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function radar_groups_ctools_plugin_api($module = NULL, $api = NULL) {
+function radar_og_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -16,14 +16,14 @@ function radar_groups_ctools_plugin_api($module = NULL, $api = NULL) {
 /**
  * Implements hook_views_api().
  */
-function radar_groups_views_api($module = NULL, $api = NULL) {
+function radar_og_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
 
 /**
  * Implements hook_image_default_styles().
  */
-function radar_groups_image_default_styles() {
+function radar_og_image_default_styles() {
   $styles = array();
 
   // Exported image style: 35x35.
@@ -73,22 +73,4 @@ function radar_groups_image_default_styles() {
   );
 
   return $styles;
-}
-
-/**
- * Implements hook_node_info().
- */
-function radar_groups_node_info() {
-  $items = array(
-    'group' => array(
-      'name' => t('Group'),
-      'base' => 'node_content',
-      'description' => t('Who is organizing something, or where is something organized? Squat, location, action group, collective, city, region etc.'),
-      'has_title' => '1',
-      'title_label' => t('Name'),
-      'help' => '',
-    ),
-  );
-  drupal_alter('node_info', $items);
-  return $items;
 }

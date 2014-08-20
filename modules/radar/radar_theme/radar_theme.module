@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Radar Theme feature.
+ */
+
+include_once 'radar_theme.features.inc';

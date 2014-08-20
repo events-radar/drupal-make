@@ -6,6 +6,7 @@
 /*
  * Body
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/radar\/web\/profiles\/radar\/themes\/at-radar\/sass\/print\.scss}line{font-family:\0000314}}
 body {
   width: 100% !important;
   margin: 0 !important;
@@ -22,12 +23,14 @@ body {
 /*
  * Links
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/radar\/web\/profiles\/radar\/themes\/at-radar\/sass\/print\.scss}line{font-family:\0000331}}
 a {
   background: transparent;
   font-weight: 700;
   text-decoration: underline;
   color: #0000ee;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/radar\/web\/profiles\/radar\/themes\/at-radar\/sass\/print\.scss}line{font-family:\0000338}}
 a[href^="http://"]:after, a[href^="http://"]:visited:after {
   content: "(" attr(href) ")";
   font-size: 10pt;
@@ -36,6 +39,7 @@ a[href^="http://"]:after, a[href^="http://"]:visited:after {
 /*
  * Strip background from likely candidates
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/radar\/web\/profiles\/radar\/themes\/at-radar\/sass\/print\.scss}line{font-family:\0000349}}
 div[id*="wrapper"],
 [class*="title"],
 [class*="inner"],
@@ -66,9 +70,9 @@ table * {
 }
 
 /*
- * Hide various bits of the page, .noprint reusable class for hiding stuff.
+ * Hide various bits of the page
  */
-.noprint,
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/radar\/web\/profiles\/radar\/themes\/at-radar\/sass\/print\.scss}line{font-family:\0000382}}
 .sidebar,
 #breadcrumb,
 .nav,
@@ -91,6 +95,7 @@ ul.links,
 /*
  * Ensure the display the main content region
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/radar\/web\/profiles\/radar\/themes\/at-radar\/sass\/print\.scss}line{font-family:\00003105}}
 #content {
   display: block !important;
 }
@@ -98,10 +103,12 @@ ul.links,
 /*
  * Layout
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/radar\/web\/profiles\/radar\/themes\/at-radar\/sass\/print\.scss}line{font-family:\00003113}}
 #header {
   margin-bottom: 20px;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/radar\/web\/profiles\/radar\/themes\/at-radar\/sass\/print\.scss}line{font-family:\00003118}}
 .content-inner {
   margin: 0 !important;
   padding: 0 !important;
@@ -110,6 +117,7 @@ ul.links,
 /*
  * HTML elements
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/radar\/web\/profiles\/radar\/themes\/at-radar\/sass\/print\.scss}line{font-family:\00003127}}
 h1,
 h2,
 h3,
@@ -122,24 +130,29 @@ h6 {
   line-height: 1;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/radar\/web\/profiles\/radar\/themes\/at-radar\/sass\/print\.scss}line{font-family:\00003140}}
 h1 {
   font-size: 14pt;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/radar\/web\/profiles\/radar\/themes\/at-radar\/sass\/print\.scss}line{font-family:\00003145}}
 h2 {
   font-size: 13pt;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/radar\/web\/profiles\/radar\/themes\/at-radar\/sass\/print\.scss}line{font-family:\00003150}}
 h3 {
   font-size: 12pt;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/radar\/web\/profiles\/radar\/themes\/at-radar\/sass\/print\.scss}line{font-family:\00003155}}
 h4,
 h5,
 h6 {
   font-size: 11pt;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/radar\/web\/profiles\/radar\/themes\/at-radar\/sass\/print\.scss}line{font-family:\00003161}}
 h1 a,
 h2 a,
 h3 a,
@@ -152,14 +165,17 @@ h6 a,
   color: #333333;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/radar\/web\/profiles\/radar\/themes\/at-radar\/sass\/print\.scss}line{font-family:\00003175}}
 .h-group a:link, .h-group a:visited {
   text-decoration: none;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/radar\/web\/profiles\/radar\/themes\/at-radar\/sass\/print\.scss}line{font-family:\00003182}}
 #page-title {
   margin-top: 20px;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/radar\/web\/profiles\/radar\/themes\/at-radar\/sass\/print\.scss}line{font-family:\00003187}}
 pre,
 code,
 tt,
@@ -170,6 +186,7 @@ var {
   font-family: Consolas, "Lucida Console", Menlo, Monaco, "DejaVu Sans Mono", monospace, sans-serif;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/radar\/web\/profiles\/radar\/themes\/at-radar\/sass\/print\.scss}line{font-family:\00003198}}
 blockquote {
   margin: 20px;
   padding: 10px;
@@ -178,6 +195,7 @@ blockquote {
   background: #eeeeee;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/radar\/web\/profiles\/radar\/themes\/at-radar\/sass\/print\.scss}line{font-family:\00003207}}
 hr {
   background-color: #666666;
 }
@@ -185,10 +203,12 @@ hr {
 /*
  * Header, Logo, Site name
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/radar\/web\/profiles\/radar\/themes\/at-radar\/sass\/print\.scss}line{font-family:\00003215}}
 #header {
   padding-bottom: 20px;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/radar\/web\/profiles\/radar\/themes\/at-radar\/sass\/print\.scss}line{font-family:\00003220}}
 #logo img {
   padding: 0 10px 0 0;
   margin: 0 !important;
@@ -198,12 +218,14 @@ hr {
 /*
  * Images
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/radar\/web\/profiles\/radar\/themes\/at-radar\/sass\/print\.scss}line{font-family:\00003230}}
 img {
   float: left;
   margin: 4px 20px 10px 0;
   page-break-inside: avoid;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/radar\/web\/profiles\/radar\/themes\/at-radar\/sass\/print\.scss}line{font-family:\00003237}}
 a img {
   border: none;
 }
@@ -211,38 +233,46 @@ a img {
 /*
  * Tables
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/radar\/web\/profiles\/radar\/themes\/at-radar\/sass\/print\.scss}line{font-family:\00003245}}
 table {
   margin: 1px;
   text-align: left;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/radar\/web\/profiles\/radar\/themes\/at-radar\/sass\/print\.scss}line{font-family:\00003251}}
 th {
   border-bottom: 1px solid #333333;
   font-weight: 700;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/radar\/web\/profiles\/radar\/themes\/at-radar\/sass\/print\.scss}line{font-family:\00003257}}
 td {
   border-bottom: 1px solid #333333;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/radar\/web\/profiles\/radar\/themes\/at-radar\/sass\/print\.scss}line{font-family:\00003262}}
 th,
 td {
   padding: 4px 10px 4px 0;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/radar\/web\/profiles\/radar\/themes\/at-radar\/sass\/print\.scss}line{font-family:\00003268}}
 tfoot {
   font-style: italic;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/radar\/web\/profiles\/radar\/themes\/at-radar\/sass\/print\.scss}line{font-family:\00003273}}
 caption {
   margin-bottom: 10px;
   text-align: left;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/radar\/web\/profiles\/radar\/themes\/at-radar\/sass\/print\.scss}line{font-family:\00003279}}
 thead {
   display: table-header-group;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/radar\/web\/profiles\/radar\/themes\/at-radar\/sass\/print\.scss}line{font-family:\00003284}}
 tr {
   page-break-inside: avoid;
 }
@@ -250,6 +280,7 @@ tr {
 /*
  * Forms
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/radar\/web\/profiles\/radar\/themes\/at-radar\/sass\/print\.scss}line{font-family:\00003292}}
 form {
   margin-bottom: 10px;
 }
@@ -257,11 +288,13 @@ form {
 /*
  * Poll module
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/radar\/web\/profiles\/radar\/themes\/at-radar\/sass\/print\.scss}line{font-family:\00003300}}
 .poll .text,
 .poll .percent,
 .poll .total {
   text-align: left;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/radar\/web\/profiles\/radar\/themes\/at-radar\/sass\/print\.scss}line{font-family:\00003305}}
 .poll form {
   margin-bottom: 0;
 }
@@ -269,6 +302,7 @@ form {
 /*
  * Articles
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/radar\/web\/profiles\/radar\/themes\/at-radar\/sass\/print\.scss}line{font-family:\00003314}}
 .node,
 .comment {
   margin-bottom: 20px;
@@ -276,6 +310,7 @@ form {
   page-break-inside: avoid;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/radar\/web\/profiles\/radar\/themes\/at-radar\/sass\/print\.scss}line{font-family:\00003321}}
 .submitted {
   color: #666666;
   text-decoration: none;
@@ -284,6 +319,7 @@ form {
   margin: 0;
   padding: 0;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/radar\/web\/profiles\/radar\/themes\/at-radar\/sass\/print\.scss}line{font-family:\00003329}}
 .submitted a {
   color: #666666;
   text-decoration: none;

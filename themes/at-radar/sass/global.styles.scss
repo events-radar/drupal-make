@@ -26,6 +26,26 @@
  * helper classes and base styles.
  */
 
+/* ==================
+ * Semantic classes
+ * ================== */
+
+.inline {
+  display: inline;
+}
+
+.right {
+  float: right;
+  padding-left: .5em;
+}
+
+.left {
+  float: left;
+  padding-right: .5em;
+}
+
+
+
 /* =============================================================================
  *   Base
  * ========================================================================== */
@@ -43,7 +63,7 @@ html {
 }
 
 body {
-  font-family: $sans-serif-small; // Set from _custom.scss font variables
+  font-family: $sans-serif-large; // Set from _custom.scss font variables
   font-size: 87.5%;
 }
 
@@ -327,12 +347,15 @@ var {
  */
 #site-name {
   margin: 0;
+  font-family: $mono;
+  font-weight: normal;
 
   a {
 
     &:link,
     &:visited {
       text-decoration: none;
+      color: grey;
     }
 
     &:hover,
@@ -366,7 +389,20 @@ var {
  */
 #page-title {
   margin: 0;
+  color: $green;
 }
+
+/* ===================
+ * Views 
+ * =================== */
+
+.views-label {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+
+
 
 
 /* =============================================================================
@@ -539,6 +575,8 @@ ul.links {
 
 a {
   text-decoration: none;
+  color: black;
+  font-size: 1.1em;
 
   &:link,
   &:visited {}
@@ -549,6 +587,7 @@ a {
   &:hover,
   &:focus {
     text-decoration: underline;
+    color: $light-blue;
   }
 }
 
@@ -1917,6 +1956,8 @@ tr.error {
   #site-name,
   #page-title {
     margin: 0;
+    color: grey;
+    font-family: serif;
   }
 }
 

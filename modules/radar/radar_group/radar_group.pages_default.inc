@@ -127,7 +127,7 @@ function radar_group_default_page_manager_handlers() {
     $display->content['new-6e525b08-bf1b-4192-b6cb-9939a7c827f9'] = $pane;
     $display->panels['two_33_66_second'][0] = 'new-6e525b08-bf1b-4192-b6cb-9939a7c827f9';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-6e525b08-bf1b-4192-b6cb-9939a7c827f9';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['node_view_panel_context_2'] = $handler;
 

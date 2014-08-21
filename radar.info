@@ -44,6 +44,7 @@ dependencies[] = views_bulk_operations
 dependencies[] = variable
 dependencies[] = variable_realm
 dependencies[] = variable_store
+dependencies[] = panels
 
 ; Admin Menu
 dependencies[] = admin_menu

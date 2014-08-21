@@ -78,7 +78,15 @@ h1 {}
 h2 {}
 
 
-h3 {}
+h3 { 
+ span.date-display-single { 
+    color: white;
+    background-color: black;
+    padding: 0 .6em;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+  }
+}
 
 
 h4 {}
@@ -392,18 +400,6 @@ var {
   color: $green;
 }
 
-/* ===================
- * Views 
- * =================== */
-
-.views-label {
-  font-weight: bold;
-  font-size: 1.1em;
-}
-
-
-
-
 
 /* =============================================================================
  *   Misc Global Styles
@@ -576,7 +572,7 @@ ul.links {
 a {
   text-decoration: none;
   color: black;
-  font-size: 1.1em;
+  font-size: 1em;
 
   &:link,
   &:visited {}

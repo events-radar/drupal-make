@@ -1,5 +1,7 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the Radar Languages feature.
  */
+
+include_once 'radar_languages.features.inc';

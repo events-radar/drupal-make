@@ -46,8 +46,9 @@ dependencies[] = variable_realm
 dependencies[] = variable_store
 dependencies[] = panels
 
-; Admin Menu
+; Administration
 dependencies[] = admin_menu
+dependencies[] = module_filter
 
 ; Additional fields
 dependencies[] = addressfield
@@ -86,6 +87,14 @@ dependencies[] = job_scheduler
 dependencies[] = feeds
 ; and additional fields
 
+; Date
+dependencies[] = date_popup
+dependencies[] = date_repeat
+dependencies[] = date_repeat_field
+dependencies[] = date_repeat_entity
+dependencies[] = uuid
+dependencies[] = replicate
+
 ; Radar features
 dependencies[] = radar_admin_settings
 dependencies[] = radar_bits
@@ -98,3 +107,7 @@ dependencies[] = radar_location
 dependencies[] = radar_theme
 dependencies[] = radar_topics
 
+; Development
+dependencies[] = devel
+dependencies[] = node_export_features
+dependencies[] = diff

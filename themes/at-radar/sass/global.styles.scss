@@ -44,6 +44,14 @@
   padding-right: .5em;
 }
 
+.label {
+  font-weight: bold;
+}
+
+.small-label {
+  font-style: italic;
+}
+
 
 
 /* =============================================================================
@@ -79,7 +87,7 @@ h2 {}
 
 
 h3 { 
- span.date-display-single { 
+ .date-display-single { 
     color: white;
     background-color: black;
     padding: 0 .6em;

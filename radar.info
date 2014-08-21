@@ -73,7 +73,6 @@ dependencies[] = i18nviews
 dependencies[] = entityreference
 dependencies[] = og
 dependencies[] = og_access
-dependencies[] = og_field_access
 dependencies[] = og_language
 dependencies[] = og_node_link
 dependencies[] = og_ui

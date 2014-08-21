@@ -4,5 +4,5 @@ modules/devel/
 modules/migrate/
 themes/adaptivetheme/
 
-themes/at-radar/.sass-cache/
-themes/at-radar/css/
+themes/at-radar/.sass-cache/*
+themes/at-radar/css/*

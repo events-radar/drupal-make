@@ -110,19 +110,15 @@ function radar_group_views_default_views() {
   $handler->display->display_options['fields']['field_phone']['element_label_class'] = 'small-label, inline';
   $handler->display->display_options['fields']['field_phone']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_phone']['element_default_classes'] = FALSE;
-  /* Field: Content: offline */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
   $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
   $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
+  $handler->display->display_options['fields']['field_location']['label'] = 'offline';
   $handler->display->display_options['fields']['field_location']['element_label_type'] = 'div';
   $handler->display->display_options['fields']['field_location']['element_label_class'] = 'label';
   $handler->display->display_options['fields']['field_location']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_location']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_location']['type'] = 'field_collection_fields';
-  $handler->display->display_options['fields']['field_location']['settings'] = array(
-    'view_mode' => 'full',
-  );
-  $handler->display->display_options['fields']['field_location']['delta_offset'] = '0';
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';

@@ -9,7 +9,6 @@ dependencies[] = features
 dependencies[] = image
 dependencies[] = link
 dependencies[] = radar_event
-dependencies[] = radar_location
 dependencies[] = radar_og
 dependencies[] = strongarm
 dependencies[] = text

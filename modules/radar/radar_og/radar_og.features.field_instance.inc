@@ -462,7 +462,7 @@ function radar_og_field_definition(&$field_instances, $entity_type, $bundle) {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 16,
+      'weight' => 18,
     ),
     'widget_type' => 'options_select',
   );
@@ -473,7 +473,7 @@ function radar_og_field_definition(&$field_instances, $entity_type, $bundle) {
     'default_value' => NULL,
     'default_value_function' => 'entityreference_prepopulate_field_default_value',
     'deleted' => '0',
-    'description' => 'Separate group names with commas',
+    'description' => 'Groups that the event is posted into.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -535,7 +535,7 @@ function radar_og_field_definition(&$field_instances, $entity_type, $bundle) {
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -609,7 +609,7 @@ function radar_og_field_definition(&$field_instances, $entity_type, $bundle) {
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
-      'weight' => 5,
+      'weight' => 7,
     ),
   );
 

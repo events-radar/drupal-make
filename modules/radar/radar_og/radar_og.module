@@ -460,6 +460,7 @@ function radar_og_system_info_alter(&$info, $file, $type) {
     if (!empty($group_content_entity_types)) {
       foreach ($group_content_entity_types as $entity_type => $bundles) {
         foreach (array_keys($bundles) as $bundle) {
+          $info['features']['field_group'][] = "group_groups|$entity_type|$bundle|form";
           $info['features']['field_instance'][] = "$entity_type-$bundle-og_group_ref";
           $info['features']['field_instance'][] = "$entity_type-$bundle-og_group_request";
           $info['features']['field_instance'][] = "$entity_type-$bundle-group_content_access";

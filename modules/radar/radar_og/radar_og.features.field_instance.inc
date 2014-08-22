@@ -471,7 +471,7 @@ function radar_og_field_definition(&$field_instances, $entity_type, $bundle) {
   $field_instances["$entity_type-$bundle-og_group_ref"] = array(
     'bundle' => $bundle,
     'default_value' => NULL,
-    'default_value_function' => 'radar_og_entityreference_default_value',
+    'default_value_function' => 'entityreference_prepopulate_field_default_value',
     'deleted' => '0',
     'description' => 'Separate group names with commas',
     'display' => array(

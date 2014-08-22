@@ -491,43 +491,6 @@ function radar_og_default_message_type_alter(&$defaults) {
   }
 }
 
-
-/**
- * Implements hook_og_user_access_alter().
- *
- * Deny create permissions from non-members on "non-public" groups (i.e. groups
- * that don't allow joining without approval).
- */
-function radar_og_og_user_access_alter(&$perm, $context) {
-  dsm('radar_og_og_user_access_alter');
-  dsm($perm);
-  dsm($context);
-  $account = $context['account'];
-  $group_type = $context['group_type'];
-  $group = $context['group'];
-
-  if ($group_type != 'node') {
-    return;
-  }
-  // The purpose of this function is to grant permissions to create content
-  // in a group to non-members of the group, when the group's privacy settings
-  // (field_og_subscribe_settings) is set to "Anyone can contribute".
-  if (og_is_member($group_type, $group->nid, 'user', $account, array(OG_STATE_ACTIVE, OG_STATE_PENDING, OG_STATE_BLOCKED))) {
-    // The user is a group member, so comply to the OG permissions.
-    return;
-  }
-
-  $wrapper = entity_metadata_wrapper($group_type, $group);
-  $access_create = $account->uid && $wrapper->field_og_subscribe_settings->value() == 'anyone';
-
-  // Make sure user can view group (i.e. it's not private).
-  $radar_og_entity_types = radar_og_get_group_content_entity_types();
-  foreach (array_keys($radar_og_entity_types['node']) as $type) {
-    $perm["create $type content"] = $access_create;
-  }
-}
-
-
 /**
  * Implements of hook_token_info().
  */
@@ -673,41 +636,6 @@ function radar_og_group_submission_message($form, &$form_state) {
   }
 }
 
-/**
- * Default value function for the og_group_ref reference field.
- * This function is assigned to the field with the default_value_function
- * property defined in our instances of the og_group_ref field,
- * which takes place in radar_og_field_definition().
- */
-function radar_og_entityreference_default_value($entity_type, $entity, $field, $instance, $langcode) {
-
-  $items = array();
-  $field_name = $field['field_name'];
-
-  if (empty($_GET[$field_name]) || !is_string($_GET[$field_name])) {
-    return $items;
-  }
-
-  if (empty($instance['settings']['behaviors']['prepopulate']['status'])) {
-    return $items;
-  }
-
-  $ids = explode(',', $_GET[$field_name]);
-  // Check access to the provided entities.
-  $target_type = $field['settings']['target_type'];
-  entity_load($target_type, $ids);
-  // Remove group nodes hidden by the node access system.
-  foreach ($ids as $target_id) {
-    $target = entity_load_single($target_type, $target_id);
-    if (entity_access('view', $target_type, $target)
-      && og_is_group_type($target_type, $target->type)
-      && (og_user_access($target_type, $target_id, "create $entity->type content") || og_user_access($target_type, $target_id, "update any $entity->type content"))
-    ) {
-      $items[] = array('target_id' => $target_id);
-    }
-  }
-  return $items;
-}
 
 /**
  * Implements hook_strongarm_alter().

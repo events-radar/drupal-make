@@ -95,6 +95,12 @@ dependencies[] = date_repeat_entity
 dependencies[] = uuid
 dependencies[] = replicate
 
+; Location
+dependencies[] = eck
+dependencies[] = auto_entitylabel
+dependencies[] = inline_entity_form
+
+
 ; Radar features
 dependencies[] = radar_admin_settings
 dependencies[] = radar_bits

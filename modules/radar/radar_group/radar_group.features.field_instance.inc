@@ -46,7 +46,7 @@ function radar_group_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -97,7 +97,7 @@ function radar_group_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 9,
+      'weight' => 6,
     ),
   );
 
@@ -152,29 +152,25 @@ function radar_group_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
-  // Exported field_instance: 'node-group-field_location'
-  $field_instances['node-group-field_location'] = array(
+  // Exported field_instance: 'node-group-field_offline'
+  $field_instances['node-group-field_offline'] = array(
     'bundle' => 'group',
-    'default_value' => array(),
+    'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'field_collection',
+        'module' => 'entityreference',
         'settings' => array(
-          'add' => 'Add',
-          'delete' => 'Delete',
-          'description' => TRUE,
-          'edit' => 'Edit',
-          'view_mode' => 'full',
+          'link' => FALSE,
         ),
-        'type' => 'field_collection_view',
-        'weight' => 14,
+        'type' => 'entityreference_label',
+        'weight' => 21,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -184,18 +180,33 @@ function radar_group_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_location',
-    'label' => 'Location',
+    'field_name' => 'field_offline',
+    'label' => 'offline',
     'required' => 0,
     'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'field_collection',
-      'settings' => array(),
-      'type' => 'field_collection_embed',
+      'active' => 1,
+      'module' => 'inline_entity_form',
+      'settings' => array(
+        'fields' => array(),
+        'type_settings' => array(
+          'allow_existing' => 1,
+          'delete_references' => 0,
+          'label_plural' => 'entities',
+          'label_singular' => 'entity',
+          'match_operator' => 'CONTAINS',
+          'override_labels' => 0,
+        ),
+      ),
+      'type' => 'inline_entity_form',
       'weight' => 10,
     ),
   );
@@ -278,15 +289,15 @@ function radar_group_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
   t('Image');
-  t('Location');
   t('email');
+  t('offline');
   t('online');
   t('opening times');
   t('phone');

@@ -342,26 +342,21 @@ function radar_event_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_location'
-  $field_instances['node-event-field_location'] = array(
+  // Exported field_instance: 'node-event-field_offline'
+  $field_instances['node-event-field_offline'] = array(
     'bundle' => 'event',
-    'default_value' => NULL,
-    'default_value_function' => 'radar_location_field_collection_prepopulate',
+    'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'field_collection',
+        'module' => 'entityreference',
         'settings' => array(
-          'add' => 'Add',
-          'delete' => 'Delete',
-          'description' => TRUE,
-          'edit' => 'Edit',
-          'view_mode' => 'full',
+          'link' => FALSE,
         ),
-        'type' => 'field_collection_view',
-        'weight' => 13,
+        'type' => 'entityreference_label',
+        'weight' => 29,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -370,21 +365,35 @@ function radar_event_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
-    'display_in_partial_form' => 0,
     'entity_type' => 'node',
-    'field_name' => 'field_location',
+    'field_name' => 'field_offline',
     'label' => 'offline',
     'required' => 0,
     'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'field_collection',
-      'settings' => array(),
-      'type' => 'field_collection_embed',
-      'weight' => 12,
+      'active' => 1,
+      'module' => 'inline_entity_form',
+      'settings' => array(
+        'fields' => array(),
+        'type_settings' => array(
+          'allow_existing' => 1,
+          'delete_references' => 0,
+          'label_plural' => 'entities',
+          'label_singular' => 'entity',
+          'match_operator' => 'CONTAINS',
+          'override_labels' => 0,
+        ),
+      ),
+      'type' => 'inline_entity_form',
+      'weight' => 9,
     ),
   );
 

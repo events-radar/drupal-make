@@ -71,6 +71,7 @@ function radar_og_field_default_field_instances() {
   t('Group content visibility');
   t('Group roles and permissions');
   t('Request message');
+  t('Request to be added to group');
   t('This is the text a user may send to the group administrators.');
   t('Group Logo');
   t('Hide contributed content from non-members');
@@ -461,6 +462,80 @@ function radar_og_field_definition(&$field_instances, $entity_type, $bundle) {
           'status' => 1,
         ),
       ),
+      'user_register_form' => FALSE,
+    ),
+    'view modes' => array(
+      'full' => array(
+        'custom settings' => FALSE,
+        'label' => 'Full',
+        'type' => 'og_list_default',
+      ),
+      'teaser' => array(
+        'custom settings' => FALSE,
+        'label' => 'Teaser',
+        'type' => 'og_list_default',
+      ),
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'og',
+      'settings' => array(),
+      'type' => 'og_complex',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-og_group_request'
+  $field_instances['"entity_type-$bundle-og_group_request'] = array(
+    'bundle' => $bundle,
+    'default_value' => NULL,
+    'default_value_function' => 'entityreference_prepopulate_field_default_value',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'og_ui',
+        'settings' => array(),
+        'type' => 'og_list_default',
+        'weight' => 23,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => $entity_type,
+    'field_name' => 'og_group_request',
+    'label' => 'Request to be added to group',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'og_widget' => array(
+          'access_override' => 0,
+          'admin' => array(
+            'widget_type' => 'entityreference_autocomplete_tags',
+          ),
+          'default' => array(
+            'widget_type' => 'entityreference_autocomplete_tags',
+          ),
+          'status' => TRUE,
+        ),
+        'prepopulate' => array(
+          'action' => 'none',
+          'action_on_edit' => 0,
+          'fallback' => 'none',
+          'providers' => array(
+            'og_context' => 1,
+            'url' => 1,
+          ),
+          'skip_perm' => 0,
+          'status' => 1,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'view modes' => array(

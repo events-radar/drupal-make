@@ -74,3 +74,17 @@ function radar_og_image_default_styles() {
 
   return $styles;
 }
+
+/**
+ * Implements hook_default_og_membership_type().
+ */
+function radar_og_default_og_membership_type() {
+  $items = array();
+  $items['og_group_request'] = entity_import('og_membership_type', '{
+    "name" : "og_group_request",
+    "description" : "Request to add content to a group",
+    "language" : "",
+    "rdf_mapping" : []
+  }');
+  return $items;
+}

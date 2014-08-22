@@ -45,6 +45,8 @@ dependencies[] = variable
 dependencies[] = variable_realm
 dependencies[] = variable_store
 dependencies[] = panels
+dependencies[] = uuid
+dependencies[] = replicate
 
 ; Administration
 dependencies[] = admin_menu
@@ -92,8 +94,6 @@ dependencies[] = date_popup
 dependencies[] = date_repeat
 dependencies[] = date_repeat_field
 dependencies[] = date_repeat_entity
-dependencies[] = uuid
-dependencies[] = replicate
 
 ; Location
 dependencies[] = eck

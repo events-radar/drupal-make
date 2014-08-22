@@ -58,15 +58,21 @@ libraries[leaflet][download][type] = "file"
 libraries[leaflet][download][url] = "http://leaflet-cdn.s3.amazonaws.com/build/leaflet-0.7.3.zip"
 projects[leaflet_geojson][subdir] = "contrib"
 
-; location combined field, and autopopulation of location.
-projects[field_collection][subdir] = "contrib"
-projects[field_collection][version] = "1.0-beta7"
+; location entity, and autopopulation of location.
+projects[eck][subdir] = "contrib"
+projects[eck][version] = "2.0-rc4"
+projects[auto_entitylabel][subdir] = "contrib"
+projects[auto_entitylabel][type] = "module"
+projects[auto_entitylabel][download][url] = "git://git.drupal.org/project/auto_entitylabel.git"
+projects[auto_entitylabel][download][revision] = "baf64896565faa5efe38900a8c881e17cef2499e"
 projects[entityreference_prepopulate][subdir] = "contrib"
 projects[entityreference_prepopulate][version] = "1.5"
 
 ;; date
 ; field
 projects[date][subdir] = "contrib"
+projects[date_repeat_entity][subdir] = "contrib"
+projects[date_repeat_entity][version] = "2.8"
 ;
 projects[calendar][subdir] = "contrib"
 ; ical
@@ -130,6 +136,10 @@ projects[panels][subdir] = "contrib"
 
 ; UI enhancement
 projects[admin_menu][subdir] = "contrib"
+
+projects[module_filter][subdir] = "contrib"
+projects[module_filter][version] = "2.0-alpha2"
+
 projects[better_exposed_filters][subdir] = "contrib"
 projects[inline_entity_form][subdir] = "contrib"
 

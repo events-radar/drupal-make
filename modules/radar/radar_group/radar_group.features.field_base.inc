@@ -59,6 +59,50 @@ function radar_group_field_default_field_bases() {
     'type' => 'link_field',
   );
 
+  // Exported field_base: 'field_offline'
+  $field_bases['field_offline'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_offline',
+    'foreign keys' => array(
+      'eck_location' => array(
+        'columns' => array(
+          'target_id' => 'id',
+        ),
+        'table' => 'eck_location',
+      ),
+    ),
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'location' => 'location',
+        ),
+      ),
+      'target_type' => 'location',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
   // Exported field_base: 'field_opening_times'
   $field_bases['field_opening_times'] = array(
     'active' => 1,

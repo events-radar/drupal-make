@@ -1,6 +1,12 @@
 <?php
 /**
  * @file
+ * Code for the Radar Location feature.
+ */
+
+include_once 'radar_location.features.inc';
+/**
+ * @file
  * Alterations for the location field collection.
  */
 

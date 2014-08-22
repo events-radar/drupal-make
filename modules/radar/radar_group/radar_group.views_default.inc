@@ -50,6 +50,7 @@ function radar_group_views_default_views() {
   $handler->display->display_options['fields']['field_group_logo']['table'] = 'field_data_field_group_logo';
   $handler->display->display_options['fields']['field_group_logo']['field'] = 'field_group_logo';
   $handler->display->display_options['fields']['field_group_logo']['label'] = '';
+  $handler->display->display_options['fields']['field_group_logo']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_group_logo']['element_class'] = 'right';
   $handler->display->display_options['fields']['field_group_logo']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_group_logo']['element_default_classes'] = FALSE;
@@ -110,15 +111,19 @@ function radar_group_views_default_views() {
   $handler->display->display_options['fields']['field_phone']['element_label_class'] = 'small-label, inline';
   $handler->display->display_options['fields']['field_phone']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_phone']['element_default_classes'] = FALSE;
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
-  $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
-  $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
-  $handler->display->display_options['fields']['field_location']['label'] = 'offline';
-  $handler->display->display_options['fields']['field_location']['element_label_type'] = 'div';
-  $handler->display->display_options['fields']['field_location']['element_label_class'] = 'label';
-  $handler->display->display_options['fields']['field_location']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_location']['element_default_classes'] = FALSE;
+  /* Field: Content: offline */
+  $handler->display->display_options['fields']['field_offline']['id'] = 'field_offline';
+  $handler->display->display_options['fields']['field_offline']['table'] = 'field_data_field_offline';
+  $handler->display->display_options['fields']['field_offline']['field'] = 'field_offline';
+  $handler->display->display_options['fields']['field_offline']['element_label_type'] = 'div';
+  $handler->display->display_options['fields']['field_offline']['element_label_class'] = 'label';
+  $handler->display->display_options['fields']['field_offline']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_offline']['type'] = 'entityreference_entity_view';
+  $handler->display->display_options['fields']['field_offline']['settings'] = array(
+    'view_mode' => 'teaser',
+    'links' => 0,
+  );
+  $handler->display->display_options['fields']['field_offline']['delta_offset'] = '0';
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
@@ -186,6 +191,7 @@ function radar_group_views_default_views() {
   $handler->display->display_options['fields']['field_group_logo']['table'] = 'field_data_field_group_logo';
   $handler->display->display_options['fields']['field_group_logo']['field'] = 'field_group_logo';
   $handler->display->display_options['fields']['field_group_logo']['label'] = '';
+  $handler->display->display_options['fields']['field_group_logo']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_group_logo']['element_class'] = 'right';
   $handler->display->display_options['fields']['field_group_logo']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_group_logo']['element_default_classes'] = FALSE;

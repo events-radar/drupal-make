@@ -304,6 +304,13 @@ function radar_event_views_default_views() {
   $handler->display->display_options['filters']['field_date_time_value']['group'] = 1;
   $handler->display->display_options['filters']['field_date_time_value']['default_date'] = 'today';
   $handler->display->display_options['filters']['field_date_time_value']['year_range'] = '-1:+3';
+  /* Filter criterion: OG membership: Type */
+  $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
+  $handler->display->display_options['filters']['type_1']['table'] = 'og_membership';
+  $handler->display->display_options['filters']['type_1']['field'] = 'type';
+  $handler->display->display_options['filters']['type_1']['value'] = array(
+    'og_membership_type_default' => 'og_membership_type_default',
+  );
   $handler->display->display_options['pane_title'] = 'Events teasers';
 
   /* Display: Upcoming events pane */

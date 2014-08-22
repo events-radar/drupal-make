@@ -83,11 +83,29 @@ body {
 h1 {}
 
 
-h2 {}
-
+h2 {
+  &.group {
+    color: white;
+    background-color: $green;
+    padding: 0 .6em;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+  }
+}
 
 h3 { 
- .date-display-single { 
+  &.group {
+    background-color: $green;
+    padding: 0 .6em;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    
+    a {
+      color: white;
+    }
+  }
+
+ .date { 
     color: white;
     background-color: black;
     padding: 0 .6em;

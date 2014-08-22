@@ -41,6 +41,10 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['field_date_time']['table'] = 'field_data_field_date_time';
   $handler->display->display_options['fields']['field_date_time']['field'] = 'field_date_time';
   $handler->display->display_options['fields']['field_date_time']['label'] = '';
+  $handler->display->display_options['fields']['field_date_time']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_date_time']['alter']['text'] = '<div class=date>[field_date_time]</div>';
+  $handler->display->display_options['fields']['field_date_time']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['field_date_time']['alter']['preserve_tags'] = '<div>';
   $handler->display->display_options['fields']['field_date_time']['element_type'] = 'h3';
   $handler->display->display_options['fields']['field_date_time']['element_class'] = 'date';
   $handler->display->display_options['fields']['field_date_time']['element_label_colon'] = FALSE;
@@ -180,7 +184,7 @@ function radar_event_views_default_views() {
     0 => array(
       'field' => 'field_date_time',
       'rendered' => 1,
-      'rendered_strip' => 1,
+      'rendered_strip' => 0,
     ),
   );
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
@@ -199,6 +203,10 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['field_date_time']['field'] = 'field_date_time';
   $handler->display->display_options['fields']['field_date_time']['label'] = '';
   $handler->display->display_options['fields']['field_date_time']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_date_time']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_date_time']['alter']['text'] = '<div class=date>[field_date_time]</div>';
+  $handler->display->display_options['fields']['field_date_time']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['field_date_time']['alter']['preserve_tags'] = '<div>';
   $handler->display->display_options['fields']['field_date_time']['element_type'] = '0';
   $handler->display->display_options['fields']['field_date_time']['element_class'] = 'date';
   $handler->display->display_options['fields']['field_date_time']['element_label_colon'] = FALSE;
@@ -330,8 +338,13 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['field_date_time']['field'] = 'field_date_time';
   $handler->display->display_options['fields']['field_date_time']['label'] = '';
   $handler->display->display_options['fields']['field_date_time']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_date_time']['element_type'] = 'h3';
+  $handler->display->display_options['fields']['field_date_time']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_date_time']['alter']['text'] = '<div class=date>[field_date_time]</div>';
+  $handler->display->display_options['fields']['field_date_time']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_date_time']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['field_date_time']['alter']['preserve_tags'] = '<div> ';
   $handler->display->display_options['fields']['field_date_time']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_date_time']['element_wrapper_type'] = 'span';
   $handler->display->display_options['fields']['field_date_time']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_date_time']['settings'] = array(
     'format_type' => 'medium',
@@ -357,7 +370,10 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['field_date_time_1']['table'] = 'field_data_field_date_time';
   $handler->display->display_options['fields']['field_date_time_1']['field'] = 'field_date_time';
   $handler->display->display_options['fields']['field_date_time_1']['label'] = '';
+  $handler->display->display_options['fields']['field_date_time_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_date_time_1']['alter']['text'] = '[field_date_time_1]';
   $handler->display->display_options['fields']['field_date_time_1']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_date_time_1']['element_class'] = 'inline';
   $handler->display->display_options['fields']['field_date_time_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_date_time_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_date_time_1']['settings'] = array(
@@ -376,7 +392,6 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['field_price']['label'] = '';
   $handler->display->display_options['fields']['field_price']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_price']['element_class'] = 'inline';
-  $handler->display->display_options['fields']['field_price']['element_label_class'] = 'label, inline';
   $handler->display->display_options['fields']['field_price']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_price']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;

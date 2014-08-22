@@ -136,6 +136,9 @@ projects[inline_entity_form][subdir] = "contrib"
 projects[message][subdir] = "contrib"
 projects[message][version] = "1.9"
 
+projects[field_group][subdir] = "contrib"
+projects[field_group][version] = "1.4"
+
 ; Migrate
 projects[migrate][subdir] = "migrate"
 projects[migrate_extras][subdir] = "migrate"

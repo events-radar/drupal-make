@@ -72,7 +72,7 @@ projects[entityreference_prepopulate][version] = "1.5"
 ; field
 projects[date][subdir] = "contrib"
 projects[date_repeat_entity][subdir] = "contrib"
-projects[date_repeat_entity][version] = "2.8"
+projects[date_repeat_entity][version] = "2.0"
 ;
 projects[calendar][subdir] = "contrib"
 ; ical

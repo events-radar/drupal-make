@@ -296,6 +296,9 @@ function radar_og_field_default_field_bases() {
     'locked' => '0',
     'module' => 'image',
     'settings' => array(
+      'entity_translation_sync' => array(
+        0 => 'fid',
+      ),
       'default_image' => 0,
       'uri_scheme' => 'public',
     ),

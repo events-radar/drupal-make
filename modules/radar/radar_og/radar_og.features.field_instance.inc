@@ -417,6 +417,56 @@ function radar_og_field_definition_group(&$field_instances, $entity_type, $bundl
 }
 
 function radar_og_field_definition(&$field_instances, $entity_type, $bundle) {
+  // Exported field_instance: '[entity]-[bundle]-group_content_access'
+  $field_instances["$entity_type-$bundle-group_content_access"] = array(
+    'bundle' => $bundle,
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => '0',
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => $entity_type,
+    'field_name' => 'group_content_access',
+    'label' => 'Group content visibility',
+    'required' => TRUE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'view modes' => array(
+      'full' => array(
+        'label' => 'above',
+        'type' => 'list_default',
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'type' => 'list_default',
+      ),
+    ),
+    'widget' => array(
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 16,
+    ),
+    'widget_type' => 'options_select',
+  );
+
   // Exported field_instance: 'node-post-og_group_ref'
   $field_instances["$entity_type-$bundle-og_group_ref"] = array(
     'bundle' => $bundle,
@@ -460,6 +510,10 @@ function radar_og_field_definition(&$field_instances, $entity_type, $bundle) {
           'og_context' => 0,
           'skip_perm' => '0',
           'status' => 1,
+          'providers' => array(
+            'og_context' => 1,
+            'url' => 1,
+          ),
         ),
       ),
       'user_register_form' => FALSE,
@@ -486,7 +540,7 @@ function radar_og_field_definition(&$field_instances, $entity_type, $bundle) {
   );
 
   // Exported field_instance: 'node-event-og_group_request'
-  $field_instances['"entity_type-$bundle-og_group_request'] = array(
+  $field_instances["$entity_type-$bundle-og_group_request"] = array(
     'bundle' => $bundle,
     'default_value' => NULL,
     'default_value_function' => 'entityreference_prepopulate_field_default_value',
@@ -559,53 +613,4 @@ function radar_og_field_definition(&$field_instances, $entity_type, $bundle) {
     ),
   );
 
-  // Exported field_instance: '[entity]-[bundle]-group_content_access'
-  $field_instances["$entity_type-$bundle-group_content_access"] = array(
-    'bundle' => $bundle,
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
-    'deleted' => '0',
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => $entity_type,
-    'field_name' => 'group_content_access',
-    'label' => 'Group content visibility',
-    'required' => TRUE,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'view modes' => array(
-      'full' => array(
-        'label' => 'above',
-        'type' => 'list_default',
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'type' => 'list_default',
-      ),
-    ),
-    'widget' => array(
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 16,
-    ),
-    'widget_type' => 'options_select',
-  );
 }

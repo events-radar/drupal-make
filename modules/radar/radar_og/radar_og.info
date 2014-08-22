@@ -1,7 +1,7 @@
 name = Radar Groups
 description = Radar Organic Groups Functionality
 core = 7.x
-package = Radar - Building blocks
+package = Radar
 dependencies[] = radar_body
 dependencies[] = radar_topics
 dependencies[] = ctools

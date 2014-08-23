@@ -7,7 +7,6 @@ project = radar_location
 dependencies[] = addressfield
 dependencies[] = ctools
 dependencies[] = eck
-dependencies[] = eck
 dependencies[] = features
 dependencies[] = geocoder
 dependencies[] = geofield

@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Radar Development feature.
- */
-
-include_once 'radar_development.features.inc';

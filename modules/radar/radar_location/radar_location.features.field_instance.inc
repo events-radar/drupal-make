@@ -251,7 +251,7 @@ function radar_location_field_default_field_instances() {
       'active' => 1,
       'module' => 'openlayers',
       'settings' => array(
-        'allow_edit' => 0,
+        'allow_edit' => 1,
         'data_storage' => 'single',
         'delta_handling' => 'default',
         'feature_types' => array(
@@ -273,7 +273,7 @@ function radar_location_field_default_field_instances() {
             ),
           ),
         ),
-        'openlayers_map' => 'geofield_widget_map',
+        'openlayers_map' => 'radar_location_geofield_widget_map',
         'use_geocoder' => 1,
       ),
       'type' => 'geofield_openlayers',

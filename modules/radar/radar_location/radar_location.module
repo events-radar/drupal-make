@@ -11,6 +11,17 @@ include_once 'radar_location.features.inc';
  */
 
 /**
+ * Implements hook_form_alter().
+ */
+function radar_location_form_alter(&$form, &$form_state, $form_id) {
+  // If the node edit form has a offline (embedded entity form) field load
+  // the openlayers js already.
+  if (substr($form_id, -10) == '_node_form' && !empty($form['field_offline'])) {
+    openlayers_include();
+  }
+}
+
+/**
  * Implements hook_field_create_instance().
  *
  * Enforce our default_value_function callback on the event instance.
@@ -70,7 +81,8 @@ function radar_location_field_collection_prepopulate($entity_type, $entity, $fie
  * Implements hook_field_widget_WIDGET_TYPE_form_alter().
  *
  * Change callbacks for geofield geocoding; so that we can get the address
- * field out of the field collection.
+ * field out of the field collection - now entity in inline entity form, but
+ * it works the same.
  */
 function radar_location_field_widget_geofield_openlayers_form_alter(&$element, &$form_state, $context) {
   foreach ($element as &$row) {

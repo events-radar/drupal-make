@@ -19,3 +19,33 @@ function radar_event_radar_entity_integration() {
   );
 }
 
+/**
+ * Default value callback.
+ *
+ * Uses entityreference_prepopulate for og_group_ref field to retrieve group which
+ * event is being posted from, to the retrieve any field collection location(s)
+ * that it has.
+ *
+ * @see radar_location_field_create_instance().
+ */
+function radar_event_entityreference_offline_prepopulate($entity_type, $entity, $field, $instance, $langcode) {
+  $items = array();
+  // reuse values inserted by entityreference_prepopulate.
+  $instance['settings']['behaviors']['prepopulate']['status'] = TRUE;
+  $field['field_name'] = 'og_group_ref';
+  if ($ids = entityreference_prepopulate_get_values($field, $instance)) {
+    foreach ($ids as $nid) {
+      $node = node_load($nid);
+      // @todo correct access to language code.
+      $values[$nid] = $node->field_offline['und'];
+    }
+    if (!empty($values)) {
+      // @todo there will be a function for this.
+      foreach ($values as $value) {
+        $items = array_merge($items, $value);
+      }
+    }
+  }
+  return $items;
+}
+

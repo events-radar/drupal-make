@@ -345,7 +345,7 @@ function radar_event_field_default_field_instances() {
   // Exported field_instance: 'node-event-field_offline'
   $field_instances['node-event-field_offline'] = array(
     'bundle' => 'event',
-    'default_value_function' => '',
+    'default_value_function' => 'radar_event_entityreference_offline_prepopulate',
     'deleted' => 0,
     'description' => '',
     'display' => array(

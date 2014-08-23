@@ -21,7 +21,7 @@ function radar_location_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'auto_entitylabel_pattern_location_location';
-  $strongarm->value = '[location:field_address:organisation] [location:field_address:thoroughfare] [location:field_address:premise] [location:field_address:locality] [location:field_address:country]';
+  $strongarm->value = '[location:field_address:name-line] [location:field_address:thoroughfare] [location:field_address:premise] [location:field_address:locality] [location:field_address:country]';
   $export['auto_entitylabel_pattern_location_location'] = $strongarm;
 
   $strongarm = new stdClass();

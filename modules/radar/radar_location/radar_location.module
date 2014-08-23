@@ -11,6 +11,15 @@ include_once 'radar_location.features.inc';
  */
 
 /**
+ * Implements hook_ctools_plugin_directory().
+ */
+function radar_location_ctools_plugin_directory($module, $plugin) {
+  if ($module == 'addressfield') {
+    return 'plugins/' . $module . '/' . $plugin;
+  }
+}
+
+/**
  * Implements hook_form_alter().
  */
 function radar_location_form_alter(&$form, &$form_state, $form_id) {
@@ -34,6 +43,23 @@ function radar_location_field_widget_geofield_openlayers_form_alter(&$element, &
       $row['use_geocoder']['#submit'] = array('radar_location_openlayers_use_geocoder_submit');
     }
   }
+}
+
+/**
+ * Implements hook_field_info_alter().
+ */
+function radar_location_field_info_alter(&$info) {
+  // Want to edit the property info to change the name of 'Full name' to 'Building name'.
+  $info['addressfield']['property_callbacks'][] = 'radar_location_addressfield_property_info_callback';
+}
+
+/**
+ * Callback to alter the property info of address fields.
+ */
+function radar_location_addressfield_property_info_callback(&$info, $entity_type, $field, $instance, $field_type) {
+  $name = $field['field_name'];
+  $property = &$info[$entity_type]['bundles'][$instance['bundle']]['properties'][$name];
+  $property['property info']['name_line']['label'] = t('Building name');
 }
 
 /**

@@ -21,6 +21,7 @@ function radar_location_field_default_field_instances() {
         'postal_code' => '',
         'locality' => '',
         'country' => 'NL',
+        'name_line' => '',
       ),
     ),
     'deleted' => 0,
@@ -66,8 +67,9 @@ function radar_location_field_default_field_instances() {
         'available_countries' => array(),
         'format_handlers' => array(
           'address' => 'address',
-          'organisation' => 'organisation',
+          'building-name' => 'building-name',
           'address-hide-country' => 0,
+          'organisation' => 0,
           'name-full' => 0,
           'name-oneline' => 0,
         ),

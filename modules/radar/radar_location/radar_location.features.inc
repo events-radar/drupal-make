@@ -38,7 +38,7 @@ function radar_location_eck_entity_type_info() {
       'label' => 'Location',
       'properties' => array(
         'title' => array(
-          'label' => 'Title',
+          'label' => 'Address',
           'type' => 'text',
           'behavior' => 'title',
         ),

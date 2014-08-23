@@ -1,0 +1,11 @@
+name = Radar Basics
+description = Basic functionalisy such as pages, front page and general permissions
+core = 7.x
+package = Radar
+version = 7.x-1.0-alpha1
+project = radar_basics
+dependencies[] = features
+dependencies[] = node
+features[features_api][] = api:2
+features[user_permission][] = access content
+features[user_permission][] = view own unpublished content

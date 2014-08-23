@@ -10,7 +10,7 @@
 */
 function radar_install() {
   $enable = array(
-    'theme_default' => 'at-radar',
+    'theme_default' => 'at_radar',
     'admin_theme' => 'seven',
   );
   theme_enable($enable);

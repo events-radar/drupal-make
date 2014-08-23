@@ -66,8 +66,8 @@ function radar_location_field_default_field_instances() {
         'available_countries' => array(),
         'format_handlers' => array(
           'address' => 'address',
+          'organisation' => 'organisation',
           'address-hide-country' => 0,
-          'organisation' => 0,
           'name-full' => 0,
           'name-oneline' => 0,
         ),
@@ -255,7 +255,7 @@ function radar_location_field_default_field_instances() {
         'feature_types' => array(
           'path' => 0,
           'point' => 'point',
-          'polygon' => 0,
+          'polygon' => 'polygon',
         ),
         'geocoder_field' => 'field_address',
         'geocoder_handler' => 'mapquest_nominatim',

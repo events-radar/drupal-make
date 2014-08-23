@@ -42,8 +42,8 @@ function radar_og_form_og_ui_admin_permissions_alter(&$form, &$form_state) {
  * Implements hook_ctools_plugin_directory().
  */
 function radar_og_ctools_plugin_directory($module, $plugin) {
-  if ($module == 'entityreference') {
-    return "plugins/entityreference/$plugin";
+  if ($module == 'entityreference' || $module == 'ctools') {
+    return "plugins/$module/$plugin";
   }
 }
 
@@ -1072,6 +1072,85 @@ function radar_og_field_formatter_view($entity_type, $entity, $field, $instance,
 
     return $element;
   }
+}
+
+/**
+ * Return a form element with crafted links to create nodes for a group.
+ *
+ * Tests users ability to create content in the group, and alters link text
+ * appropriately.
+ * @see og_node_create_links().
+ *
+ * @param $group_type
+ *   The entity type of the group.
+ * @param $gid
+ *   The group ID.
+ * @param $field_name
+ *   The group audience field name.
+ * @param $destination
+ *   (optional) The destiantion after a node is created. Defaults to the
+ *   destination passed in the URL if exists, otherwise back to the current
+ *   page. FALSE to not append any destination to node create links.
+ * @param $types
+ *   (optional) An array of type names. Restrict the created links to the given
+ *   types.
+ */
+function radar_og_node_create_links($group_type, $gid, $field_name, $destination = NULL, $types = NULL) {
+  if (!og_is_group($group_type, $gid)) {
+    return;
+  }
+
+  $types = isset($types) ? $types : array_keys(node_type_get_types());
+  foreach ($types as $type_name) {
+    if (!og_is_group_content_type('node', $type_name)) {
+      continue;
+    }
+
+    $instance = field_info_instance('node', $field_name, $type_name);
+    if (empty($instance['settings']['behaviors']['prepopulate']['status'])) {
+      // Instance doesn't allow prepopulating.
+      continue;
+    }
+    $names[$type_name] = node_type_get_name($type_name);
+  }
+
+  if (empty($names)) {
+    return;
+  }
+
+  // Sort names.
+  asort($names);
+
+  // Build links.
+  $options  = array(
+    'html' => TRUE,
+    'query' => array($field_name => $gid),
+  );
+
+  if ($destination) {
+    $options['query']['destination'] = $destination;
+  }
+  elseif ($destination !== FALSE) {
+    $options['query'] += drupal_get_destination();
+  }
+
+  $items = array();
+  foreach ($names as $type => $name) {
+    // theme_item_list's 'data' items isn't a render element, so use l().
+    // http://drupal.org/node/891112
+    $permission = og_user_access('node', $gid, "Create $type content");
+    $name = drupal_strtolower($name);
+    $link_text = $permission ? t("Create new %name in group", array('%name' => $name)) : t("Submit new %name to group", array('%name' => $name));
+    $items[] = array('data' => l($link_text, 'node/add/' . str_replace('_', '-', $type), $options));
+  }
+
+  $element = array();
+  $element['og_node_create_links'] = array(
+    '#theme' => 'item_list',
+    '#items' => $items,
+  );
+
+  return $element;
 }
 
 

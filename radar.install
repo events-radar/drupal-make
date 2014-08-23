@@ -1,0 +1,30 @@
+<?php
+
+/**
+* @file
+* Radar installation file.
+*/
+
+/**
+* Implements hook_install.
+*/
+function radar_install() {
+  $enable = array(
+    'theme_default' => 'at-radar',
+    'admin_theme' => 'seven',
+  );
+  theme_enable($enable);
+
+  foreach ($enable as $var => $theme) {
+    if (!is_numeric($var)) {
+      variable_set($var, $theme);
+    }
+  }
+
+  // Disable the default Bartik.
+  theme_disable(array('bartik'));
+
+  // Rebuild & Revert all enabled features.
+  features_rebuild();
+  features_revert();
+}

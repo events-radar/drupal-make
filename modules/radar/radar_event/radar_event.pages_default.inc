@@ -28,13 +28,12 @@ function radar_event_default_page_manager_handlers() {
     'css' => '',
     'contexts' => array(),
     'relationships' => array(
-      0 => array(
-        'identifier' => 'OG membership from a group node and user',
-        'keyword' => 'og_membership',
-        'name' => 'og_membership_from_group_and_user',
-        'context' => array(
-          0 => 'argument_entity_id:node_1',
-        ),
+      1 => array(
+        'identifier' => 'Node from Node (on Node: Groups [og_group_ref])',
+        'keyword' => 'node_2',
+        'name' => 'entity_from_field:og_group_ref-node-node',
+        'delta' => '0',
+        'context' => 'argument_entity_id:node_1',
         'id' => 1,
       ),
     ),
@@ -92,24 +91,40 @@ function radar_event_default_page_manager_handlers() {
     $display->content['new-f98d3b40-9af2-4684-8e7c-e540fa80fac4'] = $pane;
     $display->panels['two_66_33_first'][0] = 'new-f98d3b40-9af2-4684-8e7c-e540fa80fac4';
     $pane = new stdClass();
-    $pane->pid = 'new-5ea6ce33-3534-4780-8291-a8e3c924a981';
+    $pane->pid = 'new-23db92f7-26c5-4c09-b375-2f45cc1aea23';
     $pane->panel = 'two_66_33_second';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'radar_group-panel_pane_2';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:og_group_ref';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'entityreference_entity_view',
+      'delta_limit' => '0',
+      'delta_offset' => '0',
+      'delta_reversed' => 0,
+      'formatter_settings' => array(
+        'view_mode' => 'teaser',
+        'links' => 0,
+      ),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'group',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '5ea6ce33-3534-4780-8291-a8e3c924a981';
-    $display->content['new-5ea6ce33-3534-4780-8291-a8e3c924a981'] = $pane;
-    $display->panels['two_66_33_second'][0] = 'new-5ea6ce33-3534-4780-8291-a8e3c924a981';
+    $pane->uuid = '23db92f7-26c5-4c09-b375-2f45cc1aea23';
+    $display->content['new-23db92f7-26c5-4c09-b375-2f45cc1aea23'] = $pane;
+    $display->panels['two_66_33_second'][0] = 'new-23db92f7-26c5-4c09-b375-2f45cc1aea23';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = 'new-f98d3b40-9af2-4684-8e7c-e540fa80fac4';
   $handler->conf['display'] = $display;

@@ -162,63 +162,6 @@ function radar_group_views_default_views() {
       'label' => 'Content: Nid',
     ),
   );
-
-  /* Display: Teaser group pane */
-  $handler = $view->new_display('panel_pane', 'Teaser group pane', 'panel_pane_2');
-  $handler->display->display_options['display_description'] = 'Displaying the teaser of one or several groups.';
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Entity Reference: Referencing entity */
-  $handler->display->display_options['relationships']['reverse_og_group_ref_node']['id'] = 'reverse_og_group_ref_node';
-  $handler->display->display_options['relationships']['reverse_og_group_ref_node']['table'] = 'node';
-  $handler->display->display_options['relationships']['reverse_og_group_ref_node']['field'] = 'reverse_og_group_ref_node';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_type'] = 'h3';
-  $handler->display->display_options['fields']['title']['element_class'] = 'group';
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
-  /* Field: Content: Group Logo */
-  $handler->display->display_options['fields']['field_group_logo']['id'] = 'field_group_logo';
-  $handler->display->display_options['fields']['field_group_logo']['table'] = 'field_data_field_group_logo';
-  $handler->display->display_options['fields']['field_group_logo']['field'] = 'field_group_logo';
-  $handler->display->display_options['fields']['field_group_logo']['label'] = '';
-  $handler->display->display_options['fields']['field_group_logo']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_group_logo']['element_class'] = 'right';
-  $handler->display->display_options['fields']['field_group_logo']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_group_logo']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_group_logo']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_group_logo']['settings'] = array(
-    'image_style' => '50x50',
-    'image_link' => '',
-  );
-  /* Field: Content: Description */
-  $handler->display->display_options['fields']['body']['id'] = 'body';
-  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
-  $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
-  $handler->display->display_options['fields']['body']['settings'] = array(
-    'trim_length' => '600',
-  );
-  /* Field: Content: opening times */
-  $handler->display->display_options['fields']['field_opening_times']['id'] = 'field_opening_times';
-  $handler->display->display_options['fields']['field_opening_times']['table'] = 'field_data_field_opening_times';
-  $handler->display->display_options['fields']['field_opening_times']['field'] = 'field_opening_times';
-  $handler->display->display_options['fields']['field_opening_times']['element_label_type'] = 'div';
-  $handler->display->display_options['fields']['field_opening_times']['element_label_class'] = 'label';
-  $handler->display->display_options['fields']['field_opening_times']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  $handler->display->display_options['pane_title'] = 'Groups teasers';
   $export['radar_group'] = $view;
 
   return $export;

@@ -95,6 +95,30 @@ function radar_group_views_default_views() {
   $handler->display->display_options['fields']['field_link']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_link']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_link']['click_sort_column'] = 'url';
+  /* Field: Content: All taxonomy terms (translated) */
+  $handler->display->display_options['fields']['term_node_tid_i18n']['id'] = 'term_node_tid_i18n';
+  $handler->display->display_options['fields']['term_node_tid_i18n']['table'] = 'node';
+  $handler->display->display_options['fields']['term_node_tid_i18n']['field'] = 'term_node_tid_i18n';
+  $handler->display->display_options['fields']['term_node_tid_i18n']['label'] = 'categories';
+  $handler->display->display_options['fields']['term_node_tid_i18n']['element_label_type'] = 'div';
+  $handler->display->display_options['fields']['term_node_tid_i18n']['element_label_class'] = 'small-label, inline';
+  $handler->display->display_options['fields']['term_node_tid_i18n']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['term_node_tid_i18n']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['term_node_tid_i18n']['vocabularies'] = array(
+    'category' => 0,
+    'topics' => 0,
+  );
+  /* Field: Content: Topics */
+  $handler->display->display_options['fields']['field_topics']['id'] = 'field_topics';
+  $handler->display->display_options['fields']['field_topics']['table'] = 'field_data_field_topics';
+  $handler->display->display_options['fields']['field_topics']['field'] = 'field_topics';
+  $handler->display->display_options['fields']['field_topics']['label'] = 'topics';
+  $handler->display->display_options['fields']['field_topics']['element_label_type'] = 'div';
+  $handler->display->display_options['fields']['field_topics']['element_label_class'] = 'small-label, inline';
+  $handler->display->display_options['fields']['field_topics']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_topics']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_topics']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_topics']['delta_offset'] = '0';
   /* Field: Content: email */
   $handler->display->display_options['fields']['field_email']['id'] = 'field_email';
   $handler->display->display_options['fields']['field_email']['table'] = 'field_data_field_email';

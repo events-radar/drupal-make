@@ -7,38 +7,6 @@
 include_once 'radar_og.features.inc';
 
 /**
- * Implements hook_og_permission_alter().
- *
-function radar_og_og_permission_alter(&$perms) {
-  // Rename the 'subscribe' and 'subscribe without approval' permissions to
-  // better reflect their purpose in Radar.
-  $perms['subscribe']['title'] = t('Contribute to the group');
-  $perms['subscribe']['description'] = t('This value is set automatically based on the "Group Privacy Settings" field.');
-  $perms['subscribe without approval']['title'] = t('Contribute to the group without approval');
-  $perms['subscribe without approval']['description'] = t('This value is set automatically based on the "Group Privacy Settings" field.');
-}
-
-/**
- * Implements hook_form_FORM_ID_alter().
- *
- * Hides permissions that are set automatically based on the "Group Privacy
- * Settings" field.
- *
-function radar_og_form_og_ui_admin_permissions_alter(&$form, &$form_state) {
-  $hidden_permissions = array('subscribe', 'subscribe without approval');
-  foreach ($hidden_permissions as $permission) {
-    if (isset($form['permission'][$permission])) {
-      $form['permission'][$permission]['#markup'] .= ' ' . t('<strong>Disabled by the Radar Groups module.<strong>');
-    }
-    foreach ($form['checkboxes'] as $index => $elements) {
-      if (isset($elements['#options'][$permission])) {
-        unset($form['checkboxes'][$index]['#options'][$permission]);
-      }
-    }
-  }
-}
-
-/**
  * Implements hook_ctools_plugin_directory().
  */
 function radar_og_ctools_plugin_directory($module, $plugin) {
@@ -51,37 +19,11 @@ function radar_og_ctools_plugin_directory($module, $plugin) {
  * Implements hook_modules_enabled().
  *
  * Make sure the og access fields exist when og_access is enabled.
- *
+ */
 function radar_og_modules_enabled($modules) {
   if (in_array('og_access', $modules)) {
     features_revert(array('radar_og' => array('field_base')));
     features_revert(array('radar_og' => array('field_instance')));
-  }
-}
-
-/**
- * Implements hook_help().
- * Used for the 3.2 -> 3.3 migration to warn users who have out-of-date groups
- * to make sure they update the group privacy settings.
- * See https://drupal.org/node/2059857 for more information
- *
-function radar_og_help($path, $arg) {
-  if (variable_get('radar_og_needs_update', FALSE)) {
-    $message =  '<p>' . t("Drupal Radar 3.3 added a new, required field to control group privacy. Please edit your group(s) select one of the privacy options. Once all groups are
-      set, an administrator can dismiss the update notice.") . '</p>';
-    if ($path == 'admin/content/groups/update') {
-      return $message;
-    }
-    elseif ($arg[0] == 'node' && $arg[2] == 'edit') {
-      $node = menu_get_object();
-      if($node->type == 'group' && empty($node->field_og_subscribe_settings)) {
-        return $message;
-      }
-    }
-    if (user_access('edit any group content')) {
-      $message = t("Group privacy settings !updated.", array('!updated' => l('need to be updated', 'admin/content/groups/update')));
-      drupal_set_message($message, 'warning', FALSE);
-    }
   }
 }
 
@@ -102,7 +44,6 @@ function radar_og_entity_view($entity, $type, $view_mode, $langcode) {
     drupal_set_breadcrumb($breadcrumb);
   }
 }
-
 
 /**
  * Implements hook_form_FORM_ID_alter().
@@ -140,6 +81,7 @@ function radar_og_form_node_form_alter(&$form, &$form_state) {
  * After build callback for the group node form.
  *
  * Display the private content checkbox inside the privacy settings field.
+ * Only makes sense when og_access is on.
  */
 function radar_og_form_group_node_after_build($form, $form_state) {
   $form['field_og_subscribe_settings'][LANGUAGE_NONE]['approval']['#suffix'] = render($form['field_og_access_default_value']);
@@ -154,7 +96,7 @@ function radar_og_form_group_node_after_build($form, $form_state) {
  *   The OG role object of which the permissions are being changed.
  * @param $permissions
  *   The anonymous user permissions of the group.
- */
+ *
 function _radar_og_update_group_permissions($role, $permissions) {
   $updated_roles = &drupal_static(__FUNCTION__);
   if (!empty($updated_roles[$role->rid])) {
@@ -284,24 +226,8 @@ function radar_og_radar_entity_integration() {
 }
 
 /**
- * Implements hook_views_pre_view().
- * By default, all views should have a group_type filter that looks at only nodes.
- * This function allows those views to also show group content on the front page
- * regardless of their entity type.
- * See https://drupal.org/node/2037417 for more info.
+ *
  */
-function radar_og_views_pre_view(&$view, &$display_id, &$args) {
-  // We check to see if a group id argument is set in the view, and if no arguments
-  // are being passed to the view. If so, the group_type filter is irrelevant.
-  if (isset($view->display_handler->options['arguments']['gid']) && empty($args)) {
-    if (isset($view->display_handler->options['filters']['group_type'])) {
-      $filters = $view->display_handler->get_option('filters');
-      unset($filters['group_type']);
-      $view->display_handler->override_option('filters', $filters);
-    }
-  }
-}
-
 function radar_og_group_contributors_count_topics($group) {
   // Format the count of contributors.
   $output = '';
@@ -388,16 +314,7 @@ function radar_og_form_alter(&$form, &$form_state, $form_id) {
       $form['actions']['submit']['#submit'][] = 'radar_og_node_in_group_submit';
     }
   }
-/*  if (in_array($form_id, array('og_ui_admin_global_permissions', 'og_ui_admin_permissions'))) {
-    $group_content_entity_types = radar_og_get_group_content_entity_types();
-    if (!empty($group_content_entity_types)) {
-      // @TODO: Improve this message to be more specific and/or
-      // reflect these changes in the checkboxes.
-      $message = 'In addition to the permissions listed here, the Radar Groups module grants non-group members the ability to post content into groups where content in the group is public.';
-      drupal_set_message(t($message), 'warning');
-    }
-} */
-  // Hide internal fields that the user should not be able to edit directly.
+/*  // Hide internal fields that the user should not be able to edit directly.
   if ($form_id == 'edit_profile_user_profile_form' || substr($form_id, -10) === '_node_form') {
     $internal_fields = array('field_unread_invitations', 'field_unread_messages', 'user_trusted_contacts', 'og_user_group_ref', 'group_access');
     foreach ($internal_fields as $field_name) {
@@ -406,13 +323,7 @@ function radar_og_form_alter(&$form, &$form_state, $form_id) {
       }
     }
   }
-  // Disable Trusted Contacts field if radar_trusted_contacts is disabled.
-  $group_content_entity_types = radar_og_get_group_content_entity_types();
-  if (isset($form['#node']->type) && isset($group_content_entity_types['node'][$form['#node']->type])) {
-    if (isset($form['og_user_group_ref']) && !module_exists('radar_trusted_contacts')) {
-      $form['og_user_group_ref']['#access'] = FALSE;
-    }
-  }
+*/
 }
 
 /**
@@ -663,57 +574,13 @@ function radar_og_default_rules_configuration_alter(&$configs) {
  * When the node's group is private, force the group content to be private.
  */
 function radar_og_node_presave($node) {
-  if (!module_exists('og_access')) {
-    return;
-  }
-
-  $wrapper = entity_metadata_wrapper('node', $node);
-
-  if (og_is_group('node', $node)) {
-    // Determine whether the group is private according to the subscription
-    // field.
-    $private = $wrapper->field_og_subscribe_settings->value() == 'invitation';
-    $wrapper->{OG_ACCESS_FIELD}->set((int)$private);
-    return;
-  }
-
-  if (!og_is_group_content_type('node', $node->type)) {
-    return;
-  }
-
-
-  // Check whether any of the groups are private.
-  $private = FALSE;
-  foreach (array_keys(og_get_group_audience_fields('node', $node->type)) as $field) {
-    if (empty($node->$field)) {
-      continue;
-    }
-
-    foreach ($wrapper->$field as $group_wrapper) {
-      if (empty($group_wrapper->field_og_access_default_value)) {
-        continue;
-      }
-
-      if ($group_wrapper->field_og_access_default_value->value() == TRUE) {
-        // Once a private group was found, there's no need to continue.
-        $private = TRUE;
-        break 2;
-      }
-    }
-  }
-
-  if ($private) {
-    $wrapper->{OG_CONTENT_ACCESS_FIELD}->set(OG_CONTENT_ACCESS_PRIVATE);
-  }
+  dsm($node);
 }
 
 /**
  * Implements hook_node_update().
  */
 function radar_og_node_update($node) {
-  $account = user_load($node->uid);
-  radar_og_first_contribution($account, $node);
-
   if (og_is_group('node', $node)) {
     radar_og_set_group_permissions($node);
   }
@@ -723,9 +590,6 @@ function radar_og_node_update($node) {
  * Implements hook_node_insert().
  */
 function radar_og_node_insert($node) {
-  $account = user_load($node->uid);
-  radar_og_first_contribution($account, $node);
-
   if (og_is_group('node', $node)) {
     // When creating a new group, this hook happens before OG creates the
     // group specific roles. Therefore we create the roles here before altering
@@ -758,6 +622,19 @@ function radar_og_set_group_permissions($node) {
     'subscribe' => $permission == 'approval',
     'subscribe without approval' => $permission == 'anyone',
   );
+
+  $group_content_entity_types = radar_og_get_group_content_entity_types();
+  if (!empty($group_content_entity_types)) {
+    foreach ($group_content_entity_types as $entity_type => $bundles) {
+      // @todo other entity types permissions, how to query anon posting
+      // generally?
+      if ($entity_type == 'node') {
+        foreach (array_keys($bundles) as $bundle) {
+          $permissions["create $bundle content"] = $permission == 'anyone';
+        }
+      }
+    }
+  }
 
   // Check if the permissions needs to be changed.
   $changed = FALSE;
@@ -819,35 +696,6 @@ function radar_og_get_group_types() {
   }
 
   return $radar_og;
-}
-
-/**
- * When a user first creates content within a group,
- * grant her the contributor role within that group.
- */
-function radar_og_first_contribution($account, $node) {
-  // Find the groups that this piece of content belongs to.
-  $groups = og_get_entity_groups('node', $node);
-  // @todo: Make it work also with user-groups.
-  if (!empty($groups['node'])) {
-    $node_groups = array_values($groups['node']);
-    // Find the groups that the node author belongs to.
-    $account_groups = og_get_groups_by_user($account, 'node');
-    if (!$account_groups) {
-      $account_groups = array();
-    }
-    // For groups where this user is not already a member, add her to the group.
-    // Anonymous users should never be added to a group automatically
-    if ($account->uid == 0) {
-      return;
-    }
-    $new_groups = array_diff($node_groups, $account_groups);
-    if (!empty($new_groups)) {
-      foreach ($new_groups as $new_group_nid) {
-        og_group('node', $new_group_nid, array('entity' => $account->uid));
-      }
-    }
-  }
 }
 
 /**

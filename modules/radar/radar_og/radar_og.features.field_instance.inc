@@ -90,7 +90,7 @@ function radar_og_field_definition_group(&$field_instances, $entity_type, $bundl
       ),
     ),
     'deleted' => '0',
-    'description' => t("These privacy settings will not change the visibility of content that has already posted into this group. It takes effect only for content created after the group is saved with new privacy settings."),
+    'description' => t("You can customise the posting permissions in more detail later."),
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -119,48 +119,6 @@ function radar_og_field_definition_group(&$field_instances, $entity_type, $bundl
       'settings' => array(),
       'type' => 'options_buttons',
       'weight' => '41',
-    ),
-  );
-
-  // Exported field_instance: 'node-group-field_og_access_default_value'
-  $field_instances["$entity_type-$bundle-field_og_access_default_value"] = array(
-    'bundle' => $bundle,
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
-    'deleted' => '0',
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_og_access_default_value',
-    'label' => 'Hide contributed content from non-members',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'display_label' => 1,
-      ),
-      'type' => 'options_onoff',
-      'weight' => '42',
     ),
   );
 
@@ -315,56 +273,6 @@ function radar_og_field_definition_group(&$field_instances, $entity_type, $bundl
     ),
   );
 
-  // Exported field_instance: 'node-group-group_access'
-  $field_instances["$entity_type-$bundle-group_access"] = array(
-    'bundle' => $bundle,
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
-    'deleted' => '0',
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 4,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'group_access',
-    'label' => 'Group visibility',
-    'required' => TRUE,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'view modes' => array(
-      'full' => array(
-        'label' => 'above',
-        'type' => 'options_onoff',
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'type' => 'options_onoff',
-      ),
-    ),
-    'widget' => array(
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 41,
-    ),
-    'widget_type' => 'options_select',
-  );
-
   // Exported field_instance: 'node-group-field_group_logo'
   $field_instances["$entity_type-$bundle-field_group_logo"] = array(
     'bundle' => $bundle,
@@ -414,6 +322,100 @@ function radar_og_field_definition_group(&$field_instances, $entity_type, $bundl
       'weight' => '5',
     ),
   );
+
+  if (module_exists('og_access')) {
+    // Exported field_instance: 'node-group-field_og_access_default_value'
+    $field_instances["$entity_type-$bundle-field_og_access_default_value"] = array(
+      'bundle' => $bundle,
+      'default_value' => array(
+        0 => array(
+          'value' => 0,
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 5,
+        ),
+        'teaser' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_og_access_default_value',
+      'label' => 'Hide contributed content from non-members',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'display_label' => 1,
+        ),
+        'type' => 'options_onoff',
+        'weight' => '42',
+      ),
+    );
+
+    // Exported field_instance: 'node-group-group_access'
+    $field_instances["$entity_type-$bundle-group_access"] = array(
+      'bundle' => $bundle,
+      'default_value' => array(
+        0 => array(
+          'value' => 0,
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 4,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'group_access',
+      'label' => 'Group visibility',
+      'required' => TRUE,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'view modes' => array(
+        'full' => array(
+          'label' => 'above',
+          'type' => 'options_onoff',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'type' => 'options_onoff',
+        ),
+      ),
+      'widget' => array(
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => 41,
+      ),
+      'widget_type' => 'options_select',
+    );
+  }
 }
 
 function radar_og_field_definition(&$field_instances, $entity_type, $bundle) {

@@ -115,7 +115,7 @@ function radar_group_default_page_manager_handlers() {
       'types' => array(),
       'field_name' => 'og_group_ref',
       'context' => 'argument_entity_id:node_1',
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => '',
     );
     $pane->cache = array();

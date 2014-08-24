@@ -104,8 +104,10 @@ function radar_group_views_default_views() {
   $handler->display->display_options['fields']['term_node_tid_i18n']['element_label_class'] = 'small-label, inline';
   $handler->display->display_options['fields']['term_node_tid_i18n']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['term_node_tid_i18n']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['term_node_tid_i18n']['link_to_taxonomy'] = FALSE;
+  $handler->display->display_options['fields']['term_node_tid_i18n']['limit'] = TRUE;
   $handler->display->display_options['fields']['term_node_tid_i18n']['vocabularies'] = array(
-    'category' => 0,
+    'category' => 'category',
     'topics' => 0,
   );
   /* Field: Content: Topics */

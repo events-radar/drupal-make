@@ -64,3 +64,4 @@ features[variable][] = pathauto_node_group_en_pattern
 features[variable][] = pathauto_node_group_nl_pattern
 features[variable][] = pathauto_node_group_und_pattern
 features[views_view][] = radar_group
+features[views_view][] = requests

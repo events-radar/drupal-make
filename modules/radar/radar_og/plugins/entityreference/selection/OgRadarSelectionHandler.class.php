@@ -51,9 +51,17 @@ class OgRadarSelectionHandler extends OgSelectionHandler {
     $field_mode = $this->instance['field_mode'];
     $field_mode = $this->field['settings']['handler_settings']['membership_type'] == 'og_group_request' ? 'admin' : $field_mode;
 
+    // If user has permission to edit entity, let the values stay the same.
+    $field_groups = array();
+    if (! empty($this->entity)) {
+      $wrapper = entity_metadata_wrapper($this->entity_type, $this->entity);
+      $field_groups = $wrapper->{$this->field['field_name']}->raw();
+    }
+
+    $anon_groups = $this->getGidsForCreate();
+
     $user_groups = og_get_groups_by_user(NULL, $group_type);
     $user_groups = $user_groups ? $user_groups : array();
-    $user_groups = array_merge($user_groups, $this->getGidsForCreate());
 
     // SQL for groups that a non-member can post into:-
     // select gid from og_role_permission inner join og_role on og_role.rid =
@@ -86,6 +94,10 @@ class OgRadarSelectionHandler extends OgSelectionHandler {
         $ids = $user_groups;
       }
 
+      // Add groups that the user can post into. Add existing groups even if
+      // user otherwise couldn't post.
+      $ids = array_merge($ids, $anon_groups, $field_groups);
+
       if ($ids) {
         $query->propertyCondition($entity_info['entity keys']['id'], $ids, 'IN');
       }
@@ -107,6 +119,12 @@ class OgRadarSelectionHandler extends OgSelectionHandler {
           }
         }
       }
+
+      // Remove the group that the field is already posted in.
+      foreach ($field_groups as $gid) {
+        unset($user_groups[$gid]);
+      }
+
       if ($user_groups) {
         $query->propertyCondition($entity_info['entity keys']['id'], $user_groups, 'NOT IN');
       }

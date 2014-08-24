@@ -18,6 +18,8 @@ projects[variable][subdir] = "contrib"
 projects[variable][version] = "2.5"
 projects[uuid][subdir] = "contrib"
 projects[uuid][version] = "1.0-alpha5"
+projects[uuid_features][subdir] = "contrib"
+projects[uuid_features][version] = "1.0-alpha4"
 projects[replicate][subdir] = "contrib"
 projects[replicate][version] = "1.1"
 

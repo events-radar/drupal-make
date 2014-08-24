@@ -46,6 +46,7 @@ dependencies[] = variable_realm
 dependencies[] = variable_store
 dependencies[] = panels
 dependencies[] = uuid
+dependencies[] = uuid_features
 dependencies[] = replicate
 
 ; Administration

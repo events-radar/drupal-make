@@ -1,5 +1,5 @@
 name = Radar Basics
-description = Basic functionalisy such as pages, front page and general permissions
+description = Basic functionality such as pages, front page and general permissions
 core = 7.x
 package = Radar
 version = 7.x-1.0-alpha1
@@ -28,3 +28,4 @@ features[variable][] = menu_parent_page
 features[variable][] = node_options_page
 features[variable][] = node_preview_page
 features[variable][] = node_submitted_page
+features[variable][] = page_manager_node_view_disabled

@@ -569,15 +569,6 @@ function radar_og_default_rules_configuration_alter(&$configs) {
 }
 
 /**
- * Implements hook_node_presave().
- *
- * When the node's group is private, force the group content to be private.
- */
-function radar_og_node_presave($node) {
-  dsm($node);
-}
-
-/**
  * Implements hook_node_update().
  */
 function radar_og_node_update($node) {

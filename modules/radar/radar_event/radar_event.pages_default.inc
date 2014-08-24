@@ -125,7 +125,7 @@ function radar_event_default_page_manager_handlers() {
     $pane->uuid = '23db92f7-26c5-4c09-b375-2f45cc1aea23';
     $display->content['new-23db92f7-26c5-4c09-b375-2f45cc1aea23'] = $pane;
     $display->panels['two_66_33_second'][0] = 'new-23db92f7-26c5-4c09-b375-2f45cc1aea23';
-  $display->hide_title = PANELS_TITLE_NONE;
+  $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-f98d3b40-9af2-4684-8e7c-e540fa80fac4';
   $handler->conf['display'] = $display;
   $export['node_view_panel_context'] = $handler;

@@ -525,12 +525,5 @@ function radar_admin_settings_user_default_permissions() {
     'module' => 'panels',
   );
 
-  // Exported permission: 'view the administration theme'.
-  $permissions['view the administration theme'] = array(
-    'name' => 'view the administration theme',
-    'roles' => array(),
-    'module' => 'system',
-  );
-
   return $permissions;
 }

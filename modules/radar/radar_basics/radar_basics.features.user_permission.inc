@@ -29,5 +29,14 @@ function radar_basics_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'view the administration theme'.
+  $permissions['view the administration theme'] = array(
+    'name' => 'view the administration theme',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'system',
+  );
+
   return $permissions;
 }

@@ -93,11 +93,9 @@ class OgRadarSelectionHandler extends OgSelectionHandler {
       else {
         $ids = $user_groups;
       }
-
       // Add groups that the user can post into. Add existing groups even if
       // user otherwise couldn't post.
       $ids = array_merge($ids, $anon_groups, $field_groups);
-
       if ($ids) {
         $query->propertyCondition($entity_info['entity keys']['id'], $ids, 'IN');
       }
@@ -107,26 +105,27 @@ class OgRadarSelectionHandler extends OgSelectionHandler {
         $query->propertyCondition($entity_info['entity keys']['id'], -1, '=');
       }
     }
-    elseif ($field_mode == 'admin' && $user_groups) {
-      // Show only groups the user doesn't belong to.
+    elseif ($field_mode == 'admin') {
+      // Don't show groups the user can post into.
       if (!empty($this->instance) && $this->instance['entity_type'] == 'node') {
-        // Don't include the groups, the user doesn't have create
-        // permission.
         $node_type = $this->instance['bundle'];
         foreach ($user_groups as $delta => $gid) {
-          if (!og_user_access($group_type, $gid, "create $node_type content")) {
+          if (og_user_access($group_type, $gid, "create $node_type content")) {
             unset($user_groups[$delta]);
           }
         }
       }
 
-      // Remove the group that the field is already posted in.
+      $ids = array_merge($user_groups, $anon_groups);
+
+      // But remove the group that the field is already posted in, that can be
+      // still listed even if the user can post into it.
       foreach ($field_groups as $gid) {
-        unset($user_groups[$gid]);
+        unset($ids[$gid]);
       }
 
-      if ($user_groups) {
-        $query->propertyCondition($entity_info['entity keys']['id'], $user_groups, 'NOT IN');
+      if ($ids) {
+        $query->propertyCondition($entity_info['entity keys']['id'], $ids, 'NOT IN');
       }
     }
     return $query;

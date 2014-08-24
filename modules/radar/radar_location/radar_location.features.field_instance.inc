@@ -260,7 +260,7 @@ function radar_location_field_default_field_instances() {
           'polygon' => 'polygon',
         ),
         'geocoder_field' => 'field_address',
-        'geocoder_handler' => 'mapquest_nominatim',
+        'geocoder_handler' => 'radar_nominatim',
         'handler_settings' => array(
           'google' => array(
             'all_results' => 0,

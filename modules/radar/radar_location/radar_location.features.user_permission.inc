@@ -162,6 +162,13 @@ function radar_location_user_default_permissions() {
   // Exported permission: 'geocoder_service_handler_mapquest_nominatim'.
   $permissions['geocoder_service_handler_mapquest_nominatim'] = array(
     'name' => 'geocoder_service_handler_mapquest_nominatim',
+    'roles' => array(),
+    'module' => 'geocoder',
+  );
+
+  // Exported permission: 'geocoder_service_handler_radar_nominatim'.
+  $permissions['geocoder_service_handler_radar_nominatim'] = array(
+    'name' => 'geocoder_service_handler_radar_nominatim',
     'roles' => array(
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',

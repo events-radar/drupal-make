@@ -14,7 +14,7 @@ include_once 'radar_location.features.inc';
  * Implements hook_ctools_plugin_directory().
  */
 function radar_location_ctools_plugin_directory($module, $plugin) {
-  if ($module == 'addressfield') {
+  if ($module == 'addressfield' || $module == 'geocoder') {
     return 'plugins/' . $module . '/' . $plugin;
   }
 }

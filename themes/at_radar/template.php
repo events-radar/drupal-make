@@ -71,6 +71,23 @@ function at_radar_process_node(&$vars) {
 }
 // */
 
+/**
+ * Override variables in entity templates.
+ */
+function at_radar_preprocess_entity(&$vars) {
+  if ($vars['entity_type'] == 'location') {
+    at_radar_preprocess_entity_location($vars);
+  }
+}
+
+/**
+ * Override variables in location entity templates.
+ *
+ * @see at_radar_preprocess_entity().
+ */
+function at_radar_preprocess_entity_location(&$vars) {
+  unset($vars['content']['title']);
+}
 
 /**
  * Override or insert variables into the comment templates.

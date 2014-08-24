@@ -104,6 +104,7 @@ dependencies[] = geocoder
 
 ; Radar features
 dependencies[] = radar_admin_settings
+dependencies[] = radar_basics
 dependencies[] = radar_bits
 dependencies[] = radar_body
 dependencies[] = radar_content_moderation

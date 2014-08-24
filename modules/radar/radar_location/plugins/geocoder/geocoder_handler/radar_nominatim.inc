@@ -65,7 +65,7 @@ function _radar_location_addressfield_parse($field_item, &$attempt) {
         break;
       }
     case 4:
-      if (!empty($field_item['premise'] && !empty($field_item['postal_code']))) {
+      if (!empty($field_item['premise']) && !empty($field_item['postal_code'])) {
         unset($field_item['premise']);
         unset($field_item['postal_code']);
         $attempt = 4;

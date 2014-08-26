@@ -396,7 +396,6 @@ var {
   font-weight: normal;
 
   a {
-
     &:link,
     &:visited {
       text-decoration: none;
@@ -610,8 +609,7 @@ ul.links {
 a {
   text-decoration: none;
   color: black;
-  font-size: 1em;
-
+  
   &:link,
   &:visited {}
 

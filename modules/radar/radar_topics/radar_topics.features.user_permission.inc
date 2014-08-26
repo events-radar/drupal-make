@@ -19,12 +19,10 @@ function radar_topics_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
-  // Exported permission: 'delete terms in topics'.
-  $permissions['delete terms in topics'] = array(
-    'name' => 'delete terms in topics',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+  // Exported permission: 'delete terms in topic'.
+  $permissions['delete terms in topic'] = array(
+    'name' => 'delete terms in topic',
+    'roles' => array(),
     'module' => 'taxonomy',
   );
 
@@ -38,13 +36,10 @@ function radar_topics_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
-  // Exported permission: 'edit terms in topics'.
-  $permissions['edit terms in topics'] = array(
-    'name' => 'edit terms in topics',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'content moderator' => 'content moderator',
-    ),
+  // Exported permission: 'edit terms in topic'.
+  $permissions['edit terms in topic'] = array(
+    'name' => 'edit terms in topic',
+    'roles' => array(),
     'module' => 'taxonomy',
   );
 

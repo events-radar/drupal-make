@@ -4,6 +4,12 @@
  * Code for the Radar Topics feature.
  */
 
+include_once 'radar_topics.features.inc';
+/**
+ * @file
+ * Code for the Radar Topics feature.
+ */
+
 /**
 * Implements hook_system_info_alter().
 */

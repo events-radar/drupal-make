@@ -38,18 +38,18 @@ function radar_event_field_default_field_instances() {
     'settings' => array(
       'display_summary' => 0,
       'entity_translation_sync' => FALSE,
-      'text_processing' => 1,
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 10,
+        'rows' => 7,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 3,
+      'weight' => 2,
     ),
   );
 
@@ -97,7 +97,7 @@ function radar_event_field_default_field_instances() {
         'display_label' => 0,
       ),
       'type' => 'options_onoff',
-      'weight' => 17,
+      'weight' => 11,
     ),
   );
 
@@ -136,7 +136,7 @@ function radar_event_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 16,
+      'weight' => 10,
     ),
   );
 
@@ -232,7 +232,7 @@ function radar_event_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -283,7 +283,7 @@ function radar_event_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 8,
+      'weight' => 18,
     ),
   );
 
@@ -338,7 +338,7 @@ function radar_event_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 4,
+      'weight' => 6,
     ),
   );
 
@@ -393,7 +393,7 @@ function radar_event_field_default_field_instances() {
         ),
       ),
       'type' => 'inline_entity_form',
-      'weight' => 9,
+      'weight' => 8,
     ),
   );
 
@@ -434,7 +434,7 @@ function radar_event_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -470,11 +470,19 @@ function radar_event_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'text',
+      'module' => 'select_or_other',
       'settings' => array(
-        'size' => 60,
+        'available_options' => 'free entrance
+by donation',
+        'available_options_php' => '',
+        'markup_available_options_php' => '&lt;none&gt;',
+        'other' => 'Other',
+        'other_size' => 60,
+        'other_title' => '',
+        'other_unknown_defaults' => 'other',
+        'sort_options' => 0,
       ),
-      'type' => 'text_textfield',
+      'type' => 'select_or_other_buttons',
       'weight' => 5,
     ),
   );

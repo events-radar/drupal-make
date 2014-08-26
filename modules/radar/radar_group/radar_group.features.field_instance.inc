@@ -46,7 +46,7 @@ function radar_group_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -97,7 +97,7 @@ function radar_group_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 6,
+      'weight' => 10,
     ),
   );
 
@@ -152,7 +152,7 @@ function radar_group_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 9,
+      'weight' => 7,
     ),
   );
 
@@ -207,7 +207,7 @@ function radar_group_field_default_field_instances() {
         ),
       ),
       'type' => 'inline_entity_form',
-      'weight' => 10,
+      'weight' => 5,
     ),
   );
 
@@ -249,7 +249,7 @@ function radar_group_field_default_field_instances() {
         'rows' => 7,
       ),
       'type' => 'text_textarea',
-      'weight' => 13,
+      'weight' => 7,
     ),
   );
 
@@ -290,7 +290,7 @@ function radar_group_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 

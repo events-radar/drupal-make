@@ -71,10 +71,10 @@ function radar_event_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '13',
+          'weight' => '8',
         ),
         'redirect' => array(
-          'weight' => '14',
+          'weight' => '9',
         ),
         'language' => array(
           'weight' => '1',

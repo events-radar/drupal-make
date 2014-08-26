@@ -76,15 +76,6 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['body']['label'] = '';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
-  /* Field: Content: online */
-  $handler->display->display_options['fields']['field_link']['id'] = 'field_link';
-  $handler->display->display_options['fields']['field_link']['table'] = 'field_data_field_link';
-  $handler->display->display_options['fields']['field_link']['field'] = 'field_link';
-  $handler->display->display_options['fields']['field_link']['element_label_type'] = 'span';
-  $handler->display->display_options['fields']['field_link']['element_label_class'] = 'label, inline';
-  $handler->display->display_options['fields']['field_link']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_link']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_link']['click_sort_column'] = 'url';
   /* Field: Content: All taxonomy terms (translated) */
   $handler->display->display_options['fields']['term_node_tid_i18n']['id'] = 'term_node_tid_i18n';
   $handler->display->display_options['fields']['term_node_tid_i18n']['table'] = 'node';
@@ -100,17 +91,18 @@ function radar_event_views_default_views() {
     'category' => 'category',
     'topics' => 0,
   );
-  /* Field: Content: Topics */
-  $handler->display->display_options['fields']['field_topics']['id'] = 'field_topics';
-  $handler->display->display_options['fields']['field_topics']['table'] = 'field_data_field_topics';
-  $handler->display->display_options['fields']['field_topics']['field'] = 'field_topics';
-  $handler->display->display_options['fields']['field_topics']['label'] = 'topics';
-  $handler->display->display_options['fields']['field_topics']['element_label_type'] = 'div';
-  $handler->display->display_options['fields']['field_topics']['element_label_class'] = 'small-label, inline';
-  $handler->display->display_options['fields']['field_topics']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_topics']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_topics']['type'] = 'taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_topics']['delta_offset'] = '0';
+  /* Field: Content: All taxonomy terms (translated) */
+  $handler->display->display_options['fields']['term_node_tid_i18n_1']['id'] = 'term_node_tid_i18n_1';
+  $handler->display->display_options['fields']['term_node_tid_i18n_1']['table'] = 'node';
+  $handler->display->display_options['fields']['term_node_tid_i18n_1']['field'] = 'term_node_tid_i18n';
+  $handler->display->display_options['fields']['term_node_tid_i18n_1']['label'] = 'topics';
+  $handler->display->display_options['fields']['term_node_tid_i18n_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['term_node_tid_i18n_1']['link_to_taxonomy'] = FALSE;
+  $handler->display->display_options['fields']['term_node_tid_i18n_1']['limit'] = TRUE;
+  $handler->display->display_options['fields']['term_node_tid_i18n_1']['vocabularies'] = array(
+    'topic' => 'topic',
+    'category' => 0,
+  );
   /* Field: Content: Date & Time */
   $handler->display->display_options['fields']['field_date_time_1']['id'] = 'field_date_time_1';
   $handler->display->display_options['fields']['field_date_time_1']['table'] = 'field_data_field_date_time';
@@ -129,6 +121,23 @@ function radar_event_views_default_views() {
     'show_repeat_rule' => 'hide',
   );
   $handler->display->display_options['fields']['field_date_time_1']['delta_offset'] = '0';
+  /* Field: Content: price */
+  $handler->display->display_options['fields']['field_price']['id'] = 'field_price';
+  $handler->display->display_options['fields']['field_price']['table'] = 'field_data_field_price';
+  $handler->display->display_options['fields']['field_price']['field'] = 'field_price';
+  $handler->display->display_options['fields']['field_price']['element_label_type'] = 'div';
+  $handler->display->display_options['fields']['field_price']['element_label_class'] = 'small-label, inline';
+  $handler->display->display_options['fields']['field_price']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_price']['element_default_classes'] = FALSE;
+  /* Field: Content: online */
+  $handler->display->display_options['fields']['field_link']['id'] = 'field_link';
+  $handler->display->display_options['fields']['field_link']['table'] = 'field_data_field_link';
+  $handler->display->display_options['fields']['field_link']['field'] = 'field_link';
+  $handler->display->display_options['fields']['field_link']['element_label_type'] = 'span';
+  $handler->display->display_options['fields']['field_link']['element_label_class'] = 'label, inline';
+  $handler->display->display_options['fields']['field_link']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_link']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_link']['click_sort_column'] = 'url';
   /* Field: Content: email */
   $handler->display->display_options['fields']['field_email']['id'] = 'field_email';
   $handler->display->display_options['fields']['field_email']['table'] = 'field_data_field_email';
@@ -145,14 +154,6 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['field_phone']['element_label_class'] = 'small-label, inline';
   $handler->display->display_options['fields']['field_phone']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_phone']['element_default_classes'] = FALSE;
-  /* Field: Content: price */
-  $handler->display->display_options['fields']['field_price']['id'] = 'field_price';
-  $handler->display->display_options['fields']['field_price']['table'] = 'field_data_field_price';
-  $handler->display->display_options['fields']['field_price']['field'] = 'field_price';
-  $handler->display->display_options['fields']['field_price']['element_label_type'] = 'div';
-  $handler->display->display_options['fields']['field_price']['element_label_class'] = 'small-label, inline';
-  $handler->display->display_options['fields']['field_price']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_price']['element_default_classes'] = FALSE;
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';

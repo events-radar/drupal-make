@@ -1,0 +1,15 @@
+name = Radar search
+description = Search settings, and core views.
+core = 7.x
+package = Radar
+version = 7.x-1.0-alpha1
+project = radar_search
+dependencies[] = entity
+dependencies[] = radar_event
+dependencies[] = radar_group
+dependencies[] = radar_location
+dependencies[] = search_api
+dependencies[] = search_api_solr
+features[features_api][] = api:2
+features[search_api_index][] = default_node_index
+features[search_api_server][] = solr

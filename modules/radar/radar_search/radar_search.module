@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Radar search feature.
+ */
+
+include_once 'radar_search.features.inc';

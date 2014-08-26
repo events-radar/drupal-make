@@ -155,6 +155,9 @@ projects[message][version] = "1.9"
 projects[field_group][subdir] = "contrib"
 projects[field_group][version] = "1.4"
 
+projects[select_or_other][subdir] = "contrib"
+projects[select_or_other][version] = "2.20"
+
 ; Migrate
 projects[migrate][subdir] = "migrate"
 projects[migrate_extras][subdir] = "migrate"

@@ -23,7 +23,6 @@ dependencies[] = menu
 dependencies[] = message
 dependencies[] = module_filter
 dependencies[] = node
-dependencies[] = node_export
 dependencies[] = page_manager
 dependencies[] = panels
 dependencies[] = path

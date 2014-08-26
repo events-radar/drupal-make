@@ -254,7 +254,18 @@ var {
 /*
  * Footer wrapper
  */
-#footer {}
+#footer {
+  border-top: 1px solid grey;
+
+    #primary-menu-bar a {
+      font-family: $mono;
+      font-color: grey;
+    }  
+   #block-system-powered-by {
+     text-align: right;
+   }
+}
+
 
 
 /*

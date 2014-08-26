@@ -5,3 +5,31 @@
  */
 
 include_once 'radar_basics.features.inc';
+
+/**
+ * Implements hook_date_format_types().
+ */
+function radar_basics_date_format_types() {
+  return array(
+    'radar_time' => t('Time'),
+    'radar_day' => t('Day'),
+  );
+}
+
+/**
+ * Implements hook_date_formats() {
+ */
+function radar_basics_date_formats() {
+  return array(
+    array(
+      'type' => 'radar_day',
+      'format' => 'l j F',
+      'locales' => array(),
+    ),
+    array(
+      'type' => 'radar_time',
+      'format' => 'H:i',
+      'locales' => array(),
+    ),
+  );
+}

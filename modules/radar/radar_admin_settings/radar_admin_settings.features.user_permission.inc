@@ -441,13 +441,6 @@ function radar_admin_settings_user_default_permissions() {
     'module' => 'eck',
   );
 
-  // Exported permission: 'export own nodes'.
-  $permissions['export own nodes'] = array(
-    'name' => 'export own nodes',
-    'roles' => array(),
-    'module' => 'node_export',
-  );
-
   // Exported permission: 'flush caches'.
   $permissions['flush caches'] = array(
     'name' => 'flush caches',
@@ -481,13 +474,6 @@ function radar_admin_settings_user_default_permissions() {
     'name' => 'use PHP for label patterns',
     'roles' => array(),
     'module' => 'auto_entitylabel',
-  );
-
-  // Exported permission: 'use PHP to import nodes'.
-  $permissions['use PHP to import nodes'] = array(
-    'name' => 'use PHP to import nodes',
-    'roles' => array(),
-    'module' => 'node_export',
   );
 
   // Exported permission: 'use flag import'.

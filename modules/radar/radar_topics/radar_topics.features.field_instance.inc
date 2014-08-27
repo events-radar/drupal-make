@@ -105,15 +105,19 @@ function radar_topics_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'inline',
-        'module' => 'i18n_taxonomy',
-        'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_plain',
-        'weight' => 1,
+        'module' => 'ds',
+        'settings' => array(
+          'taxonomy_term_link' => TRUE,
+          'taxonomy_term_separator' => ', ',
+        ),
+        'type' => 'ds_taxonomy_separator_localized',
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
+    'fences_wrapper' => 'div',
     'field_name' => 'field_category',
-    'label' => 'Category',
+    'label' => 'categories',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -146,7 +150,7 @@ function radar_topics_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 10,
       ),
     ),
     'entity_type' => 'node',
@@ -172,6 +176,7 @@ function radar_topics_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Category');
+  t('categories');
   t('topics');
 
   return $field_instances;

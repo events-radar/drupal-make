@@ -74,7 +74,7 @@ function radar_search_default_search_api_index() {
           "real_type" : "list\\u003Clocation\\u003E"
         },
         "field_offline:title" : { "type" : "list\\u003Ctext\\u003E" },
-        "field_topic" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
+        "field_topics" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "nid" : { "type" : "integer" },
         "promote" : { "type" : "boolean" },
         "search_api_language" : { "type" : "string" },
@@ -97,7 +97,7 @@ function radar_search_default_search_api_index() {
 function radar_search_default_search_api_server() {
   $items = array();
   $items['solr'] = entity_import('search_api_server', '{
-    "name" : "Solr",
+    "name" : "solr",
     "machine_name" : "solr",
     "description" : "",
     "class" : "search_api_solr_service",
@@ -105,16 +105,16 @@ function radar_search_default_search_api_server() {
       "clean_ids" : true,
       "site_hash" : true,
       "scheme" : "http",
-      "host" : "127.0.0.1",
+      "host" : "localhost",
       "port" : "8983",
-      "path" : "\\/solr\\/radar_clara\\/",
+      "path" : "\\/solr\\/radar_staging",
       "http_user" : "",
       "http_pass" : "",
       "excerpt" : 0,
       "retrieve_data" : 0,
       "highlight_data" : 0,
       "skip_schema_check" : 0,
-      "solr_version" : "4",
+      "solr_version" : "",
       "http_method" : "AUTO"
     },
     "enabled" : "1",

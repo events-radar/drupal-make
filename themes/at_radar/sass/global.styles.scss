@@ -2078,7 +2078,33 @@ tr.error {
   margin: 0;
 }
 
+/* =============================
+ * Custom plugins
+ * ============================= */
 
+.create-event {
+  background-color: $light-grey;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  text-align: center;
+  margin: .83em 10px;
+  font-size: 1.3em;
+
+  ul {
+    padding: 0;
+    margin: 0;
+
+    li {
+      list-style: none;
+      margin: 0;
+      
+      a {
+        color: white;
+        font-weight: bold;
+      }
+    }
+  }
+}
 
 
 

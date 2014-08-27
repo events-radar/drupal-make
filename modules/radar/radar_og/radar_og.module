@@ -958,7 +958,7 @@ function radar_og_node_create_links($group_type, $gid, $field_name, $destination
   if (!og_is_group($group_type, $gid)) {
     return;
   }
-
+  $group_content_entity_types = radar_og_get_group_content_entity_types();
   $types = isset($types) ? $types : array_keys(node_type_get_types());
   foreach ($types as $type_name) {
     if (!og_is_group_content_type('node', $type_name)) {
@@ -995,12 +995,21 @@ function radar_og_node_create_links($group_type, $gid, $field_name, $destination
 
   $items = array();
   foreach ($names as $type => $name) {
-    // theme_item_list's 'data' items isn't a render element, so use l().
-    // http://drupal.org/node/891112
-    $permission = og_user_access('node', $gid, "Create $type content");
-    $name = drupal_strtolower($name);
-    $link_text = $permission ? t("Create new %name in group", array('%name' => $name)) : t("Submit new %name to group", array('%name' => $name));
-    $items[] = array('data' => l($link_text, 'node/add/' . str_replace('_', '-', $type), $options));
+    // If this is a radar og type then there is the option to propose content.
+    $permission = og_user_access('node', $gid, "Create $type content")
+      && (og_user_access('node', $gid, 'subscribe') || og_user_access('node', $gid, 'subscribe without approval'));
+    if (isset($group_content_entity_types['node'][$type])) {
+      // theme_item_list's 'data' items isn't a render element, so use l().
+      // http://drupal.org/node/891112
+      $name = drupal_strtolower($name);
+      $link_text = $permission ? t("Create new %name in group", array('%name' => $name)) : t("Submit new %name to group", array('%name' => $name));
+      $items[] = array('data' => l($link_text, 'node/add/' . str_replace('_', '-', $type), $options));
+    }
+    // Otherwise it's just post if you are allowed.
+    elseif ($permission) {
+      $link_text = t("Create new %name in group", array('%name' => $name));
+      $items[] = array('data' => l($link_text, 'node/add/' . str_replace('_', '-', $type), $options));
+    }
   }
 
   $element = array();

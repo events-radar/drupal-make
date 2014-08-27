@@ -75,7 +75,7 @@ function radar_event_ical_feeds_importer_default() {
           6 => array(
             'source' => 'UID',
             'target' => 'guid',
-            'unique' => FALSE,
+            'unique' => 1,
           ),
           7 => array(
             'source' => 'CATEGORIES',

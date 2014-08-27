@@ -223,7 +223,7 @@ function radar_og_features_pipe_alter(&$pipe, $data, $export) {
   }
   if (!empty($pipe['field_base'])) {
     foreach ($pipe['field_base'] as $delta => $value) {
-      if ($delta == 'og_group_ref') {
+      if ($delta == 'og_group_ref' || $delta == 'og_group_request') {
         unset($pipe['field_base'][$delta]);
       }
     }

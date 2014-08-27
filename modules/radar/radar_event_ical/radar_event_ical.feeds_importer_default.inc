@@ -87,6 +87,11 @@ function radar_event_ical_feeds_importer_default() {
             'target' => 'field_category',
             'unique' => FALSE,
           ),
+          9 => array(
+            'source' => 'URL',
+            'target' => 'url',
+            'unique' => 1,
+          ),
         ),
         'update_existing' => '2',
         'input_format' => 'plain_text',

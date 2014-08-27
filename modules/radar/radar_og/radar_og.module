@@ -94,7 +94,8 @@ function radar_og_form_group_node_after_build($form, $form_state) {
  */
 function radar_og_node_validate($node, $form, &$form_state) {
   // Ensure all group content is posted into a group.
-  if (og_is_group_content_type('node', $node->type)) {
+  $group_content_entity_types = radar_og_get_group_content_entity_types();
+  if (isset($group_content_entity_types['node'][$node->type])) {
     $wrapper = entity_metadata_wrapper('node', $node);
     $og_group_ref = $wrapper->og_group_ref->raw();
     $og_group_request = $wrapper->og_group_request->raw();

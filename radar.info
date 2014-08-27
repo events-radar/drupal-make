@@ -24,7 +24,6 @@ dependencies[] = openid
 dependencies[] = options
 dependencies[] = path
 dependencies[] = rdf
-dependencies[] = search
 dependencies[] = taxonomy
 dependencies[] = text
 

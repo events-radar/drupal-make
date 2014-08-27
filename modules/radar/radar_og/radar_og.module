@@ -213,7 +213,10 @@ function radar_og_features_pipe_alter(&$pipe, $data, $export) {
       $field_name = $args[2];
       $excluded_fields = array('og_group_ref', 'og_group_request', 'field_og_access_default_value',
         'field_og_subscribe_settings', 'og_roles_permissions', 'group_access', 'field_group_logo', 'group_group', 'body');
-      if (in_array($field_name, $excluded_fields)) {
+// @todo Think about this. These are special groups handling.
+// Then there is standard group handling. Does this want to be
+// included here, or somehow properly excluded.
+      if ($export['module_name'] != 'rader_event_ical' && in_array($field_name, $excluded_fields)) {
         unset($pipe['field_instance'][$delta]);
       }
     }

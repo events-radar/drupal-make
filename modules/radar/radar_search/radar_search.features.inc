@@ -74,6 +74,7 @@ function radar_search_default_search_api_index() {
           "real_type" : "list\\u003Clocation\\u003E"
         },
         "field_offline:title" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_topic" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "nid" : { "type" : "integer" },
         "promote" : { "type" : "boolean" },
         "search_api_language" : { "type" : "string" },

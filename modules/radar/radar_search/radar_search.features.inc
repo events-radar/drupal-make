@@ -5,6 +5,25 @@
  */
 
 /**
+ * Implements hook_ctools_plugin_api().
+ */
+function radar_search_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "facetapi" && $api == "facetapi_defaults") {
+    return array("version" => "1");
+  }
+  if ($module == "page_manager" && $api == "pages_default") {
+    return array("version" => "1");
+  }
+}
+
+/**
+ * Implements hook_views_api().
+ */
+function radar_search_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
+}
+
+/**
  * Implements hook_default_search_api_index().
  */
 function radar_search_default_search_api_index() {
@@ -87,7 +106,7 @@ function radar_search_default_search_api_server() {
       "scheme" : "http",
       "host" : "127.0.0.1",
       "port" : "8983",
-      "path" : "\\/solr\\/core0\\/",
+      "path" : "\\/solr\\/radar_clara\\/",
       "http_user" : "",
       "http_pass" : "",
       "excerpt" : 0,

@@ -245,13 +245,6 @@ function radar_admin_settings_user_default_permissions() {
     'module' => 'redirect',
   );
 
-  // Exported permission: 'administer search'.
-  $permissions['administer search'] = array(
-    'name' => 'administer search',
-    'roles' => array(),
-    'module' => 'search',
-  );
-
   // Exported permission: 'administer site configuration'.
   $permissions['administer site configuration'] = array(
     'name' => 'administer site configuration',

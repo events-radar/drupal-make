@@ -29,6 +29,7 @@ dependencies[] = text
 
 ; Basic additions
 dependencies[] = ctools
+dependencies[] = ds
 dependencies[] = features
 dependencies[] = strongarm
 dependencies[] = libraries

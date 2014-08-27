@@ -83,7 +83,17 @@ projects[date_repeat_entity][version] = "2.0"
 projects[calendar][subdir] = "contrib"
 ; ical
 projects[date_ical][subdir] = "contrib"
+
 projects[feeds][subdir] = "contrib"
+; Need dev version for this issue now committed.
+; https://www.drupal.org/node/1989196
+projects[feeds][type] = "module"
+projects[feeds][download][url] = "git://git.drupal.org/project/feeds.git"
+projects[feeds][download][revision] = "a6abe508df0c215205e1e645254eafe2ea761bf0"
+; Patch to enable inheritance of parent node fields.
+; https://www.drupal.org/node/1074662#comment-8370161
+projects[feeds][patch][1074662] = "https://www.drupal.org/files/issues/1074662-10-feeds-inherit_properties.patch-7.x-2.0-alpha8-2.patch"
+
 projects[job_scheduler][subdir] = "contrib"
 ; libraries
 libraries[iCalcreator][type] = "libraries"

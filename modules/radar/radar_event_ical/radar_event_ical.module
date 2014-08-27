@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Event ical feature.
+ */
+
+include_once 'radar_event_ical.features.inc';

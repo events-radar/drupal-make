@@ -160,7 +160,7 @@ projects[search_api_solr][subdir] = "contrib"
 projects[search_api_location][subdir] = "contrib"
 projects[search_api_location][type] = "module"
 projects[search_api_location][download][url] = "git://git.drupal.org/project/search_api_location.git"
-projects[search_api_location][download][revision] = " e7624bab910bd2ec4dccd0490e1cf762adc3d2cb"
+projects[search_api_location][download][revision] = "e7624bab910bd2ec4dccd0490e1cf762adc3d2cb"
 
 ; Search API sorts - so we can show things in date order.
 projects[search_api_sorts][subdir] = "contrib"

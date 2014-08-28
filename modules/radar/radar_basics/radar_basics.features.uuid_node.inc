@@ -19,14 +19,13 @@ function radar_basics_uuid_features_default_content() {
   'promote' => 0,
   'sticky' => 0,
   'vuuid' => 'cbeb62e9-4abf-4b2e-b4f3-928e03521b0c',
-  'ds_switch' => '',
   'type' => 'page',
   'language' => 'en',
   'created' => 1409050792,
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '3da52869-9542-488b-8031-12d4e21fb694',
-  'revision_uid' => 1,
+  'revision_uid' => 0,
   'body' => array(
     'en' => array(
       0 => array(
@@ -101,20 +100,8 @@ Several different groups use radar to display their agenda on their own site. Wh
     ),
   ),
   'translations' => array(
-    'original' => 'en',
-    'data' => array(
-      'en' => array(
-        'entity_type' => 'node',
-        'entity_id' => 27,
-        'language' => 'en',
-        'source' => '',
-        'uid' => 1,
-        'status' => 1,
-        'translate' => 0,
-        'created' => 1409050792,
-        'changed' => 1409073322,
-      ),
-    ),
+    'original' => NULL,
+    'data' => array(),
   ),
   'name' => 'admin',
   'picture' => 0,
@@ -130,14 +117,13 @@ Several different groups use radar to display their agenda on their own site. Wh
   'promote' => 0,
   'sticky' => 0,
   'vuuid' => '43993009-40f8-4af9-bc05-0e1e3cd2f39f',
-  'ds_switch' => '',
   'type' => 'page',
   'language' => 'en',
   'created' => 1409050852,
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'cbc153cf-bb0a-4e12-8fb6-3c882e07833f',
-  'revision_uid' => 1,
+  'revision_uid' => 0,
   'body' => array(
     'en' => array(
       0 => array(
@@ -216,20 +202,8 @@ Some groups are open for everybody to post, in others posts from non-members of 
     ),
   ),
   'translations' => array(
-    'original' => 'en',
-    'data' => array(
-      'en' => array(
-        'entity_type' => 'node',
-        'entity_id' => 28,
-        'language' => 'en',
-        'source' => '',
-        'uid' => 1,
-        'status' => 1,
-        'translate' => 0,
-        'created' => 1409050852,
-        'changed' => 1409073337,
-      ),
-    ),
+    'original' => NULL,
+    'data' => array(),
   ),
   'name' => 'admin',
   'picture' => 0,

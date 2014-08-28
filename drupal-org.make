@@ -147,20 +147,46 @@ projects[flag][version] = "3.5"
 projects[flag_abuse][subdir] = "contrib"
 projects[flag_abuse][version] = "2.0"
 
-; Search - @TODO
+;
+;; Search
+;
 projects[search_api][subdir] = "contrib"
 projects[search_api_solr][subdir] = "contrib"
 ;libraries[SolrPhpClient][type] = "libraries"
 ;libraries[SolrPhpClient][download][type] = "file"
 ;libraries[SolrPhpClient][download][url] = "http://solr-php-client.googlecode.com/files/SolrPhpClient.r60.2011-05-04.tgz"
-; add patches
+
+; Search API location - dev includes distance for results.
 projects[search_api_location][subdir] = "contrib"
+projects[search_api_location][type] = "module"
+projects[search_api_location][download][url] = "git://git.drupal.org/project/search_api_location.git"
+projects[search_api_location][download][revision] = " e7624bab910bd2ec4dccd0490e1cf762adc3d2cb"
+
+; Search API sorts - so we can show things in date order.
+projects[search_api_sorts][subdir] = "contrib"
+; Fixes broken list page from version 1.5
+projects[search_api_sorts][type] = "module"
+projects[search_api_sorts][download][url] = "git://git.drupal.org/project/search_api_sorts.git"
+projects[search_api_sorts][download][revision] = "de8b6feaea76aa27cf549c60221fea2b53f0d111"
+
 ; facet_api
 projects[facetapi][subdir] = "contrib"
-projects[facetapi][subdir] = "contrib"
-; https://drupal.org/project/date_facets https://drupal.org/node/1834998
+projects[facetapi][version] = "1.5"
 
-; Layout
+; Search API integration for date facet only exists
+; in dev. It has several fixes after first commit too.
+projects[date_facets][subdir] = "contrib"
+projects[date_facets][type] = "module"
+projects[date_facets][download][url] = "git://git.drupal.org/project/date_facets.git"
+projects[date_facets][download][revision] = "9037608bc2736096b9e30d94e843958aab27e584"
+
+; Pretty paths
+projects[facetapi_pretty_paths][subdir] = "contrib"
+projects[facetapi_pretty_paths][version] = "1.1"
+
+;
+;; Layout
+;
 projects[panels][subdir] = "contrib"
 
 ; UI enhancement

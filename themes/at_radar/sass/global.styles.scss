@@ -44,16 +44,6 @@
   padding-right: .5em;
 }
 
-.label {
-  font-weight: bold;
-  color: $grey;
-}
-
-.small-label {
-  font-style: italic;
-}
-
-
 
 /* =============================================================================
  *   Base
@@ -74,6 +64,7 @@ html {
 body {
   font-family: $sans-serif-large; // Set from _custom.scss font variables
   font-size: 87.5%;
+  color: $dark-grey;
 }
 
 
@@ -90,9 +81,13 @@ h2 {
     padding: 0 .6em 0.1em 1em;
     -moz-border-radius: 15px;
     border-radius: 15px;
-    color: white;
-    background-color: $green;
+    border: $green 2px solid;
+    color: $green;
   }
+
+  &.event {
+    margin: .83em 0 .3em;
+  }  
 
   &.block-title {
     padding: 0 .6em 0.1em 1em;
@@ -110,26 +105,25 @@ h2 {
 
 h3 { 
   &.group {
-    background-color: $green;
+    border: $green 2px solid;
     padding: 0 .6em .1em 1em;
     -moz-border-radius: 15px;
     border-radius: 15px;
     min-width: 20em;
     width: 20%;
-    
-    a {
-      color: white;
-    }
+    color: $green;
+    font-weight: normal;
   }
 
  .date { 
-    color: white;
-    background-color: black;
+    border: $light-grey 2px solid;
     padding: 0 .6em;
     -moz-border-radius: 15px;
     border-radius: 15px;
     min-width: 14em;
     width: 20%;
+    color: $grey;
+    font-weight: normal;
   }
 }
 
@@ -2088,7 +2082,7 @@ tr.error {
   border-radius: 15px;
   text-align: center;
   margin: .83em 10px;
-  font-size: 1.3em;
+  padding: .5em;
 
   ul {
     padding: 0;
@@ -2100,12 +2094,28 @@ tr.error {
       
       a {
         color: white;
-        font-weight: bold;
       }
     }
   }
 }
 
+/* ==============================
+ * Entity Reference
+ * ============================== */
+
+.group-reference {
+
+  .field-type-taxonomy-term-reference,
+  .field-name-field-opening-times {
+
+    .field-label {
+      font-size: 1em;
+      font-weight: normal;
+      font-style: italic;
+    }
+  }
+
+}
 
 
 /* ==============================
@@ -2116,3 +2126,10 @@ tr.error {
   margin-bottom: .8em;
 }
 
+.label {
+  font-style: italic;
+}
+
+.info {
+  margin: .3em 0 .3em 1em;
+}

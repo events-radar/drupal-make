@@ -66,6 +66,7 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'h2';
+  $handler->display->display_options['fields']['title']['element_class'] = 'event';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
@@ -74,6 +75,7 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['element_type'] = 'p';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
   /* Field: Content: All taxonomy terms (translated) */
@@ -82,20 +84,25 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['term_node_tid_i18n']['field'] = 'term_node_tid_i18n';
   $handler->display->display_options['fields']['term_node_tid_i18n']['label'] = 'categories';
   $handler->display->display_options['fields']['term_node_tid_i18n']['element_label_type'] = 'div';
-  $handler->display->display_options['fields']['term_node_tid_i18n']['element_label_class'] = 'small-label, inline';
+  $handler->display->display_options['fields']['term_node_tid_i18n']['element_label_class'] = 'label inline';
   $handler->display->display_options['fields']['term_node_tid_i18n']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['term_node_tid_i18n']['element_wrapper_class'] = 'info';
   $handler->display->display_options['fields']['term_node_tid_i18n']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['term_node_tid_i18n']['link_to_taxonomy'] = FALSE;
   $handler->display->display_options['fields']['term_node_tid_i18n']['limit'] = TRUE;
   $handler->display->display_options['fields']['term_node_tid_i18n']['vocabularies'] = array(
     'category' => 'category',
-    'topics' => 0,
+    'topic' => 0,
   );
   /* Field: Content: All taxonomy terms (translated) */
   $handler->display->display_options['fields']['term_node_tid_i18n_1']['id'] = 'term_node_tid_i18n_1';
   $handler->display->display_options['fields']['term_node_tid_i18n_1']['table'] = 'node';
   $handler->display->display_options['fields']['term_node_tid_i18n_1']['field'] = 'term_node_tid_i18n';
   $handler->display->display_options['fields']['term_node_tid_i18n_1']['label'] = 'topics';
+  $handler->display->display_options['fields']['term_node_tid_i18n_1']['element_label_type'] = 'div';
+  $handler->display->display_options['fields']['term_node_tid_i18n_1']['element_label_class'] = 'label inline';
+  $handler->display->display_options['fields']['term_node_tid_i18n_1']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['term_node_tid_i18n_1']['element_wrapper_class'] = 'info';
   $handler->display->display_options['fields']['term_node_tid_i18n_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['term_node_tid_i18n_1']['link_to_taxonomy'] = FALSE;
   $handler->display->display_options['fields']['term_node_tid_i18n_1']['limit'] = TRUE;
@@ -109,11 +116,12 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['field_date_time_1']['field'] = 'field_date_time';
   $handler->display->display_options['fields']['field_date_time_1']['label'] = 'open at';
   $handler->display->display_options['fields']['field_date_time_1']['element_label_type'] = 'div';
-  $handler->display->display_options['fields']['field_date_time_1']['element_label_class'] = 'small-label, inline';
+  $handler->display->display_options['fields']['field_date_time_1']['element_label_class'] = 'label inline';
   $handler->display->display_options['fields']['field_date_time_1']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_date_time_1']['element_wrapper_class'] = 'info';
   $handler->display->display_options['fields']['field_date_time_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_date_time_1']['settings'] = array(
-    'format_type' => 'time',
+    'format_type' => 'radar_time',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -126,16 +134,18 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['field_price']['table'] = 'field_data_field_price';
   $handler->display->display_options['fields']['field_price']['field'] = 'field_price';
   $handler->display->display_options['fields']['field_price']['element_label_type'] = 'div';
-  $handler->display->display_options['fields']['field_price']['element_label_class'] = 'small-label, inline';
+  $handler->display->display_options['fields']['field_price']['element_label_class'] = 'label inline';
   $handler->display->display_options['fields']['field_price']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_price']['element_wrapper_class'] = 'info';
   $handler->display->display_options['fields']['field_price']['element_default_classes'] = FALSE;
   /* Field: Content: online */
   $handler->display->display_options['fields']['field_link']['id'] = 'field_link';
   $handler->display->display_options['fields']['field_link']['table'] = 'field_data_field_link';
   $handler->display->display_options['fields']['field_link']['field'] = 'field_link';
   $handler->display->display_options['fields']['field_link']['element_label_type'] = 'span';
-  $handler->display->display_options['fields']['field_link']['element_label_class'] = 'label, inline';
+  $handler->display->display_options['fields']['field_link']['element_label_class'] = 'label inline';
   $handler->display->display_options['fields']['field_link']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_link']['element_wrapper_class'] = 'info';
   $handler->display->display_options['fields']['field_link']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_link']['click_sort_column'] = 'url';
   /* Field: Content: email */
@@ -143,16 +153,18 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['field_email']['table'] = 'field_data_field_email';
   $handler->display->display_options['fields']['field_email']['field'] = 'field_email';
   $handler->display->display_options['fields']['field_email']['element_label_type'] = 'div';
-  $handler->display->display_options['fields']['field_email']['element_label_class'] = 'small-label, inline';
+  $handler->display->display_options['fields']['field_email']['element_label_class'] = 'label inline';
   $handler->display->display_options['fields']['field_email']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_email']['element_wrapper_class'] = 'info';
   $handler->display->display_options['fields']['field_email']['element_default_classes'] = FALSE;
   /* Field: Content: phone */
   $handler->display->display_options['fields']['field_phone']['id'] = 'field_phone';
   $handler->display->display_options['fields']['field_phone']['table'] = 'field_data_field_phone';
   $handler->display->display_options['fields']['field_phone']['field'] = 'field_phone';
   $handler->display->display_options['fields']['field_phone']['element_label_type'] = 'div';
-  $handler->display->display_options['fields']['field_phone']['element_label_class'] = 'small-label, inline';
+  $handler->display->display_options['fields']['field_phone']['element_label_class'] = 'label inline';
   $handler->display->display_options['fields']['field_phone']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_phone']['element_wrapper_class'] = 'info';
   $handler->display->display_options['fields']['field_phone']['element_default_classes'] = FALSE;
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
@@ -170,8 +182,10 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['field_offline']['id'] = 'field_offline';
   $handler->display->display_options['fields']['field_offline']['table'] = 'field_data_field_offline';
   $handler->display->display_options['fields']['field_offline']['field'] = 'field_offline';
+  $handler->display->display_options['fields']['field_offline']['label'] = '';
   $handler->display->display_options['fields']['field_offline']['element_label_type'] = 'div';
   $handler->display->display_options['fields']['field_offline']['element_label_class'] = 'label';
+  $handler->display->display_options['fields']['field_offline']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_offline']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_offline']['type'] = 'entityreference_entity_view';
   $handler->display->display_options['fields']['field_offline']['settings'] = array(
@@ -268,6 +282,7 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'h2';
+  $handler->display->display_options['fields']['title']['element_class'] = 'event';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   /* Field: Content: Description */
@@ -275,6 +290,7 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['element_type'] = 'p';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
   /* Field: Content: All taxonomy terms (translated) */
@@ -283,14 +299,15 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['term_node_tid_i18n']['field'] = 'term_node_tid_i18n';
   $handler->display->display_options['fields']['term_node_tid_i18n']['label'] = 'categories';
   $handler->display->display_options['fields']['term_node_tid_i18n']['element_label_type'] = 'div';
-  $handler->display->display_options['fields']['term_node_tid_i18n']['element_label_class'] = 'small-label, inline';
+  $handler->display->display_options['fields']['term_node_tid_i18n']['element_label_class'] = 'label inline';
   $handler->display->display_options['fields']['term_node_tid_i18n']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['term_node_tid_i18n']['element_wrapper_class'] = 'info';
   $handler->display->display_options['fields']['term_node_tid_i18n']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['term_node_tid_i18n']['link_to_taxonomy'] = FALSE;
   $handler->display->display_options['fields']['term_node_tid_i18n']['limit'] = TRUE;
   $handler->display->display_options['fields']['term_node_tid_i18n']['vocabularies'] = array(
     'category' => 'category',
-    'topics' => 0,
+    'topic' => 0,
   );
   /* Field: Content: Date & Time */
   $handler->display->display_options['fields']['field_date_time_1']['id'] = 'field_date_time_1';
@@ -298,11 +315,12 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['field_date_time_1']['field'] = 'field_date_time';
   $handler->display->display_options['fields']['field_date_time_1']['label'] = 'open at';
   $handler->display->display_options['fields']['field_date_time_1']['element_label_type'] = 'div';
-  $handler->display->display_options['fields']['field_date_time_1']['element_label_class'] = 'small-label, inline';
+  $handler->display->display_options['fields']['field_date_time_1']['element_label_class'] = 'label inline';
   $handler->display->display_options['fields']['field_date_time_1']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_date_time_1']['element_wrapper_class'] = 'info';
   $handler->display->display_options['fields']['field_date_time_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_date_time_1']['settings'] = array(
-    'format_type' => 'time',
+    'format_type' => 'radar_time',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -315,9 +333,21 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['field_price']['table'] = 'field_data_field_price';
   $handler->display->display_options['fields']['field_price']['field'] = 'field_price';
   $handler->display->display_options['fields']['field_price']['element_label_type'] = 'div';
-  $handler->display->display_options['fields']['field_price']['element_label_class'] = 'small-label, inline';
+  $handler->display->display_options['fields']['field_price']['element_label_class'] = 'label inline';
   $handler->display->display_options['fields']['field_price']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_price']['element_wrapper_class'] = 'info';
   $handler->display->display_options['fields']['field_price']['element_default_classes'] = FALSE;
+  /* Field: Content: Link */
+  $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['label'] = '>>';
+  $handler->display->display_options['fields']['view_node']['element_label_class'] = 'label';
+  $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_node']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['view_node']['element_wrapper_class'] = 'info';
+  $handler->display->display_options['fields']['view_node']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['view_node']['text'] = 'more info';
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';

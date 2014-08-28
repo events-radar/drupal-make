@@ -6,7 +6,7 @@ api = 2
 ;; Basic additions
 ;
 projects[ctools][subdir] = "contrib"
-projcets[ds][subdir] = "contrib"
+projects[ds][subdir] = "contrib"
 projects[ds][version] = "2.6"
 projects[entity][subdir] = "contrib"
 projects[features][subdir] = "contrib"

@@ -40,6 +40,14 @@ projects[views_bulk_operations][subdir] = "contrib"
 
 ;fields
 projects[addressfield][subdir] = "contrib"
+; using git just because patch was written against it.
+projects[addressfield][type] = "module"
+projects[addressfield][download][url] = "git://git.drupal.org/project/addressfield.git"
+projects[addressfield][download][revision] = "8c0e233f8b690743a586435ca713b478af3d98a1"
+; UK addresses patch, till there is something better.
+; https://www.drupal.org/node/1844918
+projects[addressfield][patch][1844918] = "https://www.drupal.org/files/issues/1844918-07-alternate_street_address_order_uk.patch"
+
 projects[geofield][subdir] = "contrib"
 ; requirements
 projects[geophp][subdir] = "contrib"

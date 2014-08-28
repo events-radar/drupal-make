@@ -65,10 +65,7 @@ function radar_search_strongarm() {
       'search_api_views:radar_search:panel_pane_1' => 'search_api_views:radar_search:panel_pane_1',
     ),
     'events' => array(
-      'search_api_views:radar_event_search:page' => 'search_api_views:radar_event_search:page',
-      'search_api_views:radar_event_search:search_api_views_facets_block_1' => 'search_api_views:radar_event_search:search_api_views_facets_block_1',
       'search_api_views:radar_event_search:panel_pane_1' => 'search_api_views:radar_event_search:panel_pane_1',
-      'search_api_views:radar_event_search:panel_pane_2' => 'search_api_views:radar_event_search:panel_pane_2',
     ),
   );
   $export['search_api_facets_search_ids'] = $strongarm;

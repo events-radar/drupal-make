@@ -38,14 +38,82 @@ function radar_search_views_default_views() {
       'rendered_strip' => 0,
     ),
   );
+  $handler->display->display_options['style_options']['row_class'] = 'results';
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  /* Field: Date & Time: Start date (indexed) */
+  $handler->display->display_options['fields']['field_date_time_value_1']['id'] = 'field_date_time_value_1';
+  $handler->display->display_options['fields']['field_date_time_value_1']['table'] = 'search_api_index_events';
+  $handler->display->display_options['fields']['field_date_time_value_1']['field'] = 'field_date_time_value';
+  $handler->display->display_options['fields']['field_date_time_value_1']['label'] = '';
+  $handler->display->display_options['fields']['field_date_time_value_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_date_time_value_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_date_time_value_1']['alter']['text'] = '<div class=date>[field_date_time_value_1]</div>';
+  $handler->display->display_options['fields']['field_date_time_value_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_date_time_value_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_date_time_value_1']['date_format'] = 'medium';
+  $handler->display->display_options['fields']['field_date_time_value_1']['second_date_format'] = 'radar_time';
+  $handler->display->display_options['fields']['field_date_time_value_1']['link_to_entity'] = 0;
+  /* Field: Indexed Node: Groups */
+  $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
+  $handler->display->display_options['fields']['og_group_ref']['table'] = 'search_api_index_events';
+  $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
+  $handler->display->display_options['fields']['og_group_ref']['label'] = '';
+  $handler->display->display_options['fields']['og_group_ref']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['og_group_ref']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['og_group_ref']['alter']['text'] = ' @ [og_group_ref]';
+  $handler->display->display_options['fields']['og_group_ref']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['og_group_ref']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['og_group_ref']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['og_group_ref']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['og_group_ref']['bypass_access'] = 0;
+  /* Field: offline » Address: Locality (i.e. City) (indexed) */
+  $handler->display->display_options['fields']['field_offline_field_address_locality']['id'] = 'field_offline_field_address_locality';
+  $handler->display->display_options['fields']['field_offline_field_address_locality']['table'] = 'search_api_index_events';
+  $handler->display->display_options['fields']['field_offline_field_address_locality']['field'] = 'field_offline_field_address_locality';
+  $handler->display->display_options['fields']['field_offline_field_address_locality']['label'] = '';
+  $handler->display->display_options['fields']['field_offline_field_address_locality']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_offline_field_address_locality']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_offline_field_address_locality']['alter']['text'] = ', [field_offline_field_address_locality]';
+  $handler->display->display_options['fields']['field_offline_field_address_locality']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_offline_field_address_locality']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_offline_field_address_locality']['link_to_entity'] = 0;
   /* Field: Indexed Node: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'search_api_index_events';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['text'] = '<strong>[title][og_group_ref]</strong>[field_offline_field_address_locality] ';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_entity'] = 1;
+  /* Field: Indexed Node: price */
+  $handler->display->display_options['fields']['field_price']['id'] = 'field_price';
+  $handler->display->display_options['fields']['field_price']['table'] = 'search_api_index_events';
+  $handler->display->display_options['fields']['field_price']['field'] = 'field_price';
+  $handler->display->display_options['fields']['field_price']['label'] = '';
+  $handler->display->display_options['fields']['field_price']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_price']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_price']['alter']['text'] = ' - [field_price]';
+  $handler->display->display_options['fields']['field_price']['element_class'] = 'inline';
+  $handler->display->display_options['fields']['field_price']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_price']['element_default_classes'] = FALSE;
+  /* Field: Date & Time: Start date (indexed) */
+  $handler->display->display_options['fields']['field_date_time_value_2']['id'] = 'field_date_time_value_2';
+  $handler->display->display_options['fields']['field_date_time_value_2']['table'] = 'search_api_index_events';
+  $handler->display->display_options['fields']['field_date_time_value_2']['field'] = 'field_date_time_value';
+  $handler->display->display_options['fields']['field_date_time_value_2']['label'] = '';
+  $handler->display->display_options['fields']['field_date_time_value_2']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_date_time_value_2']['alter']['text'] = '[field_date_time_value_2][field_price]';
+  $handler->display->display_options['fields']['field_date_time_value_2']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_date_time_value_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_date_time_value_2']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_date_time_value_2']['date_format'] = 'long';
+  $handler->display->display_options['fields']['field_date_time_value_2']['second_date_format'] = 'radar_time';
+  $handler->display->display_options['fields']['field_date_time_value_2']['link_to_entity'] = 0;
   /* Field: Date & Time: Start date (indexed) */
   $handler->display->display_options['fields']['field_date_time_value']['id'] = 'field_date_time_value';
   $handler->display->display_options['fields']['field_date_time_value']['table'] = 'search_api_index_events';
@@ -61,6 +129,7 @@ function radar_search_views_default_views() {
   $handler->display->display_options['fields']['field_date_time_value2']['table'] = 'search_api_index_events';
   $handler->display->display_options['fields']['field_date_time_value2']['field'] = 'field_date_time_value2';
   $handler->display->display_options['fields']['field_date_time_value2']['label'] = '';
+  $handler->display->display_options['fields']['field_date_time_value2']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_date_time_value2']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_date_time_value2']['alter']['text'] = '[field_date_time_value] - [field_date_time_value2]';
   $handler->display->display_options['fields']['field_date_time_value2']['element_label_colon'] = FALSE;
@@ -70,24 +139,6 @@ function radar_search_views_default_views() {
   $handler->display->display_options['fields']['field_date_time_value2']['date_format'] = 'radar_time';
   $handler->display->display_options['fields']['field_date_time_value2']['second_date_format'] = 'radar_time';
   $handler->display->display_options['fields']['field_date_time_value2']['link_to_entity'] = 0;
-  /* Field: Indexed Node: The main body text » Summary */
-  $handler->display->display_options['fields']['body_summary']['id'] = 'body_summary';
-  $handler->display->display_options['fields']['body_summary']['table'] = 'search_api_index_events';
-  $handler->display->display_options['fields']['body_summary']['field'] = 'body_summary';
-  $handler->display->display_options['fields']['body_summary']['label'] = '';
-  $handler->display->display_options['fields']['body_summary']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['body_summary']['link_to_entity'] = 0;
-  /* Field: Date & Time: Start date (indexed) */
-  $handler->display->display_options['fields']['field_date_time_value_1']['id'] = 'field_date_time_value_1';
-  $handler->display->display_options['fields']['field_date_time_value_1']['table'] = 'search_api_index_events';
-  $handler->display->display_options['fields']['field_date_time_value_1']['field'] = 'field_date_time_value';
-  $handler->display->display_options['fields']['field_date_time_value_1']['label'] = '';
-  $handler->display->display_options['fields']['field_date_time_value_1']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_date_time_value_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_date_time_value_1']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_date_time_value_1']['date_format'] = 'radar_day';
-  $handler->display->display_options['fields']['field_date_time_value_1']['second_date_format'] = 'radar_time';
-  $handler->display->display_options['fields']['field_date_time_value_1']['link_to_entity'] = 0;
   /* Filter criterion: Date & Time: Start date (indexed) */
   $handler->display->display_options['filters']['field_date_time_value']['id'] = 'field_date_time_value';
   $handler->display->display_options['filters']['field_date_time_value']['table'] = 'search_api_index_events';
@@ -172,6 +223,8 @@ function radar_search_views_default_views() {
   $handler->display->display_options['fields']['field_price']['field'] = 'field_price';
   $handler->display->display_options['fields']['field_price']['label'] = '';
   $handler->display->display_options['fields']['field_price']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_price']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_price']['alter']['text'] = ' - [field_price]';
   $handler->display->display_options['fields']['field_price']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_price']['element_class'] = 'inline';
   $handler->display->display_options['fields']['field_price']['element_label_colon'] = FALSE;

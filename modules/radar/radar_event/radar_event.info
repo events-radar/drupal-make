@@ -41,7 +41,6 @@ features[field_base][] = field_price
 features[field_group][] = group_date|node|event|form
 features[field_group][] = group_image|node|event|form
 features[field_group][] = group_info|node|event|form
-features[field_group][] = group_tags|node|event|form
 features[field_instance][] = node-event-body
 features[field_instance][] = node-event-date_repeat_entity_clone_state
 features[field_instance][] = node-event-date_repeat_entity_master_uuid

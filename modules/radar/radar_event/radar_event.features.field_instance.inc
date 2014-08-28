@@ -183,7 +183,7 @@ function radar_event_field_default_field_instances() {
       'active' => 1,
       'module' => 'date',
       'settings' => array(
-        'increment' => 15,
+        'increment' => 5,
         'input_format' => 'Y-m-d H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
@@ -441,7 +441,7 @@ function radar_event_field_default_field_instances() {
   // Exported field_instance: 'node-event-field_price'
   $field_instances['node-event-field_price'] = array(
     'bundle' => 'event',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(

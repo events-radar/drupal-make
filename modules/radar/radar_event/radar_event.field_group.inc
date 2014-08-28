@@ -76,7 +76,7 @@ function radar_event_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Info',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_price',
       1 => 'field_email',

@@ -24,7 +24,7 @@ function radar_location_format_building_name_generate(&$format, $address) {
     '#weight' => -50,
   );
   $format['name_block']['name_line'] = array(
-    '#title' => t('Building name'),
+    '#title' => t('Locally known as'),
     '#tag' => 'div',
     '#size' => 30,
     '#attributes' => array(

@@ -19,6 +19,22 @@ function radar_location_ctools_plugin_directory($module, $plugin) {
   }
 }
 
+function radar_location_ctools_plugin_post_alter(&$plugin, &$info) {
+  if ($plugin['module'] == 'addressfield' && $plugin['type'] == 'address' && $plugin['name'] == 'address') {
+    $plugin['format callback'] = 'radar_location_addressfield_format_generate_override';
+  }
+}
+
+function radar_location_addressfield_format_generate_override(&$format, $address, $context = array()) {
+  addressfield_format_address_generate($format, $address, $context);
+  if ($format['street_block']['thoroughfare']['#title'] == t('Address 1')) {
+    $format['street_block']['thoroughfare']['#title'] = t('Street address');
+  }
+  if ($format['street_block']['premise']['#title'] == t('Address 2')) {
+    $format['street_block']['premise']['#title'] = t('Flat, Apartment, Box etc.');
+  }
+}
+
 /**
  * Implements hook_form_alter().
  */

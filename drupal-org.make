@@ -76,8 +76,13 @@ projects[leaflet_geojson][subdir] = "contrib"
 
 ; location entity, and autopopulation of location.
 projects[eck][subdir] = "contrib"
-projects[eck][version] = "2.0-rc4"
-;
+; Git version patch is applied against.
+projects[eck][type] = "module"
+projects[eck][download][url] = "git://git.drupal.org/project/eck"
+projects[eck][download][revision] = "6b2be8f39e976260df1a30a8dda73f6ede3a5c6a"
+; UUID patch https://www.drupal.org/node/2037281#comment-9104489
+projects[eck][patch][2037281] = "https://www.drupal.org/files/issues/eck-uuid-default-property-2037281-26.patch"
+
 projects[auto_entitylabel][subdir] = "contrib"
 projects[auto_entitylabel][type] = "module"
 projects[auto_entitylabel][download][url] = "git://git.drupal.org/project/auto_entitylabel.git"

@@ -25,7 +25,7 @@ function radar_basics_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '3da52869-9542-488b-8031-12d4e21fb694',
-  'revision_uid' => 0,
+  'revision_uid' => 1,
   'body' => array(
     'en' => array(
       0 => array(
@@ -100,8 +100,20 @@ Several different groups use radar to display their agenda on their own site. Wh
     ),
   ),
   'translations' => array(
-    'original' => NULL,
-    'data' => array(),
+    'original' => 'en',
+    'data' => array(
+      'en' => array(
+        'entity_type' => 'node',
+        'entity_id' => 1,
+        'language' => 'en',
+        'source' => '',
+        'uid' => 1,
+        'status' => 1,
+        'translate' => 0,
+        'created' => 1409050792,
+        'changed' => 1409345365,
+      ),
+    ),
   ),
   'name' => 'admin',
   'picture' => 0,
@@ -123,7 +135,7 @@ Several different groups use radar to display their agenda on their own site. Wh
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'cbc153cf-bb0a-4e12-8fb6-3c882e07833f',
-  'revision_uid' => 0,
+  'revision_uid' => 1,
   'body' => array(
     'en' => array(
       0 => array(
@@ -202,8 +214,20 @@ Some groups are open for everybody to post, in others posts from non-members of 
     ),
   ),
   'translations' => array(
-    'original' => NULL,
-    'data' => array(),
+    'original' => 'en',
+    'data' => array(
+      'en' => array(
+        'entity_type' => 'node',
+        'entity_id' => 2,
+        'language' => 'en',
+        'source' => '',
+        'uid' => 1,
+        'status' => 1,
+        'translate' => 0,
+        'created' => 1409050852,
+        'changed' => 1409345400,
+      ),
+    ),
   ),
   'name' => 'admin',
   'picture' => 0,

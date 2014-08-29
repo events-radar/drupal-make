@@ -156,13 +156,16 @@ function radar_group_views_default_views() {
   $handler->display->display_options['fields']['field_offline']['element_label_type'] = 'div';
   $handler->display->display_options['fields']['field_offline']['element_label_class'] = 'label';
   $handler->display->display_options['fields']['field_offline']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_offline']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_offline']['element_wrapper_class'] = 'address-map';
   $handler->display->display_options['fields']['field_offline']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_offline']['type'] = 'entityreference_entity_view';
   $handler->display->display_options['fields']['field_offline']['settings'] = array(
-    'view_mode' => 'teaser',
+    'view_mode' => 'default',
     'links' => 0,
   );
   $handler->display->display_options['fields']['field_offline']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_offline']['separator'] = '<br>';
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';

@@ -77,10 +77,14 @@ projects[leaflet_geojson][subdir] = "contrib"
 ; location entity, and autopopulation of location.
 projects[eck][subdir] = "contrib"
 projects[eck][version] = "2.0-rc4"
+;
 projects[auto_entitylabel][subdir] = "contrib"
 projects[auto_entitylabel][type] = "module"
 projects[auto_entitylabel][download][url] = "git://git.drupal.org/project/auto_entitylabel.git"
 projects[auto_entitylabel][download][revision] = "baf64896565faa5efe38900a8c881e17cef2499e"
+; Work around for eck update https://www.drupal.org/node/2329729
+projects[auto_entitylabel][patch][2329729] = "https://www.drupal.org/files/issues/2329729-01-auto_entitylabel_eck.patch"
+;
 projects[entityreference_prepopulate][subdir] = "contrib"
 projects[entityreference_prepopulate][version] = "1.5"
 

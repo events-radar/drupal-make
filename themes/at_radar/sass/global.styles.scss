@@ -44,6 +44,10 @@
   padding-right: .5em;
 }
 
+.green {
+  color: $green;
+}
+
 
 /* =============================================================================
  *   Base
@@ -112,6 +116,18 @@ h3 {
     color: $grey;
     font-weight: normal;
   }
+}
+
+.group h3 {
+    border: $green 2px solid;
+    padding: 0 .6em .1em 1em;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    min-width: 1.5em;
+    width: 3%;
+    color: $green;
+    font-weight: normal;
+
 }
 
 
@@ -2121,6 +2137,11 @@ tr.error {
   margin: .3em 0 .3em 1em;
 }
 
+
+/* 
+ * Facets
+ */
+
 .facet  {
 
   &.block {
@@ -2143,6 +2164,7 @@ tr.error {
     margin: 0 0 .2em 0;
   }
 }
+
 
 .events-period {
 

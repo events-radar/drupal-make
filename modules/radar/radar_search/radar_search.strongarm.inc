@@ -66,6 +66,11 @@ function radar_search_strongarm() {
     ),
     'events' => array(
       'search_api_views:radar_event_search:panel_pane_1' => 'search_api_views:radar_event_search:panel_pane_1',
+      'search_api_views:radar_group_search:panel_pane_1' => 'search_api_views:radar_group_search:panel_pane_1',
+      'search_api_views:radar_group_search:default' => 'search_api_views:radar_group_search:default',
+    ),
+    'groups' => array(
+      'search_api_views:radar_group_search:panel_pane_1' => 'search_api_views:radar_group_search:panel_pane_1',
     ),
   );
   $export['search_api_facets_search_ids'] = $strongarm;

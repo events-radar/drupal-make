@@ -205,6 +205,108 @@ function radar_search_default_search_api_index() {
     "read_only" : "0",
     "rdf_mapping" : []
   }');
+  $items['groups'] = entity_import('search_api_index', '{
+    "name" : "Groups index",
+    "machine_name" : "groups",
+    "description" : null,
+    "server" : "solr",
+    "item_type" : "node",
+    "options" : {
+      "index_directly" : 0,
+      "cron_limit" : "50",
+      "fields" : {
+        "author" : { "type" : "integer", "entity_type" : "user" },
+        "field_category" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
+        "field_offline" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "location" },
+        "field_offline:field_address:administrative_area" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_offline:field_address:country" : { "type" : "list\\u003Cstring\\u003E" },
+        "field_offline:field_address:locality" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_offline:field_address:name_line" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_offline:field_address:postal_code" : { "type" : "list\\u003Cstring\\u003E" },
+        "field_offline:field_address:premise" : { "type" : "list\\u003Cstring\\u003E" },
+        "field_offline:field_address:thoroughfare" : { "type" : "list\\u003Cstring\\u003E" },
+        "field_offline:field_map:geom" : { "type" : "list\\u003Cstring\\u003E" },
+        "field_offline:field_map:latlon" : {
+          "type" : "list\\u003Cstring\\u003E",
+          "real_type" : "list\\u003Clocation\\u003E"
+        },
+        "field_offline:id" : { "type" : "list\\u003Cinteger\\u003E" },
+        "field_offline:title" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_topic" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
+        "nid" : { "type" : "integer" },
+        "og_group_ref" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "node" },
+        "search_api_access_node" : { "type" : "list\\u003Cstring\\u003E" },
+        "search_api_language" : { "type" : "string" },
+        "status" : { "type" : "boolean" },
+        "title" : { "type" : "string" },
+        "uuid" : { "type" : "string" }
+      },
+      "data_alter_callbacks" : {
+        "search_api_alter_bundle_filter" : {
+          "status" : 1,
+          "weight" : "-10",
+          "settings" : { "default" : "0", "bundles" : { "group" : "group" } }
+        },
+        "search_api_alter_node_access" : { "status" : 1, "weight" : "0", "settings" : [] },
+        "search_api_alter_node_status" : { "status" : 1, "weight" : "0", "settings" : [] },
+        "search_api_alter_language_control" : {
+          "status" : 0,
+          "weight" : "0",
+          "settings" : { "lang_field" : "", "languages" : [] }
+        },
+        "search_api_alter_add_viewed_entity" : { "status" : 0, "weight" : "0", "settings" : { "mode" : "full" } },
+        "search_api_alter_add_url" : { "status" : 0, "weight" : "0", "settings" : [] },
+        "search_api_alter_add_aggregation" : { "status" : 1, "weight" : "0", "settings" : [] },
+        "search_api_alter_add_hierarchy" : { "status" : 0, "weight" : "0", "settings" : { "fields" : [] } }
+      },
+      "processors" : {
+        "search_api_case_ignore" : {
+          "status" : 1,
+          "weight" : "0",
+          "settings" : { "fields" : { "title" : true } }
+        },
+        "search_api_html_filter" : {
+          "status" : 1,
+          "weight" : "10",
+          "settings" : {
+            "fields" : [],
+            "title" : 0,
+            "alt" : 1,
+            "tags" : "h1 = 5\\r\\nh2 = 3\\r\\nh3 = 2\\r\\nstrong = 2\\r\\nb = 2\\r\\nem = 1.5\\r\\nu = 1.5"
+          }
+        },
+        "search_api_tokenizer" : {
+          "status" : 1,
+          "weight" : "20",
+          "settings" : { "fields" : [], "spaces" : "[^[:alnum:]]", "ignorable" : "[\\u0027]" }
+        },
+        "search_api_stopwords" : {
+          "status" : 0,
+          "weight" : "30",
+          "settings" : {
+            "fields" : { "title" : true },
+            "file" : "",
+            "stopwords" : "but\\r\\ndid\\r\\nthe this that those\\r\\netc"
+          }
+        },
+        "search_api_highlighting" : {
+          "status" : 0,
+          "weight" : "35",
+          "settings" : {
+            "prefix" : "\\u003Cstrong\\u003E",
+            "suffix" : "\\u003C\\/strong\\u003E",
+            "excerpt" : 1,
+            "excerpt_length" : "256",
+            "exclude_fields" : [],
+            "highlight" : "always"
+          }
+        }
+      }
+    },
+    "enabled" : "1",
+    "read_only" : "0",
+    "rdf_mapping" : []
+  }');
   return $items;
 }
 

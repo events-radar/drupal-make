@@ -45,6 +45,11 @@ function radar_location_eck_entity_type_info() {
           'type' => 'text',
           'behavior' => 'title',
         ),
+        'uuid' => array(
+          'label' => 'UUID',
+          'type' => 'text',
+          'behavior' => 'uuid',
+        ),
       ),
     ),
   );

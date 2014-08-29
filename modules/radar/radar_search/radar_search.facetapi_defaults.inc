@@ -824,7 +824,7 @@ function radar_search_facetapi_default_facet_settings() {
     'individual_parent' => '0',
     'query_type' => 'term',
     'limit_active_items' => 0,
-    'default_true' => '1',
+    'default_true' => TRUE,
     'facet_search_ids' => array(),
     'exclude' => 0,
     'pretty_paths_alias' => 'category',
@@ -855,7 +855,7 @@ function radar_search_facetapi_default_facet_settings() {
     'individual_parent' => 0,
     'query_type' => 'date_range',
     'limit_active_items' => 1,
-    'default_true' => '1',
+    'default_true' => TRUE,
     'facet_search_ids' => array(),
     'exclude' => 0,
     'pretty_paths_alias' => 'date',
@@ -876,6 +876,7 @@ function radar_search_facetapi_default_facet_settings() {
     'dependencies' => array(
       'bundle' => 'none',
       'bundle_selected' => array(),
+      'roles' => array(),
     ),
     'facet_mincount' => '1',
     'facet_missing' => '0',
@@ -883,7 +884,7 @@ function radar_search_facetapi_default_facet_settings() {
     'individual_parent' => 0,
     'query_type' => 'term',
     'limit_active_items' => 1,
-    'default_true' => '1',
+    'default_true' => TRUE,
     'facet_search_ids' => array(),
     'exclude' => 0,
     'pretty_paths_alias' => 'country',
@@ -904,6 +905,7 @@ function radar_search_facetapi_default_facet_settings() {
     'dependencies' => array(
       'bundle' => 'none',
       'bundle_selected' => array(),
+      'roles' => array(),
     ),
     'facet_mincount' => '1',
     'facet_missing' => '0',
@@ -932,6 +934,7 @@ function radar_search_facetapi_default_facet_settings() {
     'dependencies' => array(
       'bundle' => 'none',
       'bundle_selected' => array(),
+      'roles' => array(),
     ),
     'facet_mincount' => '1',
     'facet_missing' => '0',
@@ -987,7 +990,7 @@ function radar_search_facetapi_default_facet_settings() {
   $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
-    'widget' => 'facetapi_links',
+    'widget' => 'facetapi_checkbox_links',
     'filters' => array(),
     'active_sorts' => array(
       'active' => 'active',
@@ -1138,11 +1141,16 @@ function radar_search_facetapi_default_facet_settings() {
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'date_range',
-    'filters' => array(),
+    'filters' => array(
+      'active_items' => array(
+        'status' => 0,
+        'weight' => '-50',
+      ),
+    ),
     'active_sorts' => array(
-      'active' => 'active',
+      'display' => 'display',
+      'active' => 0,
       'count' => 0,
-      'display' => 0,
       'indexed' => 0,
     ),
     'sort_weight' => array(
@@ -1153,8 +1161,8 @@ function radar_search_facetapi_default_facet_settings() {
     ),
     'sort_order' => array(
       'active' => '3',
-      'count' => '3',
-      'display' => '4',
+      'count' => '4',
+      'display' => '3',
       'indexed' => '4',
     ),
     'empty_behavior' => 'none',
@@ -1165,7 +1173,7 @@ function radar_search_facetapi_default_facet_settings() {
     'show_expanded' => 0,
     'ranges' => array(
       'this_week' => array(
-        'label' => 'This week',
+        'label' => 'this week',
         'machine_name' => 'this_week',
         'date_range_start_op' => 'NOW',
         'date_range_start_amount' => '',
@@ -1173,19 +1181,19 @@ function radar_search_facetapi_default_facet_settings() {
         'date_range_end_op' => '+',
         'date_range_end_amount' => '7',
         'date_range_end_unit' => 'DAY',
-        'weight' => '-8',
+        'weight' => '-10',
         'delete' => 0,
       ),
-      'next_month' => array(
-        'label' => 'This month',
-        'machine_name' => 'next_month',
-        'date_range_start_op' => 'NOW',
-        'date_range_start_amount' => '',
-        'date_range_start_unit' => 'HOUR',
+      'next_week' => array(
+        'label' => 'next week',
+        'machine_name' => 'next_week',
+        'date_range_start_op' => '+',
+        'date_range_start_amount' => '8',
+        'date_range_start_unit' => 'DAY',
         'date_range_end_op' => '+',
-        'date_range_end_amount' => '1',
-        'date_range_end_unit' => 'MONTH',
-        'weight' => '0',
+        'date_range_end_amount' => '14',
+        'date_range_end_unit' => 'DAY',
+        'weight' => '-9',
         'delete' => 0,
       ),
     ),
@@ -1202,6 +1210,7 @@ function radar_search_facetapi_default_facet_settings() {
     'auto-submit-delay' => '1500',
     'range_simple' => 10,
     'range_advanced' => '',
+    'show_all' => 1,
   );
   $export['search_api@events:block:field_date_time:value'] = $facet;
 
@@ -1323,7 +1332,7 @@ function radar_search_facetapi_default_facet_settings() {
   $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
-    'widget' => 'facetapi_links',
+    'widget' => 'facetapi_checkbox_links',
     'filters' => array(),
     'active_sorts' => array(
       'active' => 'active',
@@ -1437,7 +1446,7 @@ function radar_search_facetapi_default_facet_settings() {
   $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
-    'widget' => 'facetapi_links',
+    'widget' => 'facetapi_checkbox_links',
     'filters' => array(),
     'active_sorts' => array(
       'active' => 'active',
@@ -1833,7 +1842,7 @@ function radar_search_facetapi_default_facet_settings() {
   $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
-    'widget' => 'facetapi_links',
+    'widget' => 'facetapi_checkbox_links',
     'filters' => array(),
     'active_sorts' => array(
       'active' => 'active',
@@ -1928,6 +1937,7 @@ function radar_search_facetapi_default_facet_settings() {
       'value' => '',
       'format' => 'plain_text',
     ),
+    'show_all' => 1,
   );
   $export['search_api@events:block:field_price'] = $facet;
 

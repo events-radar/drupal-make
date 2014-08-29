@@ -199,6 +199,12 @@ projects[facetapi_pretty_paths][subdir] = "contrib"
 projects[facetapi_pretty_paths][version] = "1.1"
 
 ;
+;; Services
+;
+projects[services][subdir] = "contrib"
+projects[services][version] = "3.7"
+
+;
 ;; Layout
 ;
 projects[panels][subdir] = "contrib"

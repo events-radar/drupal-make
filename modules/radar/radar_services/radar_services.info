@@ -1,0 +1,16 @@
+name = Radar services
+description = API configuration
+core = 7.x
+package = Radar
+version = 7.x-1.0-alpha1
+project = radar_services
+dependencies[] = ctools
+dependencies[] = rest_server
+dependencies[] = services
+dependencies[] = strongarm
+dependencies[] = uuid_services
+features[ctools][] = services:services:3
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[services_endpoint][] = api_1_0
+features[variable][] = uuid_services_support_all_entity_types

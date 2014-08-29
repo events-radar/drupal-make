@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Radar services feature.
+ */
+
+include_once 'radar_services.features.inc';

@@ -89,6 +89,11 @@ projects[auto_entitylabel][download][url] = "git://git.drupal.org/project/auto_e
 projects[auto_entitylabel][download][revision] = "baf64896565faa5efe38900a8c881e17cef2499e"
 ; Work around for eck update https://www.drupal.org/node/2329729
 projects[auto_entitylabel][patch][2329729] = "https://www.drupal.org/files/issues/2329729-01-auto_entitylabel_eck.patch"
+; UUID for entityreference
+projects[entityreference_uuid][subdir] = "contrib"
+projects[entityreference_uuid][type] = "module"
+projects[entityreference_uuid][download][url] = "https://github.com/Gizra/entityreference_uuid.git"
+projects[entityreference_uuid][download][revision] = "95feee9d7fa5cd9f8862d9cf7d3655a271bb66c2"
 ;
 projects[entityreference_prepopulate][subdir] = "contrib"
 projects[entityreference_prepopulate][version] = "1.5"

@@ -10,6 +10,7 @@ dependencies[] = date
 dependencies[] = entity
 dependencies[] = entityreference
 dependencies[] = entityreference_prepopulate
+dependencies[] = entityreference_uuid
 dependencies[] = features
 dependencies[] = field_group
 dependencies[] = image

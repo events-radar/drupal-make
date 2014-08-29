@@ -89,6 +89,9 @@ function radar_group_field_default_field_bases() {
           'views-select-list' => array(
             'status' => 0,
           ),
+          'uuid' => array(
+            'status' => 1,
+          ),
         ),
         'sort' => array(
           'type' => 'none',

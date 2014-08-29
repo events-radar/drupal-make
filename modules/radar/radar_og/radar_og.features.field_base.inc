@@ -182,6 +182,9 @@ function radar_og_field_default_field_bases() {
           'views-select-list' => array(
             'status' => 0,
           ),
+          'uuid' => array(
+            'status' => 1,
+          ),
         ),
         'membership_type' => 'og_membership_type_default',
         'sort' => array(
@@ -229,6 +232,9 @@ function radar_og_field_default_field_bases() {
           ),
           'views-select-list' => array(
             'status' => 0,
+          ),
+          'uuid' => array(
+            'status' => 1,
           ),
         ),
         'membership_type' => 'og_group_request',

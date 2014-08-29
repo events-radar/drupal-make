@@ -50,7 +50,7 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['field_date_time']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_date_time']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_date_time']['settings'] = array(
-    'format_type' => 'medium',
+    'format_type' => 'radar_day',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',

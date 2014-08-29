@@ -99,13 +99,13 @@ projects[feeds][subdir] = "contrib"
 ; https://www.drupal.org/node/1989196
 projects[feeds][type] = "module"
 projects[feeds][download][url] = "git://git.drupal.org/project/feeds.git"
-projects[feeds][download][revision] = "a6abe508df0c215205e1e645254eafe2ea761bf0"
+projects[feeds][download][revision] = "0cc602dbe06f6c5c094ac904167e467c146268ef"
 ; Patch to enable inheritance of parent node fields.
 ; https://www.drupal.org/node/1074662#comment-8370161
 projects[feeds][patch][1074662] = "https://www.drupal.org/files/issues/1074662-10-feeds-inherit_properties.patch-7.x-2.0-alpha8-2.patch"
 ; Fix unique test
 ; https://www.drupal.org/node/2328605#comment-9098023
-projects[feeds][patch][2328605] = "https://www.drupal.org/files/issues/2328605-01-existingEntityId.patch"
+projects[feeds][patch][2328605] = "https://www.drupal.org/files/issues/2328605-06-existingEntityId.patch"
 
 projects[job_scheduler][subdir] = "contrib"
 ; libraries

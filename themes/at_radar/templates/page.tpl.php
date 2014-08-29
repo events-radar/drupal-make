@@ -129,6 +129,7 @@
 
       <!-- !Header Region -->
       <?php print render($page['header']); ?>
+        <?php if ($secondary_navigation): print $secondary_navigation; endif; ?>
 
     </header>
 
@@ -220,7 +221,6 @@
     <?php if ($page['footer'] || $attribution): ?>
       <footer<?php print $footer_attributes; ?>>
         <?php if ($primary_navigation): print $primary_navigation; endif; ?>
-        <?php if ($secondary_navigation): print $secondary_navigation; endif; ?>
         <?php print render($page['footer']); ?>
         <?php print $attribution; ?>
       </footer>

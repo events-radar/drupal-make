@@ -271,17 +271,27 @@ var {
  * Footer wrapper
  */
 #footer {
-  border-top: 1px solid grey;
+  background-color: $light-grey;
+  color: white;
+  padding-top: .5em;
+  font-family: $mono;
+  font-size: 1.2em;
 
-    #primary-menu-bar a {
-      font-family: $mono;
-      font-color: $grey;
-      font-size: 1.2em;
+  a {
+    &:link,
+    &:visited {
+      color: $dark-grey;
+    }
 
-    }  
-   #block-system-powered-by {
-     text-align: right;
-   }
+    &:hover,
+    &:focus {
+      color: white;
+    }
+  }  
+
+  #block-system-powered-by {
+    text-align: right;
+  }
 }
 
 
@@ -455,6 +465,12 @@ var {
   font-weight: normal;
 }
 
+#secondary-menu-bar ul li {
+  float: right;
+  font-family: $mono;
+  
+}
+
 
 /* =============================================================================
  *   Misc Global Styles
@@ -563,7 +579,7 @@ ul.links {
 /*
  * Header region, embedded in the #header
  */
-.region-header {}
+.region-header {} 
 
 
 /*

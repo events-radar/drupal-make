@@ -38,5 +38,12 @@ function radar_location_strongarm() {
   $strongarm->value = FALSE;
   $export['eck_clear_caches'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entityreference_uuid_field_name';
+  $strongarm->value = 'uuid';
+  $export['entityreference_uuid_field_name'] = $strongarm;
+
   return $export;
 }

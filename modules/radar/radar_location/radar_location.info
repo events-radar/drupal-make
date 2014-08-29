@@ -57,3 +57,4 @@ features[variable][] = auto_entitylabel_location_location
 features[variable][] = auto_entitylabel_pattern_location_location
 features[variable][] = auto_entitylabel_php_location_location
 features[variable][] = eck_clear_caches
+features[variable][] = entityreference_uuid_field_name

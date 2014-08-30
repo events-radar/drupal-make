@@ -173,47 +173,6 @@ function radar_og_field_definition_group(&$field_instances, $entity_type, $bundl
       'weight' => 1,
     ),
   );
-   // Exported field_instance: 'node-group-body'
-  $field_instances["$entity_type-$bundle-body"] = array(
-    'bundle' => $bundle,
-    'default_value' => NULL,
-    'deleted' => '0',
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'body',
-    'label' => 'Description',
-    'required' => 0,
-    'settings' => array(
-      'display_summary' => 0,
-      'text_processing' => '1',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => '7',
-        'summary_rows' => 5,
-      ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => '5',
-    ),
-  );
 
   // Exported field_instance: 'node-group-group_group'
   $field_instances["$entity_type-$bundle-" . OG_GROUP_FIELD] = array(

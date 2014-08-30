@@ -10,6 +10,52 @@
 function radar_group_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-group-body'
+  $field_instances['node-group-body'] = array(
+    'bundle' => 'group',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 300,
+        ),
+        'type' => 'text_summary_or_trimmed',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'body',
+    'label' => 'Description',
+    'required' => 0,
+    'settings' => array(
+      'display_summary' => 0,
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 7,
+        'summary_rows' => 5,
+      ),
+      'type' => 'text_textarea_with_summary',
+      'weight' => 5,
+    ),
+  );
+
   // Exported field_instance: 'node-group-field_email'
   $field_instances['node-group-field_email'] = array(
     'bundle' => 'group',
@@ -296,6 +342,7 @@ function radar_group_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Description');
   t('Image');
   t('email');
   t('offline');

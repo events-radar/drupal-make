@@ -21,7 +21,7 @@ function radar_group_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Images',
-    'weight' => '8',
+    'weight' => '9',
     'children' => array(
       0 => 'field_group_logo',
       1 => 'field_image',
@@ -49,7 +49,7 @@ function radar_group_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Info',
-    'weight' => '6',
+    'weight' => '7',
     'children' => array(
       0 => 'field_email',
       1 => 'field_link',
@@ -78,7 +78,7 @@ function radar_group_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Location',
-    'weight' => '9',
+    'weight' => '10',
     'children' => array(
       0 => 'field_offline',
     ),

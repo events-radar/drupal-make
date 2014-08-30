@@ -86,11 +86,11 @@ function radar_group_field_default_field_bases() {
       'handler' => 'base',
       'handler_settings' => array(
         'behaviors' => array(
-          'views-select-list' => array(
-            'status' => 0,
-          ),
           'uuid' => array(
             'status' => 1,
+          ),
+          'views-select-list' => array(
+            'status' => 0,
           ),
         ),
         'sort' => array(

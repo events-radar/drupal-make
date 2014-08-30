@@ -5,7 +5,6 @@ package = Radar
 version = 7.x-1.0-alpha6
 project = radar_group
 dependencies[] = ds
-dependencies[] = entityreference
 dependencies[] = entityreference_uuid
 dependencies[] = features
 dependencies[] = field_group

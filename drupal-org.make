@@ -210,7 +210,7 @@ projects[services_views][type] = "module"
 projects[services_views][download][url] = "git://git.drupal.org/project/services_views.git"
 projects[services_views][download][revision] = "e30674c31c07ec11b530bc2741f8ef677d4ae9d2"
 ; patch to extend argument handling.
-projects[services_views][patch][2330187] = "https://www.drupal.org/files/issues/2330187-01-arguments-declared-to-services.patch"
+projects[services_views][patch][2330187] = "https://www.drupal.org/files/issues/2330187-02-arguments-declared-to-services.patch"
 
 ; stop-gap search_api solution
 projects[services_entity][subdir] = "contrib"

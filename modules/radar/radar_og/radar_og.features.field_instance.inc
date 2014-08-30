@@ -207,11 +207,11 @@ function radar_og_field_definition_group(&$field_instances, $entity_type, $bundl
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => '20',
+        'rows' => '7',
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => '4',
+      'weight' => '5',
     ),
   );
 

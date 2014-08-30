@@ -36,6 +36,13 @@ function radar_services_default_services_endpoint() {
         ),
       ),
     ),
+    'group_events' => array(
+      'operations' => array(
+        'index' => array(
+          'enabled' => '1',
+        ),
+      ),
+    ),
     'location' => array(
       'operations' => array(
         'retrieve' => array(

@@ -204,6 +204,14 @@ projects[facetapi_pretty_paths][version] = "1.1"
 projects[services][subdir] = "contrib"
 projects[services][version] = "3.7"
 
+projects[services_views][subdir] = "contrib"
+; dev has basic argument handling added.
+projects[services_views][type] = "module"
+projects[services_views][download][url] = "git://git.drupal.org/project/services_views.git"
+projects[services_views][download][revision] = "e30674c31c07ec11b530bc2741f8ef677d4ae9d2"
+; patch to extend argument handling.
+projects[services_views][patch][2330187] = "https://www.drupal.org/files/issues/2330187-01-arguments-declared-to-services.patch"
+
 ;
 ;; Layout
 ;

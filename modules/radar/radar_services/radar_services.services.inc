@@ -68,6 +68,14 @@ function radar_services_default_services_endpoint() {
         ),
       ),
     ),
+    'search_api' => array(
+      'alias' => 'search',
+      'operations' => array(
+        'retrieve' => array(
+          'enabled' => '1',
+        ),
+      ),
+    ),
     'taxonomy_term' => array(
       'operations' => array(
         'retrieve' => array(

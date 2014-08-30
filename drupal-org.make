@@ -212,6 +212,15 @@ projects[services_views][download][revision] = "e30674c31c07ec11b530bc2741f8ef67
 ; patch to extend argument handling.
 projects[services_views][patch][2330187] = "https://www.drupal.org/files/issues/2330187-01-arguments-declared-to-services.patch"
 
+; stop-gap search_api solution
+projects[services_entity][subdir] = "contrib"
+projects[services_entity][version] = "2.0-alpha8"
+projects[services_search_api][subdir] = "contrib"
+projects[services_search_api][type] = "module"
+projects[services_search_api][download][url] = "git://git.drupal.org/project/services_search_api.git"
+projects[services_search_api][download][revision] = "a868e7a197925e36f01f3057a9f2d66c13e95c1f"
+projects[services_search_api][patch][2072691] = "https://www.drupal.org/files/issues/services_search_api-2072691-6.patch"
+
 ;
 ;; Layout
 ;

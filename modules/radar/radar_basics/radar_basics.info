@@ -36,6 +36,7 @@ features[user_permission][] = edit own page content
 features[user_permission][] = view own unpublished content
 features[user_permission][] = view the administration theme
 features[uuid_node][] = 3da52869-9542-488b-8031-12d4e21fb694
+features[uuid_node][] = 836c6a7e-6c2b-4c70-9179-73c84c5c1944
 features[uuid_node][] = cbc153cf-bb0a-4e12-8fb6-3c882e07833f
 features[variable][] = field_bundle_settings_node__page
 features[variable][] = language_content_type_page

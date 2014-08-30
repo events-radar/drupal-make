@@ -100,20 +100,8 @@ Several different groups use radar to display their agenda on their own site. Wh
     ),
   ),
   'translations' => array(
-    'original' => 'en',
-    'data' => array(
-      'en' => array(
-        'entity_type' => 'node',
-        'entity_id' => 1,
-        'language' => 'en',
-        'source' => '',
-        'uid' => 1,
-        'status' => 1,
-        'translate' => 0,
-        'created' => 1409050792,
-        'changed' => 1409345365,
-      ),
-    ),
+    'original' => NULL,
+    'data' => array(),
   ),
   'name' => 'admin',
   'picture' => 0,
@@ -142,17 +130,19 @@ Several different groups use radar to display their agenda on their own site. Wh
         'value' => 'Radar is driven by the groups that use it. Therefore all events have to be post into a group. 
 
 To do so, simply go to the page of that group and click on "Create an event". The location of that group is added automatically to your event, but you can change to use another existing location as well as by adding a new location.
-If you want to post an event into two or more groups, do so from the group that where the event will take place. That way the correct location will 
+If you want to post an event into two or more groups, do so from the group that where the event will take place. That way the correct location will automatically be added.
 Some groups are open for everybody to post, in others posts from non-members of that group will be hold up for moderation.
 
-If you want to set up a new group, please contact radar@squat.net.',
+As a registered user, you can add a new group at http://radar.iskra.net/node/add/group . The group will not be visible untli an administrator has published it. 
+You will then also be made an administration manager of that group. As such you can add other users to the group and moderate events posted by other into your group.',
         'summary' => '',
-        'format' => 'plain_text',
+        'format' => 'rich_text_editor',
         'safe_value' => '<p>Radar is driven by the groups that use it. Therefore all events have to be post into a group. </p>
-<p>To do so, simply go to the page of that group and click on &quot;Create an event&quot;. The location of that group is added automatically to your event, but you can change to use another existing location as well as by adding a new location.<br />
-If you want to post an event into two or more groups, do so from the group that where the event will take place. That way the correct location will<br />
+<p>To do so, simply go to the page of that group and click on "Create an event". The location of that group is added automatically to your event, but you can change to use another existing location as well as by adding a new location.<br />
+If you want to post an event into two or more groups, do so from the group that where the event will take place. That way the correct location will automatically be added.<br />
 Some groups are open for everybody to post, in others posts from non-members of that group will be hold up for moderation.</p>
-<p>If you want to set up a new group, please contact <a href="mailto:radar@squat.net">radar@squat.net</a>.</p>
+<p>As a registered user, you can add a new group at <a href="http://radar.iskra.net/node/add/group">http://radar.iskra.net/node/add/group</a> . The group will not be visible untli an administrator has published it.<br />
+You will then also be made an administration manager of that group. As such you can add other users to the group and moderate events posted by other into your group.</p>
 ',
         'safe_summary' => '',
       ),
@@ -225,7 +215,7 @@ Some groups are open for everybody to post, in others posts from non-members of 
         'status' => 1,
         'translate' => 0,
         'created' => 1409050852,
-        'changed' => 1409345400,
+        'changed' => 1409409092,
       ),
     ),
   ),

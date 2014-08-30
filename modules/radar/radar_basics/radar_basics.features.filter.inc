@@ -16,7 +16,7 @@ function radar_basics_filter_default_formats() {
     'name' => 'Plain text',
     'cache' => 1,
     'status' => 1,
-    'weight' => 10,
+    'weight' => -10,
     'filters' => array(
       'filter_html_escape' => array(
         'weight' => 0,

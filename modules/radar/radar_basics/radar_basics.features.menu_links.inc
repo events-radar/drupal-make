@@ -54,21 +54,21 @@ function radar_basics_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
   );
-  // Exported menu link: main-menu_how-to-post:node/39
-  $menu_links['main-menu_how-to-post:node/39'] = array(
+  // Exported menu link: main-menu_how-to-post:node/2
+  $menu_links['main-menu_how-to-post:node/2'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'node/39',
+    'link_path' => 'node/2',
     'router_path' => 'node/%',
     'link_title' => 'How to post?',
     'options' => array(
-      'identifier' => 'main-menu_how-to-post:node/39',
+      'identifier' => 'main-menu_how-to-post:node/2',
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 0,
+    'weight' => 11,
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
@@ -95,21 +95,21 @@ function radar_basics_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
   );
-  // Exported menu link: main-menu_why-radar:node/38
-  $menu_links['main-menu_why-radar:node/38'] = array(
+  // Exported menu link: main-menu_why-radar:node/1
+  $menu_links['main-menu_why-radar:node/1'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'node/38',
+    'link_path' => 'node/1',
     'router_path' => 'node/%',
     'link_title' => 'Why Radar?',
     'options' => array(
-      'identifier' => 'main-menu_why-radar:node/38',
+      'identifier' => 'main-menu_why-radar:node/1',
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 0,
+    'weight' => 10,
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,

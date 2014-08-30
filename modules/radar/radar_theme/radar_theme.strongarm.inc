@@ -51,7 +51,7 @@ function radar_theme_strongarm() {
     'toggle_comment_user_verification' => '1',
     'toggle_favicon' => 1,
     'toggle_main_menu' => 1,
-    'toggle_secondary_menu' => 0,
+    'toggle_secondary_menu' => 1,
     'default_logo' => 1,
     'logo_path' => '',
     'logo_upload' => '',

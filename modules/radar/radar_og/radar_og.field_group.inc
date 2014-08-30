@@ -69,7 +69,7 @@ function radar_og_field_group_definition(&$export, $entity_type, $bundle) {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Groups',
+    'label' => 'Groups & Locations',
     'weight' => '4',
     'children' => array(
       0 => 'og_group_ref',
@@ -78,7 +78,7 @@ function radar_og_field_group_definition(&$export, $entity_type, $bundle) {
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'label' => 'Groups',
+      'label' => 'Groups & Locations',
       'instance_settings' => array(
         'required_fields' => 1,
         'classes' => 'group-groups field-group-tab',

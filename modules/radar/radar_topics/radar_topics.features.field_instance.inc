@@ -44,12 +44,12 @@ function radar_topics_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 15,
+      'weight' => 11,
     ),
   );
 
-  // Exported field_instance: 'node-event-field_topic'
-  $field_instances['node-event-field_topic'] = array(
+  // Exported field_instance: 'node-event-field_topics'
+  $field_instances['node-event-field_topics'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
     'deleted' => 0,
@@ -57,10 +57,10 @@ function radar_topics_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'i18n_taxonomy',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 31,
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -70,8 +70,8 @@ function radar_topics_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_topic',
-    'label' => 'topics',
+    'field_name' => 'field_topics',
+    'label' => 'Topics',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -85,7 +85,7 @@ function radar_topics_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 17,
+      'weight' => 10,
     ),
   );
 
@@ -105,19 +105,15 @@ function radar_topics_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'inline',
-        'module' => 'ds',
-        'settings' => array(
-          'taxonomy_term_link' => TRUE,
-          'taxonomy_term_separator' => ', ',
-        ),
-        'type' => 'ds_taxonomy_separator_localized',
-        'weight' => 2,
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 14,
       ),
     ),
     'entity_type' => 'node',
-    'fences_wrapper' => 'div',
     'field_name' => 'field_category',
-    'label' => 'categories',
+    'label' => 'Category',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -128,12 +124,12 @@ function radar_topics_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 9,
+      'weight' => 11,
     ),
   );
 
-  // Exported field_instance: 'node-group-field_topic'
-  $field_instances['node-group-field_topic'] = array(
+  // Exported field_instance: 'node-group-field_topics'
+  $field_instances['node-group-field_topics'] = array(
     'bundle' => 'group',
     'default_value' => NULL,
     'deleted' => 0,
@@ -141,10 +137,10 @@ function radar_topics_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'i18n_taxonomy',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 22,
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -154,8 +150,8 @@ function radar_topics_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_topic',
-    'label' => 'topics',
+    'field_name' => 'field_topics',
+    'label' => 'Topics',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -169,15 +165,14 @@ function radar_topics_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
   t('Category');
-  t('categories');
-  t('topics');
+  t('Topics');
 
   return $field_instances;
 }

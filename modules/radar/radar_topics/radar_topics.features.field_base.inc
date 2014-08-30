@@ -46,13 +46,13 @@ function radar_topics_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_topic'
-  $field_bases['field_topic'] = array(
+  // Exported field_base: 'field_topics'
+  $field_bases['field_topics'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_topic',
+    'field_name' => 'field_topics',
     'foreign keys' => array(
       'tid' => array(
         'columns' => array(
@@ -71,7 +71,7 @@ function radar_topics_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'topic',
+          'vocabulary' => 'topics',
           'parent' => 0,
         ),
       ),

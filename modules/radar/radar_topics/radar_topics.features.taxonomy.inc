@@ -34,9 +34,9 @@ function radar_topics_taxonomy_default_vocabularies() {
         ),
       ),
     ),
-    'topic' => array(
+    'topics' => array(
       'name' => 'topics',
-      'machine_name' => 'topic',
+      'machine_name' => 'topics',
       'description' => '',
       'hierarchy' => 0,
       'module' => 'taxonomy',

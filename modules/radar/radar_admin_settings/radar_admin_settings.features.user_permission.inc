@@ -497,6 +497,25 @@ function radar_admin_settings_user_default_permissions() {
     'module' => 'panels',
   );
 
+  // Exported permission: 'use text format full_html'.
+  $permissions['use text format full_html'] = array(
+    'name' => 'use text format full_html',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'filter',
+  );
+
+  // Exported permission: 'use text format rich_text_editor'.
+  $permissions['use text format rich_text_editor'] = array(
+    'name' => 'use text format rich_text_editor',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+      'content moderator' => 'content moderator',
+    ),
+    'module' => 'filter',
+  );
+
   // Exported permission: 'view pane admin links'.
   $permissions['view pane admin links'] = array(
     'name' => 'view pane admin links',

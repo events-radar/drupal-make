@@ -32,7 +32,7 @@ function radar_admin_settings_filter_default_formats() {
     'name' => 'Rich-text editor',
     'cache' => 1,
     'status' => 1,
-    'weight' => -9,
+    'weight' => -10,
     'filters' => array(
       'filter_html' => array(
         'weight' => -10,

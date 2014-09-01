@@ -70,6 +70,15 @@ function radar_admin_settings_user_default_permissions() {
     'module' => 'system',
   );
 
+  // Exported permission: 'access user profiles'.
+  $permissions['access user profiles'] = array(
+    'name' => 'access user profiles',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'user',
+  );
+
   // Exported permission: 'administer actions'.
   $permissions['administer actions'] = array(
     'name' => 'administer actions',
@@ -185,7 +194,10 @@ function radar_admin_settings_user_default_permissions() {
   // Exported permission: 'administer nodes'.
   $permissions['administer nodes'] = array(
     'name' => 'administer nodes',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content moderator' => 'content moderator',
+    ),
     'module' => 'node',
   );
 
@@ -283,7 +295,9 @@ function radar_admin_settings_user_default_permissions() {
   // Exported permission: 'administer users'.
   $permissions['administer users'] = array(
     'name' => 'administer users',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'user',
   );
 
@@ -313,6 +327,24 @@ function radar_admin_settings_user_default_permissions() {
     'name' => 'bypass node access',
     'roles' => array(),
     'module' => 'node',
+  );
+
+  // Exported permission: 'cancel account'.
+  $permissions['cancel account'] = array(
+    'name' => 'cancel account',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'user',
+  );
+
+  // Exported permission: 'change own username'.
+  $permissions['change own username'] = array(
+    'name' => 'change own username',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'user',
   );
 
   // Exported permission: 'display drupal links'.
@@ -460,6 +492,13 @@ function radar_admin_settings_user_default_permissions() {
     'name' => 'rename features',
     'roles' => array(),
     'module' => 'features',
+  );
+
+  // Exported permission: 'select account cancellation method'.
+  $permissions['select account cancellation method'] = array(
+    'name' => 'select account cancellation method',
+    'roles' => array(),
+    'module' => 'user',
   );
 
   // Exported permission: 'use PHP for label patterns'.

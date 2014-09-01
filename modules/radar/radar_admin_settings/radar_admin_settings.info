@@ -38,6 +38,7 @@ dependencies[] = views
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[filter][] = full_html
+features[filter][] = plain_text
 features[filter][] = rich_text_editor
 features[menu_custom][] = navigation
 features[menu_links][] = navigation_add-content:node/add

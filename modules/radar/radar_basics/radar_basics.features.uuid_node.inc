@@ -106,7 +106,7 @@ Several different groups use radar to display their agenda on their own site. Wh
   'name' => 'admin',
   'picture' => 0,
   'data' => 'b:0;',
-  'date' => '2014-08-26 12:59:52 +0200',
+  'date' => '2014-08-26 10:59:52 +0000',
 );
   $nodes[] = array(
   'uid' => 1,
@@ -503,25 +503,13 @@ Response:
     ),
   ),
   'translations' => array(
-    'original' => 'en',
-    'data' => array(
-      'en' => array(
-        'entity_type' => 'node',
-        'entity_id' => 6,
-        'language' => 'en',
-        'source' => '',
-        'uid' => 1,
-        'status' => 1,
-        'translate' => 0,
-        'created' => 1409408888,
-        'changed' => 1409408992,
-      ),
-    ),
+    'original' => NULL,
+    'data' => array(),
   ),
   'name' => 'admin',
   'picture' => 0,
   'data' => 'b:0;',
-  'date' => '2014-08-30 16:28:08 +0200',
+  'date' => '2014-08-30 14:28:08 +0000',
 );
   $nodes[] = array(
   'uid' => 1,
@@ -625,7 +613,7 @@ You will then also be made an administration manager of that group. As such you 
   'name' => 'admin',
   'picture' => 0,
   'data' => 'b:0;',
-  'date' => '2014-08-26 13:00:52 +0200',
+  'date' => '2014-08-26 11:00:52 +0000',
 );
   return $nodes;
 }

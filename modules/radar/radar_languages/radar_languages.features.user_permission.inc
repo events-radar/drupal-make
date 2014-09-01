@@ -13,18 +13,14 @@ function radar_languages_user_default_permissions() {
   // Exported permission: 'administer entity translation'.
   $permissions['administer entity translation'] = array(
     'name' => 'administer entity translation',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'entity_translation',
   );
 
   // Exported permission: 'toggle field translatability'.
   $permissions['toggle field translatability'] = array(
     'name' => 'toggle field translatability',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'entity_translation',
   );
 
@@ -51,6 +47,13 @@ function radar_languages_user_default_permissions() {
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'translation',
+  );
+
+  // Exported permission: 'translate interface'.
+  $permissions['translate interface'] = array(
+    'name' => 'translate interface',
+    'roles' => array(),
+    'module' => 'locale',
   );
 
   // Exported permission: 'translate node entities'.

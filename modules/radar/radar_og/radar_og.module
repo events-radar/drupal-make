@@ -158,6 +158,59 @@ function _radar_og_update_group_permissions($role, $permissions) {
 }
 
 /**
+ * Implements hook_action_info().
+ */
+function radar_og_action_info() {
+  return array(
+    'radar_og_moderate_accept_action' => array(
+      'type' => 'og_membership',
+      'label' => t('Accept request to group.'),
+      'configurable' => FALSE,
+    ),
+    'radar_og_moderate_reject_action' => array(
+      'type' => 'og_membership',
+      'label' => t('Reject request to group.'),
+      'configurable' => FALSE,
+    ),
+  );
+}
+
+/**
+ * Action callback: Accept a og_group_request.
+ */
+function radar_og_moderate_accept_action($og_membership, $context = array()) {
+  $entity = entity_load_single($og_membership->entity_type, $og_membership->etid);
+  $wrapper = entity_metadata_wrapper($og_membership->entity_type, $entity);
+  foreach($wrapper->og_group_request->value() as $delta => $group) {
+    list($gid, ,) = entity_extract_ids($og_membership->group_type, $group);
+    if ($gid == $og_membership->gid) {
+      // Move value to og_group_gid and remove from og_group_request.
+      $wrapper->og_group_ref[] = $group;
+      $wrapper->og_group_request[$delta]->set();
+      $wrapper->save();
+      break;
+    }
+  }
+}
+
+/**
+ * Action callback: Reject a og_group_request.
+ */
+function radar_og_moderate_reject_action($og_membership, $context = array()) {
+  $entity = entity_load_single($og_membership->entity_type, $og_membership->etid);
+  $wrapper = entity_metadata_wrapper($og_membership->entity_type, $entity);
+  foreach($wrapper->og_group_request->value() as $delta => $group) {
+    list($gid, ,) = entity_extract_ids($og_membership->group_type, $group);
+    if ($gid == $og_membership->gid) {
+      // Remove from og_group_request.
+      $wrapper->og_group_request[$delta]->set();
+      $wrapper->save();
+      break;
+    }
+  }
+}
+
+/**
  * Implements hook_menu_alter().
  */
 function radar_og_menu_alter(&$items) {

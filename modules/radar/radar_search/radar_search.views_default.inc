@@ -15,7 +15,7 @@ function radar_search_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'search_api_index_events';
-  $view->human_name = 'Radar event search';
+  $view->human_name = 'Radar Event search';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -56,7 +56,7 @@ function radar_search_views_default_views() {
   $handler->display->display_options['fields']['field_date_time_value_1']['alter']['text'] = '<div class=date>[field_date_time_value_1]</div>';
   $handler->display->display_options['fields']['field_date_time_value_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_date_time_value_1']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_date_time_value_1']['date_format'] = 'medium';
+  $handler->display->display_options['fields']['field_date_time_value_1']['date_format'] = 'radar_day';
   $handler->display->display_options['fields']['field_date_time_value_1']['second_date_format'] = 'radar_time';
   $handler->display->display_options['fields']['field_date_time_value_1']['link_to_entity'] = 0;
   /* Field: Indexed Node: Groups */

@@ -77,7 +77,7 @@ function radar_admin_settings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'site_frontpage';
-  $strongarm->value = 'find';
+  $strongarm->value = 'events';
   $export['site_frontpage'] = $strongarm;
 
   $strongarm = new stdClass();

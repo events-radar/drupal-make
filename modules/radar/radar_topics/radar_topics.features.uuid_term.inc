@@ -41,7 +41,27 @@ function radar_topics_uuid_features_default_terms() {
     'vocabulary_machine_name' => 'category',
   );
   $terms[] = array(
-    'name' => 'film',
+    'name' => 'vegan',
+    'description' => NULL,
+    'format' => NULL,
+    'weight' => 0,
+    'uuid' => '3400c631-79b7-4df2-9431-75364eb23655',
+    'language' => 'en',
+    'i18n_tsid' => 0,
+    'vocabulary_machine_name' => 'topic',
+  );
+  $terms[] = array(
+    'name' => 'exhibition',
+    'description' => '',
+    'format' => 'plain_text',
+    'weight' => 0,
+    'uuid' => '5ef858bd-178c-4d89-9a96-742b0e3f250f',
+    'language' => 'und',
+    'i18n_tsid' => 0,
+    'vocabulary_machine_name' => 'category',
+  );
+  $terms[] = array(
+    'name' => 'film / theatre',
     'description' => '',
     'format' => 'plain_text',
     'weight' => 0,
@@ -71,6 +91,36 @@ function radar_topics_uuid_features_default_terms() {
     'vocabulary_machine_name' => 'category',
   );
   $terms[] = array(
+    'name' => 'vegetarian',
+    'description' => NULL,
+    'format' => NULL,
+    'weight' => 0,
+    'uuid' => 'b3ca3173-119e-4703-9fe8-5e815a6f0941',
+    'language' => 'en',
+    'i18n_tsid' => 0,
+    'vocabulary_machine_name' => 'topic',
+  );
+  $terms[] = array(
+    'name' => 'party',
+    'description' => '',
+    'format' => 'plain_text',
+    'weight' => 0,
+    'uuid' => 'b89e871f-c923-4f66-a7ba-a34bc9ccce5b',
+    'language' => 'und',
+    'i18n_tsid' => 0,
+    'vocabulary_machine_name' => 'category',
+  );
+  $terms[] = array(
+    'name' => 'hacking',
+    'description' => NULL,
+    'format' => NULL,
+    'weight' => 0,
+    'uuid' => 'e1f231a6-619d-49b1-bfb5-930612ab3f69',
+    'language' => 'en',
+    'i18n_tsid' => 0,
+    'vocabulary_machine_name' => 'topic',
+  );
+  $terms[] = array(
     'name' => 'action / protest / camp',
     'description' => '',
     'format' => 'plain_text',
@@ -81,7 +131,27 @@ function radar_topics_uuid_features_default_terms() {
     'vocabulary_machine_name' => 'category',
   );
   $terms[] = array(
-    'name' => 'work space',
+    'name' => 'book shop / info shop / library',
+    'description' => '',
+    'format' => 'plain_text',
+    'weight' => 0,
+    'uuid' => 'edad891e-151a-4219-9822-39c7dcff6a4f',
+    'language' => 'und',
+    'i18n_tsid' => 0,
+    'vocabulary_machine_name' => 'category',
+  );
+  $terms[] = array(
+    'name' => 'Linux',
+    'description' => NULL,
+    'format' => NULL,
+    'weight' => 0,
+    'uuid' => 'ef5cb5bf-1449-497e-b486-4f67c5c1ee64',
+    'language' => 'en',
+    'i18n_tsid' => 0,
+    'vocabulary_machine_name' => 'topic',
+  );
+  $terms[] = array(
+    'name' => 'work space / diy',
     'description' => '',
     'format' => 'plain_text',
     'weight' => 0,
@@ -89,16 +159,6 @@ function radar_topics_uuid_features_default_terms() {
     'language' => 'und',
     'i18n_tsid' => 0,
     'vocabulary_machine_name' => 'category',
-  );
-  $terms[] = array(
-    'name' => 'hacking',
-    'description' => NULL,
-    'format' => NULL,
-    'weight' => 0,
-    'uuid' => 'fd845cdb-6685-4a65-a9f7-ef48f466851b',
-    'language' => 'en',
-    'i18n_tsid' => 0,
-    'vocabulary_machine_name' => 'topics',
   );
   $terms[] = array(
     'name' => 'music',

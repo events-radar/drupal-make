@@ -78,7 +78,7 @@ function radar_group_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Location',
-    'weight' => '11',
+    'weight' => '9',
     'children' => array(
       0 => 'field_offline',
     ),
@@ -112,12 +112,13 @@ function radar_group_field_group_info() {
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Tags',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-tags field-group-tab',
         'required_fields' => 1,
+        'classes' => 'group-tags field-group-tab',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_tags|node|group|form'] = $field_group;

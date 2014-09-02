@@ -56,6 +56,49 @@ function radar_group_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-group-field_category'
+  $field_instances['node-group-field_category'] = array(
+    'bundle' => 'group',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 19,
+      ),
+      'teaser' => array(
+        'label' => 'inline',
+        'module' => 'ds',
+        'settings' => array(
+          'taxonomy_term_link' => 0,
+          'taxonomy_term_separator' => ', ',
+        ),
+        'type' => 'ds_taxonomy_separator_localized',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_category',
+    'label' => 'categories',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 9,
+    ),
+  );
+
   // Exported field_instance: 'node-group-field_email'
   $field_instances['node-group-field_email'] = array(
     'bundle' => 'group',
@@ -385,6 +428,7 @@ function radar_group_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Description');
   t('Image');
+  t('categories');
   t('email');
   t('offline');
   t('online');

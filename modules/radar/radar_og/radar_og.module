@@ -187,6 +187,8 @@ function radar_og_moderate_accept_action($og_membership, $context = array()) {
       // Move value to og_group_gid and remove from og_group_request.
       $wrapper->og_group_ref[] = $group;
       $wrapper->og_group_request[$delta]->set();
+      // And publish it. If it matters, node specific, no general rule?
+      $wrapper->status->set(NODE_PUBLISHED);
       $wrapper->save();
       break;
     }

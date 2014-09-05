@@ -54,6 +54,25 @@ function radar_basics_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
   );
+  // Exported menu link: main-menu_api:node/13
+  $menu_links['main-menu_api:node/13'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'node/13',
+    'router_path' => 'node/%',
+    'link_title' => 'API',
+    'options' => array(
+      'identifier' => 'main-menu_api:node/13',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 13,
+    'customized' => 1,
+    'language' => 'und',
+    'menu_links_customized' => 1,
+  );
   // Exported menu link: main-menu_how-to-post:node/2
   $menu_links['main-menu_how-to-post:node/2'] = array(
     'menu_name' => 'main-menu',
@@ -116,6 +135,7 @@ function radar_basics_menu_default_menu_links() {
   );
   // Translatables
   // Included for use with string extractors like potx.
+  t('API');
   t('All events');
   t('All groups');
   t('How to post?');

@@ -503,8 +503,20 @@ Response:
     ),
   ),
   'translations' => array(
-    'original' => NULL,
-    'data' => array(),
+    'original' => 'en',
+    'data' => array(
+      'en' => array(
+        'entity_type' => 'node',
+        'entity_id' => 13,
+        'language' => 'en',
+        'source' => '',
+        'uid' => 1,
+        'status' => 1,
+        'translate' => 0,
+        'created' => 1409408888,
+        'changed' => 1409937154,
+      ),
+    ),
   ),
   'name' => 'admin',
   'picture' => 0,

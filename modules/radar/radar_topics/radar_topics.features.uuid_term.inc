@@ -21,6 +21,16 @@ function radar_topics_uuid_features_default_terms() {
     'vocabulary_machine_name' => 'category',
   );
   $terms[] = array(
+    'name' => 'meeting',
+    'description' => '',
+    'format' => 'rich_text_editor',
+    'weight' => 0,
+    'uuid' => '20a888f9-54c1-4767-8af1-40de3d1d2636',
+    'language' => 'und',
+    'i18n_tsid' => 0,
+    'vocabulary_machine_name' => 'category',
+  );
+  $terms[] = array(
     'name' => 'bar / cafe',
     'description' => '',
     'format' => 'plain_text',

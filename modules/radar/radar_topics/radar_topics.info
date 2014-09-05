@@ -20,6 +20,7 @@ features[taxonomy][] = topic
 features[user_permission][] = delete terms in category
 features[user_permission][] = edit terms in category
 features[uuid_term][] = 0b9e8d1f-d51d-4d32-b984-2dba1099e0fa
+features[uuid_term][] = 20a888f9-54c1-4767-8af1-40de3d1d2636
 features[uuid_term][] = 2a56c4d7-eb98-4f96-9ac6-d383a1af5ce8
 features[uuid_term][] = 2a7f6975-4c01-4777-8611-dffe0306c06f
 features[uuid_term][] = 3400c631-79b7-4df2-9431-75364eb23655

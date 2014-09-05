@@ -62,7 +62,7 @@ projects[openlayers][subdir] = "contrib"
 ; Broken makefile library path, prevents makefile finishing.
 projects[openlayers][type] = "module"
 projects[openlayers][download][url] = "git://git.drupal.org/project/openlayers.git"
-projects[openlayers][download][revision] = "ccee1d33289f297f27345f3a19c45c00d468d2b4"
+projects[openlayers][download][revision] = "d01aae20f83e23c0e67ef94027dc0002d42f432a"
 
 projects[proj4js][subdir] = "contrib"
 projects[proj4js][version] = "1.2"

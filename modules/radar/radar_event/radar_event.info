@@ -23,6 +23,7 @@ dependencies[] = options
 dependencies[] = page_manager
 dependencies[] = radar_bits
 dependencies[] = radar_og
+dependencies[] = radar_topics
 dependencies[] = select_or_other
 dependencies[] = services_views
 dependencies[] = strongarm

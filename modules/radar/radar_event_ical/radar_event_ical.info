@@ -39,3 +39,4 @@ features_exclude[dependencies][radar_og] = radar_og
 features_exclude[dependencies][views] = views
 features_exclude[dependencies][views_load_more] = views_load_more
 features_exclude[dependencies][og_context] = og_context
+features[variable][] = pathauto_node_event_ical_importer_pattern

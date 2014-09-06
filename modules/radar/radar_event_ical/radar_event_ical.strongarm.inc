@@ -80,5 +80,12 @@ function radar_event_ical_strongarm() {
   $strongarm->value = 0;
   $export['node_submitted_event_ical_importer'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_event_ical_importer_pattern';
+  $strongarm->value = '[node:og-group-ref:0:field-offline:0:field-address:locality]/[node:og-group-ref:0:title]/importer/[node:title]';
+  $export['pathauto_node_event_ical_importer_pattern'] = $strongarm;
+
   return $export;
 }

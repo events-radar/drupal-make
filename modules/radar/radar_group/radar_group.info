@@ -57,7 +57,6 @@ features[field_instance][] = node-group-field_opening_times
 features[field_instance][] = node-group-field_phone
 features[field_instance][] = node-group-field_topic
 features[menu_custom][] = management
-features[menu_links][] = management_pending-groups:pending-groups
 features[node][] = group
 features[og_features_permission][] = node:group:add user
 features[og_features_permission][] = node:group:administer group

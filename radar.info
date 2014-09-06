@@ -71,6 +71,8 @@ dependencies[] = i18n_taxonomy
 dependencies[] = i18n_translation
 dependencies[] = i18n_variable
 dependencies[] = i18nviews
+dependencies[] = l10n_update
+dependencies[] = translation_table
 
 ; Organic Groups
 dependencies[] = entityreference

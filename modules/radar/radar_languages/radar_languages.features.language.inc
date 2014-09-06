@@ -16,11 +16,24 @@ function radar_languages_locale_default_languages() {
     'name' => 'German',
     'native' => 'Deutsch',
     'direction' => 0,
-    'enabled' => 1,
+    'enabled' => 0,
     'plurals' => 0,
     'formula' => '',
     'domain' => '',
     'prefix' => 'de',
+    'weight' => 0,
+  );
+  // Exported language: el.
+  $languages['el'] = array(
+    'language' => 'el',
+    'name' => 'Greek',
+    'native' => 'Ελληνικά',
+    'direction' => 0,
+    'enabled' => 0,
+    'plurals' => 0,
+    'formula' => '',
+    'domain' => '',
+    'prefix' => 'el',
     'weight' => 0,
   );
   // Exported language: en.
@@ -36,15 +49,28 @@ function radar_languages_locale_default_languages() {
     'prefix' => '',
     'weight' => 0,
   );
+  // Exported language: it.
+  $languages['it'] = array(
+    'language' => 'it',
+    'name' => 'Italian',
+    'native' => 'Italiano',
+    'direction' => 0,
+    'enabled' => 0,
+    'plurals' => 2,
+    'formula' => '($n!=1)',
+    'domain' => '',
+    'prefix' => 'it',
+    'weight' => 0,
+  );
   // Exported language: nl.
   $languages['nl'] = array(
     'language' => 'nl',
     'name' => 'Dutch',
     'native' => 'Nederlands',
     'direction' => 0,
-    'enabled' => 1,
-    'plurals' => 0,
-    'formula' => '',
+    'enabled' => 0,
+    'plurals' => 2,
+    'formula' => '($n!=1)',
     'domain' => '',
     'prefix' => 'nl',
     'weight' => 0,

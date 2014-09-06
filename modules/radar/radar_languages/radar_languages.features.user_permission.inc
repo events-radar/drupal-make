@@ -27,7 +27,10 @@ function radar_languages_user_default_permissions() {
   // Exported permission: 'translate admin strings'.
   $permissions['translate admin strings'] = array(
     'name' => 'translate admin strings',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content moderator' => 'content moderator',
+    ),
     'module' => 'i18n_string',
   );
 
@@ -68,7 +71,10 @@ function radar_languages_user_default_permissions() {
   // Exported permission: 'translate user-defined strings'.
   $permissions['translate user-defined strings'] = array(
     'name' => 'translate user-defined strings',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content moderator' => 'content moderator',
+    ),
     'module' => 'i18n_string',
   );
 

@@ -97,6 +97,26 @@ function radar_event_ical_views_default_views() {
   $handler->display->display_options['fields']['config']['table'] = 'feeds_source';
   $handler->display->display_options['fields']['config']['field'] = 'config';
   $handler->display->display_options['fields']['config']['element_default_classes'] = FALSE;
+  /* Field: Location: Address - Locality (i.e. City) */
+  $handler->display->display_options['fields']['field_address_locality']['id'] = 'field_address_locality';
+  $handler->display->display_options['fields']['field_address_locality']['table'] = 'field_data_field_address';
+  $handler->display->display_options['fields']['field_address_locality']['field'] = 'field_address_locality';
+  $handler->display->display_options['fields']['field_address_locality']['relationship'] = 'field_offline_target_id';
+  $handler->display->display_options['fields']['field_address_locality']['label'] = '';
+  $handler->display->display_options['fields']['field_address_locality']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_address_locality']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_address_locality']['alter']['text'] = '[field_address_locality], ';
+  $handler->display->display_options['fields']['field_address_locality']['element_label_colon'] = FALSE;
+  /* Field: Location: Address - Country */
+  $handler->display->display_options['fields']['field_address_country']['id'] = 'field_address_country';
+  $handler->display->display_options['fields']['field_address_country']['table'] = 'field_data_field_address';
+  $handler->display->display_options['fields']['field_address_country']['field'] = 'field_address_country';
+  $handler->display->display_options['fields']['field_address_country']['relationship'] = 'field_offline_target_id';
+  $handler->display->display_options['fields']['field_address_country']['label'] = 'City & Country';
+  $handler->display->display_options['fields']['field_address_country']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_address_country']['alter']['text'] = '[field_address_locality][field_address_country]';
+  $handler->display->display_options['fields']['field_address_country']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_address_country']['display_name'] = 0;
   /* Field: Content: Post date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
@@ -128,8 +148,13 @@ function radar_event_ical_views_default_views() {
     'event_ical_importer' => 'event_ical_importer',
   );
 
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
+  /* Display: All importers page */
+  $handler = $view->new_display('page', 'All importers page', 'page');
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_offline_target_id']['id'] = 'field_offline_target_id';
+  $handler->display->display_options['relationships']['field_offline_target_id']['table'] = 'field_data_field_offline';
+  $handler->display->display_options['relationships']['field_offline_target_id']['field'] = 'field_offline_target_id';
   $handler->display->display_options['path'] = 'admin/content/importers';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Event importers';
@@ -139,8 +164,8 @@ function radar_event_ical_views_default_views() {
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
 
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page_1');
+  /* Display: Group importer page */
+  $handler = $view->new_display('page', 'Group importer page', 'page_1');
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'og_context';
   $handler->display->display_options['access']['perm'] = 'administer group';

@@ -450,7 +450,20 @@ function radar_group_views_default_views() {
   $handler->display->display_options['fields']['field_address_locality']['table'] = 'field_data_field_address';
   $handler->display->display_options['fields']['field_address_locality']['field'] = 'field_address_locality';
   $handler->display->display_options['fields']['field_address_locality']['relationship'] = 'field_offline_target_id';
-  $handler->display->display_options['fields']['field_address_locality']['label'] = 'City';
+  $handler->display->display_options['fields']['field_address_locality']['label'] = '';
+  $handler->display->display_options['fields']['field_address_locality']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_address_locality']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_address_locality']['alter']['text'] = '[field_address_locality], ';
+  $handler->display->display_options['fields']['field_address_locality']['element_label_colon'] = FALSE;
+  /* Field: Location: Address - Country */
+  $handler->display->display_options['fields']['field_address_country']['id'] = 'field_address_country';
+  $handler->display->display_options['fields']['field_address_country']['table'] = 'field_data_field_address';
+  $handler->display->display_options['fields']['field_address_country']['field'] = 'field_address_country';
+  $handler->display->display_options['fields']['field_address_country']['relationship'] = 'field_offline_target_id';
+  $handler->display->display_options['fields']['field_address_country']['label'] = 'City & Country';
+  $handler->display->display_options['fields']['field_address_country']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_address_country']['alter']['text'] = '[field_address_locality][field_address_country]';
+  $handler->display->display_options['fields']['field_address_country']['display_name'] = 0;
   /* Field: Content: Post date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';

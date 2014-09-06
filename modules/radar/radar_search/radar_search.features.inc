@@ -97,7 +97,7 @@ function radar_search_default_search_api_index() {
     "server" : "solr",
     "item_type" : "node",
     "options" : {
-      "index_directly" : 0,
+      "index_directly" : 1,
       "cron_limit" : "50",
       "fields" : {
         "field_category" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
@@ -120,7 +120,6 @@ function radar_search_default_search_api_index() {
         "field_offline:id" : { "type" : "list\\u003Cinteger\\u003E" },
         "field_offline:title" : { "type" : "list\\u003Ctext\\u003E" },
         "field_price" : { "type" : "string" },
-        "field_topic" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "nid" : { "type" : "integer" },
         "og_group_ref" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "node" },
         "search_api_access_node" : { "type" : "list\\u003Cstring\\u003E" },
@@ -211,7 +210,7 @@ function radar_search_default_search_api_index() {
     "server" : "solr",
     "item_type" : "node",
     "options" : {
-      "index_directly" : 0,
+      "index_directly" : 1,
       "cron_limit" : "50",
       "fields" : {
         "author" : { "type" : "integer", "entity_type" : "user" },

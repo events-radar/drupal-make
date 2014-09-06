@@ -33,3 +33,28 @@ function radar_basics_date_formats() {
     ),
   );
 }
+
+/**
+ * Implements hook_pathauto_alias_alter().
+ *
+ * Seems our widget supplying og entityreference sequentially indexed from 0;
+ * so tokens relying on the first reference being index 0 don't work.
+ */
+function radar_basics_pathauto_alias_alter(&$alias, $context) {
+  if ($context['module'] == 'node' && ($context['type'] == 'event' || $context['type'] == 'event_ical_importer')) {
+    $node =& $context['data']['node'];
+    if (empty($node->og_group_ref)) {
+      $alias = 'awaiting-group-confirmation/' . $alias;
+    }
+    else {
+      $node->og_group_ref[LANGUAGE_NONE] = array_values($node->og_group_ref[LANGUAGE_NONE]);
+      $alias = token_replace($context['pattern'], $context['data'], array(
+        'sanitize' => FALSE,
+        'clear' => TRUE,
+        'callback' => 'pathauto_clean_token_values',
+        'language' => (object) array('language' => $context['language']),
+        'pathauto' => TRUE,
+      ));
+    }
+  }
+}

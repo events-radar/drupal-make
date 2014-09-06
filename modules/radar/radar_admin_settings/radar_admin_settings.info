@@ -40,6 +40,7 @@ features[features_api][] = api:2
 features[filter][] = full_html
 features[filter][] = plain_text
 features[filter][] = rich_text_editor
+features[menu_custom][] = management
 features[menu_custom][] = navigation
 features[menu_links][] = navigation_event-ical-importer:node/add/event-ical-importer
 features[menu_links][] = navigation_event:node/add/event

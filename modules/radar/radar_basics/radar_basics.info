@@ -21,7 +21,6 @@ features[menu_custom][] = main-menu
 features[menu_custom][] = user-menu
 features[menu_links][] = main-menu_all-events:events
 features[menu_links][] = main-menu_all-groups:groups
-features[menu_links][] = main-menu_api:node/13
 features[menu_links][] = main-menu_how-to-post:node/2
 features[menu_links][] = main-menu_login:user
 features[menu_links][] = main-menu_why-radar:node/1

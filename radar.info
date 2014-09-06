@@ -73,6 +73,7 @@ dependencies[] = i18n_variable
 dependencies[] = i18nviews
 dependencies[] = l10n_update
 dependencies[] = translation_table
+dependencies[] = lang_dropdown
 
 ; Organic Groups
 dependencies[] = entityreference

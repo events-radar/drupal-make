@@ -145,6 +145,8 @@ projects[l10n_update][subdir] = "contrib"
 projects[l10n_update][version] = "1.0"
 projects[translation_table][subdir] = "contrib"
 projects[translation_table][version] = "1.0-beta1"
+projects[lang_dropdown][subdir] = "contrib"
+projects[lang_dropdown][version] = "2.5"
 
 
 

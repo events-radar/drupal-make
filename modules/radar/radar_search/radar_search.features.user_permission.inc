@@ -31,6 +31,16 @@ function radar_search_user_default_permissions() {
     'module' => 'search_api',
   );
 
+  // Exported permission: 'search content'.
+  $permissions['search content'] = array(
+    'name' => 'search content',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'radar_search',
+  );
+
   // Exported permission: 'use search_api_sorts'.
   $permissions['use search_api_sorts'] = array(
     'name' => 'use search_api_sorts',

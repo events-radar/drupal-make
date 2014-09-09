@@ -5,3 +5,16 @@
  */
 
 include_once 'radar_search.features.inc';
+
+/**
+ * Implements hook_permissions().
+ */
+function radar_search_permission() {
+  return array(
+    'search content' => array(
+      'title' => t('Search content'),
+      'description' => t('Replacement for core search permission. Used by services seach api.'),
+    ),
+  );
+}
+

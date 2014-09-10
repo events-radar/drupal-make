@@ -78,7 +78,7 @@ function radar_group_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Location',
-    'weight' => '9',
+    'weight' => '10',
     'children' => array(
       0 => 'field_offline',
     ),
@@ -105,7 +105,7 @@ function radar_group_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Tags',
-    'weight' => '10',
+    'weight' => '11',
     'children' => array(
       0 => 'field_category',
       1 => 'field_topic',
@@ -134,7 +134,7 @@ function radar_group_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Opening times',
-    'weight' => '5',
+    'weight' => '4',
     'children' => array(
       0 => 'field_opening_times',
     ),

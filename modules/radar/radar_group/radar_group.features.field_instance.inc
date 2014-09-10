@@ -245,6 +245,46 @@ function radar_group_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-group-field_notifications'
+  $field_instances['node-group-field_notifications'] = array(
+    'bundle' => 'group',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Notification about pending events, requested to be posted into this group',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'email',
+        'settings' => array(),
+        'type' => 'email_default',
+        'weight' => 23,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_notifications',
+    'label' => 'Send notifications to',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'email',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'email_textfield',
+      'weight' => 42,
+    ),
+  );
+
   // Exported field_instance: 'node-group-field_offline'
   $field_instances['node-group-field_offline'] = array(
     'bundle' => 'group',
@@ -428,6 +468,8 @@ function radar_group_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Description');
   t('Image');
+  t('Notification about pending events, requested to be posted into this group');
+  t('Send notifications to');
   t('categories');
   t('email');
   t('offline');

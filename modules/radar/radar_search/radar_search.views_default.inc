@@ -226,6 +226,10 @@ function radar_search_views_default_views() {
   $handler->display->display_options['fields']['field_category']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_category']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_category']['bypass_access'] = 0;
+  /* Sort criterion: Indexed Node: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'search_api_index_groups';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
 
   /* Display: Groups search pane */
   $handler = $view->new_display('panel_pane', 'Groups search pane', 'panel_pane_1');

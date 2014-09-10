@@ -10,15 +10,6 @@
 function radar_admin_settings_user_default_permissions() {
   $permissions = array();
 
-  // Exported permission: 'access administration menu'.
-  $permissions['access administration menu'] = array(
-    'name' => 'access administration menu',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'admin_menu',
-  );
-
   // Exported permission: 'access administration pages'.
   $permissions['access administration pages'] = array(
     'name' => 'access administration pages',
@@ -68,6 +59,15 @@ function radar_admin_settings_user_default_permissions() {
     'name' => 'access site reports',
     'roles' => array(),
     'module' => 'system',
+  );
+
+  // Exported permission: 'access toolbar'.
+  $permissions['access toolbar'] = array(
+    'name' => 'access toolbar',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'toolbar',
   );
 
   // Exported permission: 'access user profiles'.
@@ -257,6 +257,13 @@ function radar_admin_settings_user_default_permissions() {
     'module' => 'redirect',
   );
 
+  // Exported permission: 'administer shortcuts'.
+  $permissions['administer shortcuts'] = array(
+    'name' => 'administer shortcuts',
+    'roles' => array(),
+    'module' => 'shortcut',
+  );
+
   // Exported permission: 'administer site configuration'.
   $permissions['administer site configuration'] = array(
     'name' => 'administer site configuration',
@@ -347,11 +354,11 @@ function radar_admin_settings_user_default_permissions() {
     'module' => 'user',
   );
 
-  // Exported permission: 'display drupal links'.
-  $permissions['display drupal links'] = array(
-    'name' => 'display drupal links',
+  // Exported permission: 'customize shortcut links'.
+  $permissions['customize shortcut links'] = array(
+    'name' => 'customize shortcut links',
     'roles' => array(),
-    'module' => 'admin_menu',
+    'module' => 'shortcut',
   );
 
   // Exported permission: 'eck add bundles'.
@@ -466,13 +473,6 @@ function radar_admin_settings_user_default_permissions() {
     'module' => 'eck',
   );
 
-  // Exported permission: 'flush caches'.
-  $permissions['flush caches'] = array(
-    'name' => 'flush caches',
-    'roles' => array(),
-    'module' => 'admin_menu',
-  );
-
   // Exported permission: 'generate features'.
   $permissions['generate features'] = array(
     'name' => 'generate features',
@@ -499,6 +499,13 @@ function radar_admin_settings_user_default_permissions() {
     'name' => 'select account cancellation method',
     'roles' => array(),
     'module' => 'user',
+  );
+
+  // Exported permission: 'switch shortcut sets'.
+  $permissions['switch shortcut sets'] = array(
+    'name' => 'switch shortcut sets',
+    'roles' => array(),
+    'module' => 'shortcut',
   );
 
   // Exported permission: 'use PHP for label patterns'.

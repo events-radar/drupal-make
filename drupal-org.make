@@ -143,12 +143,12 @@ projects[i18nviews][download][url] = "git://git.drupal.org/project/i18nviews.git
 projects[i18nviews][download][revision] = "26bd52c4664b0fec8155273f0c0f3ab8a5a2ef66"
 projects[l10n_update][subdir] = "contrib"
 projects[l10n_update][version] = "1.0"
-projects[translation_table][subdir] = "contrib"
-projects[translation_table][version] = "1.0-beta1"
 projects[lang_dropdown][subdir] = "contrib"
 projects[lang_dropdown][version] = "2.5"
-
-
+projects[title][subdir] = "contrib"
+projects[title][version] = "1.0-alpha7"
+projects[translation_table][subdir] = "contrib"
+projects[translation_table][version] = "1.0-beta1"
 
 ; Organic groups
 projects[entityreference][subdir] = "contrib"

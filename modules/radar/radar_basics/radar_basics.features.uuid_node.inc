@@ -44,6 +44,15 @@ Several different groups use radar to display their agenda on their own site. Wh
       ),
     ),
   ),
+  'title_field' => array(
+    'en' => array(
+      0 => array(
+        'value' => 'Why Radar?',
+        'format' => NULL,
+        'safe_value' => 'Why Radar?',
+      ),
+    ),
+  ),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:Item',
@@ -100,8 +109,20 @@ Several different groups use radar to display their agenda on their own site. Wh
     ),
   ),
   'translations' => array(
-    'original' => NULL,
-    'data' => array(),
+    'original' => 'en',
+    'data' => array(
+      'en' => array(
+        'entity_type' => 'node',
+        'entity_id' => 1,
+        'language' => 'en',
+        'source' => '',
+        'uid' => 1,
+        'status' => 1,
+        'translate' => 0,
+        'created' => 1410442498,
+        'changed' => 1410442498,
+      ),
+    ),
   ),
   'name' => 'admin',
   'picture' => 0,
@@ -447,6 +468,15 @@ Response:
       ),
     ),
   ),
+  'title_field' => array(
+    'en' => array(
+      0 => array(
+        'value' => 'API',
+        'format' => NULL,
+        'safe_value' => 'API',
+      ),
+    ),
+  ),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:Item',
@@ -563,6 +593,15 @@ You will then also be made an administration manager of that group. As such you 
       ),
     ),
   ),
+  'title_field' => array(
+    'en' => array(
+      0 => array(
+        'value' => 'How to post?',
+        'format' => NULL,
+        'safe_value' => 'How to post?',
+      ),
+    ),
+  ),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:Item',
@@ -619,8 +658,20 @@ You will then also be made an administration manager of that group. As such you 
     ),
   ),
   'translations' => array(
-    'original' => NULL,
-    'data' => array(),
+    'original' => 'en',
+    'data' => array(
+      'en' => array(
+        'entity_type' => 'node',
+        'entity_id' => 3,
+        'language' => 'en',
+        'source' => '',
+        'uid' => 1,
+        'status' => 1,
+        'translate' => 0,
+        'created' => 1410442498,
+        'changed' => 1410442498,
+      ),
+    ),
   ),
   'name' => 'admin',
   'picture' => 0,
@@ -655,6 +706,15 @@ You will then also be made an administration manager of that group. As such you 
         'safe_value' => '<p>Radar is multilingual - but needs translation.<br /><strong>Content translation:</strong> All groups and events can be posted in any of the available languages and then translated into any other one. A link to do so is visible for logged-in users directly on the pages.<br /><strong>Interface translation:</strong> The whole interface (labels, buttons etc.) can be translated as well. Some of that is provided automatically, but other bits of texts need to be translated manually for each language. Any user with the permissions of a <em>content editor</em> can translate them in the Translation table.<br /><strong>More languages?</strong> Additional languages can be added at any time. Just tell us.</p>
 ',
         'safe_summary' => '',
+      ),
+    ),
+  ),
+  'title_field' => array(
+    'en' => array(
+      0 => array(
+        'value' => 'Translate',
+        'format' => NULL,
+        'safe_value' => 'Translate',
       ),
     ),
   ),

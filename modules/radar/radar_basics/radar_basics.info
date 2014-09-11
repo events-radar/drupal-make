@@ -21,7 +21,6 @@ features[menu_custom][] = main-menu
 features[menu_custom][] = user-menu
 features[menu_links][] = main-menu_all-events:events
 features[menu_links][] = main-menu_all-groups:groups
-features[menu_links][] = main-menu_login:user
 features[menu_links][] = main-menu_why-radar:node/1
 features[node][] = page
 features[user_permission][] = access content

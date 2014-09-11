@@ -68,6 +68,13 @@ function radar_languages_user_default_permissions() {
     'module' => 'entity_translation',
   );
 
+  // Exported permission: 'translate taxonomy_term entities'.
+  $permissions['translate taxonomy_term entities'] = array(
+    'name' => 'translate taxonomy_term entities',
+    'roles' => array(),
+    'module' => 'entity_translation',
+  );
+
   // Exported permission: 'translate user-defined strings'.
   $permissions['translate user-defined strings'] = array(
     'name' => 'translate user-defined strings',

@@ -598,6 +598,14 @@ function radar_group_views_default_views() {
     ),
   );
   $handler->display->display_options['style_options']['empty_table'] = TRUE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = 'Events are only published if they are accepted by at least one group. 
+Once they are approved - or if they have been posted in a group where they don\'t require approval - they are automatically published, but they will only show up in <em>this</em> group if they are approved here as well.
+';
+  $handler->display->display_options['header']['area']['format'] = 'rich_text_editor';
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
@@ -728,10 +736,10 @@ function radar_group_views_default_views() {
   $handler->display->display_options['fields']['field_date_time']['id'] = 'field_date_time';
   $handler->display->display_options['fields']['field_date_time']['table'] = 'field_data_field_date_time';
   $handler->display->display_options['fields']['field_date_time']['field'] = 'field_date_time';
-  $handler->display->display_options['fields']['field_date_time']['label'] = 'Date';
+  $handler->display->display_options['fields']['field_date_time']['label'] = 'Start date & time';
   $handler->display->display_options['fields']['field_date_time']['settings'] = array(
     'format_type' => 'medium',
-    'fromto' => 'both',
+    'fromto' => 'value',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
@@ -748,6 +756,12 @@ function radar_group_views_default_views() {
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_length' => '300',
   );
+  /* Field: Content: Published */
+  $handler->display->display_options['fields']['status']['id'] = 'status';
+  $handler->display->display_options['fields']['status']['table'] = 'node';
+  $handler->display->display_options['fields']['status']['field'] = 'status';
+  $handler->display->display_options['fields']['status']['type'] = 'published-notpublished';
+  $handler->display->display_options['fields']['status']['not'] = 0;
   /* Field: Content: Groups audience */
   $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['table'] = 'og_membership';
@@ -790,13 +804,6 @@ function radar_group_views_default_views() {
   $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['gid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['gid']['validate']['type'] = 'og';
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';

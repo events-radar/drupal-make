@@ -303,7 +303,7 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['view_node']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['view_node']['element_wrapper_class'] = 'info';
   $handler->display->display_options['fields']['view_node']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['view_node']['text'] = ' ... more >>';
+  $handler->display->display_options['fields']['view_node']['text'] = '  Read more >>';
   /* Field: Content: Description */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -313,7 +313,7 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['body']['alter']['text'] = '[body][view_node]';
   $handler->display->display_options['fields']['body']['alter']['max_length'] = '300';
   $handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
-  $handler->display->display_options['fields']['body']['alter']['preserve_tags'] = '<em> <strong>';
+  $handler->display->display_options['fields']['body']['alter']['preserve_tags'] = '<em> <strong> <a>';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';

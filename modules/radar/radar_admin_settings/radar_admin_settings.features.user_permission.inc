@@ -61,15 +61,6 @@ function radar_admin_settings_user_default_permissions() {
     'module' => 'system',
   );
 
-  // Exported permission: 'access toolbar'.
-  $permissions['access toolbar'] = array(
-    'name' => 'access toolbar',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'toolbar',
-  );
-
   // Exported permission: 'access user profiles'.
   $permissions['access user profiles'] = array(
     'name' => 'access user profiles',
@@ -257,13 +248,6 @@ function radar_admin_settings_user_default_permissions() {
     'module' => 'redirect',
   );
 
-  // Exported permission: 'administer shortcuts'.
-  $permissions['administer shortcuts'] = array(
-    'name' => 'administer shortcuts',
-    'roles' => array(),
-    'module' => 'shortcut',
-  );
-
   // Exported permission: 'administer site configuration'.
   $permissions['administer site configuration'] = array(
     'name' => 'administer site configuration',
@@ -352,13 +336,6 @@ function radar_admin_settings_user_default_permissions() {
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'user',
-  );
-
-  // Exported permission: 'customize shortcut links'.
-  $permissions['customize shortcut links'] = array(
-    'name' => 'customize shortcut links',
-    'roles' => array(),
-    'module' => 'shortcut',
   );
 
   // Exported permission: 'eck add bundles'.
@@ -499,13 +476,6 @@ function radar_admin_settings_user_default_permissions() {
     'name' => 'select account cancellation method',
     'roles' => array(),
     'module' => 'user',
-  );
-
-  // Exported permission: 'switch shortcut sets'.
-  $permissions['switch shortcut sets'] = array(
-    'name' => 'switch shortcut sets',
-    'roles' => array(),
-    'module' => 'shortcut',
   );
 
   // Exported permission: 'use PHP for label patterns'.

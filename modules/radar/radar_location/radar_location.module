@@ -130,3 +130,18 @@ function radar_location_openlayers_use_geocoder_submit($form, &$form_state) {
     drupal_array_set_nested_value($form_state, array_merge(array('values'), $parents, array($field_name)), $field_value);
   }
 }
+
+
+/*
+ * Override the default country list
+ */
+
+function radar_location_countries_alter(&$countries) {
+  // Adding Catalonia to the country list.
+  $countries['CT'] = 'Catalonia';
+  // Renaming Palestine.
+  $countries['PS'] = 'Palestine';
+  
+  // Sort the list
+  natcasesort($countries);
+}

@@ -106,7 +106,7 @@ Several different groups use radar to display their agenda on their own site. Wh
   'name' => 'admin',
   'picture' => 0,
   'data' => 'b:0;',
-  'date' => '2014-08-26 10:59:52 +0000',
+  'date' => '2014-08-26 12:59:52 +0200',
 );
   $nodes[] = array(
   'uid' => 1,
@@ -507,21 +507,21 @@ Response:
     'data' => array(
       'en' => array(
         'entity_type' => 'node',
-        'entity_id' => 13,
+        'entity_id' => 2,
         'language' => 'en',
         'source' => '',
         'uid' => 1,
         'status' => 1,
         'translate' => 0,
         'created' => 1409408888,
-        'changed' => 1410001521,
+        'changed' => 1410019576,
       ),
     ),
   ),
   'name' => 'admin',
   'picture' => 0,
   'data' => 'b:0;',
-  'date' => '2014-08-30 14:28:08 +0000',
+  'date' => '2014-08-30 16:28:08 +0200',
 );
   $nodes[] = array(
   'uid' => 1,
@@ -625,7 +625,114 @@ You will then also be made an administration manager of that group. As such you 
   'name' => 'admin',
   'picture' => 0,
   'data' => 'b:0;',
-  'date' => '2014-08-26 11:00:52 +0000',
+  'date' => '2014-08-26 13:00:52 +0200',
+);
+  $nodes[] = array(
+  'uid' => 1,
+  'title' => 'Translate',
+  'log' => '',
+  'status' => 1,
+  'comment' => 0,
+  'promote' => 0,
+  'sticky' => 0,
+  'vuuid' => 'e0602968-e251-45e2-8ae9-4cb98fc36a2c',
+  'type' => 'page',
+  'language' => 'en',
+  'created' => 1410436370,
+  'tnid' => 0,
+  'translate' => 0,
+  'uuid' => 'e72ba8f0-880f-45c6-b96f-cb30c1c6f63d',
+  'revision_uid' => 1,
+  'body' => array(
+    'en' => array(
+      0 => array(
+        'value' => 'Radar is multilingual - but needs translation.
+<strong>Content translation:</strong> All groups and events can be posted in any of the available languages and then translated into any other one. A link to do so is visible for logged-in users directly on the pages.
+<strong>Interface translation:</strong> The whole interface (labels, buttons etc.) can be translated as well. Some of that is provided automatically, but other bits of texts need to be translated manually for each language. Any user with the permissions of a <em>content editor</em> can translate them in the <a href="/admin/config/regional/translate/table">Translation table</a>.
+<strong>More languages?</strong> Additional languages can be added at any time. Just tell us.',
+        'summary' => '',
+        'format' => 'rich_text_editor',
+        'safe_value' => '<p>Radar is multilingual - but needs translation.<br /><strong>Content translation:</strong> All groups and events can be posted in any of the available languages and then translated into any other one. A link to do so is visible for logged-in users directly on the pages.<br /><strong>Interface translation:</strong> The whole interface (labels, buttons etc.) can be translated as well. Some of that is provided automatically, but other bits of texts need to be translated manually for each language. Any user with the permissions of a <em>content editor</em> can translate them in the Translation table.<br /><strong>More languages?</strong> Additional languages can be added at any time. Just tell us.</p>
+',
+        'safe_summary' => '',
+      ),
+    ),
+  ),
+  'rdf_mapping' => array(
+    'rdftype' => array(
+      0 => 'sioc:Item',
+      1 => 'foaf:Document',
+    ),
+    'title' => array(
+      'predicates' => array(
+        0 => 'dc:title',
+      ),
+    ),
+    'created' => array(
+      'predicates' => array(
+        0 => 'dc:date',
+        1 => 'dc:created',
+      ),
+      'datatype' => 'xsd:dateTime',
+      'callback' => 'date_iso8601',
+    ),
+    'changed' => array(
+      'predicates' => array(
+        0 => 'dc:modified',
+      ),
+      'datatype' => 'xsd:dateTime',
+      'callback' => 'date_iso8601',
+    ),
+    'body' => array(
+      'predicates' => array(
+        0 => 'content:encoded',
+      ),
+    ),
+    'uid' => array(
+      'predicates' => array(
+        0 => 'sioc:has_creator',
+      ),
+      'type' => 'rel',
+    ),
+    'name' => array(
+      'predicates' => array(
+        0 => 'foaf:name',
+      ),
+    ),
+    'comment_count' => array(
+      'predicates' => array(
+        0 => 'sioc:num_replies',
+      ),
+      'datatype' => 'xsd:integer',
+    ),
+    'last_activity' => array(
+      'predicates' => array(
+        0 => 'sioc:last_activity_date',
+      ),
+      'datatype' => 'xsd:dateTime',
+      'callback' => 'date_iso8601',
+    ),
+  ),
+  'translations' => array(
+    'original' => 'en',
+    'data' => array(
+      'en' => array(
+        'entity_type' => 'node',
+        'entity_id' => 482,
+        'language' => 'en',
+        'source' => '',
+        'uid' => 1,
+        'status' => 1,
+        'translate' => 0,
+        'created' => 1410436370,
+        'changed' => 1410436370,
+      ),
+    ),
+  ),
+  'name' => 'admin',
+  'picture' => 0,
+  'data' => 'b:0;',
+  'date' => '2014-09-11 13:52:50 +0200',
 );
   return $nodes;
 }

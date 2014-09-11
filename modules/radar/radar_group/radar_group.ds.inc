@@ -27,6 +27,32 @@ function radar_group_ds_field_settings_info() {
         'class' => 'group',
       ),
     ),
+    'node_link' => array(
+      'weight' => '3',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link text' => 'Read more & See all events >>',
+        'wrapper' => '',
+        'class' => '',
+        'ft' => array(),
+      ),
+    ),
+    'field_category' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'inline',
+        ),
+      ),
+    ),
+    'field_group_logo' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_minimal',
+          'classes' => 'right',
+        ),
+      ),
+    ),
   );
   $export['node|group|teaser'] = $ds_fieldsetting;
 
@@ -50,14 +76,18 @@ function radar_group_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'title',
-        1 => 'body',
-        2 => 'field_category',
-        3 => 'field_opening_times',
+        1 => 'field_group_logo',
+        2 => 'body',
+        3 => 'node_link',
+        4 => 'field_category',
+        5 => 'field_opening_times',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
+      'field_group_logo' => 'ds_content',
       'body' => 'ds_content',
+      'node_link' => 'ds_content',
       'field_category' => 'ds_content',
       'field_opening_times' => 'ds_content',
     ),

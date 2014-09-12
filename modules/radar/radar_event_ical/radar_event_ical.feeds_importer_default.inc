@@ -58,39 +58,39 @@ function radar_event_ical_feeds_importer_default() {
             'unique' => FALSE,
           ),
           3 => array(
-            'source' => 'SUMMARY',
-            'target' => 'title',
-            'unique' => FALSE,
-          ),
-          4 => array(
             'source' => 'DESCRIPTION',
             'target' => 'body',
             'unique' => FALSE,
           ),
-          5 => array(
+          4 => array(
             'source' => 'URL',
             'target' => 'field_link:url',
             'unique' => FALSE,
           ),
-          6 => array(
+          5 => array(
             'source' => 'UID',
             'target' => 'guid',
             'unique' => 1,
           ),
-          7 => array(
+          6 => array(
             'source' => 'CATEGORIES',
             'target' => 'field_topic',
             'unique' => FALSE,
           ),
-          8 => array(
+          7 => array(
             'source' => 'CATEGORIES',
             'target' => 'field_category',
             'unique' => FALSE,
           ),
-          9 => array(
+          8 => array(
             'source' => 'URL',
             'target' => 'url',
             'unique' => 1,
+          ),
+          9 => array(
+            'source' => 'SUMMARY',
+            'target' => 'title_field',
+            'unique' => FALSE,
           ),
         ),
         'update_existing' => '2',

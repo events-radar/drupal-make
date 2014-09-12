@@ -128,7 +128,7 @@ function radar_search_default_search_api_index() {
         "search_api_aggregation_1" : { "type" : "integer" },
         "search_api_language" : { "type" : "string" },
         "status" : { "type" : "boolean" },
-        "title" : { "type" : "text" },
+        "title_field" : { "type" : "text" },
         "uuid" : { "type" : "string" }
       },
       "data_alter_callbacks" : {

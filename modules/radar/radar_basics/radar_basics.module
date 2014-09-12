@@ -55,6 +55,7 @@ function radar_basics_pathauto_alias_alter(&$alias, $context) {
         'language' => (object) array('language' => $context['language']),
         'pathauto' => TRUE,
       ));
+      $alias = pathauto_clean_alias($alias);
     }
   }
 }

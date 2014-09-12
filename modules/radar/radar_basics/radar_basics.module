@@ -59,3 +59,81 @@ function radar_basics_pathauto_alias_alter(&$alias, $context) {
     }
   }
 }
+
+/**
+ * Implements hook_form_alter().
+ */
+function radar_basics_form_alter(&$form, &$form_state, $form_id) {
+  switch ($form_id) {
+  case 'user_profile_form':
+      // Remove revalidation option if no e-mail supplied.
+      if ($form['#user']->mail == NULL && isset($form['revalidate'])) {
+        unset($form['revalidate']);
+      }
+    case 'user_register_form':
+      // Make e-mail address optional.
+      $form['account']['mail']['#required'] = FALSE;
+      $key = array_search('user_account_form_validate', $form['#validate']);
+      $form['#validate'][$key] = 'radar_basics_user_account_form_validate';
+      break;
+
+    case 'user_pass':
+      global $user;
+      if ($user->uid >0 && $user->mail == NULL) {
+        $form = array('note' => array('#markup' => t('You have not set an e-mail address so no reminder can be sent.')));
+      }
+      else {
+        $form['note'] = array('#markup' => t('This will only work if you have set an e-mail address. No indication will be given if this was the case.'));
+      }
+  }
+}
+
+/**
+ * Form validation callback.
+ *
+ * Performs standard user register validation, fooling the lack of e-mail in
+ * registration
+ *
+ * @see user_account_form_validate().
+ */
+function radar_basics_user_account_form_validate($form, &$form_state) {
+  // If no email value, then stuff a temp one to fool the validation.
+  if ($form_state['values']['mail'] == NULL) {
+    // A unique non-existent email.
+    $form_state['values']['mail'] = 'radar_basics_user_account_form_validate@example.com';
+  }
+  // Call original system validation.
+  user_account_form_validate($form, $form_state);
+  // Stuff empty back again.
+  if ($form_state['values']['mail'] == 'radar_basics_user_account_form_validate@example.com') {
+    $form_state['values']['mail'] = NULL;
+  }
+}
+
+/**
+ * Implements a mail handler that doesn't get upset if there is no e-mail
+ * address.
+ */
+class RadarMailSystem extends DefaultMailSystem implements MailSystemInterface {
+  public function mail(array $message) {
+    $recipients = $this->getRecipients($message);
+    if (empty($recipients)) {
+      return TRUE;
+    }
+    return parent::mail($message);
+  }
+
+  protected function getRecipients(array $message) {
+    $recipients = array();
+    if ($row = $message['to']) {
+      $recipients = array_merge($recipients, explode(',', $row));
+    }
+    foreach (array('cc', 'bcc') as $type) {
+      if ($row = isset($message['headers'][$type]) ? $message['headers'][$type] : FALSE) {
+        $recipients = array_merge($recipients, explode(',', $row));
+      }
+    }
+    return $recipients;
+  }
+}
+

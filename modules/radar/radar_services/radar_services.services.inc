@@ -21,7 +21,8 @@ function radar_services_default_services_endpoint() {
   );
   $endpoint->server_settings = array();
   $endpoint->resources = array(
-    'file' => array(
+    'entity_file' => array(
+      'alias' => 'file',
       'operations' => array(
         'retrieve' => array(
           'enabled' => '1',
@@ -29,9 +30,7 @@ function radar_services_default_services_endpoint() {
         'update' => array(
           'enabled' => '1',
         ),
-      ),
-      'actions' => array(
-        'create_raw' => array(
+        'create' => array(
           'enabled' => '1',
         ),
       ),
@@ -43,8 +42,12 @@ function radar_services_default_services_endpoint() {
         ),
       ),
     ),
-    'location' => array(
+    'entity_location' => array(
+      'alias' => 'location',
       'operations' => array(
+        'create' => array(
+          'enabled' => '1',
+        ),
         'retrieve' => array(
           'enabled' => '1',
         ),
@@ -53,17 +56,16 @@ function radar_services_default_services_endpoint() {
         ),
       ),
     ),
-    'node' => array(
+    'entity_node' => array(
+      'alias' => 'node',
       'operations' => array(
+        'create' => array(
+          'enabled' => '1',
+        ),
         'retrieve' => array(
           'enabled' => '1',
         ),
         'update' => array(
-          'enabled' => '1',
-        ),
-      ),
-      'relationships' => array(
-        'files' => array(
           'enabled' => '1',
         ),
       ),
@@ -76,8 +78,12 @@ function radar_services_default_services_endpoint() {
         ),
       ),
     ),
-    'taxonomy_term' => array(
+    'entity_taxonomy_term' => array(
+      'alias' => 'taxonomy_term',
       'operations' => array(
+        'create' => array(
+          'enabled' => '1',
+        ),
         'retrieve' => array(
           'enabled' => '1',
         ),
@@ -86,23 +92,14 @@ function radar_services_default_services_endpoint() {
         ),
       ),
     ),
-    'user' => array(
+    'entity_user' => array(
+      'alias' => 'user',
       'actions' => array(
         'login' => array(
           'enabled' => '1',
-          'settings' => array(
-            'services' => array(
-              'resource_api_version' => '1.1',
-            ),
-          ),
         ),
         'logout' => array(
           'enabled' => '1',
-          'settings' => array(
-            'services' => array(
-              'resource_api_version' => '1.1',
-            ),
-          ),
         ),
         'token' => array(
           'enabled' => '1',

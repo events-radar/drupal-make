@@ -82,6 +82,7 @@ function radar_search_default_search_api_index() {
         "search_api_language" : { "type" : "string" },
         "sticky" : { "type" : "boolean" },
         "title" : { "type" : "text", "boost" : "5.0" },
+        "title_field" : { "type" : "string" },
         "type" : { "type" : "string" },
         "uuid" : { "type" : "text" }
       }
@@ -100,6 +101,7 @@ function radar_search_default_search_api_index() {
       "index_directly" : 1,
       "cron_limit" : "50",
       "fields" : {
+        "author" : { "type" : "integer", "entity_type" : "user" },
         "field_category" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_date_time:duration" : { "type" : "list\\u003Cduration\\u003E" },
         "field_date_time:value" : { "type" : "list\\u003Cdate\\u003E" },

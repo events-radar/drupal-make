@@ -5,3 +5,91 @@
  */
 
 include_once 'radar_services.features.inc';
+
+/**
+ * Implements hook_services_resources_alter().
+ */
+function radar_services_services_resources_alter(&$resources) {
+  // Add language parameter that we can access in the overriden entity
+  // resource, to set the entity api base language.
+  $language = array(
+    'name' => 'language',
+    'optional' => TRUE,
+    'default value' => LANGUAGE_NONE,
+    'type' => 'string',
+    'description' => t('Language code for language preference when translation available.'),
+    'source' => array('param' => 'language'),
+  );
+  foreach ($resources as $name => $resource) {
+    if (substr($name, 0, 7) == 'entity_') {
+      $resources[$name]['operations']['retrieve']['args'][] = $language;
+      $resources[$name]['operations']['index']['args'][] = $language;
+    }
+    if ($name == 'search_api') {
+      $resources[$name]['operations']['retrieve']['args'][] = $language;
+      // also need our own callback to pass language onto entity resource.
+      $resources[$name]['operations']['retrieve']['callback'] = '_radar_services_search_api_resource_retrieve';
+      $resources[$name]['operations']['retrieve']['file'] = array(
+        'type' => 'inc',
+        'module' => 'radar_services',
+        'name' => 'radar_services.resources',
+      );
+    }
+  }
+}
+
+/**
+ * Implements hook_services_entity_resource_info().
+ */
+function radar_services_services_entity_resource_info() {
+  return array(
+    'radar' => array(
+      'title' => t('Radar entity resource'),
+      'description' => t('Extends clean controller to support field level translation, and anything else we need.'),
+      'class' => 'RadarServicesEntityResourceController',
+    ),
+  );
+}
+
+/**
+ * Implements hook_services_request_preprocess_alter().
+ */
+function radar_services_services_request_preprocess_alter($controller, &$args, $options) {
+  if ($controller['callback'] != '_radar_services_search_api_resource_retrieve') {
+    return;
+  }
+
+  $arg_keys;
+  foreach ($controller['args'] as $key => $arg_definition) {
+    $arg_keys[$arg_definition['name']] = $key;
+  }
+
+  // Groups search. No fields defined.
+  if ($args[$arg_keys['index']] == 'groups' && empty($args[$arg_keys['fields']])) {
+    $args[$arg_keys['fields']] = array(
+      'title',
+      'uuid',
+    );
+  }
+  if ($args[$arg_keys['index']] == 'events' && empty($args[$arg_keys['fields']])) {
+    $args[$arg_keys['fields']] = array(
+      'title',
+      'uuid',
+      'og_group_gid',
+      'date_time',
+      'offline',
+      'category',
+      'topic',
+      'price',
+      'link',
+      'phone',
+      'body',
+      'image',
+      'language',
+      'created',
+      'updated',
+    );
+  }
+}
+
+

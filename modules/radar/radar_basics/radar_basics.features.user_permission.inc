@@ -20,6 +20,13 @@ function radar_basics_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'administer CAPTCHA settings'.
+  $permissions['administer CAPTCHA settings'] = array(
+    'name' => 'administer CAPTCHA settings',
+    'roles' => array(),
+    'module' => 'captcha',
+  );
+
   // Exported permission: 'create page content'.
   $permissions['create page content'] = array(
     'name' => 'create page content',
@@ -55,6 +62,16 @@ function radar_basics_user_default_permissions() {
     'name' => 'edit own page content',
     'roles' => array(),
     'module' => 'node',
+  );
+
+  // Exported permission: 'skip CAPTCHA'.
+  $permissions['skip CAPTCHA'] = array(
+    'name' => 'skip CAPTCHA',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content moderator' => 'content moderator',
+    ),
+    'module' => 'captcha',
   );
 
   // Exported permission: 'view own unpublished content'.

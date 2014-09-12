@@ -28,6 +28,8 @@ dependencies[] = taxonomy
 dependencies[] = text
 
 ; Basic additions
+dependencies[] = captcha
+dependencien[] = captcha_pack
 dependencies[] = ctools
 dependencies[] = ds
 dependencies[] = features

@@ -5,6 +5,10 @@ api = 2
 ;
 ;; Basic additions
 ;
+projects[captcha][subdir] = "contrib"
+projects[captcha][version] ="1.1"
+projects[captcha_pack][subdir] ="contrib"
+projects[captcha_pack][version] = "1.0-alpha1"
 projects[ctools][subdir] = "contrib"
 projects[ds][subdir] = "contrib"
 projects[ds][version] = "2.6"

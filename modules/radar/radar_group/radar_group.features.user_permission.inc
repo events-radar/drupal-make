@@ -15,6 +15,7 @@ function radar_group_user_default_permissions() {
     'name' => 'create group content',
     'roles' => array(
       'authenticated user' => 'authenticated user',
+      'non-authenticated user' => 'non-authenticated user',
     ),
     'module' => 'node',
   );
@@ -54,6 +55,7 @@ function radar_group_user_default_permissions() {
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
       'content moderator' => 'content moderator',
+      'non-authenticated user' => 'non-authenticated user',
     ),
     'module' => 'node',
   );

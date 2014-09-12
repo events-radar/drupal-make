@@ -16,6 +16,7 @@ function radar_event_user_default_permissions() {
     'roles' => array(
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
+      'non-authenticated user' => 'non-authenticated user',
     ),
     'module' => 'node',
   );
@@ -53,6 +54,7 @@ function radar_event_user_default_permissions() {
     'name' => 'edit own event content',
     'roles' => array(
       'authenticated user' => 'authenticated user',
+      'non-authenticated user' => 'non-authenticated user',
     ),
     'module' => 'node',
   );

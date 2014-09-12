@@ -39,6 +39,7 @@ function radar_languages_user_default_permissions() {
     'name' => 'translate any entity',
     'roles' => array(
       'authenticated user' => 'authenticated user',
+      'non-authenticated user' => 'non-authenticated user',
     ),
     'module' => 'entity_translation',
   );
@@ -48,6 +49,7 @@ function radar_languages_user_default_permissions() {
     'name' => 'translate content',
     'roles' => array(
       'authenticated user' => 'authenticated user',
+      'non-authenticated user' => 'non-authenticated user',
     ),
     'module' => 'translation',
   );
@@ -64,6 +66,7 @@ function radar_languages_user_default_permissions() {
     'name' => 'translate node entities',
     'roles' => array(
       'authenticated user' => 'authenticated user',
+      'non-authenticated user' => 'non-authenticated user',
     ),
     'module' => 'entity_translation',
   );

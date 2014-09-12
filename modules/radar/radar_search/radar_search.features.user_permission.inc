@@ -37,6 +37,7 @@ function radar_search_user_default_permissions() {
     'roles' => array(
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
+      'non-authenticated user' => 'non-authenticated user',
     ),
     'module' => 'search_api_sorts',
   );

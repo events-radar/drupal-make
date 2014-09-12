@@ -22,6 +22,7 @@ function radar_location_user_default_permissions() {
     'name' => 'eck add location location entities',
     'roles' => array(
       'authenticated user' => 'authenticated user',
+      'non-authenticated user' => 'non-authenticated user',
     ),
     'module' => 'eck',
   );
@@ -106,6 +107,7 @@ function radar_location_user_default_permissions() {
     'roles' => array(
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
+      'non-authenticated user' => 'non-authenticated user',
     ),
     'module' => 'eck',
   );
@@ -172,6 +174,7 @@ function radar_location_user_default_permissions() {
     'roles' => array(
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
+      'non-authenticated user' => 'non-authenticated user',
     ),
     'module' => 'geocoder',
   );

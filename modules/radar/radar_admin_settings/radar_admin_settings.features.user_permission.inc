@@ -325,6 +325,7 @@ function radar_admin_settings_user_default_permissions() {
     'name' => 'cancel account',
     'roles' => array(
       'authenticated user' => 'authenticated user',
+      'non-authenticated user' => 'non-authenticated user',
     ),
     'module' => 'user',
   );
@@ -334,6 +335,7 @@ function radar_admin_settings_user_default_permissions() {
     'name' => 'change own username',
     'roles' => array(
       'authenticated user' => 'authenticated user',
+      'non-authenticated user' => 'non-authenticated user',
     ),
     'module' => 'user',
   );

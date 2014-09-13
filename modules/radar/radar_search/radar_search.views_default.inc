@@ -91,6 +91,12 @@ function radar_search_views_default_views() {
   $handler->display->display_options['fields']['title_field']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['title_field']['alter']['text'] = '<strong>[title_field][og_group_ref]</strong>[field_offline_field_address_locality]';
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field']['type'] = 'title_linked';
+  $handler->display->display_options['fields']['title_field']['settings'] = array(
+    'title_style' => '_none',
+    'title_link' => 'content',
+    'title_class' => '',
+  );
   /* Field: Indexed Node: price */
   $handler->display->display_options['fields']['field_price']['id'] = 'field_price';
   $handler->display->display_options['fields']['field_price']['table'] = 'search_api_index_events';

@@ -132,16 +132,24 @@ function radar_location_openlayers_use_geocoder_submit($form, &$form_state) {
 }
 
 
-/*
+/**
  * Override the default country list
  */
-
 function radar_location_countries_alter(&$countries) {
+  // No idea if this hook can be called too early, but the predefined list can.
+  // Like drupal_alter is there so early.
+  $t = get_t();
+
   // Adding Catalonia to the country list.
-  $countries['CT'] = 'Catalonia';
+  $countries['XC'] = $t('Catalonia');
+  // Basque - Euskadi (hence E)
+  $countries['XE'] = $t('Basque');
+  // Kosovo
+  $countries['XK'] = $t('Kosovo');
   // Renaming Palestine.
-  $countries['PS'] = 'Palestine';
-  
+  $countries['PS'] = $t('Palestine');
+    ;
+
   // Sort the list
   natcasesort($countries);
 }

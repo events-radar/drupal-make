@@ -75,7 +75,7 @@ function radar_group_field_default_field_instances() {
         'module' => 'ds',
         'settings' => array(
           'taxonomy_term_link' => 0,
-          'taxonomy_term_separator' => ', ',
+          'taxonomy_term_separator' => ' / ',
         ),
         'type' => 'ds_taxonomy_separator_localized',
         'weight' => 4,
@@ -263,7 +263,7 @@ function radar_group_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 14,
       ),
     ),
     'entity_type' => 'node',

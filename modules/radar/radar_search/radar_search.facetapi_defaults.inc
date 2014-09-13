@@ -967,6 +967,9 @@ function radar_search_facetapi_default_facet_settings() {
       'bundle' => 'none',
       'bundle_selected' => array(),
       'roles' => array(),
+      'facets' => array(),
+      'force_deactivation' => TRUE,
+      'regex' => FALSE,
     ),
     'facet_mincount' => '1',
     'facet_missing' => '0',
@@ -1959,24 +1962,27 @@ function radar_search_facetapi_default_facet_settings() {
   $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
-    'widget' => 'facetapi_links',
+    'widget' => 'facetapi_checkbox_links',
     'filters' => array(),
     'active_sorts' => array(
       'active' => 'active',
       'count' => 'count',
       'display' => 'display',
+      'natural' => 0,
       'indexed' => 0,
     ),
     'sort_weight' => array(
       'active' => '-50',
       'count' => '-49',
       'display' => '-48',
+      'natural' => '0',
       'indexed' => '0',
     ),
     'sort_order' => array(
       'active' => '3',
       'count' => '3',
       'display' => '4',
+      'natural' => '4',
       'indexed' => '4',
     ),
     'empty_behavior' => 'none',
@@ -2060,6 +2066,8 @@ function radar_search_facetapi_default_facet_settings() {
       'value' => '',
       'format' => 'plain_text',
     ),
+    'default_option_label' => '',
+    'submit_page' => '',
   );
   $export['search_api@events:block:field_topic'] = $facet;
 

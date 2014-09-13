@@ -122,19 +122,25 @@ function radar_search_views_default_views() {
   $handler->display->display_options['fields']['field_category']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_category']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_category']['bypass_access'] = 0;
-  /* Field: Date & Time: Start date (indexed) */
-  $handler->display->display_options['fields']['field_date_time_value_2']['id'] = 'field_date_time_value_2';
-  $handler->display->display_options['fields']['field_date_time_value_2']['table'] = 'search_api_index_events';
-  $handler->display->display_options['fields']['field_date_time_value_2']['field'] = 'field_date_time_value';
-  $handler->display->display_options['fields']['field_date_time_value_2']['label'] = '';
-  $handler->display->display_options['fields']['field_date_time_value_2']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_date_time_value_2']['alter']['text'] = '[field_date_time_value_2][field_category][field_price]';
-  $handler->display->display_options['fields']['field_date_time_value_2']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_date_time_value_2']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_date_time_value_2']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_date_time_value_2']['date_format'] = 'radar_time';
-  $handler->display->display_options['fields']['field_date_time_value_2']['second_date_format'] = 'radar_time';
-  $handler->display->display_options['fields']['field_date_time_value_2']['link_to_entity'] = 0;
+  /* Field: Indexed Node: Date & Time */
+  $handler->display->display_options['fields']['field_date_time']['id'] = 'field_date_time';
+  $handler->display->display_options['fields']['field_date_time']['table'] = 'search_api_index_events';
+  $handler->display->display_options['fields']['field_date_time']['field'] = 'field_date_time';
+  $handler->display->display_options['fields']['field_date_time']['label'] = '';
+  $handler->display->display_options['fields']['field_date_time']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_date_time']['alter']['text'] = '[field_date_time][field_category][field_price]';
+  $handler->display->display_options['fields']['field_date_time']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_date_time']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_date_time']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_date_time']['settings'] = array(
+    'format_type' => 'radar_time',
+    'fromto' => 'value',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_repeat_rule' => 'hide',
+  );
+  $handler->display->display_options['fields']['field_date_time']['delta_offset'] = '0';
   /* Filter criterion: Date & Time: Start date (indexed) */
   $handler->display->display_options['filters']['field_date_time_value']['id'] = 'field_date_time_value';
   $handler->display->display_options['filters']['field_date_time_value']['table'] = 'search_api_index_events';

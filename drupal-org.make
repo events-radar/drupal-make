@@ -69,6 +69,10 @@ projects[openlayers][subdir] = "contrib"
 projects[openlayers][type] = "module"
 projects[openlayers][download][url] = "git://git.drupal.org/project/openlayers.git"
 projects[openlayers][download][revision] = "d01aae20f83e23c0e67ef94027dc0002d42f432a"
+; Library
+libraries[openlayers][type] = "libraries"
+libraries[openlayers][download][type] = "file"
+libraries[openlayers][download][url] = "http://github.com/openlayers/openlayers/releases/download/release-2.13.1/OpenLayers-2.13.1.zip"
 
 projects[proj4js][subdir] = "contrib"
 projects[proj4js][version] = "1.2"
@@ -104,15 +108,34 @@ projects[entityreference_uuid][download][revision] = "95feee9d7fa5cd9f8862d9cf7d
 projects[entityreference_prepopulate][subdir] = "contrib"
 projects[entityreference_prepopulate][version] = "1.5"
 
+;
 ;; date
+;
+
 ; field
 projects[date][subdir] = "contrib"
+
 projects[date_repeat_entity][subdir] = "contrib"
 projects[date_repeat_entity][version] = "2.0"
-;
+
 projects[calendar][subdir] = "contrib"
+
 ; ical
 projects[date_ical][subdir] = "contrib"
+
+; timezone field - attached to locations
+projects[tzfield][subdir] = "contrib"
+projects[tzfield][type] = "module"
+projects[tzfield][download][url] = "git://git.drupal.org/project/tzfield.git"
+projects[tzfield][download][revision] = "7ceb3474405e6fccaa7d53b4161fe62fab73718a"
+; Entity API patch
+projects[tzfield][patch][1824306] = "https://www.drupal.org/files/allow_tzfield_to_work_with_entity_api-1824306-1.patch"
+; Use core TZ list
+projects[tzfield][patch][1952050] = "https://www.drupal.org/files/1952050-1-tzfield-system_time_zone.patch"
+
+;
+;; Feeds
+;
 
 projects[feeds][subdir] = "contrib"
 ; Need dev version for this issue now committed.

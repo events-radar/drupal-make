@@ -24,13 +24,19 @@ function radar_group_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 1,
       ),
+      'list' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 13,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
           'trim_length' => 300,
         ),
-        'type' => 'text_summary_or_trimmed',
+        'type' => 'text_trimmed',
         'weight' => 2,
       ),
     ),
@@ -69,6 +75,16 @@ function radar_group_field_default_field_instances() {
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
         'weight' => 19,
+      ),
+      'list' => array(
+        'label' => 'hidden',
+        'module' => 'ds',
+        'settings' => array(
+          'taxonomy_term_link' => 0,
+          'taxonomy_term_separator' => ' / ',
+        ),
+        'type' => 'ds_taxonomy_separator_localized',
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'inline',
@@ -113,6 +129,12 @@ function radar_group_field_default_field_instances() {
         'type' => 'email_default',
         'weight' => 15,
       ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -154,6 +176,12 @@ function radar_group_field_default_field_instances() {
         ),
         'type' => 'image',
         'weight' => 20,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 18,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -202,6 +230,12 @@ function radar_group_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
+        'weight' => 17,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 17,
       ),
       'teaser' => array(
@@ -259,6 +293,12 @@ function radar_group_field_default_field_instances() {
         'type' => 'email_default',
         'weight' => 23,
       ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 20,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -300,6 +340,16 @@ function radar_group_field_default_field_instances() {
         ),
         'type' => 'entityreference_label',
         'weight' => 21,
+      ),
+      'list' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 0,
+          'view_mode' => 'teaser',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -354,6 +404,13 @@ function radar_group_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 18,
       ),
+      'list' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
       'teaser' => array(
         'label' => 'above',
         'module' => 'text',
@@ -396,6 +453,12 @@ function radar_group_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 16,
       ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -436,6 +499,12 @@ function radar_group_field_default_field_instances() {
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
         'weight' => 22,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 19,
       ),
       'teaser' => array(
         'label' => 'above',

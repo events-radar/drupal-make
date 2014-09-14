@@ -38,21 +38,6 @@ function radar_group_ds_field_settings_info() {
         'ft' => array(),
       ),
     ),
-    'field_category' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'inline',
-        ),
-      ),
-    ),
-    'field_group_logo' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_minimal',
-          'classes' => 'right',
-        ),
-      ),
-    ),
   );
   $export['node|group|teaser'] = $ds_fieldsetting;
 

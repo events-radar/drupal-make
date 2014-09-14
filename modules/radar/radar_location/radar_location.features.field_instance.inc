@@ -232,11 +232,50 @@ function radar_location_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'location-location-field_timezone'
+  $field_instances['location-location-field_timezone'] = array(
+    'bundle' => 'location',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'tzfield',
+        'settings' => array(),
+        'type' => 'tzfield_default',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'location',
+    'field_name' => 'field_timezone',
+    'label' => 'Timezone',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 3,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Address');
   t('Directions');
   t('Map');
+  t('Timezone');
 
   return $field_instances;
 }

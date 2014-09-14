@@ -73,6 +73,7 @@ function radar_search_strongarm() {
     'groups' => array(
       'search_api_views:radar_group_search:panel_pane_1' => 'search_api_views:radar_group_search:panel_pane_1',
       'SearchApiQuery' => 'SearchApiQuery',
+      'search_api_views:radar_group_search:panel_pane_2' => 'search_api_views:radar_group_search:panel_pane_2',
     ),
   );
   $export['search_api_facets_search_ids'] = $strongarm;

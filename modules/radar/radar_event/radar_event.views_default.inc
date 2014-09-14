@@ -86,6 +86,7 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['term_node_tid_i18n']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['term_node_tid_i18n']['element_wrapper_class'] = 'info';
   $handler->display->display_options['fields']['term_node_tid_i18n']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['term_node_tid_i18n']['separator'] = ' / ';
   $handler->display->display_options['fields']['term_node_tid_i18n']['link_to_taxonomy'] = FALSE;
   $handler->display->display_options['fields']['term_node_tid_i18n']['limit'] = TRUE;
   $handler->display->display_options['fields']['term_node_tid_i18n']['vocabularies'] = array(
@@ -327,6 +328,7 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['term_node_tid_i18n']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['term_node_tid_i18n']['element_wrapper_class'] = 'info';
   $handler->display->display_options['fields']['term_node_tid_i18n']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['term_node_tid_i18n']['separator'] = ' / ';
   $handler->display->display_options['fields']['term_node_tid_i18n']['link_to_taxonomy'] = FALSE;
   $handler->display->display_options['fields']['term_node_tid_i18n']['limit'] = TRUE;
   $handler->display->display_options['fields']['term_node_tid_i18n']['vocabularies'] = array(
@@ -485,11 +487,12 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['term_node_tid_i18n']['element_label_class'] = 'small-label, inline';
   $handler->display->display_options['fields']['term_node_tid_i18n']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['term_node_tid_i18n']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['term_node_tid_i18n']['separator'] = ' / ';
   $handler->display->display_options['fields']['term_node_tid_i18n']['link_to_taxonomy'] = FALSE;
   $handler->display->display_options['fields']['term_node_tid_i18n']['limit'] = TRUE;
   $handler->display->display_options['fields']['term_node_tid_i18n']['vocabularies'] = array(
     'category' => 'category',
-    'topics' => 0,
+    'topic' => 0,
   );
   /* Field: Content: All taxonomy terms (translated) */
   $handler->display->display_options['fields']['term_node_tid_i18n_1']['id'] = 'term_node_tid_i18n_1';

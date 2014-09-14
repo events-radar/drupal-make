@@ -91,6 +91,12 @@ function radar_search_views_default_views() {
   $handler->display->display_options['fields']['title_field']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['title_field']['alter']['text'] = '<strong>[title_field][og_group_ref]</strong>[field_offline_field_address_locality]';
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field']['type'] = 'title_linked';
+  $handler->display->display_options['fields']['title_field']['settings'] = array(
+    'title_style' => '_none',
+    'title_link' => 'content',
+    'title_class' => '',
+  );
   /* Field: Indexed Node: price */
   $handler->display->display_options['fields']['field_price']['id'] = 'field_price';
   $handler->display->display_options['fields']['field_price']['table'] = 'search_api_index_events';
@@ -112,22 +118,29 @@ function radar_search_views_default_views() {
   $handler->display->display_options['fields']['field_category']['alter']['text'] = ' - [field_category]';
   $handler->display->display_options['fields']['field_category']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_category']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_category']['list']['separator'] = ' / ';
   $handler->display->display_options['fields']['field_category']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_category']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_category']['bypass_access'] = 0;
-  /* Field: Date & Time: Start date (indexed) */
-  $handler->display->display_options['fields']['field_date_time_value_2']['id'] = 'field_date_time_value_2';
-  $handler->display->display_options['fields']['field_date_time_value_2']['table'] = 'search_api_index_events';
-  $handler->display->display_options['fields']['field_date_time_value_2']['field'] = 'field_date_time_value';
-  $handler->display->display_options['fields']['field_date_time_value_2']['label'] = '';
-  $handler->display->display_options['fields']['field_date_time_value_2']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_date_time_value_2']['alter']['text'] = '[field_date_time_value_2][field_category][field_price]';
-  $handler->display->display_options['fields']['field_date_time_value_2']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_date_time_value_2']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_date_time_value_2']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_date_time_value_2']['date_format'] = 'radar_time';
-  $handler->display->display_options['fields']['field_date_time_value_2']['second_date_format'] = 'radar_time';
-  $handler->display->display_options['fields']['field_date_time_value_2']['link_to_entity'] = 0;
+  /* Field: Indexed Node: Date & Time */
+  $handler->display->display_options['fields']['field_date_time']['id'] = 'field_date_time';
+  $handler->display->display_options['fields']['field_date_time']['table'] = 'search_api_index_events';
+  $handler->display->display_options['fields']['field_date_time']['field'] = 'field_date_time';
+  $handler->display->display_options['fields']['field_date_time']['label'] = '';
+  $handler->display->display_options['fields']['field_date_time']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_date_time']['alter']['text'] = '[field_date_time][field_category][field_price]';
+  $handler->display->display_options['fields']['field_date_time']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_date_time']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_date_time']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_date_time']['settings'] = array(
+    'format_type' => 'radar_time',
+    'fromto' => 'value',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_repeat_rule' => 'hide',
+  );
+  $handler->display->display_options['fields']['field_date_time']['delta_offset'] = '0';
   /* Filter criterion: Date & Time: Start date (indexed) */
   $handler->display->display_options['filters']['field_date_time_value']['id'] = 'field_date_time_value';
   $handler->display->display_options['filters']['field_date_time_value']['table'] = 'search_api_index_events';
@@ -191,27 +204,47 @@ function radar_search_views_default_views() {
   $handler->display->display_options['fields']['title_1']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_1']['link_to_entity'] = 0;
-  /* Field: offline » Address: Locality (i.e. City) (indexed) */
-  $handler->display->display_options['fields']['field_offline_field_address_locality']['id'] = 'field_offline_field_address_locality';
-  $handler->display->display_options['fields']['field_offline_field_address_locality']['table'] = 'search_api_index_groups';
-  $handler->display->display_options['fields']['field_offline_field_address_locality']['field'] = 'field_offline_field_address_locality';
-  $handler->display->display_options['fields']['field_offline_field_address_locality']['label'] = '';
-  $handler->display->display_options['fields']['field_offline_field_address_locality']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_offline_field_address_locality']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_offline_field_address_locality']['alter']['text'] = ', [field_offline_field_address_locality]';
-  $handler->display->display_options['fields']['field_offline_field_address_locality']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_offline_field_address_locality']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_offline_field_address_locality']['link_to_entity'] = 0;
   /* Field: Indexed Node: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'search_api_index_groups';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['text'] = '<strong>[title]</strong>[field_offline_field_address_locality] ';
+  $handler->display->display_options['fields']['title']['element_type'] = 'h2';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_entity'] = 1;
+  /* Field: Indexed Node: opening times */
+  $handler->display->display_options['fields']['field_opening_times']['id'] = 'field_opening_times';
+  $handler->display->display_options['fields']['field_opening_times']['table'] = 'search_api_index_groups';
+  $handler->display->display_options['fields']['field_opening_times']['field'] = 'field_opening_times';
+  $handler->display->display_options['fields']['field_opening_times']['label'] = '';
+  $handler->display->display_options['fields']['field_opening_times']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_opening_times']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_opening_times']['element_wrapper_class'] = 'right half';
+  $handler->display->display_options['fields']['field_opening_times']['element_default_classes'] = FALSE;
+  /* Field: offline » Address: Thoroughfare (i.e. Street address) (indexed) */
+  $handler->display->display_options['fields']['field_offline_field_address_thoroughfare']['id'] = 'field_offline_field_address_thoroughfare';
+  $handler->display->display_options['fields']['field_offline_field_address_thoroughfare']['table'] = 'search_api_index_groups';
+  $handler->display->display_options['fields']['field_offline_field_address_thoroughfare']['field'] = 'field_offline_field_address_thoroughfare';
+  $handler->display->display_options['fields']['field_offline_field_address_thoroughfare']['label'] = '';
+  $handler->display->display_options['fields']['field_offline_field_address_thoroughfare']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_offline_field_address_thoroughfare']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_offline_field_address_thoroughfare']['alter']['text'] = '[field_offline_field_address_thoroughfare], ';
+  $handler->display->display_options['fields']['field_offline_field_address_thoroughfare']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_offline_field_address_thoroughfare']['link_to_entity'] = 0;
+  /* Field: offline » Address: Locality (i.e. City) (indexed) */
+  $handler->display->display_options['fields']['field_offline_field_address_locality']['id'] = 'field_offline_field_address_locality';
+  $handler->display->display_options['fields']['field_offline_field_address_locality']['table'] = 'search_api_index_groups';
+  $handler->display->display_options['fields']['field_offline_field_address_locality']['field'] = 'field_offline_field_address_locality';
+  $handler->display->display_options['fields']['field_offline_field_address_locality']['label'] = '';
+  $handler->display->display_options['fields']['field_offline_field_address_locality']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_offline_field_address_locality']['alter']['text'] = '[field_offline_field_address_thoroughfare][field_offline_field_address_locality]';
+  $handler->display->display_options['fields']['field_offline_field_address_locality']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_offline_field_address_locality']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_offline_field_address_locality']['element_wrapper_class'] = 'half';
+  $handler->display->display_options['fields']['field_offline_field_address_locality']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_offline_field_address_locality']['link_to_entity'] = 0;
   /* Field: Indexed Node: Category */
   $handler->display->display_options['fields']['field_category']['id'] = 'field_category';
   $handler->display->display_options['fields']['field_category']['table'] = 'search_api_index_groups';
@@ -219,7 +252,7 @@ function radar_search_views_default_views() {
   $handler->display->display_options['fields']['field_category']['label'] = '';
   $handler->display->display_options['fields']['field_category']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_category']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_category']['element_wrapper_class'] = 'info';
+  $handler->display->display_options['fields']['field_category']['element_wrapper_class'] = 'info half';
   $handler->display->display_options['fields']['field_category']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_category']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_category']['view_mode'] = 'full';

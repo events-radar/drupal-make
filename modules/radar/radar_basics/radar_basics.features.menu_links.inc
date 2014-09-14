@@ -54,30 +54,10 @@ function radar_basics_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
   );
-  // Exported menu link: main-menu_why-radar:node/1
-  $menu_links['main-menu_why-radar:node/1'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => 'node/1',
-    'router_path' => 'node/%',
-    'link_title' => 'Why Radar?',
-    'options' => array(
-      'identifier' => 'main-menu_why-radar:node/1',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => 10,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
-  );
   // Translatables
   // Included for use with string extractors like potx.
   t('All events');
   t('All groups');
-  t('Why Radar?');
 
 
   return $menu_links;

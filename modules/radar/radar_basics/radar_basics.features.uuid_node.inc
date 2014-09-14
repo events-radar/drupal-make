@@ -14,7 +14,7 @@ function radar_basics_uuid_features_default_content() {
   'uid' => 1,
   'title' => 'Why Radar?',
   'log' => '',
-  'status' => 1,
+  'status' => 0,
   'comment' => 0,
   'promote' => 0,
   'sticky' => 0,
@@ -26,7 +26,7 @@ function radar_basics_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '3da52869-9542-488b-8031-12d4e21fb694',
-  'revision_uid' => 1,
+  'revision_uid' => 0,
   'body' => array(
     'en' => array(
       0 => array(
@@ -110,31 +110,19 @@ Several different groups use radar to display their agenda on their own site. Wh
     ),
   ),
   'translations' => array(
-    'original' => 'en',
-    'data' => array(
-      'en' => array(
-        'entity_type' => 'node',
-        'entity_id' => 1,
-        'language' => 'en',
-        'source' => '',
-        'uid' => 1,
-        'status' => 1,
-        'translate' => 0,
-        'created' => 1410442498,
-        'changed' => 1410442498,
-      ),
-    ),
+    'original' => NULL,
+    'data' => array(),
   ),
   'name' => 'admin',
   'picture' => 0,
   'data' => 'b:0;',
-  'date' => '2014-08-26 12:59:52 +0200',
+  'date' => '2014-08-26 10:59:52 +0000',
 );
   $nodes[] = array(
   'uid' => 1,
   'title' => 'API',
   'log' => '',
-  'status' => 1,
+  'status' => 0,
   'comment' => 0,
   'promote' => 0,
   'sticky' => 0,
@@ -146,7 +134,7 @@ Several different groups use radar to display their agenda on their own site. Wh
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '836c6a7e-6c2b-4c70-9179-73c84c5c1944',
-  'revision_uid' => 1,
+  'revision_uid' => 0,
   'body' => array(
     'en' => array(
       0 => array(
@@ -535,31 +523,19 @@ Response:
     ),
   ),
   'translations' => array(
-    'original' => 'en',
-    'data' => array(
-      'en' => array(
-        'entity_type' => 'node',
-        'entity_id' => 2,
-        'language' => 'en',
-        'source' => '',
-        'uid' => 1,
-        'status' => 1,
-        'translate' => 0,
-        'created' => 1409408888,
-        'changed' => 1410019576,
-      ),
-    ),
+    'original' => NULL,
+    'data' => array(),
   ),
   'name' => 'admin',
   'picture' => 0,
   'data' => 'b:0;',
-  'date' => '2014-08-30 16:28:08 +0200',
+  'date' => '2014-08-30 14:28:08 +0000',
 );
   $nodes[] = array(
   'uid' => 1,
   'title' => 'How to post?',
   'log' => '',
-  'status' => 1,
+  'status' => 0,
   'comment' => 0,
   'promote' => 0,
   'sticky' => 0,
@@ -571,7 +547,7 @@ Response:
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'cbc153cf-bb0a-4e12-8fb6-3c882e07833f',
-  'revision_uid' => 1,
+  'revision_uid' => 0,
   'body' => array(
     'en' => array(
       0 => array(
@@ -661,31 +637,19 @@ You will then also be made an administration manager of that group. As such you 
     ),
   ),
   'translations' => array(
-    'original' => 'en',
-    'data' => array(
-      'en' => array(
-        'entity_type' => 'node',
-        'entity_id' => 3,
-        'language' => 'en',
-        'source' => '',
-        'uid' => 1,
-        'status' => 1,
-        'translate' => 0,
-        'created' => 1410442498,
-        'changed' => 1410442498,
-      ),
-    ),
+    'original' => NULL,
+    'data' => array(),
   ),
   'name' => 'admin',
   'picture' => 0,
   'data' => 'b:0;',
-  'date' => '2014-08-26 13:00:52 +0200',
+  'date' => '2014-08-26 11:00:52 +0000',
 );
   $nodes[] = array(
   'uid' => 1,
   'title' => 'Translate',
   'log' => '',
-  'status' => 1,
+  'status' => 0,
   'comment' => 0,
   'promote' => 0,
   'sticky' => 0,
@@ -697,8 +661,21 @@ You will then also be made an administration manager of that group. As such you 
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'e72ba8f0-880f-45c6-b96f-cb30c1c6f63d',
-  'revision_uid' => 1,
+  'revision_uid' => 0,
   'body' => array(
+    'de' => array(
+      0 => array(
+        'value' => 'Radar ist mehr-sprachig.
+<strong>Content translation:</strong> All groups and events can be posted in any of the available languages and then translated into any other one. A link to do so is visible for logged-in users directly on the pages.
+<strong>Interface translation:</strong> The whole interface (labels, buttons etc.) can be translated as well. Some of that is provided automatically, but other bits of texts need to be translated manually for each language. Any user with the permissions of a <em>content editor</em> can translate them in the <a href="/admin/config/regional/translate/table">Translation table</a>.
+<strong>More languages?</strong> Additional languages can be added at any time. Just tell us.',
+        'summary' => '',
+        'format' => 'rich_text_editor',
+        'safe_value' => '<p>Radar ist mehr-sprachig.<br /><strong>Content translation:</strong> All groups and events can be posted in any of the available languages and then translated into any other one. A link to do so is visible for logged-in users directly on the pages.<br /><strong>Interface translation:</strong> The whole interface (labels, buttons etc.) can be translated as well. Some of that is provided automatically, but other bits of texts need to be translated manually for each language. Any user with the permissions of a <em>content editor</em> can translate them in the Translation table.<br /><strong>More languages?</strong> Additional languages can be added at any time. Just tell us.</p>
+',
+        'safe_summary' => '',
+      ),
+    ),
     'en' => array(
       0 => array(
         'value' => 'Radar is multilingual - but needs translation.
@@ -714,6 +691,13 @@ You will then also be made an administration manager of that group. As such you 
     ),
   ),
   'title_field' => array(
+    'de' => array(
+      0 => array(
+        'value' => 'übersetzen',
+        'format' => NULL,
+        'safe_value' => 'übersetzen',
+      ),
+    ),
     'en' => array(
       0 => array(
         'value' => 'Translate',
@@ -778,25 +762,13 @@ You will then also be made an administration manager of that group. As such you 
     ),
   ),
   'translations' => array(
-    'original' => 'en',
-    'data' => array(
-      'en' => array(
-        'entity_type' => 'node',
-        'entity_id' => 482,
-        'language' => 'en',
-        'source' => '',
-        'uid' => 1,
-        'status' => 1,
-        'translate' => 0,
-        'created' => 1410436370,
-        'changed' => 1410436370,
-      ),
-    ),
+    'original' => NULL,
+    'data' => array(),
   ),
   'name' => 'admin',
   'picture' => 0,
   'data' => 'b:0;',
-  'date' => '2014-09-11 13:52:50 +0200',
+  'date' => '2014-09-11 11:52:50 +0000',
 );
   return $nodes;
 }

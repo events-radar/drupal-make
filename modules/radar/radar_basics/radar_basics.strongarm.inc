@@ -143,52 +143,9 @@ function radar_basics_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'captcha_placement_map_cache';
-  $strongarm->value = array(
-    'user_register_form' => array(
-      'path' => array(),
-      'key' => 'actions',
-      'weight' => 99,
-    ),
-    'captcha_admin_settings' => array(
-      'path' => array(),
-      'key' => 'actions',
-      'weight' => 99,
-    ),
-    'masquerade_block_1' => array(
-      'path' => array(),
-      'key' => 'submit',
-      'weight' => NULL,
-    ),
-    'lang_dropdown_form' => array(
-      'path' => array(),
-      'key' => 'submit',
-      'weight' => NULL,
-    ),
-    'views_form_requests_page' => array(
-      'path' => array(
-        0 => 'actions',
-      ),
-      'key' => 'submit',
-      'weight' => NULL,
-    ),
-    'group_node_form' => array(
-      'path' => array(),
-      'key' => 'actions',
-      'weight' => 99,
-    ),
-    'event_node_form' => array(
-      'path' => array(),
-      'key' => 'actions',
-      'weight' => 99,
-    ),
-    'captcha_point_admin_form' => array(
-      'path' => array(),
-      'key' => 'actions',
-      'weight' => 99,
-    ),
-  );
-  $export['captcha_placement_map_cache'] = $strongarm;
+  $strongarm->name = 'configurable_timezones';
+  $strongarm->value = 0;
+  $export['configurable_timezones'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -380,6 +337,13 @@ function radar_basics_strongarm() {
   $strongarm->name = 'pathauto_node_page_und_pattern';
   $strongarm->value = '';
   $export['pathauto_node_page_und_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_default_timezone';
+  $strongarm->value = '2';
+  $export['user_default_timezone'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

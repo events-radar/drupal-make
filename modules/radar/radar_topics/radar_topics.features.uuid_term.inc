@@ -115,20 +115,6 @@ function radar_topics_uuid_features_default_terms() {
     ),
   );
   $terms[] = array(
-    'name' => 'vegan',
-    'description' => NULL,
-    'format' => NULL,
-    'weight' => 0,
-    'uuid' => '3400c631-79b7-4df2-9431-75364eb23655',
-    'language' => 'en',
-    'i18n_tsid' => 0,
-    'vocabulary_machine_name' => 'topic',
-    'translations' => array(
-      'original' => NULL,
-      'data' => array(),
-    ),
-  );
-  $terms[] = array(
     'name' => 'exhibition',
     'description' => '',
     'format' => 'plain_text',
@@ -233,20 +219,6 @@ function radar_topics_uuid_features_default_terms() {
     ),
   );
   $terms[] = array(
-    'name' => 'vegetarian',
-    'description' => NULL,
-    'format' => NULL,
-    'weight' => 0,
-    'uuid' => 'b3ca3173-119e-4703-9fe8-5e815a6f0941',
-    'language' => 'en',
-    'i18n_tsid' => 0,
-    'vocabulary_machine_name' => 'topic',
-    'translations' => array(
-      'original' => NULL,
-      'data' => array(),
-    ),
-  );
-  $terms[] = array(
     'name' => 'party',
     'description' => '',
     'format' => 'plain_text',
@@ -270,20 +242,6 @@ function radar_topics_uuid_features_default_terms() {
           'changed' => 1410600685,
         ),
       ),
-    ),
-  );
-  $terms[] = array(
-    'name' => 'hacking',
-    'description' => NULL,
-    'format' => NULL,
-    'weight' => 0,
-    'uuid' => 'e1f231a6-619d-49b1-bfb5-930612ab3f69',
-    'language' => 'en',
-    'i18n_tsid' => 0,
-    'vocabulary_machine_name' => 'topic',
-    'translations' => array(
-      'original' => NULL,
-      'data' => array(),
     ),
   );
   $terms[] = array(
@@ -313,6 +271,32 @@ function radar_topics_uuid_features_default_terms() {
     ),
   );
   $terms[] = array(
+    'name' => 'advice/help/office hours',
+    'description' => '',
+    'format' => 'plain_text',
+    'weight' => 0,
+    'uuid' => 'e97f372b-29bc-460b-bff6-35d2462411ff',
+    'language' => 'en',
+    'i18n_tsid' => 0,
+    'vocabulary_machine_name' => 'category',
+    'translations' => array(
+      'original' => 'en',
+      'data' => array(
+        'en' => array(
+          'entity_type' => 'taxonomy_term',
+          'entity_id' => 34,
+          'language' => 'en',
+          'source' => '',
+          'uid' => 1,
+          'status' => 1,
+          'translate' => 0,
+          'created' => 1410686932,
+          'changed' => 1410686932,
+        ),
+      ),
+    ),
+  );
+  $terms[] = array(
     'name' => 'book shop/info shop/library',
     'description' => '',
     'format' => 'plain_text',
@@ -336,20 +320,6 @@ function radar_topics_uuid_features_default_terms() {
           'changed' => 1410600614,
         ),
       ),
-    ),
-  );
-  $terms[] = array(
-    'name' => 'Linux',
-    'description' => NULL,
-    'format' => NULL,
-    'weight' => 0,
-    'uuid' => 'ef5cb5bf-1449-497e-b486-4f67c5c1ee64',
-    'language' => 'en',
-    'i18n_tsid' => 0,
-    'vocabulary_machine_name' => 'topic',
-    'translations' => array(
-      'original' => NULL,
-      'data' => array(),
     ),
   );
   $terms[] = array(

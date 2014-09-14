@@ -71,7 +71,9 @@ function radar_event_date_time_prepopulate($entity_type, $entity, $field, $insta
     $nid = reset($ids);
     $node = node_load($nid);
     $wrapper = entity_metadata_wrapper('node', $node);
-    $items[0]['timezone'] = $wrapper->field_offline[0]->field_timezone->value();
+    if (isset($wrapper->field_offline) && count($wrapper->field_offline) && isset($wrapper->field_offline[0]->field_timezone)) {
+      $items[0]['timezone'] = $wrapper->field_offline[0]->field_timezone->value();
+    }
   }
 
   return $items;

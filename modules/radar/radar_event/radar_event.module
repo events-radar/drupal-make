@@ -26,6 +26,7 @@ function radar_event_radar_entity_integration() {
  * event is being posted from, to the retrieve any field collection location(s)
  * that it has.
  *
+ * @see radar_event_field_deafult_field_instances().
  * @see radar_location_field_create_instance().
  */
 function radar_event_entityreference_offline_prepopulate($entity_type, $entity, $field, $instance, $langcode) {
@@ -36,8 +37,7 @@ function radar_event_entityreference_offline_prepopulate($entity_type, $entity, 
   if ($ids = entityreference_prepopulate_get_values($field, $instance)) {
     foreach ($ids as $nid) {
       $node = node_load($nid);
-      // @todo correct access to language code.
-      $values[$nid] = $node->field_offline['und'];
+      $values[$nid] = $node->field_offline[LANGUAGE_NONE];
     }
     if (!empty($values)) {
       // @todo there will be a function for this.
@@ -49,3 +49,30 @@ function radar_event_entityreference_offline_prepopulate($entity_type, $entity, 
   return $items;
 }
 
+/**
+ * Default value callback: event date_time field.
+ *
+ * Get the related timezone from first location associated with a group that
+ * the event is to be posted into - if it is in the
+ * entityreference_prepopulate.
+ *
+ * This does however mean that the widget doesn't realize that this is the
+ * first time that the value is being filled in.
+ *
+ * Default value for incoming from iCal is in radar_event_ical.
+ */
+function radar_event_date_time_prepopulate($entity_type, $entity, $field, $instance, $langcode) {
+  $items = date_default_value($field, $instance, $langcode);
+
+  // reuse values inserted by entityreference_prepopulate.
+  $ogfield = field_info_field('og_group_ref');
+  $ogfield_instance = field_info_instance('node', 'og_group_ref', 'event');
+  if ($ids = entityreference_prepopulate_get_values($ogfield, $ogfield_instance)) {
+    $nid = reset($ids);
+    $node = node_load($nid);
+    $wrapper = entity_metadata_wrapper('node', $node);
+    $items[0]['timezone'] = $wrapper->field_offline[0]->field_timezone->value();
+  }
+
+  return $items;
+}

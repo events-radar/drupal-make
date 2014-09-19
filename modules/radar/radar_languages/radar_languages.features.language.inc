@@ -49,6 +49,45 @@ function radar_languages_locale_default_languages() {
     'prefix' => '',
     'weight' => 0,
   );
+  // Exported language: es.
+  $languages['es'] = array(
+    'language' => 'es',
+    'name' => 'Spanish',
+    'native' => 'Español',
+    'direction' => 0,
+    'enabled' => 1,
+    'plurals' => 2,
+    'formula' => '($n!=1)',
+    'domain' => '',
+    'prefix' => 'es',
+    'weight' => 0,
+  );
+  // Exported language: eu.
+  $languages['eu'] = array(
+    'language' => 'eu',
+    'name' => 'Basque',
+    'native' => 'Euskera',
+    'direction' => 0,
+    'enabled' => 1,
+    'plurals' => 2,
+    'formula' => '($n!=1)',
+    'domain' => '',
+    'prefix' => 'eu',
+    'weight' => 0,
+  );
+  // Exported language: fr.
+  $languages['fr'] = array(
+    'language' => 'fr',
+    'name' => 'French',
+    'native' => 'Français',
+    'direction' => 0,
+    'enabled' => 1,
+    'plurals' => 2,
+    'formula' => '($n>1)',
+    'domain' => '',
+    'prefix' => 'fr',
+    'weight' => 0,
+  );
   // Exported language: it.
   $languages['it'] = array(
     'language' => 'it',

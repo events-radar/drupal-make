@@ -13,9 +13,7 @@ function radar_admin_menu_user_default_permissions() {
   // Exported permission: 'access administration menu'.
   $permissions['access administration menu'] = array(
     'name' => 'access administration menu',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'admin_menu',
   );
 

@@ -16,7 +16,7 @@ function radar_languages_strongarm() {
   $strongarm->name = 'entity_translation_entity_types';
   $strongarm->value = array(
     'node' => 'node',
-    'taxonomy_term' => 'taxonomy_term',
+    'taxonomy_term' => 0,
     'user' => 0,
   );
   $export['entity_translation_entity_types'] = $strongarm;

@@ -32,7 +32,6 @@ features[user_permission][] = translate any entity
 features[user_permission][] = translate content
 features[user_permission][] = translate interface
 features[user_permission][] = translate node entities
-features[user_permission][] = translate taxonomy_term entities
 features[user_permission][] = translate user-defined strings
 features[variable][] = entity_translation_entity_types
 features[variable][] = entity_translation_settings_node__event

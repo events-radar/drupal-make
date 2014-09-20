@@ -88,7 +88,7 @@ function radar_search_default_search_api_index() {
       }
     },
     "enabled" : "1",
-    "read_only" : "0",
+    "read_only" : "1",
     "rdf_mapping" : []
   }');
   $items['events'] = entity_import('search_api_index', '{
@@ -203,7 +203,7 @@ function radar_search_default_search_api_index() {
       }
     },
     "enabled" : "1",
-    "read_only" : "0",
+    "read_only" : "1",
     "rdf_mapping" : []
   }');
   $items['groups'] = entity_import('search_api_index', '{
@@ -305,7 +305,39 @@ function radar_search_default_search_api_index() {
       }
     },
     "enabled" : "1",
-    "read_only" : "0",
+    "read_only" : "1",
+    "rdf_mapping" : []
+  }');
+  return $items;
+}
+
+/**
+ * Implements hook_default_search_api_server().
+ */
+function radar_search_default_search_api_server() {
+  $items = array();
+  $items['solr'] = entity_import('search_api_server', '{
+    "name" : "solr",
+    "machine_name" : "solr",
+    "description" : "",
+    "class" : "search_api_solr_service",
+    "options" : {
+      "clean_ids" : true,
+      "site_hash" : true,
+      "scheme" : "http",
+      "host" : "localhost",
+      "port" : "8983",
+      "path" : "\\/solr\\/radar_staging",
+      "http_user" : "",
+      "http_pass" : "",
+      "excerpt" : 0,
+      "retrieve_data" : 0,
+      "highlight_data" : 0,
+      "skip_schema_check" : 0,
+      "solr_version" : "",
+      "http_method" : "AUTO"
+    },
+    "enabled" : "1",
     "rdf_mapping" : []
   }');
   return $items;

@@ -36,5 +36,12 @@ function radar_topics_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
+  // Exported permission: 'edit terms in topic'.
+  $permissions['edit terms in topic'] = array(
+    'name' => 'edit terms in topic',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
   return $permissions;
 }

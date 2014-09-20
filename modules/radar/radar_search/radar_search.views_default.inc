@@ -122,12 +122,29 @@ function radar_search_views_default_views() {
   $handler->display->display_options['fields']['field_category']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_category']['bypass_access'] = 0;
   /* Field: Indexed Node: Date & Time */
+  $handler->display->display_options['fields']['field_date_time_1']['id'] = 'field_date_time_1';
+  $handler->display->display_options['fields']['field_date_time_1']['table'] = 'search_api_index_events';
+  $handler->display->display_options['fields']['field_date_time_1']['field'] = 'field_date_time';
+  $handler->display->display_options['fields']['field_date_time_1']['label'] = '';
+  $handler->display->display_options['fields']['field_date_time_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_date_time_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_date_time_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_date_time_1']['settings'] = array(
+    'format_type' => 'timezone',
+    'fromto' => 'value',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_repeat_rule' => 'hide',
+  );
+  $handler->display->display_options['fields']['field_date_time_1']['delta_offset'] = '0';
+  /* Field: Indexed Node: Date & Time */
   $handler->display->display_options['fields']['field_date_time']['id'] = 'field_date_time';
   $handler->display->display_options['fields']['field_date_time']['table'] = 'search_api_index_events';
   $handler->display->display_options['fields']['field_date_time']['field'] = 'field_date_time';
   $handler->display->display_options['fields']['field_date_time']['label'] = '';
   $handler->display->display_options['fields']['field_date_time']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_date_time']['alter']['text'] = '[field_date_time][field_category][field_price]';
+  $handler->display->display_options['fields']['field_date_time']['alter']['text'] = '[field_date_time] [field_date_time_1][field_category][field_price]';
   $handler->display->display_options['fields']['field_date_time']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_date_time']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_date_time']['element_default_classes'] = FALSE;

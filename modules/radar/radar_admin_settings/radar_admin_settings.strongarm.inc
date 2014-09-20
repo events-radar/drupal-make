@@ -42,7 +42,7 @@ function radar_admin_settings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'date_format_medium';
-  $strongarm->value = 'l j F, H:i';
+  $strongarm->value = 'D, d/m/Y - H:i';
   $export['date_format_medium'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -56,7 +56,7 @@ function radar_admin_settings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'date_format_radar_time';
-  $strongarm->value = 'H:i T';
+  $strongarm->value = 'H:i';
   $export['date_format_radar_time'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -72,6 +72,13 @@ function radar_admin_settings_strongarm() {
   $strongarm->name = 'date_format_time';
   $strongarm->value = 'H:i';
   $export['date_format_time'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_timezone';
+  $strongarm->value = 'T';
+  $export['date_format_timezone'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

@@ -853,12 +853,12 @@ function radar_search_facetapi_default_facet_settings() {
     'facet_missing' => '0',
     'flatten' => 0,
     'individual_parent' => 0,
-    'query_type' => 'date_range',
+    'query_type' => 'term',
     'limit_active_items' => 1,
-    'default_true' => TRUE,
+    'default_true' => '1',
     'facet_search_ids' => array(),
     'exclude' => 0,
-    'pretty_paths_alias' => 'date',
+    'pretty_paths_alias' => '',
   );
   $export['search_api@events::field_date_time:value'] = $facet;
 
@@ -1208,10 +1208,10 @@ function radar_search_facetapi_default_facet_settings() {
   $facet->searcher = 'search_api@events';
   $facet->realm = 'block';
   $facet->facet = 'field_date_time:value';
-  $facet->enabled = TRUE;
+  $facet->enabled = FALSE;
   $facet->settings = array(
     'weight' => 0,
-    'widget' => 'date_range',
+    'widget' => 'facetapi_links',
     'filters' => array(
       'active_items' => array(
         'status' => 0,
@@ -1282,6 +1282,9 @@ function radar_search_facetapi_default_facet_settings() {
     'range_simple' => 10,
     'range_advanced' => '',
     'show_all' => 1,
+    'date_format_for_values' => 'd.m.Y',
+    'date_format_for_popup' => 'dd.mm.yy',
+    'default_option_label' => '',
   );
   $export['search_api@events:block:field_date_time:value'] = $facet;
 

@@ -126,7 +126,7 @@ function radar_search_default_search_api_index() {
         "nid" : { "type" : "integer" },
         "og_group_ref" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "node" },
         "search_api_access_node" : { "type" : "list\\u003Cstring\\u003E" },
-        "search_api_aggregation_1" : { "type" : "integer" },
+        "search_api_aggregation_1" : { "type" : "date" },
         "search_api_language" : { "type" : "string" },
         "status" : { "type" : "boolean" },
         "title_field" : { "type" : "text" },

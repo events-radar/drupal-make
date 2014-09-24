@@ -24,7 +24,9 @@ class FacetapiUrlProcessorPrettyPathsRadar extends FacetapiUrlProcessorPrettyPat
         $facets[] = $key . '/' . $value;
       }
     }
-    $_GET['q'] .= '/' . implode('/', $facets);
+    if (count($facets)) {
+      $_GET['q'] .= '/' . implode('/', $facets);
+    }
     $params = parent::fetchParams();
     $_GET['q'] = $original_q;
     return $params;

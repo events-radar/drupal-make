@@ -18,3 +18,41 @@ function radar_search_permission() {
   );
 }
 
+/**
+ * Implements hook_facetapi_url_processors().
+ */
+function radar_search_facetapi_url_processors() {
+  return array(
+    'radar_search_pretty_paths' => array(
+      'handler' => array(
+        'label' => t('Radar pretty paths'),
+        'class' => 'FacetapiUrlProcessorPrettyPathsRadar',
+      ),
+    ),
+  );
+}
+
+/**
+ * Implements hook_facetapi_searcher_info_alter().
+ *
+ * Alter search descriptions to add our class in place of pretty_paths.
+ *
+ * @param array &$searcher_info
+ *   The return values of hook_facetapi_searcher_info() implementations.
+ */
+function radar_search_facetapi_searcher_info_alter(array &$searcher_info) {
+  foreach ($searcher_info as &$info) {
+    // Activate pretty paths optionally per searcher, as configured.
+    $id = 'facetapi_pretty_paths_searcher_' . $info['name'];
+    $info['url processor'] = variable_get($id) ? 'radar_search_pretty_paths' : 'standard';
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Just clarify our alteration of pretty paths.
+ */
+function radar_search_form_facetapi_pretty_paths_admin_form_alter(&$form, $form_state) {
+  $form['searcher']['#title'] .= ' ' . t('(Radar altered)');
+}

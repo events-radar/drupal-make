@@ -129,3 +129,5 @@ features[variable][] = search_api_facets_search_ids
 features[views_view][] = radar_event_search
 features[views_view][] = radar_group_search
 features[views_view][] = radar_search
+
+files[] = plugins/facetapi/url_processor_radar_search_pretty_paths.inc

@@ -240,10 +240,9 @@ function radar_location_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'tzfield',
+        'label' => 'inline',
         'settings' => array(),
-        'type' => 'tzfield_default',
+        'type' => 'hidden',
         'weight' => 3,
       ),
       'teaser' => array(

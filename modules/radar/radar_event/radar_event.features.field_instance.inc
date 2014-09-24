@@ -143,7 +143,7 @@ function radar_event_field_default_field_instances() {
   // Exported field_instance: 'node-event-field_category'
   $field_instances['node-event-field_category'] = array(
     'bundle' => 'event',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -172,7 +172,10 @@ function radar_event_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
       'type' => 'options_buttons',
       'weight' => 12,
     ),

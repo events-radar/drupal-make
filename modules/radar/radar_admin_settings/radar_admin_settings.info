@@ -121,6 +121,7 @@ features[variable][] = date_format_radar_day
 features[variable][] = date_format_radar_time
 features[variable][] = date_format_short
 features[variable][] = date_format_time
+features[variable][] = date_format_timezone
 features[variable][] = node_admin_theme
 features[variable][] = site_default_country
 features[variable][] = site_frontpage

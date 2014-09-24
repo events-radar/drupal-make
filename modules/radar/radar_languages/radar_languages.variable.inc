@@ -15,6 +15,9 @@ $realm_variables = array();
   'site_name' => 'radar.squat.net',
   'site_slogan' => '',
 );
+  $realm_variables['language']['es'] = array();
+  $realm_variables['language']['eu'] = array();
+  $realm_variables['language']['fr'] = array();
   $realm_variables['language']['it'] = array();
   $realm_variables['language']['nl'] = array();
 

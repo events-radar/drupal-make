@@ -16,7 +16,7 @@ function radar_languages_strongarm() {
   $strongarm->name = 'entity_translation_entity_types';
   $strongarm->value = array(
     'node' => 'node',
-    'taxonomy_term' => 'taxonomy_term',
+    'taxonomy_term' => 0,
     'user' => 0,
   );
   $export['entity_translation_entity_types'] = $strongarm;
@@ -78,7 +78,7 @@ function radar_languages_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_count';
-  $strongarm->value = 5;
+  $strongarm->value = 8;
   $export['language_count'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -89,13 +89,13 @@ function radar_languages_strongarm() {
     'language' => 'en',
     'name' => 'English',
     'native' => 'English',
-    'direction' => '0',
+    'direction' => 0,
     'enabled' => 1,
-    'plurals' => '0',
+    'plurals' => 0,
     'formula' => '',
     'domain' => '',
     'prefix' => '',
-    'weight' => '0',
+    'weight' => 0,
     'javascript' => '',
   );
   $export['language_default'] = $strongarm;

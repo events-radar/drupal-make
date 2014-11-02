@@ -153,8 +153,8 @@ projects[feeds][patch][2328605] = "https://www.drupal.org/files/issues/2328605-0
 projects[job_scheduler][subdir] = "contrib"
 ; libraries
 libraries[iCalcreator][type] = "libraries"
-libraries[iCalcreator][download][type] = "file"
-libraries[iCalcreator][download][url] = "http://www.kigkonsult.se/downloads/dl.php?f=iCalcreator-2.10.23"
+libraries[iCalcreator][download][url] = "https://github.com/iCalcreator/iCalcreator.git"
+libraries[iCalcreator][download][revision] = "e3dbec2cb3bb91a8bde989e467567ae8831a4026"
 
 ;; other fields
 projects[email][subdir] = "contrib"

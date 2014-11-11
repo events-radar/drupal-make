@@ -448,7 +448,11 @@ function radar_admin_settings_user_default_permissions() {
   // Exported permission: 'eck view entities'.
   $permissions['eck view entities'] = array(
     'name' => 'eck view entities',
-    'roles' => array(),
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+      'non-authenticated user' => 'non-authenticated user',
+    ),
     'module' => 'eck',
   );
 

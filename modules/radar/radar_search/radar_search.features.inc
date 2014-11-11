@@ -88,7 +88,7 @@ function radar_search_default_search_api_index() {
       }
     },
     "enabled" : "1",
-    "read_only" : "1",
+    "read_only" : "0",
     "rdf_mapping" : []
   }');
   $items['events'] = entity_import('search_api_index', '{
@@ -203,7 +203,7 @@ function radar_search_default_search_api_index() {
       }
     },
     "enabled" : "1",
-    "read_only" : "1",
+    "read_only" : "0",
     "rdf_mapping" : []
   }');
   $items['groups'] = entity_import('search_api_index', '{
@@ -305,7 +305,7 @@ function radar_search_default_search_api_index() {
       }
     },
     "enabled" : "1",
-    "read_only" : "1",
+    "read_only" : "0",
     "rdf_mapping" : []
   }');
   return $items;
@@ -327,7 +327,7 @@ function radar_search_default_search_api_server() {
       "scheme" : "http",
       "host" : "localhost",
       "port" : "8983",
-      "path" : "\\/solr\\/radar_staging",
+      "path" : "\\/solr\\/radar_prod",
       "http_user" : "",
       "http_pass" : "",
       "excerpt" : 0,

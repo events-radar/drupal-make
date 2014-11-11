@@ -18,8 +18,8 @@ class FacetapiUrlProcessorPrettyPathsRadar extends FacetapiUrlProcessorPrettyPat
     // @todo do this properly and directly populate the values!
     // This is good to test, but composing and then deconstructing seems a waste.
     $original_q = $_GET['q'];
-    $facets = array();
     if (!empty($_GET['facets'])) {
+      $facets = array();
       foreach ($_GET['facets'] as $key => $value_array) {
         foreach ($value_array as $value) {
           $facets[] = $key . '/' . $value;

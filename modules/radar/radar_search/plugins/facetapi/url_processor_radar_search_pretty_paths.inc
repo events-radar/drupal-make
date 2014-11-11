@@ -19,13 +19,15 @@ class FacetapiUrlProcessorPrettyPathsRadar extends FacetapiUrlProcessorPrettyPat
     // This is good to test, but composing and then deconstructing seems a waste.
     $original_q = $_GET['q'];
     $facets = array();
-    foreach ($_GET['facets'] as $key => $value_array) {
-      foreach ($value_array as $value) {
-        $facets[] = $key . '/' . $value;
+    if (!empty($_GET['facets'])) {
+      foreach ($_GET['facets'] as $key => $value_array) {
+        foreach ($value_array as $value) {
+          $facets[] = $key . '/' . $value;
+        }
       }
-    }
-    if (count($facets)) {
-      $_GET['q'] .= '/' . implode('/', $facets);
+      if (count($facets)) {
+        $_GET['q'] .= '/' . implode('/', $facets);
+      }
     }
     $params = parent::fetchParams();
     $_GET['q'] = $original_q;

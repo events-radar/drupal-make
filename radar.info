@@ -108,6 +108,9 @@ dependencies[] = geofield
 dependencies[] = geophp
 dependencies[] = geocoder
 
+; UI Enhancement
+dependencies[] = wysiwyg
+
 
 ; Radar features
 dependencies[] = radar_admin_settings

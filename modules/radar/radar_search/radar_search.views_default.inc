@@ -107,7 +107,7 @@ function radar_search_views_default_views() {
   $handler->display->display_options['fields']['field_price']['element_class'] = 'inline';
   $handler->display->display_options['fields']['field_price']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_price']['element_default_classes'] = FALSE;
-  /* Field: Indexed Node: Category */
+  /* Field: Indexed Node: categories */
   $handler->display->display_options['fields']['field_category']['id'] = 'field_category';
   $handler->display->display_options['fields']['field_category']['table'] = 'search_api_index_events';
   $handler->display->display_options['fields']['field_category']['field'] = 'field_category';
@@ -261,7 +261,7 @@ function radar_search_views_default_views() {
   $handler->display->display_options['fields']['field_offline_field_address_locality']['element_wrapper_class'] = 'half';
   $handler->display->display_options['fields']['field_offline_field_address_locality']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_offline_field_address_locality']['link_to_entity'] = 0;
-  /* Field: Indexed Node: Category */
+  /* Field: Indexed Node: categories */
   $handler->display->display_options['fields']['field_category']['id'] = 'field_category';
   $handler->display->display_options['fields']['field_category']['table'] = 'search_api_index_groups';
   $handler->display->display_options['fields']['field_category']['field'] = 'field_category';

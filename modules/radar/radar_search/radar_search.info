@@ -54,6 +54,7 @@ features[facetapi][] = search_api@events::field_offline:field_address:country
 features[facetapi][] = search_api@events::field_offline:field_address:locality
 features[facetapi][] = search_api@events::field_price
 features[facetapi][] = search_api@events::field_topic
+features[facetapi][] = search_api@events::og_group_ref
 features[facetapi][] = search_api@events::search_api_aggregation_1
 features[facetapi][] = search_api@events:block:author
 features[facetapi][] = search_api@events:block:field_category

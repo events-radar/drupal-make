@@ -47,6 +47,7 @@ features[user_permission][] = delete any listings_group content
 features[user_permission][] = delete own listings_group content
 features[user_permission][] = edit any listings_group content
 features[user_permission][] = edit own listings_group content
+features[user_role][] = list moderator
 features[variable][] = language_content_type_listings_group
 features[variable][] = menu_options_listings_group
 features[variable][] = menu_parent_listings_group

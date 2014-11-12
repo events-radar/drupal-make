@@ -13,7 +13,9 @@ function radar_listings_group_user_default_permissions() {
   // Exported permission: 'create listings_group content'.
   $permissions['create listings_group content'] = array(
     'name' => 'create listings_group content',
-    'roles' => array(),
+    'roles' => array(
+      'list moderator' => 'list moderator',
+    ),
     'module' => 'node',
   );
 
@@ -34,14 +36,18 @@ function radar_listings_group_user_default_permissions() {
   // Exported permission: 'edit any listings_group content'.
   $permissions['edit any listings_group content'] = array(
     'name' => 'edit any listings_group content',
-    'roles' => array(),
+    'roles' => array(
+      'list moderator' => 'list moderator',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'edit own listings_group content'.
   $permissions['edit own listings_group content'] = array(
     'name' => 'edit own listings_group content',
-    'roles' => array(),
+    'roles' => array(
+      'list moderator' => 'list moderator',
+    ),
     'module' => 'node',
   );
 

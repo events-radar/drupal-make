@@ -530,8 +530,10 @@ function radar_admin_settings_user_default_permissions() {
   $permissions['use text format rich_text_editor'] = array(
     'name' => 'use text format rich_text_editor',
     'roles' => array(
+      'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
       'content moderator' => 'content moderator',
+      'list moderator' => 'list moderator',
     ),
     'module' => 'filter',
   );

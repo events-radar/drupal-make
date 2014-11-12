@@ -446,7 +446,6 @@ function radar_og_system_info_alter(&$info, $file, $type) {
         $info['features']['field_instance'][] = "node-$bundle-field_og_access_default_value";
         $info['features']['field_instance'][] = "node-$bundle-field_og_subscribe_settings";
         $info['features']['field_instance'][] = "node-$bundle-og_roles_permissions";
-        $info['features']['field_instance'][] = "node-$bundle-body";
         $info['features']['field_instance'][] = "node-$bundle-group_group";
 
         // These fields are only necessary when og_access.module is enabled.

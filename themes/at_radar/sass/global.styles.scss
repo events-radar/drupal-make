@@ -52,6 +52,13 @@
   color: $green;
 }
 
+.grey {
+  color: $grey;
+}
+
+.small {
+  size: .9em;
+}
 
 /* =============================================================================
  *   Base
@@ -97,6 +104,7 @@ h2 {
     margin: .83em 0 .3em;
   }  
 }
+
 
 h3 { 
   &.group {
@@ -2167,6 +2175,20 @@ tr.error {
 
 .address-map {
   margin: .83em 1em;
+}
+
+.list {
+  border: 2px solid #bbbbbb;
+  border-radius: 15px;
+  color: #777777;
+  padding: 0 0.6em 1em 0.6em;
+  margin: 0 10px;
+
+  h2 {
+    font-size: 1.17em;
+    margin: 1em 0;
+    font-weight: normal;
+  }
 }
 
 

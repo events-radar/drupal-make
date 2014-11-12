@@ -65,37 +65,63 @@ function radar_search_views_default_views() {
   $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['label'] = '';
   $handler->display->display_options['fields']['og_group_ref']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['og_group_ref']['alter']['text'] = ' @ [og_group_ref]';
+  $handler->display->display_options['fields']['og_group_ref']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['og_group_ref']['alter']['text'] = ' @ <strong>[og_group_ref]</strong>';
   $handler->display->display_options['fields']['og_group_ref']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['og_group_ref']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['og_group_ref']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['og_group_ref']['view_mode'] = 'full';
   $handler->display->display_options['fields']['og_group_ref']['bypass_access'] = 0;
-  /* Field: offline » Address: Locality (i.e. City) (indexed) */
-  $handler->display->display_options['fields']['field_offline_field_address_locality']['id'] = 'field_offline_field_address_locality';
-  $handler->display->display_options['fields']['field_offline_field_address_locality']['table'] = 'search_api_index_events';
-  $handler->display->display_options['fields']['field_offline_field_address_locality']['field'] = 'field_offline_field_address_locality';
-  $handler->display->display_options['fields']['field_offline_field_address_locality']['label'] = '';
-  $handler->display->display_options['fields']['field_offline_field_address_locality']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_offline_field_address_locality']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_offline_field_address_locality']['alter']['text'] = ', [field_offline_field_address_locality]';
-  $handler->display->display_options['fields']['field_offline_field_address_locality']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_offline_field_address_locality']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_offline_field_address_locality']['link_to_entity'] = 0;
   /* Field: Indexed Node: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'search_api_index_events';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['label'] = '';
   $handler->display->display_options['fields']['title_field']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['title_field']['alter']['text'] = '<strong>[title_field]</strong> @ <strong>[og_group_ref]</strong>[field_offline_field_address_locality]';
+  $handler->display->display_options['fields']['title_field']['alter']['text'] = '<strong>[title_field]</strong> [og_group_ref]';
+  $handler->display->display_options['fields']['title_field']['element_type'] = 'div';
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title_field']['type'] = 'title_linked';
   $handler->display->display_options['fields']['title_field']['settings'] = array(
     'title_style' => '_none',
     'title_link' => 'content',
     'title_class' => '',
   );
+  /* Field: offline » Address: Building name (indexed) */
+  $handler->display->display_options['fields']['field_offline_field_address_name_line']['id'] = 'field_offline_field_address_name_line';
+  $handler->display->display_options['fields']['field_offline_field_address_name_line']['table'] = 'search_api_index_events';
+  $handler->display->display_options['fields']['field_offline_field_address_name_line']['field'] = 'field_offline_field_address_name_line';
+  $handler->display->display_options['fields']['field_offline_field_address_name_line']['label'] = '';
+  $handler->display->display_options['fields']['field_offline_field_address_name_line']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_offline_field_address_name_line']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_offline_field_address_name_line']['alter']['text'] = '[field_offline_field_address_name_line], ';
+  $handler->display->display_options['fields']['field_offline_field_address_name_line']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_offline_field_address_name_line']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_offline_field_address_name_line']['link_to_entity'] = 0;
+  /* Field: offline » Address: Thoroughfare (i.e. Street address) (indexed) */
+  $handler->display->display_options['fields']['field_offline_field_address_thoroughfare']['id'] = 'field_offline_field_address_thoroughfare';
+  $handler->display->display_options['fields']['field_offline_field_address_thoroughfare']['table'] = 'search_api_index_events';
+  $handler->display->display_options['fields']['field_offline_field_address_thoroughfare']['field'] = 'field_offline_field_address_thoroughfare';
+  $handler->display->display_options['fields']['field_offline_field_address_thoroughfare']['label'] = '';
+  $handler->display->display_options['fields']['field_offline_field_address_thoroughfare']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_offline_field_address_thoroughfare']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_offline_field_address_thoroughfare']['alter']['text'] = '[field_offline_field_address_thoroughfare], ';
+  $handler->display->display_options['fields']['field_offline_field_address_thoroughfare']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_offline_field_address_thoroughfare']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_offline_field_address_thoroughfare']['link_to_entity'] = 0;
+  /* Field: offline » Address: Locality (i.e. City) (indexed) */
+  $handler->display->display_options['fields']['field_offline_field_address_locality']['id'] = 'field_offline_field_address_locality';
+  $handler->display->display_options['fields']['field_offline_field_address_locality']['table'] = 'search_api_index_events';
+  $handler->display->display_options['fields']['field_offline_field_address_locality']['field'] = 'field_offline_field_address_locality';
+  $handler->display->display_options['fields']['field_offline_field_address_locality']['label'] = '';
+  $handler->display->display_options['fields']['field_offline_field_address_locality']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_offline_field_address_locality']['alter']['text'] = '[field_offline_field_address_name_line][field_offline_field_address_thoroughfare][field_offline_field_address_locality]';
+  $handler->display->display_options['fields']['field_offline_field_address_locality']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_offline_field_address_locality']['element_class'] = 'grey';
+  $handler->display->display_options['fields']['field_offline_field_address_locality']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_offline_field_address_locality']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_offline_field_address_locality']['link_to_entity'] = 0;
   /* Field: Indexed Node: price */
   $handler->display->display_options['fields']['field_price']['id'] = 'field_price';
   $handler->display->display_options['fields']['field_price']['table'] = 'search_api_index_events';

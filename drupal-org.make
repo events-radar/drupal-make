@@ -281,6 +281,17 @@ projects[field_group][version] = "1.4"
 projects[select_or_other][subdir] = "contrib"
 projects[select_or_other][version] = "2.20"
 
+projects[wysiwyg][subdir] = "contrib"
+projects[wysiwyg][type] = "module"
+projects[download][url] = "git://git.drupal.org/project/wysiwyg.git"
+projects[download][revision] = "898d022cf7d0b6c6a6e7d813199d561b4ad39f8b"
+
+libraries[ckeditor][type] = "libraries"
+libraries[ckeditor][download][type] = "file"
+libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.4.5/ckeditor_4.4.5_standard.zip"
+
+
+
 ; Migrate
 projects[migrate][subdir] = "migrate"
 projects[migrate_extras][subdir] = "migrate"

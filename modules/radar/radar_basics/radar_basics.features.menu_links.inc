@@ -95,25 +95,6 @@ function radar_basics_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
   );
-  // Exported menu link: main-menu_how-to-post:node/3
-  $menu_links['main-menu_how-to-post:node/3'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => 'node/3',
-    'router_path' => 'node/%',
-    'link_title' => 'How to post?',
-    'options' => array(
-      'identifier' => 'main-menu_how-to-post:node/3',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => 9,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
-  );
   // Exported menu link: main-menu_translate:node/492
   $menu_links['main-menu_translate:node/492'] = array(
     'menu_name' => 'main-menu',
@@ -158,7 +139,6 @@ function radar_basics_menu_default_menu_links() {
   t('All events');
   t('All groups');
   t('Create account');
-  t('How to post?');
   t('Translate');
   t('Why Radar?');
 

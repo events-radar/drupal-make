@@ -119,8 +119,8 @@ Several different groups use radar to display their agenda on their own site. Wh
         'uid' => 1,
         'status' => 1,
         'translate' => 0,
-        'created' => 1410704951,
-        'changed' => 1410704951,
+        'created' => 1415288318,
+        'changed' => 1415288318,
       ),
     ),
   ),
@@ -543,8 +543,8 @@ Response:
         'uid' => 1,
         'status' => 1,
         'translate' => 0,
-        'created' => 1410704951,
-        'changed' => 1410704951,
+        'created' => 1411309642,
+        'changed' => 1411309642,
       ),
     ),
   ),
@@ -555,7 +555,7 @@ Response:
 );
   $nodes[] = array(
   'uid' => 1,
-  'title' => 'How to post?',
+  'title' => 'How to post groups and events?',
   'log' => '',
   'status' => 1,
   'comment' => 0,
@@ -572,23 +572,63 @@ Response:
   'body' => array(
     'en' => array(
       0 => array(
-        'value' => 'Radar is driven by the groups that use it. Therefore all events have to be post into a group. 
-
-To do so, simply go to the page of that group and click on "Create an event". The location of that group is added automatically to your event, but you can change to use another existing location as well as by adding a new location.
-If you want to post an event into two or more groups, do so from the group that where the event will take place. That way the correct location will automatically be added.
-Some groups are open for everybody to post, in others posts from non-members of that group will be hold up for moderation.
-
-As a registered user, you can add a new group at http://radar.iskra.net/node/add/group . The group will not be visible untli an administrator has published it. 
-You will then also be made an administration manager of that group. As such you can add other users to the group and moderate events posted by other into your group.',
+        'value' => '<h3>Groups</h3><h4>What is a group?</h4><p>In the context of this website, anybody who organizes something or who provides a space for others is a group. This can be the collective that runs a social space, or the group that squatted a building, but also the group who cooks there every week, or the project that meets up there once a month. Whether these are one or several groups on the radar site is up to you. Groups can have physical locations, but don\'t have to. This way, a group that meets at different locations also has a page where visitors can easily find upcoming events, without needing to know where the next meeting will be.</p><h4>Everybody can create a group...</h4><ul><li>Every registered user can create a group at http://new-radar.squat.net/node/add/group.</li><li>The name of the group will be used as URL for your group.</li><li>Set the language correctly, to allow for translations. If your language is missing, contact us, and we add it.</li><li>Fill in the fields as appropriate.</li><li>You can add a physical location, or use an exiting one. Groups don\'t have to have a location, and it is possible to change the locations for individual events later.</li><li>You can decide who should be allowed to post events for this group. This depends on your situation. For example if you are a social space with lots of groups organizing independent events you might want to give the responsibility for their announcements to lots of them, but if you run a cinema you possibly only want a few people dealing with it.</li><li>When you safe a new group it is <em>not</em> immediately visible. It needs to be approved by an administrator first.</li><li>Once the group is approved, you become its mananger.</li></ul><h4>... but a site administrator needs to approve it.</h4><ul><li>All new groups are listed on the <a href="/admin/content/pending-groups">Publish Pending groups</a> page. It\'s only accessibel to site administrators.</li><li>As a administrator, you can see all the information given for a pending group by clicking on its the <em>edit</em> link in the table.</li><li>The list page has a simple tick box to approve of a new group. It is then visible to everybody.</li><li>After approviing the group, please also give the manager of the group the role as <em>administrative member</em> by choosing the <em>Administer group</em> tab, and then going to the <em>People</em> page. (In future that will happen automatically, but at the moment it still needs to be done manually).</li></ul><h4>Setting up a group as an site administrator</h4><ul><li>You go through the same steps as any other user, but you can then approve of your own group.</li><li>Don\'t forget to give yourself the role of administrative member of this group.</li></ul><h4>Managing a group</h4><ul><li>As an administrative member of a group, you see some tabs on your group page, that give you some additional options to manage the group and its content.</li><li>Administrative members of a group can make other users members or administrative members.</li><li>Depending on the settings of your group, you need to approve of events posted into your group before they show up.</li></ul><h3>&nbsp;</h3><h3>Events</h3><ul><li>All events need to be posted into a group.</li><li>Cities are not groups. They are added as locations, so that it\'s possible to search by country, town, etc.</li><li>It\'s okay to make a new group for a one-off event, such as a protest camp or a demonstration.</li></ul><h4>How to add a new event</h4><ul><li>Go to the page of the group that organises the event or where it takes place, and click on the "create event" link.</li><li>Just fill in all relevant information.</li><li>Repeating events be set up with different rules, such as every Monday and Thursday, or every last Tuesday of the month. Individual dates can be excluded or modified (see below). Repeating events need either an end date or a number of occurences.</li><li>The location field is pre-populated with the location information of that group page, but you can change it.</li><li>You can add more groups and more locations to an event, for example if you are an group that has a meeting at a social space, or if you organise a demonstration together with other groups.</li><li>If you are a member of that group, your event will be visible immediately. If you post into another group, then it might require approval of that group first. This depends on individual group settings.</li></ul><h4>How to approve of an event</h4><ul><li>Group administrators see tab for "pending events" on their group page.</li><li>On that list you can just click a tick box to approve of an event.</li></ul><h4>Modifying repeating events</h4><ul><li>Repeating events are stored as individual events in the database so it is possible to change them individually, or to cancel individual dates. You can for example add a weekly film programme, and only add the name and description of the film when you got it, or cancel a single date.</li><li>Click on the edit tab for the event you want to change, and change what ever needs changing. Then click on save.</li><li>After that you are asked whether you want to apply this change only this occurence or to all.</li></ul><p>&nbsp;</p><h3>Pushing or pulling events to or from Radar</h3><p>You can push events from your own website with an ical feed, or you can pull them from Radar to your site. Both options have their advantages, but make sure to only use one so that you have one authorative source of information. Otherwise it will become messy.</p><h4>Adding feeds of events...</h4><ul><li>If you already have added your events to another website that provides a feed, then you can also automatically import these events.</li><li>Click on the link on the "Create ical event importer" link on your group page, and add the url of your feed.</li><li>Where possible the importer will try to match up the information in your feed with the fields on the website, but information such as categories will probably be missing.</li><li>When you update events or your site, they will automatially get updated on the radar site as well.</li><li>For more details, see the <a href="/api#ical">API</a> page.</li></ul><h4>... or pulling events off the radar site?</h4><ul><li>Instead you importing events from your website into radar with feeds and potentially loosing some information on the way, you can also use radar to post them, and then import them into your site with a special API.</li><li>You can choose which information to include, by customizing the query as shown on the <a href="/api">API</a> page.</li><li>Contact us if you got any problems.</li></ul>',
         'summary' => '',
         'format' => 'rich_text_editor',
-        'safe_value' => '<p>Radar is driven by the groups that use it. Therefore all events have to be post into a group. </p>
-<p>To do so, simply go to the page of that group and click on "Create an event". The location of that group is added automatically to your event, but you can change to use another existing location as well as by adding a new location.<br />
-If you want to post an event into two or more groups, do so from the group that where the event will take place. That way the correct location will automatically be added.<br />
-Some groups are open for everybody to post, in others posts from non-members of that group will be hold up for moderation.</p>
-<p>As a registered user, you can add a new group at <a href="http://radar.iskra.net/node/add/group">http://radar.iskra.net/node/add/group</a> . The group will not be visible untli an administrator has published it.<br />
-You will then also be made an administration manager of that group. As such you can add other users to the group and moderate events posted by other into your group.</p>
-',
+        'safe_value' => '<h3>Groups</h3>
+<h4>What is a group?</h4>
+<p>In the context of this website, anybody who organizes something or who provides a space for others is a group. This can be the collective that runs a social space, or the group that squatted a building, but also the group who cooks there every week, or the project that meets up there once a month. Whether these are one or several groups on the radar site is up to you. Groups can have physical locations, but don\'t have to. This way, a group that meets at different locations also has a page where visitors can easily find upcoming events, without needing to know where the next meeting will be.<br /></p><h4>Everybody can create a group...</h4>
+<ul><li>Every registered user can create a group at <a href="http://new-radar.squat.net/node/add/group">http://new-radar.squat.net/node/add/group</a>.</li>
+<li>The name of the group will be used as URL for your group.</li>
+<li>Set the language correctly, to allow for translations. If your language is missing, contact us, and we add it.</li>
+<li>Fill in the fields as appropriate.</li>
+<li>You can add a physical location, or use an exiting one. Groups don\'t have to have a location, and it is possible to change the locations for individual events later.</li>
+<li>You can decide who should be allowed to post events for this group. This depends on your situation. For example if you are a social space with lots of groups organizing independent events you might want to give the responsibility for their announcements to lots of them, but if you run a cinema you possibly only want a few people dealing with it.</li>
+<li>When you safe a new group it is <em>not</em> immediately visible. It needs to be approved by an administrator first.</li>
+<li>Once the group is approved, you become its mananger.</li>
+</ul><h4>... but a site administrator needs to approve it.</h4>
+<ul><li>All new groups are listed on the <a href="/admin/content/pending-groups">Publish Pending groups</a> page. It\'s only accessibel to site administrators.</li>
+<li>As a administrator, you can see all the information given for a pending group by clicking on its the <em>edit</em> link in the table.</li>
+<li>The list page has a simple tick box to approve of a new group. It is then visible to everybody.</li>
+<li>After approviing the group, please also give the manager of the group the role as <em>administrative member</em> by choosing the <em>Administer group</em> tab, and then going to the <em>People</em> page. (In future that will happen automatically, but at the moment it still needs to be done manually).</li>
+</ul><h4>Setting up a group as an site administrator</h4>
+<ul><li>You go through the same steps as any other user, but you can then approve of your own group.</li>
+<li>Don\'t forget to give yourself the role of administrative member of this group.</li>
+</ul><h4>Managing a group</h4>
+<ul><li>As an administrative member of a group, you see some tabs on your group page, that give you some additional options to manage the group and its content.</li>
+<li>Administrative members of a group can make other users members or administrative members.</li>
+<li>Depending on the settings of your group, you need to approve of events posted into your group before they show up.</li>
+</ul><h3> </h3>
+<h3>Events</h3>
+<ul><li>All events need to be posted into a group.</li>
+<li>Cities are not groups. They are added as locations, so that it\'s possible to search by country, town, etc.</li>
+<li>It\'s okay to make a new group for a one-off event, such as a protest camp or a demonstration.</li>
+</ul><h4>How to add a new event</h4>
+<ul><li>Go to the page of the group that organises the event or where it takes place, and click on the "create event" link.</li>
+<li>Just fill in all relevant information.</li>
+<li>Repeating events be set up with different rules, such as every Monday and Thursday, or every last Tuesday of the month. Individual dates can be excluded or modified (see below). Repeating events need either an end date or a number of occurences.</li>
+<li>The location field is pre-populated with the location information of that group page, but you can change it.</li>
+<li>You can add more groups and more locations to an event, for example if you are an group that has a meeting at a social space, or if you organise a demonstration together with other groups.</li>
+<li>If you are a member of that group, your event will be visible immediately. If you post into another group, then it might require approval of that group first. This depends on individual group settings.</li>
+</ul><h4>How to approve of an event</h4>
+<ul><li>Group administrators see tab for "pending events" on their group page.</li>
+<li>On that list you can just click a tick box to approve of an event.</li>
+</ul><h4>Modifying repeating events</h4>
+<ul><li>Repeating events are stored as individual events in the database so it is possible to change them individually, or to cancel individual dates. You can for example add a weekly film programme, and only add the name and description of the film when you got it, or cancel a single date.</li>
+<li>Click on the edit tab for the event you want to change, and change what ever needs changing. Then click on save.</li>
+<li>After that you are asked whether you want to apply this change only this occurence or to all.</li>
+</ul><p> <br /></p><h3>Pushing or pulling events to or from Radar</h3>
+<p>You can push events from your own website with an ical feed, or you can pull them from Radar to your site. Both options have their advantages, but make sure to only use one so that you have one authorative source of information. Otherwise it will become messy.<br /></p><h4>Adding feeds of events...</h4>
+<ul><li>If you already have added your events to another website that provides a feed, then you can also automatically import these events.</li>
+<li>Click on the link on the "Create ical event importer" link on your group page, and add the url of your feed.</li>
+<li>Where possible the importer will try to match up the information in your feed with the fields on the website, but information such as categories will probably be missing.</li>
+<li>When you update events or your site, they will automatially get updated on the radar site as well.</li>
+<li>For more details, see the <a href="/api#ical">API</a> page.</li>
+</ul><h4>... or pulling events off the radar site?</h4>
+<ul><li>Instead you importing events from your website into radar with feeds and potentially loosing some information on the way, you can also use radar to post them, and then import them into your site with a special API.</li>
+<li>You can choose which information to include, by customizing the query as shown on the <a href="/api">API</a> page.</li>
+<li>Contact us if you got any problems.</li>
+</ul>',
         'safe_summary' => '',
       ),
     ),
@@ -596,9 +636,9 @@ You will then also be made an administration manager of that group. As such you 
   'title_field' => array(
     'en' => array(
       0 => array(
-        'value' => 'How to post?',
+        'value' => 'How to post groups and events?',
         'format' => NULL,
-        'safe_value' => 'How to post?',
+        'safe_value' => 'How to post groups and events?',
       ),
     ),
   ),
@@ -668,8 +708,8 @@ You will then also be made an administration manager of that group. As such you 
         'uid' => 1,
         'status' => 1,
         'translate' => 0,
-        'created' => 1410704951,
-        'changed' => 1410704951,
+        'created' => 1409050852,
+        'changed' => 1415810305,
       ),
     ),
   ),
@@ -703,7 +743,7 @@ You will then also be made an administration manager of that group. As such you 
 <strong>More languages?</strong> Additional languages can be added at any time. Just tell us.',
         'summary' => '',
         'format' => 'rich_text_editor',
-        'safe_value' => '<p>Radar ist mehr-sprachig.<br /><strong>Content translation:</strong> All groups and events can be posted in any of the available languages and then translated into any other one. A link to do so is visible for logged-in users directly on the pages.<br /><strong>Interface translation:</strong> The whole interface (labels, buttons etc.) can be translated as well. Some of that is provided automatically, but other bits of texts need to be translated manually for each language. Any user with the permissions of a <em>content editor</em> can translate them in the Translation table.<br /><strong>More languages?</strong> Additional languages can be added at any time. Just tell us.</p>
+        'safe_value' => '<p>Radar ist mehr-sprachig.<br /><strong>Content translation:</strong> All groups and events can be posted in any of the available languages and then translated into any other one. A link to do so is visible for logged-in users directly on the pages.<br /><strong>Interface translation:</strong> The whole interface (labels, buttons etc.) can be translated as well. Some of that is provided automatically, but other bits of texts need to be translated manually for each language. Any user with the permissions of a <em>content editor</em> can translate them in the <a href="/admin/config/regional/translate/table">Translation table</a>.<br /><strong>More languages?</strong> Additional languages can be added at any time. Just tell us.</p>
 ',
         'safe_summary' => '',
       ),
@@ -716,7 +756,7 @@ You will then also be made an administration manager of that group. As such you 
 <strong>More languages?</strong> Additional languages can be added at any time. Just tell us.',
         'summary' => '',
         'format' => 'rich_text_editor',
-        'safe_value' => '<p>Radar is multilingual - but needs translation.<br /><strong>Content translation:</strong> All groups and events can be posted in any of the available languages and then translated into any other one. A link to do so is visible for logged-in users directly on the pages.<br /><strong>Interface translation:</strong> The whole interface (labels, buttons etc.) can be translated as well. Some of that is provided automatically, but other bits of texts need to be translated manually for each language. Any user with the permissions of a <em>content editor</em> can translate them in the Translation table.<br /><strong>More languages?</strong> Additional languages can be added at any time. Just tell us.</p>
+        'safe_value' => '<p>Radar is multilingual - but needs translation.<br /><strong>Content translation:</strong> All groups and events can be posted in any of the available languages and then translated into any other one. A link to do so is visible for logged-in users directly on the pages.<br /><strong>Interface translation:</strong> The whole interface (labels, buttons etc.) can be translated as well. Some of that is provided automatically, but other bits of texts need to be translated manually for each language. Any user with the permissions of a <em>content editor</em> can translate them in the <a href="/admin/config/regional/translate/table">Translation table</a>.<br /><strong>More languages?</strong> Additional languages can be added at any time. Just tell us.</p>
 ',
         'safe_summary' => '',
       ),
@@ -804,8 +844,8 @@ You will then also be made an administration manager of that group. As such you 
         'uid' => 1,
         'status' => 1,
         'translate' => 0,
-        'created' => 1410704951,
-        'changed' => 1410704951,
+        'created' => 1415288318,
+        'changed' => 1415288318,
       ),
     ),
   ),

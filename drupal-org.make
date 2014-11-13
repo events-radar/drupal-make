@@ -283,8 +283,8 @@ projects[select_or_other][version] = "2.20"
 
 projects[wysiwyg][subdir] = "contrib"
 projects[wysiwyg][type] = "module"
-projects[download][url] = "git://git.drupal.org/project/wysiwyg.git"
-projects[download][revision] = "898d022cf7d0b6c6a6e7d813199d561b4ad39f8b"
+projects[wysiwyg][download][url] = "git://git.drupal.org/project/wysiwyg.git"
+projects[wysiwyg][download][revision] = "898d022cf7d0b6c6a6e7d813199d561b4ad39f8b"
 
 libraries[ckeditor][type] = "libraries"
 libraries[ckeditor][download][type] = "file"

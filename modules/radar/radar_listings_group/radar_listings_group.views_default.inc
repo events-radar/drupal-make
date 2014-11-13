@@ -153,7 +153,7 @@ function radar_listings_group_views_default_views() {
   $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['nid']['alter']['text'] = 'Create event';
   $handler->display->display_options['fields']['nid']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['path'] = 'node/add/event?og_group_ref=[nid]';
+  $handler->display->display_options['fields']['nid']['alter']['path'] = 'node/add/event?og_group_ref=[nid],!1&destination=node/[nid]/listed-groups';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['path'] = 'node/%/listed-groups';
   $handler->display->display_options['menu']['type'] = 'tab';

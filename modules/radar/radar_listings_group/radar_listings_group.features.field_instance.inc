@@ -134,7 +134,7 @@ function radar_listings_group_field_default_field_instances() {
   // Exported field_instance: 'node-listings_group-field_groups_listed'
   $field_instances['node-listings_group-field_groups_listed'] = array(
     'bundle' => 'listings_group',
-    'default_value' => NULL,
+    'default_value' => array(),
     'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
@@ -176,7 +176,7 @@ function radar_listings_group_field_default_field_instances() {
         'path' => '',
         'size' => 60,
       ),
-      'type' => 'entityreference_autocomplete_tags',
+      'type' => 'entityreference_autocomplete',
       'weight' => 6,
     ),
   );

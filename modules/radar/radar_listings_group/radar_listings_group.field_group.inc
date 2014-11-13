@@ -23,8 +23,8 @@ function radar_listings_group_field_group_info() {
     'label' => 'Info',
     'weight' => '7',
     'children' => array(
-      0 => 'field_link',
-      1 => 'field_email',
+      0 => 'field_email',
+      1 => 'field_link',
       2 => 'field_phone',
     ),
     'format_type' => 'tab',

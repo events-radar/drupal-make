@@ -472,7 +472,7 @@ function radar_og_field_definition(&$field_instances, $entity_type, $bundle) {
           'skip_perm' => '0',
           'status' => 1,
           'providers' => array(
-            'og_context' => 1,
+            'og_context' => 0,
             'url' => 1,
           ),
         ),

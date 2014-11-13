@@ -16,7 +16,10 @@ function radar_search_default_page_manager_pages() {
   $page->admin_title = 'Events search';
   $page->admin_description = '';
   $page->path = 'events';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array(
     'type' => 'none',
     'title' => '',
@@ -303,7 +306,10 @@ function radar_search_default_page_manager_pages() {
   $page->admin_title = 'Groups search';
   $page->admin_description = '';
   $page->path = 'groups';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array(
     'type' => 'none',
     'title' => '',
@@ -562,7 +568,10 @@ function radar_search_default_page_manager_pages() {
   $page->admin_title = 'Search';
   $page->admin_description = '';
   $page->path = 'find';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array(
     'type' => 'none',
     'title' => 'Find a group or an event',

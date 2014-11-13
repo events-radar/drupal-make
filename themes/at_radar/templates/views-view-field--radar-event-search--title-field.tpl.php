@@ -4,11 +4,11 @@
  * @file
  *  Hackish solution to remove content types from the entity reference list.
  */
-$output = '';
-$groups = array();
+$output = "<strong>$output</strong>";
 
+$groups = array();
 // Ah the quick fix.
-$group_ids = $row->_entity_properties[$field->field_alias];
+$group_ids = $row->_entity_properties['og_group_ref'];
 // Think it's been loaded and cached anyway by the field handler, which
 // is probably where this should be done.
 foreach ($group_ids as $gid){
@@ -19,8 +19,7 @@ foreach ($group_ids as $gid){
   }
 }
 if (count($groups)) {
-  $output = implode(', ', $groups);
-  $output = " @ <strong>$output</strong>";
+  $output .= ' @ <strong>' . implode(', ', $groups) . '</strong>';
 }
 ?>
 <?php print $output; ?>

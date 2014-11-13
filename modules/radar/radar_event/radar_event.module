@@ -26,18 +26,21 @@ function radar_event_radar_entity_integration() {
  * event is being posted from, to the retrieve any field collection location(s)
  * that it has.
  *
- * @see radar_event_field_deafult_field_instances().
+ * @see radar_event_field_default_field_instances().
  * @see radar_location_field_create_instance().
  */
 function radar_event_entityreference_offline_prepopulate($entity_type, $entity, $field, $instance, $langcode) {
   $items = array();
+
   // reuse values inserted by entityreference_prepopulate.
-  $instance['settings']['behaviors']['prepopulate']['status'] = TRUE;
-  $field['field_name'] = 'og_group_ref';
-  if ($ids = entityreference_prepopulate_get_values($field, $instance)) {
+  $ogfield = field_info_field('og_group_ref');
+  $ogfield_instance = field_info_instance('node', 'og_group_ref', 'event');
+  if ($ids = entityreference_prepopulate_get_values($ogfield, $ogfield_instance)) {
     foreach ($ids as $nid) {
       $node = node_load($nid);
-      $values[$nid] = $node->field_offline[LANGUAGE_NONE];
+      if (!empty($node->field_offline[LANGUAGE_NONE])) {
+        $values[$nid] = $node->field_offline[LANGUAGE_NONE];
+      }
     }
     if (!empty($values)) {
       // @todo there will be a function for this.
@@ -68,11 +71,13 @@ function radar_event_date_time_prepopulate($entity_type, $entity, $field, $insta
   $ogfield = field_info_field('og_group_ref');
   $ogfield_instance = field_info_instance('node', 'og_group_ref', 'event');
   if ($ids = entityreference_prepopulate_get_values($ogfield, $ogfield_instance)) {
-    $nid = reset($ids);
-    $node = node_load($nid);
-    $wrapper = entity_metadata_wrapper('node', $node);
-    if (isset($wrapper->field_offline) && count($wrapper->field_offline) && isset($wrapper->field_offline[0]->field_timezone)) {
-      $items[0]['timezone'] = $wrapper->field_offline[0]->field_timezone->value();
+    foreach ($ids as $nid) {
+      $node = node_load($nid);
+      $wrapper = entity_metadata_wrapper('node', $node);
+      if (isset($wrapper->field_offline) && count($wrapper->field_offline) && isset($wrapper->field_offline[0]->field_timezone)) {
+        $items[0]['timezone'] = $wrapper->field_offline[0]->field_timezone->value();
+        break;
+      }
     }
   }
 

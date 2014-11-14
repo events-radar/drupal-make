@@ -223,8 +223,8 @@ projects[search_api_sorts][download][revision] = "de8b6feaea76aa27cf549c60221fea
 ; facet_api
 projects[facetapi][subdir] = "contrib"
 projects[facetapi][version] = "1.5"
-projects[facteapi_bonus][subdir] = "contrib"
-projects[facetapi_bonus][version] "1.1"
+projects[facetapi_bonus][subdir] = "contrib"
+projects[facetapi_bonus][version] = "1.1"
 
 ; Search API integration for date facet only exists
 ; in dev. It has several fixes after first commit too.

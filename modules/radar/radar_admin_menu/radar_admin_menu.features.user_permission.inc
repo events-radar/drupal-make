@@ -22,6 +22,8 @@ function radar_admin_menu_user_default_permissions() {
     'name' => 'access toolbar',
     'roles' => array(
       'administrator' => 'administrator',
+      'content moderator' => 'content moderator',
+      'list moderator' => 'list moderator',
     ),
     'module' => 'toolbar',
   );

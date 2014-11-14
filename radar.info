@@ -93,6 +93,9 @@ dependencies[] = job_scheduler
 dependencies[] = feeds
 ; and additional fields
 
+; Search
+dependencies[] = facetapi_bonus
+
 ; Date
 dependencies[] = date_popup
 dependencies[] = date_repeat

@@ -20,3 +20,44 @@ function radar_listings_group_radar_entity_integration() {
     ),
   );
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter.
+ *
+ * Add a submit handler to the group add form.
+ * @see radar_listings_group_group_node_save().
+ */
+function radar_listings_group_form_group_node_form_alter(&$form, &$form_state) {
+  if (!empty($_GET['og_group_ref']) && ($group = node_load($_GET['og_group_ref'])) && node_access('update', $group)) {
+    $form['radar_listings_group']['#value'] = $group->nid;
+    $form['actions']['submit']['#submit'][] = 'radar_listings_group_group_node_save';
+  }
+}
+
+/**
+ * If group node is posted from and by someone in a listings group add group to their listings group node.
+ *
+ * ground_node_form has this additional submission handler, if og_group_ref is in the URL and is a listings group.
+ * This is to allow us to automatically add the created group into the listings group entity reference list.
+ */
+function radar_listings_group_group_node_save($form, &$form_state) {
+  $node = $form_state['node'];
+  if (!empty($form['radar_listings_group']['#value']) && ($group = node_load($form['radar_listings_group']['#value'])) && node_access('update', $group)) {
+    $group = entity_metadata_wrapper('node', $group);
+    $group->field_groups_listed[] = $node->nid;
+    $group->save();
+  }
+}
+
+/**
+ * Add link to add new group to the listings view.
+ */
+function radar_listings_group_views_pre_view(&$view, &$display_id, &$args) {
+  if ($view->name == 'radar_listed_groups' && $display_id == 'page_1') {
+    $query = drupal_get_destination();
+    $query['og_group_ref'] = $args[0];
+    $items = array(l(t('Add group'), 'node/add/group', array('query' => $query)));
+    $output = theme('item_list', array('items' => $items, 'attributes' => array('class' => 'action-links')));
+    $view->set_item_option($display_id, 'header', 'area_text_custom', 'content', $output);
+  }
+}

@@ -60,6 +60,16 @@
   size: .9em;
 }
 
+.uppercase {
+  text-transform: uppercase;
+}
+
+
+.clear {
+  clear: right;
+}
+
+
 /* =============================================================================
  *   Base
  * ========================================================================== */
@@ -130,7 +140,7 @@ h3 {
   }
 }
 
-.group h3 {
+/* .group h3 {
     border: $green 2px solid;
     padding: 0 .6em .1em 1em;
     -moz-border-radius: 15px;
@@ -139,8 +149,8 @@ h3 {
     width: 3%;
     color: $green;
     font-weight: normal;
-
-}
+    clear: right;
+} */
 
 
 h4 {}

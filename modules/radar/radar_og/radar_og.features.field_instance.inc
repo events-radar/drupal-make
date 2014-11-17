@@ -504,7 +504,7 @@ function radar_og_field_definition(&$field_instances, $entity_type, $bundle) {
   $field_instances["$entity_type-$bundle-og_group_request"] = array(
     'bundle' => $bundle,
     'default_value' => NULL,
-    'default_value_function' => 'entityreference_prepopulate_field_default_value',
+    'default_value_function' => 'radar_og_entityreference_request_prepopulate',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -540,14 +540,14 @@ function radar_og_field_definition(&$field_instances, $entity_type, $bundle) {
         ),
         'prepopulate' => array(
           'action' => 'none',
-          'action_on_edit' => 0,
           'fallback' => 'none',
+          'og_context' => 0,
+          'skip_perm' => '0',
+          'status' => 1,
           'providers' => array(
-            'og_context' => 1,
+            'og_context' => 0,
             'url' => 1,
           ),
-          'skip_perm' => 0,
-          'status' => 1,
         ),
       ),
       'entity_translation_sync' => FALSE,

@@ -1145,3 +1145,27 @@ function radar_og_features_permission_rebuild($module, $gid) {
     }
   }
 }
+
+/**
+ * Default value callback og_group_request.
+ *
+ * Uses entityreference_prepopulate for og_group_ref field, except for
+ * administrators.
+ */
+function radar_og_entityreference_request_prepopulate($entity_type, $entity, $field, $instance, $langcode) {
+  $items = array();
+  if (user_access('administer group') || user_access('administer content')) {
+    return $items;
+  }
+
+  $_GET['og_group_request'] = $_GET['og_group_ref'];
+  if ($ids = entityreference_prepopulate_get_values($field, $instance)) {
+    $items = array();
+    foreach ($ids as $id) {
+      $items[] = array('target_id' => $id);
+    }
+  }
+  return $items;
+}
+
+

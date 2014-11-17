@@ -79,16 +79,14 @@ function radar_group_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Location',
-    'weight' => '10',
-    'children' => array(
-      0 => 'field_offline',
-    ),
-    'format_type' => 'tab',
+    'weight' => '44',
+    'children' => array(),
+    'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'formatter' => 'collapsible',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-location field-group-tab',
+        'classes' => 'group-location field-group-fieldset',
         'required_fields' => 1,
       ),
     ),

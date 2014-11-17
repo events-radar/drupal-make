@@ -148,7 +148,7 @@ function radar_group_views_default_views() {
   $handler->display->display_options['fields']['field_phone']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_phone']['element_wrapper_class'] = 'info';
   $handler->display->display_options['fields']['field_phone']['element_default_classes'] = FALSE;
-  /* Field: Content: offline */
+  /* Field: Content: area */
   $handler->display->display_options['fields']['field_offline']['id'] = 'field_offline';
   $handler->display->display_options['fields']['field_offline']['table'] = 'field_data_field_offline';
   $handler->display->display_options['fields']['field_offline']['field'] = 'field_offline';
@@ -764,7 +764,7 @@ Once they are approved - or if they have been posted in a group where they don\'
   $handler->display->display_options['fields']['status']['field'] = 'status';
   $handler->display->display_options['fields']['status']['type'] = 'published-notpublished';
   $handler->display->display_options['fields']['status']['not'] = 0;
-  /* Field: Content: Groups */
+  /* Field: Content: Groups audience */
   $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['table'] = 'og_membership';
   $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';

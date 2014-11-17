@@ -232,25 +232,13 @@ function radar_search_views_default_views() {
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   /* Field: Indexed Node: Title */
-  $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
-  $handler->display->display_options['fields']['title_1']['table'] = 'search_api_index_groups';
-  $handler->display->display_options['fields']['title_1']['field'] = 'title';
-  $handler->display->display_options['fields']['title_1']['label'] = '';
-  $handler->display->display_options['fields']['title_1']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['title_1']['alter']['text'] = '<div class=group>[title_1]</div>';
-  $handler->display->display_options['fields']['title_1']['alter']['max_length'] = '1';
-  $handler->display->display_options['fields']['title_1']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title_1']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title_1']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title_1']['link_to_entity'] = 0;
-  /* Field: Indexed Node: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'search_api_index_groups';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['text'] = '<strong>[title]</strong>[field_offline_field_address_locality] ';
-  $handler->display->display_options['fields']['title']['element_type'] = 'h2';
+  $handler->display->display_options['fields']['title']['element_type'] = 'h3';
+  $handler->display->display_options['fields']['title']['element_class'] = 'group clear';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_entity'] = 1;

@@ -51,6 +51,16 @@ function radar_topics_uuid_features_default_terms() {
     'vocabulary_machine_name' => 'category',
   );
   $terms[] = array(
+    'name' => 'theater',
+    'description' => '',
+    'format' => 'rich_text_editor',
+    'weight' => 0,
+    'uuid' => '3a8606d4-95ac-4941-a2ae-05835e5903dc',
+    'language' => 'und',
+    'i18n_tsid' => 0,
+    'vocabulary_machine_name' => 'category',
+  );
+  $terms[] = array(
     'name' => 'exhibition',
     'description' => '',
     'format' => 'plain_text',
@@ -61,7 +71,7 @@ function radar_topics_uuid_features_default_terms() {
     'vocabulary_machine_name' => 'category',
   );
   $terms[] = array(
-    'name' => 'film/theatre',
+    'name' => 'film',
     'description' => '',
     'format' => 'plain_text',
     'weight' => 0,

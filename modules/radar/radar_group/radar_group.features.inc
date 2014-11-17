@@ -37,7 +37,7 @@ function radar_group_node_info() {
     'group' => array(
       'name' => t('Group'),
       'base' => 'node_content',
-      'description' => t('Squat, location, action group, city.'),
+      'description' => t('Squats, social centers, theater groups, kitchen collectives, demonstration organizers; with or without physical locations'),
       'has_title' => '1',
       'title_label' => t('Group name'),
       'help' => '',

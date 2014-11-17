@@ -21,17 +21,17 @@ function radar_group_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Images',
-    'weight' => '8',
+    'weight' => '7',
     'children' => array(
       0 => 'field_group_logo',
       1 => 'field_image',
     ),
-    'format_type' => 'tab',
+    'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'formatter' => 'collapsible',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-image field-group-tab',
+        'classes' => '',
         'required_fields' => 1,
       ),
     ),
@@ -49,18 +49,19 @@ function radar_group_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Info',
-    'weight' => '7',
+    'weight' => '6',
     'children' => array(
       0 => 'field_email',
       1 => 'field_link',
       2 => 'field_phone',
+      3 => 'field_notifications',
     ),
-    'format_type' => 'tab',
+    'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'formatter' => 'collapsible',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-info field-group-tab',
+        'classes' => '',
         'required_fields' => 1,
       ),
     ),
@@ -105,20 +106,19 @@ function radar_group_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Tags',
-    'weight' => '11',
+    'weight' => '9',
     'children' => array(
       0 => 'field_category',
       1 => 'field_topic',
     ),
-    'format_type' => 'tab',
+    'format_type' => 'fieldset',
     'format_settings' => array(
-      'label' => 'Tags',
+      'formatter' => 'collapsible',
       'instance_settings' => array(
-        'required_fields' => 1,
-        'classes' => 'group-tags field-group-tab',
         'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
       ),
-      'formatter' => 'closed',
     ),
   );
   $export['group_tags|node|group|form'] = $field_group;

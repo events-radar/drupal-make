@@ -603,7 +603,7 @@ function radar_group_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'Events are only published if they are accepted by at least one group. 
+  $handler->display->display_options['header']['area']['content'] = 'Events are only published if they are approved by at least one group. 
 Once they are approved - or if they have been posted in a group where they don\'t require approval - they are automatically published, but they will only show up in <em>this</em> group if they are approved here as well.
 ';
   $handler->display->display_options['header']['area']['format'] = 'rich_text_editor';
@@ -612,8 +612,9 @@ Once they are approved - or if they have been posted in a group where they don\'
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = 'No moderation requests waiting.';
+  $handler->display->display_options['empty']['area']['content'] = 'There are no events awaiting approval to be posted in %1.';
   $handler->display->display_options['empty']['area']['format'] = 'plain_text';
+  $handler->display->display_options['empty']['area']['tokenize'] = TRUE;
   /* Relationship: OG membership: OG membership from Node */
   $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
   $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
@@ -638,8 +639,8 @@ Once they are approved - or if they have been posted in a group where they don\'
       'selected' => 1,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
+      'override_label' => 1,
+      'label' => 'Approve for this group',
     ),
     'action::views_bulk_operations_delete_item' => array(
       'selected' => 0,
@@ -702,8 +703,8 @@ Once they are approved - or if they have been posted in a group where they don\'
       'selected' => 1,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
+      'override_label' => 1,
+      'label' => 'Reject for this group',
     ),
     'action::og_membership_delete_action' => array(
       'selected' => 0,
@@ -763,7 +764,7 @@ Once they are approved - or if they have been posted in a group where they don\'
   $handler->display->display_options['fields']['status']['field'] = 'status';
   $handler->display->display_options['fields']['status']['type'] = 'published-notpublished';
   $handler->display->display_options['fields']['status']['not'] = 0;
-  /* Field: Content: Groups audience */
+  /* Field: Content: Groups */
   $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['table'] = 'og_membership';
   $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
@@ -798,7 +799,7 @@ Once they are approved - or if they have been posted in a group where they don\'
   $handler->display->display_options['arguments']['gid']['relationship'] = 'og_membership_rel';
   $handler->display->display_options['arguments']['gid']['default_action'] = 'not found';
   $handler->display->display_options['arguments']['gid']['title_enable'] = TRUE;
-  $handler->display->display_options['arguments']['gid']['title'] = 'Events requested to be posted in %1';
+  $handler->display->display_options['arguments']['gid']['title'] = 'Pending events, awaiting approval to be posted in %1';
   $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
@@ -826,8 +827,8 @@ Once they are approved - or if they have been posted in a group where they don\'
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'node/%/requests';
   $handler->display->display_options['menu']['type'] = 'tab';
-  $handler->display->display_options['menu']['title'] = 'Moderation requests';
-  $handler->display->display_options['menu']['description'] = 'Events posted with a request to add them to this group';
+  $handler->display->display_options['menu']['title'] = 'Pending events';
+  $handler->display->display_options['menu']['description'] = 'Pending events, awaiting approval to be posted in this group';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;

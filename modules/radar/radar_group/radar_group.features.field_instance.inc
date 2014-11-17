@@ -43,7 +43,7 @@ function radar_group_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'body',
     'label' => 'Description',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'display_summary' => 0,
       'entity_translation_sync' => FALSE,
@@ -54,11 +54,11 @@ function radar_group_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 7,
+        'rows' => 5,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 6,
+      'weight' => 4,
     ),
   );
 
@@ -120,7 +120,7 @@ function radar_group_field_default_field_instances() {
     'bundle' => 'group',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'publicly displayed email address',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -157,7 +157,7 @@ function radar_group_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -253,6 +253,7 @@ function radar_group_field_default_field_instances() {
       'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
+        'configurable_class' => 0,
         'configurable_title' => 0,
         'rel' => '',
         'target' => 'default',
@@ -265,7 +266,7 @@ function radar_group_field_default_field_instances() {
       'entity_translation_sync' => FALSE,
       'rel_remove' => 'default',
       'title' => 'none',
-      'title_label_use_field_label' => FALSE,
+      'title_label_use_field_label' => 0,
       'title_maxlength' => 128,
       'title_value' => '',
       'url' => 0,
@@ -286,7 +287,7 @@ function radar_group_field_default_field_instances() {
     'bundle' => 'group',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Notification about pending events, requested to be posted into this group',
+    'description' => 'An additional email address to which the system sends notifications about pending events. <em>Not displayed</em>',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -310,7 +311,7 @@ function radar_group_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_notifications',
-    'label' => 'Send notifications to',
+    'label' => 'email for notifications',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -323,7 +324,7 @@ function radar_group_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 42,
+      'weight' => 10,
     ),
   );
 
@@ -332,7 +333,8 @@ function radar_group_field_default_field_instances() {
     'bundle' => 'group',
     'default_value_function' => '',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'When you add a new location, you can either type in an address and let the system automatically put it on the map, or draw a dot or area directly on the map. <br>
+Partial address such as only a city are also possible.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -362,7 +364,7 @@ function radar_group_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_offline',
-    'label' => 'offline',
+    'label' => 'Location',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
@@ -388,7 +390,7 @@ function radar_group_field_default_field_instances() {
         ),
       ),
       'type' => 'inline_entity_form',
-      'weight' => 5,
+      'weight' => 8,
     ),
   );
 
@@ -434,10 +436,10 @@ function radar_group_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 7,
+        'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 7,
+      'weight' => 5,
     ),
   );
 
@@ -484,7 +486,7 @@ function radar_group_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 8,
     ),
   );
 
@@ -517,7 +519,7 @@ function radar_group_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_topic',
-    'label' => 'topics',
+    'label' => 'additional tags',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -537,17 +539,20 @@ function radar_group_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('An additional email address to which the system sends notifications about pending events. <em>Not displayed</em>');
   t('Description');
   t('Image');
-  t('Notification about pending events, requested to be posted into this group');
-  t('Send notifications to');
+  t('Location');
+  t('When you add a new location, you can either type in an address and let the system automatically put it on the map, or draw a dot or area directly on the map. <br>
+Partial address such as only a city are also possible.');
+  t('additional tags');
   t('categories');
   t('email');
-  t('offline');
+  t('email for notifications');
   t('online');
   t('opening times');
   t('phone');
-  t('topics');
+  t('publicly displayed email address');
 
   return $field_instances;
 }

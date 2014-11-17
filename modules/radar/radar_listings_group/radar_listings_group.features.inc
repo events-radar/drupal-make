@@ -34,7 +34,7 @@ function radar_listings_group_node_info() {
     'listings_group' => array(
       'name' => t('Listings group'),
       'base' => 'node_content',
-      'description' => t('A collective who maintain, online or/and offline, event listings.'),
+      'description' => t('A collective who maintain events listings, either online or offline. '),
       'has_title' => '1',
       'title_label' => t('Name'),
       'help' => '',

@@ -49,16 +49,16 @@ function radar_event_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Image',
-    'weight' => '6',
+    'weight' => '5',
     'children' => array(
       0 => 'field_image',
     ),
-    'format_type' => 'tab',
+    'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'formatter' => 'collapsible',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-image field-group-tab',
+        'classes' => 'group-image field-group-fieldset',
         'required_fields' => 1,
       ),
     ),
@@ -76,19 +76,19 @@ function radar_event_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Info',
-    'weight' => '5',
+    'weight' => '4',
     'children' => array(
       0 => 'field_price',
       1 => 'field_email',
       2 => 'field_link',
       3 => 'field_phone',
     ),
-    'format_type' => 'tab',
+    'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'formatter' => 'collapsible',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-info field-group-tab',
+        'classes' => '',
         'required_fields' => 1,
       ),
     ),
@@ -111,12 +111,12 @@ function radar_event_field_group_info() {
       0 => 'field_category',
       1 => 'field_topic',
     ),
-    'format_type' => 'tab',
+    'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'formatter' => 'collapsible',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-tags field-group-tab',
+        'classes' => '',
         'required_fields' => 1,
       ),
     ),

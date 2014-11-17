@@ -177,7 +177,7 @@ function radar_event_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'options_buttons',
-      'weight' => 12,
+      'weight' => 6,
     ),
   );
 
@@ -235,7 +235,7 @@ function radar_event_field_default_field_instances() {
         'year_range' => '-0:+1',
       ),
       'type' => 'date_popup',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -275,7 +275,7 @@ function radar_event_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -326,7 +326,7 @@ function radar_event_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 18,
+      'weight' => 6,
     ),
   );
 
@@ -409,7 +409,7 @@ function radar_event_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_offline',
-    'label' => 'offline',
+    'label' => 'Locations',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
@@ -435,7 +435,7 @@ function radar_event_field_default_field_instances() {
         ),
       ),
       'type' => 'inline_entity_form',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -476,7 +476,7 @@ function radar_event_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 7,
     ),
   );
 
@@ -552,7 +552,7 @@ by donation',
     ),
     'entity_type' => 'node',
     'field_name' => 'field_topic',
-    'label' => 'topics',
+    'label' => 'additional tags',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -566,7 +566,7 @@ by donation',
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 13,
+      'weight' => 7,
     ),
   );
 
@@ -592,24 +592,25 @@ by donation',
     ),
     'entity_type' => 'node',
     'field_name' => 'title_field',
-    'label' => 'Title',
-    'required' => TRUE,
+    'label' => 'Event title',
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'hide_label' => array(
-        'entity' => FALSE,
-        'page' => FALSE,
+        'entity' => 0,
+        'page' => 0,
       ),
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => -5,
+      'weight' => 0,
     ),
   );
 
@@ -619,15 +620,15 @@ by donation',
   t('Clone state (do not change)');
   t('Date & Time');
   t('Description');
+  t('Event title');
   t('Image');
+  t('Locations');
   t('Master UUID (do not change)');
-  t('Title');
+  t('additional tags');
   t('email');
-  t('offline');
   t('online');
   t('phone');
   t('price');
-  t('topics');
 
   return $field_instances;
 }

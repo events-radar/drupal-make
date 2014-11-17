@@ -261,6 +261,12 @@ projects[services_search_api][download][revision] = "a868e7a197925e36f01f3057a9f
 projects[services_search_api][patch][2072691] = "https://www.drupal.org/files/issues/services_search_api-2072691-6.patch"
 
 ;
+;; Admin helpers.
+;
+projects[node_clone][subdir] = "contrib"
+projects[node_clone][version] = "1.0-rc2"
+
+;
 ;; Layout
 ;
 projects[panels][subdir] = "contrib"

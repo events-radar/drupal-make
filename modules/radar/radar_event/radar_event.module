@@ -20,6 +20,37 @@ function radar_event_radar_entity_integration() {
 }
 
 /**
+ * Implements hook_clone_access_alter().
+ */
+function radar_event_clone_access_alter(&$access, $node) {
+  // Administer content.
+  if (user_access('administer content')) {
+    return;
+  }
+  // Only events can be cloned.
+  // This could also be done by setting the clone_omitted variable.
+  if (! $node->type == 'event') {
+    $access = FALSE;
+  }
+  // If the user otherwise has access to clone. Only clone for nodes
+  // that are in one of their groups.
+  if ($access) {
+    $member = FALSE;
+    $groups = og_get_entity_groups('node', $node);
+    foreach ($groups as $group_type => $gids) {
+      foreach ($gids as $gid) {
+        if (og_is_member('node', $gid)) {
+          $member = TRUE;
+        }
+      }
+    }
+    if (!$member) {
+      $access = FALSE;
+    }
+  }
+}
+
+/**
  * Default value callback.
  *
  * Uses entityreference_prepopulate for og_group_ref field to retrieve group which

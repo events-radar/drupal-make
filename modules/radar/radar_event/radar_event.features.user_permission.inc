@@ -10,6 +10,23 @@
 function radar_event_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'clone node'.
+  $permissions['clone node'] = array(
+    'name' => 'clone node',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+      'non-authenticated user' => 'non-authenticated user',
+    ),
+    'module' => 'clone',
+  );
+
+  // Exported permission: 'clone own nodes'.
+  $permissions['clone own nodes'] = array(
+    'name' => 'clone own nodes',
+    'roles' => array(),
+    'module' => 'clone',
+  );
+
   // Exported permission: 'create event content'.
   $permissions['create event content'] = array(
     'name' => 'create event content',

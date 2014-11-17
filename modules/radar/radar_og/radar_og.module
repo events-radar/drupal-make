@@ -1157,6 +1157,9 @@ function radar_og_entityreference_request_prepopulate($entity_type, $entity, $fi
   if (user_access('administer group') || user_access('administer content')) {
     return $items;
   }
+  if(empty($_GET['og_group_ref'])) {
+    return $items;
+  }
 
   $_GET['og_group_request'] = $_GET['og_group_ref'];
   if ($ids = entityreference_prepopulate_get_values($field, $instance)) {

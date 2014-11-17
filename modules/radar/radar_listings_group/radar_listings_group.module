@@ -56,7 +56,8 @@ function radar_listings_group_views_pre_view(&$view, &$display_id, &$args) {
   if ($view->name == 'radar_listed_groups' && $display_id == 'page_1') {
     $query = drupal_get_destination();
     $query['og_group_ref'] = $args[0];
-    $items = array(l(t('Add group'), 'node/add/group', array('query' => $query)));
+    $items[] = l(t('Add group'), 'node/add/group', array('query' => $query));
+    $items[] = l(t('Add event in this group only'), 'node/add/event', array('query' => $query));
     $output = theme('item_list', array('items' => $items, 'attributes' => array('class' => 'action-links')));
     $view->set_item_option($display_id, 'header', 'area_text_custom', 'content', $output);
   }

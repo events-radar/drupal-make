@@ -62,3 +62,33 @@ function radar_listings_group_views_pre_view(&$view, &$display_id, &$args) {
     $view->set_item_option($display_id, 'header', 'area_text_custom', 'content', $output);
   }
 }
+
+/**
+ * Add listings group to create content pane on groups.
+ *
+ * Bit hacky, but the alternative is re-making the pane plugin, and repeating almost
+ * all of the og links code :-(
+ */
+function radar_listings_group_panels_pane_content_alter($content, $pane, $args, $contexts) {
+  if ($content->module == 'og' && $content->type == 'node_create_links') {
+    // Retrieve the og from the context. It's the first one.
+    $context = reset($contexts);
+    $group = $context->data;
+    // Retrieve all entities that refer to this og with field_groups_listed.
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node');
+    $query->entityCondition('bundle', 'listings_group');
+    $query->fieldCondition('field_groups_listed', 'target_id', $group->nid, '=');
+    $results = $query->execute();
+    // Loop over any results and make an array of listings_groups that refer to this group.
+    if (!empty($results['node'])) {
+      $listings_groups = array();
+      foreach($results['node'] as $nid => $node) {
+        $listings_groups[] = $nid;
+      }
+      // Add the nids comma seperated to og_group_ref
+      $link =& $content->content['og_node_create_links']['#items'][0]['data'];
+      $link = preg_replace('/og_group_ref=([0-9,]+)/', 'og_group_ref=${1},' . implode(',', $listings_groups), $link);
+    }
+  }
+}

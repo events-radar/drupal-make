@@ -20,6 +20,23 @@ function radar_event_radar_entity_integration() {
 }
 
 /**
+ * Implements hook_entity_property_info_alter().
+ */
+function radar_event_entity_property_info_alter(&$info) {
+  $properties = &$info['node']['bundles']['event']['properties'];
+
+  $properties['field_date_time']['property info']['value']['getter callback'] = 'radar_event_date_entity_metadata_struct_getter';
+  $properties['field_date_time']['property info']['value2']['getter callback'] = 'radar_event_date_entity_metadata_struct_getter';
+  $properties['field_date_time']['property info']['rrule'] = array(
+    'type' => 'text',
+    'label' => 'Repeat rule',
+    'getter callback' => 'entity_metadata_verbatim_get',
+    'setter callback' => 'entity_property_verbatim_set',
+  );
+  unset($properties['field_date_time']['property info']['duration']);
+}
+
+/**
  * Implements hook_clone_access_alter().
  */
 function radar_event_clone_access_alter(&$access, $node) {
@@ -113,4 +130,21 @@ function radar_event_date_time_prepopulate($entity_type, $entity, $field, $insta
   }
 
   return $items;
+}
+
+/**
+ * Getter callback to return date values as ISO date in inputted timezone.
+ */
+function radar_event_date_entity_metadata_struct_getter($item, array $options, $name, $type, $info) {
+  $value = trim($item[$name]);
+  if (empty($value)) {
+    return NULL;
+  }
+
+  $timezone_db = !empty($item['timezone_db']) ? $item['timezone_db'] : 'UTC';
+  $date = new DateObject($value, $timezone_db);
+  if ($item['timezone']) {
+    $date->setTimezone(new DateTimeZone($item['timezone']));
+  }
+  return !empty($date) ? date_format_date($date, 'custom', 'c') : NULL;
 }

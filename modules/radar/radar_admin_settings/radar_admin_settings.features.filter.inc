@@ -67,7 +67,7 @@ function radar_admin_settings_filter_default_formats() {
         'status' => 1,
         'settings' => array(
           'allowed_html' => '<em> <strong> <blockquote> <ul> <ol> <li> <h3> <h4> <a>',
-          'filter_html_help' => 1,
+          'filter_html_help' => 0,
           'filter_html_nofollow' => 0,
         ),
       ),

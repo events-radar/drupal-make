@@ -298,7 +298,8 @@ libraries[ckeditor][type] = "libraries"
 libraries[ckeditor][download][type] = "file"
 libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.4.5/ckeditor_4.4.5_standard.zip"
 
-
+projects[hide_formats][subdir] = "contrib"
+projects[hide_formats][version]  = "1.1"
 
 ; Migrate
 projects[migrate][subdir] = "migrate"

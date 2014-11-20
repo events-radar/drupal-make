@@ -484,6 +484,13 @@ function radar_admin_settings_user_default_permissions() {
     'module' => 'user',
   );
 
+  // Exported permission: 'show text format dropdown'.
+  $permissions['show text format dropdown'] = array(
+    'name' => 'show text format dropdown',
+    'roles' => array(),
+    'module' => 'hide_formats',
+  );
+
   // Exported permission: 'use PHP for label patterns'.
   $permissions['use PHP for label patterns'] = array(
     'name' => 'use PHP for label patterns',

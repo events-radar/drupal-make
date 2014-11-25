@@ -296,7 +296,7 @@ var {
   background-color: $light-grey;
   color: white;
   padding-top: .5em;
-  font-family: $mono;
+  font-family: $typewriter;
   font-size: 1.2em;
 
   a {
@@ -441,9 +441,10 @@ var {
  * Site name (h1)
  */
 #site-name {
+  font-size: 2em;
   margin: 0;
   font-family: $typewriter;
-  font-weight: normal;
+  font-weight: bold;
 
   a {
     &:link,

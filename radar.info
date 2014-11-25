@@ -113,7 +113,7 @@ dependencies[] = geocoder
 
 ; UI Enhancement
 dependencies[] = wysiwyg
-
+dependencies[] = hide_formats
 
 ; Radar features
 dependencies[] = radar_admin_settings

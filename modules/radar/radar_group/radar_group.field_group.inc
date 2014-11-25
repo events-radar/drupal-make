@@ -79,8 +79,10 @@ function radar_group_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Location',
-    'weight' => '44',
-    'children' => array(),
+    'weight' => '8',
+    'children' => array(
+      0 => 'field_offline',
+    ),
     'format_type' => 'fieldset',
     'format_settings' => array(
       'formatter' => 'collapsible',
@@ -104,7 +106,7 @@ function radar_group_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Tags',
-    'weight' => '9',
+    'weight' => '10',
     'children' => array(
       0 => 'field_category',
       1 => 'field_topic',

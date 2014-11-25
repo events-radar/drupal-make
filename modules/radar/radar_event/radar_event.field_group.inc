@@ -76,12 +76,11 @@ function radar_event_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Info',
-    'weight' => '4',
+    'weight' => '6',
     'children' => array(
-      0 => 'field_price',
-      1 => 'field_email',
-      2 => 'field_link',
-      3 => 'field_phone',
+      0 => 'field_email',
+      1 => 'field_link',
+      2 => 'field_phone',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -106,7 +105,7 @@ function radar_event_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Tags',
-    'weight' => '7',
+    'weight' => '8',
     'children' => array(
       0 => 'field_category',
       1 => 'field_topic',

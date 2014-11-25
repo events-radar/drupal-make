@@ -20,12 +20,13 @@ function radar_location_field_default_field_instances() {
         'premise' => '',
         'postal_code' => '',
         'locality' => '',
-        'country' => 'NL',
+        'country' => 'DE',
         'name_line' => '',
       ),
     ),
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Addresses don\'t have to be complete - just town or country is also possible. <br>
+You can either automatically add the location to the map by clicking on the <em>Find using address field</em> button, draw it onto the map directly, or leave it blank.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -117,7 +118,7 @@ function radar_location_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 1,
+      'weight' => 2,
     ),
   );
 
@@ -228,14 +229,18 @@ function radar_location_field_default_field_instances() {
         'use_geocoder' => 1,
       ),
       'type' => 'geofield_openlayers',
-      'weight' => 2,
+      'weight' => 1,
     ),
   );
 
   // Exported field_instance: 'location-location-field_timezone'
   $field_instances['location-location-field_timezone'] = array(
     'bundle' => 'location',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 'Europe/Berlin',
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -272,6 +277,8 @@ function radar_location_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Address');
+  t('Addresses don\'t have to be complete - just town or country is also possible. <br>
+You can either automatically add the location to the map by clicking on the <em>Find using address field</em> button, draw it onto the map directly, or leave it blank.');
   t('Directions');
   t('Map');
   t('Timezone');

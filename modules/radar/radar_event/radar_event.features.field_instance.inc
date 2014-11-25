@@ -49,7 +49,7 @@ function radar_event_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -97,7 +97,7 @@ function radar_event_field_default_field_instances() {
         'display_label' => 0,
       ),
       'type' => 'options_onoff',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -136,7 +136,7 @@ function radar_event_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -235,7 +235,7 @@ function radar_event_field_default_field_instances() {
         'year_range' => '-0:+1',
       ),
       'type' => 'date_popup',
-      'weight' => 3,
+      'weight' => 2,
     ),
   );
 
@@ -326,7 +326,7 @@ function radar_event_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
@@ -525,7 +525,7 @@ by donation',
         'sort_options' => 0,
       ),
       'type' => 'select_or_other_buttons',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 

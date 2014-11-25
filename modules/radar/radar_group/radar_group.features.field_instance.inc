@@ -214,7 +214,7 @@ function radar_group_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 10,
+      'weight' => 9,
     ),
   );
 
@@ -390,7 +390,7 @@ Partial address such as only a city are also possible.',
         ),
       ),
       'type' => 'inline_entity_form',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 

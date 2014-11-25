@@ -52,6 +52,9 @@ $grey:         #777777;
 $light-grey:   #BBBBBB;;
 $dark-grey:    #444444;
 
+// Import font
+@include font-face("Typewriter", font-files("../fonts/TTWPGOTT.woff"));
+
 //
 // Font Variables
 // These font stacks are an exact copy of the stacks found in AT Cores
@@ -68,7 +71,7 @@ $modern-myriad:               'Segoe UI', 'Myriad Pro', Myriad, Arial, Helvetica
 $lucida:                      'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande', Verdana, Geneva, sans-serif;
 $impact:                      Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', sans-serif;
 $mono:                        Consolas, Monaco, 'Courier New', Courier, monospace, sans-serif;
-
+$typewriter:                  "Typewriter", $mono;
 
 //
 // Gutters

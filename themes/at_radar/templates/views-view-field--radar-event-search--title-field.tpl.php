@@ -19,7 +19,7 @@ foreach ($group_ids as $gid){
   }
 }
 if (count($groups)) {
-  $output .= ' @ <strong>' . implode(', ', $groups) . '</strong>';
+  $output .= ' <span class="group"> @ ' . implode(', ', $groups) . '</span>';
 }
 ?>
 <?php print $output; ?>

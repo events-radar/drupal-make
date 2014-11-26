@@ -87,7 +87,7 @@ html {
 }
 
 body {
-  font-family: $sans-serif-large; // Set from _custom.scss font variables
+  font-family: $event-font; // Set from _custom.scss font variables
   font-size: 87.5%;
   color: $dark-grey;
 }
@@ -103,6 +103,7 @@ h1 {}
 h2 {
 
   &.group {
+    font-family: $group-font;
     padding: 0 .6em 0.1em 1em;
     -moz-border-radius: 15px;
     border-radius: 15px;
@@ -118,6 +119,7 @@ h2 {
 
 h3 { 
   &.group {
+    font-family: $group-font;
     border: $green 2px solid;
     padding: 0 .3em .1em 1em;
     -moz-border-radius: 15px;
@@ -129,6 +131,7 @@ h3 {
   }
 
  .date { 
+    font-family: $group-font;
     border: $light-grey 2px solid;
     padding: 0 .6em;
     -moz-border-radius: 15px;
@@ -483,9 +486,11 @@ var {
  * The main page title (h1)
  */
 #page-title {
+  font-family: $typewriter;
   margin: 0 0 1em 0;
   color: $grey;
   font-weight: normal;
+  font-size: 2em;
 }
 
 #secondary-menu-bar ul li {
@@ -2246,5 +2251,10 @@ tr.error {
 
 }
 
-
+/* =====
+ * Common classes
+ */
+.group {
+  font-family: $group-font;
+}
 

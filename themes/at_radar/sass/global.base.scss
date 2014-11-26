@@ -14,6 +14,13 @@
  *   element-invisible and focusable styles.
  */
 
+/**
+ * Custom fonts.
+ */
+@include font-face("Typewriter", font-files("TTWPGOTT.woff"));
+@include font-face("Noto-Sans", font-files("noto-sans-latin-greek-400.woff"));
+@include font-face("Noto-Serif", font-files("noto-serif-latin-greek-400.woff"));
+
 /* =============================================================================
     HTML5 display definitions
    ========================================================================== */

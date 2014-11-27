@@ -12,7 +12,7 @@ $realm_variables = array();
   $realm_variables['language']['de'] = array();
   $realm_variables['language']['el'] = array();
   $realm_variables['language']['en'] = array(
-  'site_name' => '⸨﹙∘﹚⸩ r a d a r . s q u a t . n e t ᴺᴱᵂ',
+  'site_name' => '｟(･)｠ r a d a r . s q u a t . n e t ᴺᴱᵂ',
   'site_slogan' => '',
 );
   $realm_variables['language']['es'] = array();

@@ -177,7 +177,7 @@ function radar_event_views_default_views() {
     'image_style' => 'large',
     'image_link' => '',
   );
-  /* Field: Content: offline */
+  /* Field: Content: area */
   $handler->display->display_options['fields']['field_offline']['id'] = 'field_offline';
   $handler->display->display_options['fields']['field_offline']['table'] = 'field_data_field_offline';
   $handler->display->display_options['fields']['field_offline']['field'] = 'field_offline';
@@ -223,205 +223,6 @@ function radar_event_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Full event pane', 'panel_pane_1');
   $handler->display->display_options['display_description'] = 'Event pane with all the info of an event';
   $handler->display->display_options['pane_title'] = 'Full event info';
-
-  /* Display: Teaser event pane */
-  $handler = $view->new_display('panel_pane', 'Teaser event pane', 'panel_pane_2');
-  $handler->display->display_options['display_description'] = 'Displaying the teaser of one or several events';
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['grouping'] = array(
-    0 => array(
-      'field' => 'field_date_time',
-      'rendered' => 1,
-      'rendered_strip' => 0,
-    ),
-  );
-  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
-  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['inline'] = array(
-    'view_node' => 'view_node',
-    'body' => 'body',
-  );
-  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
-  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Date & Time */
-  $handler->display->display_options['fields']['field_date_time']['id'] = 'field_date_time';
-  $handler->display->display_options['fields']['field_date_time']['table'] = 'field_data_field_date_time';
-  $handler->display->display_options['fields']['field_date_time']['field'] = 'field_date_time';
-  $handler->display->display_options['fields']['field_date_time']['label'] = '';
-  $handler->display->display_options['fields']['field_date_time']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_date_time']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_date_time']['alter']['text'] = '<div class=date>[field_date_time]</div>';
-  $handler->display->display_options['fields']['field_date_time']['alter']['strip_tags'] = TRUE;
-  $handler->display->display_options['fields']['field_date_time']['alter']['preserve_tags'] = '<div>';
-  $handler->display->display_options['fields']['field_date_time']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_date_time']['element_class'] = 'date';
-  $handler->display->display_options['fields']['field_date_time']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_date_time']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_date_time']['settings'] = array(
-    'format_type' => 'radar_day',
-    'fromto' => 'value',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_repeat_rule' => 'hide',
-  );
-  $handler->display->display_options['fields']['field_date_time']['group_rows'] = FALSE;
-  $handler->display->display_options['fields']['field_date_time']['delta_offset'] = '0';
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
-  $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
-  $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
-  $handler->display->display_options['fields']['title_field']['label'] = '';
-  $handler->display->display_options['fields']['title_field']['element_type'] = 'h2';
-  $handler->display->display_options['fields']['title_field']['element_class'] = 'event';
-  $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title_field']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 1;
-  /* Field: Content: Link */
-  $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
-  $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
-  $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
-  $handler->display->display_options['fields']['view_node']['label'] = '';
-  $handler->display->display_options['fields']['view_node']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['view_node']['element_label_class'] = 'label';
-  $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view_node']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['view_node']['element_wrapper_class'] = 'info';
-  $handler->display->display_options['fields']['view_node']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['view_node']['text'] = '  Read more >>';
-  /* Field: Content: Description */
-  $handler->display->display_options['fields']['body']['id'] = 'body';
-  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
-  $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['body']['alter']['text'] = '[body][view_node]';
-  $handler->display->display_options['fields']['body']['alter']['max_length'] = '300';
-  $handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
-  $handler->display->display_options['fields']['body']['alter']['preserve_tags'] = '<em> <strong> <a>';
-  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
-  $handler->display->display_options['fields']['body']['settings'] = array(
-    'trim_length' => '300',
-  );
-  /* Field: Content: All taxonomy terms (translated) */
-  $handler->display->display_options['fields']['term_node_tid_i18n']['id'] = 'term_node_tid_i18n';
-  $handler->display->display_options['fields']['term_node_tid_i18n']['table'] = 'node';
-  $handler->display->display_options['fields']['term_node_tid_i18n']['field'] = 'term_node_tid_i18n';
-  $handler->display->display_options['fields']['term_node_tid_i18n']['label'] = 'categories';
-  $handler->display->display_options['fields']['term_node_tid_i18n']['element_label_type'] = 'div';
-  $handler->display->display_options['fields']['term_node_tid_i18n']['element_label_class'] = 'label inline';
-  $handler->display->display_options['fields']['term_node_tid_i18n']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['term_node_tid_i18n']['element_wrapper_class'] = 'info';
-  $handler->display->display_options['fields']['term_node_tid_i18n']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['term_node_tid_i18n']['separator'] = ' / ';
-  $handler->display->display_options['fields']['term_node_tid_i18n']['link_to_taxonomy'] = FALSE;
-  $handler->display->display_options['fields']['term_node_tid_i18n']['limit'] = TRUE;
-  $handler->display->display_options['fields']['term_node_tid_i18n']['vocabularies'] = array(
-    'category' => 'category',
-    'topic' => 0,
-  );
-  /* Field: Content: Date & Time */
-  $handler->display->display_options['fields']['field_date_time_1']['id'] = 'field_date_time_1';
-  $handler->display->display_options['fields']['field_date_time_1']['table'] = 'field_data_field_date_time';
-  $handler->display->display_options['fields']['field_date_time_1']['field'] = 'field_date_time';
-  $handler->display->display_options['fields']['field_date_time_1']['label'] = 'open at';
-  $handler->display->display_options['fields']['field_date_time_1']['element_label_type'] = 'div';
-  $handler->display->display_options['fields']['field_date_time_1']['element_label_class'] = 'label inline';
-  $handler->display->display_options['fields']['field_date_time_1']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_date_time_1']['element_wrapper_class'] = 'info';
-  $handler->display->display_options['fields']['field_date_time_1']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_date_time_1']['settings'] = array(
-    'format_type' => 'radar_time',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_repeat_rule' => 'hide',
-  );
-  $handler->display->display_options['fields']['field_date_time_1']['delta_offset'] = '0';
-  /* Field: Content: price */
-  $handler->display->display_options['fields']['field_price']['id'] = 'field_price';
-  $handler->display->display_options['fields']['field_price']['table'] = 'field_data_field_price';
-  $handler->display->display_options['fields']['field_price']['field'] = 'field_price';
-  $handler->display->display_options['fields']['field_price']['element_label_type'] = 'div';
-  $handler->display->display_options['fields']['field_price']['element_label_class'] = 'label inline';
-  $handler->display->display_options['fields']['field_price']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_price']['element_wrapper_class'] = 'info';
-  $handler->display->display_options['fields']['field_price']['element_default_classes'] = FALSE;
-  /* Field: Content: Image */
-  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
-  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['label'] = '';
-  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'medium',
-    'image_link' => 'content',
-  );
-  $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Date &amp; Time -  start date (field_date_time) */
-  $handler->display->display_options['sorts']['field_date_time_value']['id'] = 'field_date_time_value';
-  $handler->display->display_options['sorts']['field_date_time_value']['table'] = 'field_data_field_date_time';
-  $handler->display->display_options['sorts']['field_date_time_value']['field'] = 'field_date_time_value';
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: OG membership: Group ID */
-  $handler->display->display_options['arguments']['gid']['id'] = 'gid';
-  $handler->display->display_options['arguments']['gid']['table'] = 'og_membership';
-  $handler->display->display_options['arguments']['gid']['field'] = 'gid';
-  $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'node';
-  $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'event' => 'event',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Date &amp; Time -  start date (field_date_time) */
-  $handler->display->display_options['filters']['field_date_time_value']['id'] = 'field_date_time_value';
-  $handler->display->display_options['filters']['field_date_time_value']['table'] = 'field_data_field_date_time';
-  $handler->display->display_options['filters']['field_date_time_value']['field'] = 'field_date_time_value';
-  $handler->display->display_options['filters']['field_date_time_value']['operator'] = '>=';
-  $handler->display->display_options['filters']['field_date_time_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_date_time_value']['default_date'] = 'today';
-  $handler->display->display_options['filters']['field_date_time_value']['year_range'] = '-1:+3';
-  /* Filter criterion: OG membership: Type */
-  $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
-  $handler->display->display_options['filters']['type_1']['table'] = 'og_membership';
-  $handler->display->display_options['filters']['type_1']['field'] = 'type';
-  $handler->display->display_options['filters']['type_1']['value'] = array(
-    'og_membership_type_default' => 'og_membership_type_default',
-  );
-  $handler->display->display_options['pane_title'] = 'Events teasers';
 
   /* Display: Feed */
   $handler = $view->new_display('feed', 'Feed', 'feed_1');
@@ -764,7 +565,7 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['uuid']['label'] = '';
   $handler->display->display_options['fields']['uuid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uuid']['element_default_classes'] = FALSE;
-  /* Field: Content: offline */
+  /* Field: Content: area */
   $handler->display->display_options['fields']['field_offline']['id'] = 'field_offline';
   $handler->display->display_options['fields']['field_offline']['table'] = 'field_data_field_offline';
   $handler->display->display_options['fields']['field_offline']['field'] = 'field_offline';
@@ -924,6 +725,443 @@ function radar_event_views_default_views() {
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
   $handler->display->display_options['path'] = 'group_events';
   $export['radar_event'] = $view;
+
+  $view = new view();
+  $view->name = 'radar_group_events';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'search_api_index_events';
+  $view->human_name = 'Radar Group events';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '30';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'field_date_time_value_1',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['row_class'] = 'results';
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'No upcoming events.';
+  $handler->display->display_options['empty']['area']['format'] = 'plain_text';
+  /* Field: Date & Time: Start date (indexed) */
+  $handler->display->display_options['fields']['field_date_time_value_1']['id'] = 'field_date_time_value_1';
+  $handler->display->display_options['fields']['field_date_time_value_1']['table'] = 'search_api_index_events';
+  $handler->display->display_options['fields']['field_date_time_value_1']['field'] = 'field_date_time_value';
+  $handler->display->display_options['fields']['field_date_time_value_1']['label'] = '';
+  $handler->display->display_options['fields']['field_date_time_value_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_date_time_value_1']['alter']['text'] = '<div class=date>[field_date_time_value_1]</div>';
+  $handler->display->display_options['fields']['field_date_time_value_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_date_time_value_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_date_time_value_1']['date_format'] = 'week_day';
+  $handler->display->display_options['fields']['field_date_time_value_1']['second_date_format'] = 'radar_time';
+  $handler->display->display_options['fields']['field_date_time_value_1']['link_to_entity'] = 0;
+  /* Field: Date & Time: Start date (indexed) */
+  $handler->display->display_options['fields']['field_date_time_value']['id'] = 'field_date_time_value';
+  $handler->display->display_options['fields']['field_date_time_value']['table'] = 'search_api_index_events';
+  $handler->display->display_options['fields']['field_date_time_value']['field'] = 'field_date_time_value';
+  $handler->display->display_options['fields']['field_date_time_value']['label'] = '';
+  $handler->display->display_options['fields']['field_date_time_value']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_date_time_value']['date_format'] = 'short_day';
+  $handler->display->display_options['fields']['field_date_time_value']['second_date_format'] = 'radar_time';
+  $handler->display->display_options['fields']['field_date_time_value']['link_to_entity'] = 0;
+  /* Field: Indexed Node: Date & Time */
+  $handler->display->display_options['fields']['field_date_time_1']['id'] = 'field_date_time_1';
+  $handler->display->display_options['fields']['field_date_time_1']['table'] = 'search_api_index_events';
+  $handler->display->display_options['fields']['field_date_time_1']['field'] = 'field_date_time';
+  $handler->display->display_options['fields']['field_date_time_1']['label'] = '';
+  $handler->display->display_options['fields']['field_date_time_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_date_time_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_date_time_1']['settings'] = array(
+    'format_type' => 'radar_time',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_repeat_rule' => 'hide',
+  );
+  $handler->display->display_options['fields']['field_date_time_1']['delta_offset'] = '0';
+  /* Field: Indexed Node: Event title */
+  $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['table'] = 'search_api_index_events';
+  $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['label'] = '';
+  $handler->display->display_options['fields']['title_field']['element_type'] = 'div';
+  $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['title_field']['type'] = 'title_linked';
+  $handler->display->display_options['fields']['title_field']['settings'] = array(
+    'title_style' => '_none',
+    'title_link' => 'content',
+    'title_class' => '',
+  );
+  /* Field: Indexed Node: Category */
+  $handler->display->display_options['fields']['field_category']['id'] = 'field_category';
+  $handler->display->display_options['fields']['field_category']['table'] = 'search_api_index_events';
+  $handler->display->display_options['fields']['field_category']['field'] = 'field_category';
+  $handler->display->display_options['fields']['field_category']['label'] = 'Categories';
+  $handler->display->display_options['fields']['field_category']['alter']['text'] = ' - [field_category]';
+  $handler->display->display_options['fields']['field_category']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_category']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_category']['list']['separator'] = ' / ';
+  $handler->display->display_options['fields']['field_category']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['field_category']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_category']['bypass_access'] = 0;
+  /* Field: Indexed Node: additional tags */
+  $handler->display->display_options['fields']['field_topic']['id'] = 'field_topic';
+  $handler->display->display_options['fields']['field_topic']['table'] = 'search_api_index_events';
+  $handler->display->display_options['fields']['field_topic']['field'] = 'field_topic';
+  $handler->display->display_options['fields']['field_topic']['label'] = 'Tags';
+  $handler->display->display_options['fields']['field_topic']['alter']['text'] = ' - [field_topic]';
+  $handler->display->display_options['fields']['field_topic']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_topic']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['field_topic']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_topic']['bypass_access'] = 0;
+  /* Field: Indexed Node: Groups */
+  $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
+  $handler->display->display_options['fields']['og_group_ref']['table'] = 'search_api_index_events';
+  $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
+  $handler->display->display_options['fields']['og_group_ref']['label'] = 'by / with';
+  $handler->display->display_options['fields']['og_group_ref']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['og_group_ref']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['og_group_ref']['bypass_access'] = 0;
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+  /* Field: Indexed Node: Node ID */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_events';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['text'] = 'clone';
+  $handler->display->display_options['fields']['nid']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['path'] = '/node/[nid]/clone/confirm';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['separator'] = '';
+  $handler->display->display_options['fields']['nid']['link_to_entity'] = 0;
+  /* Contextual filter: Indexed Node: Groups */
+  $handler->display->display_options['arguments']['og_group_ref']['id'] = 'og_group_ref';
+  $handler->display->display_options['arguments']['og_group_ref']['table'] = 'search_api_index_events';
+  $handler->display->display_options['arguments']['og_group_ref']['field'] = 'og_group_ref';
+  $handler->display->display_options['arguments']['og_group_ref']['default_action'] = 'empty';
+  $handler->display->display_options['arguments']['og_group_ref']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['og_group_ref']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['og_group_ref']['summary_options']['grouping'] = array(
+    0 => array(
+      'field' => 'field_date_time_value_1',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
+  $handler->display->display_options['arguments']['og_group_ref']['break_phrase'] = 0;
+  $handler->display->display_options['arguments']['og_group_ref']['not'] = 0;
+  /* Filter criterion: Date & Time: Start date (indexed) */
+  $handler->display->display_options['filters']['field_date_time_value']['id'] = 'field_date_time_value';
+  $handler->display->display_options['filters']['field_date_time_value']['table'] = 'search_api_index_events';
+  $handler->display->display_options['filters']['field_date_time_value']['field'] = 'field_date_time_value';
+  $handler->display->display_options['filters']['field_date_time_value']['operator'] = '<=';
+  $handler->display->display_options['filters']['field_date_time_value']['value'] = '-2 hours';
+
+  /* Display: Events teaser list pane */
+  $handler = $view->new_display('panel_pane', 'Events teaser list pane', 'panel_pane_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Upcoming events';
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'more events';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Date & Time: Start date (indexed) */
+  $handler->display->display_options['fields']['field_date_time_value_1']['id'] = 'field_date_time_value_1';
+  $handler->display->display_options['fields']['field_date_time_value_1']['table'] = 'search_api_index_events';
+  $handler->display->display_options['fields']['field_date_time_value_1']['field'] = 'field_date_time_value';
+  $handler->display->display_options['fields']['field_date_time_value_1']['label'] = '';
+  $handler->display->display_options['fields']['field_date_time_value_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_date_time_value_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_date_time_value_1']['alter']['text'] = '<div class=date>[field_date_time_value_1]</div>';
+  $handler->display->display_options['fields']['field_date_time_value_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_date_time_value_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_date_time_value_1']['date_format'] = 'radar_day';
+  $handler->display->display_options['fields']['field_date_time_value_1']['second_date_format'] = 'radar_time';
+  $handler->display->display_options['fields']['field_date_time_value_1']['link_to_entity'] = 0;
+  /* Field: Indexed Node: Groups */
+  $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
+  $handler->display->display_options['fields']['og_group_ref']['table'] = 'search_api_index_events';
+  $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
+  $handler->display->display_options['fields']['og_group_ref']['label'] = '';
+  $handler->display->display_options['fields']['og_group_ref']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['og_group_ref']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['og_group_ref']['alter']['text'] = ' @ <strong>[og_group_ref]</strong>';
+  $handler->display->display_options['fields']['og_group_ref']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['og_group_ref']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['og_group_ref']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['og_group_ref']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['og_group_ref']['bypass_access'] = 0;
+  /* Field: Indexed Node: Event title */
+  $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['table'] = 'search_api_index_events';
+  $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['label'] = '';
+  $handler->display->display_options['fields']['title_field']['element_type'] = 'div';
+  $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['title_field']['type'] = 'title_linked';
+  $handler->display->display_options['fields']['title_field']['settings'] = array(
+    'title_style' => '_none',
+    'title_link' => 'content',
+    'title_class' => '',
+  );
+  /* Field: Indexed Node: Category */
+  $handler->display->display_options['fields']['field_category']['id'] = 'field_category';
+  $handler->display->display_options['fields']['field_category']['table'] = 'search_api_index_events';
+  $handler->display->display_options['fields']['field_category']['field'] = 'field_category';
+  $handler->display->display_options['fields']['field_category']['label'] = '';
+  $handler->display->display_options['fields']['field_category']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_category']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_category']['alter']['text'] = ' - [field_category]';
+  $handler->display->display_options['fields']['field_category']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_category']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_category']['list']['separator'] = ' / ';
+  $handler->display->display_options['fields']['field_category']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['field_category']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_category']['bypass_access'] = 0;
+  /* Field: Indexed Node: additional tags */
+  $handler->display->display_options['fields']['field_topic']['id'] = 'field_topic';
+  $handler->display->display_options['fields']['field_topic']['table'] = 'search_api_index_events';
+  $handler->display->display_options['fields']['field_topic']['field'] = 'field_topic';
+  $handler->display->display_options['fields']['field_topic']['label'] = '';
+  $handler->display->display_options['fields']['field_topic']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_topic']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_topic']['alter']['text'] = ' - [field_topic]';
+  $handler->display->display_options['fields']['field_topic']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_topic']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['field_topic']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_topic']['bypass_access'] = 0;
+  /* Field: Indexed Node: Date & Time */
+  $handler->display->display_options['fields']['field_date_time_1']['id'] = 'field_date_time_1';
+  $handler->display->display_options['fields']['field_date_time_1']['table'] = 'search_api_index_events';
+  $handler->display->display_options['fields']['field_date_time_1']['field'] = 'field_date_time';
+  $handler->display->display_options['fields']['field_date_time_1']['label'] = '';
+  $handler->display->display_options['fields']['field_date_time_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_date_time_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_date_time_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_date_time_1']['settings'] = array(
+    'format_type' => 'timezone',
+    'fromto' => 'value',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_repeat_rule' => 'hide',
+  );
+  $handler->display->display_options['fields']['field_date_time_1']['delta_offset'] = '0';
+  /* Field: Indexed Node: Date & Time */
+  $handler->display->display_options['fields']['field_date_time']['id'] = 'field_date_time';
+  $handler->display->display_options['fields']['field_date_time']['table'] = 'search_api_index_events';
+  $handler->display->display_options['fields']['field_date_time']['field'] = 'field_date_time';
+  $handler->display->display_options['fields']['field_date_time']['label'] = '';
+  $handler->display->display_options['fields']['field_date_time']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_date_time']['alter']['text'] = '[field_date_time] [field_date_time_1][field_category][field_topic]';
+  $handler->display->display_options['fields']['field_date_time']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_date_time']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_date_time']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_date_time']['settings'] = array(
+    'format_type' => 'radar_time',
+    'fromto' => 'value',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_repeat_rule' => 'hide',
+  );
+  $handler->display->display_options['fields']['field_date_time']['delta_offset'] = '0';
+  $handler->display->display_options['pane_title'] = 'Events teaser list pane';
+  $handler->display->display_options['pane_category']['name'] = 'Radar';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['argument_input'] = array(
+    'og_group_ref' => array(
+      'type' => 'panel',
+      'context' => 'entity:file.basename',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Indexed Node: Groups',
+    ),
+  );
+  $handler->display->display_options['link_to_view'] = '1';
+
+  /* Display: Events page */
+  $handler = $view->new_display('page', 'Events page', 'page_1');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'field_date_time_value_1' => 'field_date_time_value_1',
+    'og_group_ref' => 'og_group_ref',
+    'title_field' => 'title_field',
+    'field_category' => 'field_category',
+    'field_topic' => 'field_topic',
+    'field_date_time_1' => 'field_date_time_1',
+    'field_date_time' => 'field_date_time',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'field_date_time_value_1' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'og_group_ref' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'title_field' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_category' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_topic' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_date_time_1' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_date_time' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['path'] = 'node/%/events';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'Events';
+  $handler->display->display_options['menu']['description'] = 'Upcoming events at / by this group';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Archive page */
+  $handler = $view->new_display('page', 'Archive page', 'page_2');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'field_date_time_value_1' => 'field_date_time_value_1',
+    'og_group_ref' => 'og_group_ref',
+    'title_field' => 'title_field',
+    'field_category' => 'field_category',
+    'field_topic' => 'field_topic',
+    'field_date_time_1' => 'field_date_time_1',
+    'field_date_time' => 'field_date_time',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'field_date_time_value_1' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'og_group_ref' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'title_field' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_category' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_topic' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_date_time_1' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_date_time' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'No past events.';
+  $handler->display->display_options['empty']['area']['format'] = 'plain_text';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Indexed Node: first_start_date */
+  $handler->display->display_options['sorts']['search_api_aggregation_1']['id'] = 'search_api_aggregation_1';
+  $handler->display->display_options['sorts']['search_api_aggregation_1']['table'] = 'search_api_index_events';
+  $handler->display->display_options['sorts']['search_api_aggregation_1']['field'] = 'search_api_aggregation_1';
+  $handler->display->display_options['sorts']['search_api_aggregation_1']['order'] = 'DESC';
+  $handler->display->display_options['path'] = 'node/%/archive';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'Archive';
+  $handler->display->display_options['menu']['description'] = 'Archive events at / by this group';
+  $handler->display->display_options['menu']['weight'] = '1';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $export['radar_group_events'] = $view;
 
   return $export;
 }

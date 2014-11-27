@@ -56,3 +56,23 @@ function radar_search_facetapi_searcher_info_alter(array &$searcher_info) {
 function radar_search_form_facetapi_pretty_paths_admin_form_alter(&$form, $form_state) {
   $form['searcher']['#title'] .= ' ' . t('(Radar altered)');
 }
+
+/**
+* Implements hook_views_data_alter()
+*/
+function radar_search_views_data_alter(&$data) {
+  foreach (search_api_index_load_multiple(FALSE) as $index) {
+    $key = 'search_api_index_' . $index->machine_name;
+    $type_info = search_api_get_item_type_info($index->item_type);
+    if ($type_info['entity_type'] == 'node') {
+      $table = &$data[$key];
+      $table['clone_node'] = array(
+        'field' => array(
+          'title' => t('Clone link'),
+          'help' => t('Provide a simple link to clone the node.'),
+          'handler' => 'views_handler_field_node_link_clone',
+        ),
+      );
+    }
+  }
+}

@@ -56,6 +56,10 @@ function radar_group_default_page_manager_handlers() {
       'two_33_66_first' => NULL,
       'two_33_66_second' => NULL,
       'two_33_66_bottom' => NULL,
+      'two_66_33_top' => NULL,
+      'two_66_33_first' => NULL,
+      'two_66_33_second' => NULL,
+      'two_66_33_bottom' => NULL,
     ),
   );
   $display->cache = array();
@@ -111,10 +115,10 @@ function radar_group_default_page_manager_handlers() {
     $display->content['new-17ab2b05-3539-44d5-b53c-0667a0e8e20f'] = $pane;
     $display->panels['two_66_33_second'][0] = 'new-17ab2b05-3539-44d5-b53c-0667a0e8e20f';
     $pane = new stdClass();
-    $pane->pid = 'new-889b64a9-7ff3-4123-b07f-e9bb44474265';
+    $pane->pid = 'new-1798fc28-a444-4373-8a51-b06fb894e14d';
     $pane->panel = 'two_66_33_second';
     $pane->type = 'views_panes';
-    $pane->subtype = 'radar_event-panel_pane_2';
+    $pane->subtype = 'radar_group_events-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -122,16 +126,13 @@ function radar_group_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'event',
-    );
+    $pane->css = array();
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $pane->uuid = '889b64a9-7ff3-4123-b07f-e9bb44474265';
-    $display->content['new-889b64a9-7ff3-4123-b07f-e9bb44474265'] = $pane;
-    $display->panels['two_66_33_second'][1] = 'new-889b64a9-7ff3-4123-b07f-e9bb44474265';
+    $pane->uuid = '1798fc28-a444-4373-8a51-b06fb894e14d';
+    $display->content['new-1798fc28-a444-4373-8a51-b06fb894e14d'] = $pane;
+    $display->panels['two_66_33_second'][1] = 'new-1798fc28-a444-4373-8a51-b06fb894e14d';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-6e525b08-bf1b-4192-b6cb-9939a7c827f9';
   $handler->conf['display'] = $display;

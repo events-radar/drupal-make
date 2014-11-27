@@ -177,7 +177,7 @@ function radar_event_views_default_views() {
     'image_style' => 'large',
     'image_link' => '',
   );
-  /* Field: Content: area */
+  /* Field: Content: offline */
   $handler->display->display_options['fields']['field_offline']['id'] = 'field_offline';
   $handler->display->display_options['fields']['field_offline']['table'] = 'field_data_field_offline';
   $handler->display->display_options['fields']['field_offline']['field'] = 'field_offline';
@@ -228,8 +228,8 @@ function radar_event_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Teaser event pane', 'panel_pane_2');
   $handler->display->display_options['display_description'] = 'Displaying the teaser of one or several events';
   $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'load_more';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
@@ -764,7 +764,7 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['uuid']['label'] = '';
   $handler->display->display_options['fields']['uuid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uuid']['element_default_classes'] = FALSE;
-  /* Field: Content: area */
+  /* Field: Content: offline */
   $handler->display->display_options['fields']['field_offline']['id'] = 'field_offline';
   $handler->display->display_options['fields']['field_offline']['table'] = 'field_data_field_offline';
   $handler->display->display_options['fields']['field_offline']['field'] = 'field_offline';

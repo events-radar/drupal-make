@@ -1009,6 +1009,14 @@ function radar_event_views_default_views() {
     'show_repeat_rule' => 'hide',
   );
   $handler->display->display_options['fields']['field_date_time']['delta_offset'] = '0';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Date & Time: Start date (indexed) */
+  $handler->display->display_options['filters']['field_date_time_value']['id'] = 'field_date_time_value';
+  $handler->display->display_options['filters']['field_date_time_value']['table'] = 'search_api_index_events';
+  $handler->display->display_options['filters']['field_date_time_value']['field'] = 'field_date_time_value';
+  $handler->display->display_options['filters']['field_date_time_value']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_date_time_value']['value'] = '-2 hours';
   $handler->display->display_options['pane_title'] = 'Events teaser list pane';
   $handler->display->display_options['pane_category']['name'] = 'Radar';
   $handler->display->display_options['pane_category']['weight'] = '0';

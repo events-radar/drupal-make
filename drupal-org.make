@@ -165,7 +165,7 @@ projects[phone][subdir] = "contrib"
 ; multilingual
 projects[entity_translation][subdir] = "contrib"
 projects[entity_translation][type] = "module"
-projects[entity_translation][download][url] = "git://git.drupal.org/projects/entity_translation"
+projects[entity_translation][download][url] = "git://git.drupal.org/project/entity_translation"
 projects[entity_translation][download][revision] = "182739794291db83ee7d2a74bfb2ae2a83d5bcea"
 
 projects[i18n][subdir] = "contrib"

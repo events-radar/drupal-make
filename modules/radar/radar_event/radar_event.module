@@ -82,7 +82,12 @@ function radar_event_entityreference_offline_prepopulate($entity_type, $entity, 
   // reuse values inserted by entityreference_prepopulate.
   $ogfield = field_info_field('og_group_ref');
   $ogfield_instance = field_info_instance('node', 'og_group_ref', 'event');
-  if ($ids = entityreference_prepopulate_get_values($ogfield, $ogfield_instance)) {
+  $ids = entityreference_prepopulate_get_values($ogfield, $ogfield_instance);
+  $_GET['og_group_request'] = $_GET['og_group_ref'];
+  $ogfield = field_info_field('og_group_request');
+  $ogfield_instance = field_info_instance('node', 'og_group_request', 'event');
+  $ids += entityreference_prepopulate_get_values($ogfield, $ogfield_instance);
+  if (count($ids)) {
     foreach ($ids as $nid) {
       $node = node_load($nid);
       if (!empty($node->field_offline[LANGUAGE_NONE])) {
@@ -117,6 +122,11 @@ function radar_event_date_time_prepopulate($entity_type, $entity, $field, $insta
   // reuse values inserted by entityreference_prepopulate.
   $ogfield = field_info_field('og_group_ref');
   $ogfield_instance = field_info_instance('node', 'og_group_ref', 'event');
+  $ids = entityreference_prepopulate_get_values($ogfield, $ogfield_instance);
+  $_GET['og_group_request'] = $_GET['og_group_ref'];
+  $ogfield = field_info_field('og_group_request');
+  $ogfield_instance = field_info_instance('node', 'og_group_request', 'event');
+  $ids += entityreference_prepopulate_get_values($ogfield, $ogfield_instance);
   if ($ids = entityreference_prepopulate_get_values($ogfield, $ogfield_instance)) {
     foreach ($ids as $nid) {
       $node = node_load($nid);

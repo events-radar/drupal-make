@@ -16,5 +16,11 @@ function radar_admin_settings_user_default_roles() {
     'weight' => 3,
   );
 
+  // Exported role: tech administrator.
+  $roles['tech administrator'] = array(
+    'name' => 'tech administrator',
+    'weight' => 7,
+  );
+
   return $roles;
 }

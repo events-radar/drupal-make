@@ -15,6 +15,7 @@ function radar_admin_settings_user_default_permissions() {
     'name' => 'access administration pages',
     'roles' => array(
       'administrator' => 'administrator',
+      'tech administrator' => 'tech administrator',
     ),
     'module' => 'system',
   );
@@ -36,7 +37,9 @@ function radar_admin_settings_user_default_permissions() {
   // Exported permission: 'access contextual links'.
   $permissions['access contextual links'] = array(
     'name' => 'access contextual links',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'contextual',
   );
 
@@ -50,14 +53,19 @@ function radar_admin_settings_user_default_permissions() {
   // Exported permission: 'access site in maintenance mode'.
   $permissions['access site in maintenance mode'] = array(
     'name' => 'access site in maintenance mode',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'system',
   );
 
   // Exported permission: 'access site reports'.
   $permissions['access site reports'] = array(
     'name' => 'access site reports',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'system',
   );
 
@@ -66,6 +74,7 @@ function radar_admin_settings_user_default_permissions() {
     'name' => 'access user profiles',
     'roles' => array(
       'administrator' => 'administrator',
+      'tech administrator' => 'tech administrator',
     ),
     'module' => 'user',
   );
@@ -150,14 +159,18 @@ function radar_admin_settings_user_default_permissions() {
   // Exported permission: 'administer languages'.
   $permissions['administer languages'] = array(
     'name' => 'administer languages',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'locale',
   );
 
   // Exported permission: 'administer menu'.
   $permissions['administer menu'] = array(
     'name' => 'administer menu',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'menu',
   );
 
@@ -185,10 +198,7 @@ function radar_admin_settings_user_default_permissions() {
   // Exported permission: 'administer nodes'.
   $permissions['administer nodes'] = array(
     'name' => 'administer nodes',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'content moderator' => 'content moderator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -230,7 +240,9 @@ function radar_admin_settings_user_default_permissions() {
   // Exported permission: 'administer permissions'.
   $permissions['administer permissions'] = array(
     'name' => 'administer permissions',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'user',
   );
 
@@ -288,6 +300,7 @@ function radar_admin_settings_user_default_permissions() {
     'name' => 'administer users',
     'roles' => array(
       'administrator' => 'administrator',
+      'tech administrator' => 'tech administrator',
     ),
     'module' => 'user',
   );
@@ -539,8 +552,8 @@ function radar_admin_settings_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
-      'content moderator' => 'content moderator',
       'list moderator' => 'list moderator',
+      'non-authenticated user' => 'non-authenticated user',
     ),
     'module' => 'filter',
   );

@@ -115,7 +115,7 @@ function radar_og_node_presave($node) {
   }
 
   // If the node is not posted into a group (ie only for requested groups) unpublish it.
-  if ($node->type == 'event' && !isset($node->og_group_ref) || !count($node->og_group_ref[LANGUAGE_NONE])) {
+  if ($node->type == 'event' && (!isset($node->og_group_ref) || !count($node->og_group_ref[LANGUAGE_NONE]))) {
     drupal_set_message(t('Your event will be reviewed by the administrator of the group(s) that you have posted it into.'));
     $node->status = 0;
   }

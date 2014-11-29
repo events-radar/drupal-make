@@ -61,7 +61,6 @@ function radar_event_user_default_permissions() {
     'name' => 'edit any event content',
     'roles' => array(
       'administrator' => 'administrator',
-      'content moderator' => 'content moderator',
     ),
     'module' => 'node',
   );

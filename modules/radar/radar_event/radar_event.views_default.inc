@@ -58,7 +58,7 @@ function radar_event_views_default_views() {
     'show_repeat_rule' => 'hide',
   );
   $handler->display->display_options['fields']['field_date_time']['delta_offset'] = '0';
-  /* Field: Content: Event title */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';

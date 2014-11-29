@@ -43,7 +43,6 @@ function radar_group_user_default_permissions() {
     'name' => 'edit any group content',
     'roles' => array(
       'administrator' => 'administrator',
-      'content moderator' => 'content moderator',
     ),
     'module' => 'node',
   );
@@ -54,7 +53,6 @@ function radar_group_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
-      'content moderator' => 'content moderator',
       'non-authenticated user' => 'non-authenticated user',
     ),
     'module' => 'node',

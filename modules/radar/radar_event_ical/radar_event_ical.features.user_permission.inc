@@ -15,7 +15,7 @@ function radar_event_ical_user_default_permissions() {
     'name' => 'clear standard_ical feeds',
     'roles' => array(
       'administrator' => 'administrator',
-      'content moderator' => 'content moderator',
+      'tech administrator' => 'tech administrator',
     ),
     'module' => 'feeds',
   );
@@ -52,7 +52,6 @@ function radar_event_ical_user_default_permissions() {
     'name' => 'edit any event_ical_importer content',
     'roles' => array(
       'administrator' => 'administrator',
-      'content moderator' => 'content moderator',
     ),
     'module' => 'node',
   );
@@ -71,7 +70,8 @@ function radar_event_ical_user_default_permissions() {
     'name' => 'import standard_ical feeds',
     'roles' => array(
       'administrator' => 'administrator',
-      'content moderator' => 'content moderator',
+      'list moderator' => 'list moderator',
+      'tech administrator' => 'tech administrator',
     ),
     'module' => 'feeds',
   );
@@ -81,7 +81,7 @@ function radar_event_ical_user_default_permissions() {
     'name' => 'unlock standard_ical feeds',
     'roles' => array(
       'administrator' => 'administrator',
-      'content moderator' => 'content moderator',
+      'tech administrator' => 'tech administrator',
     ),
     'module' => 'feeds',
   );

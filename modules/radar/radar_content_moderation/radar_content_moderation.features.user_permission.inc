@@ -33,7 +33,6 @@ function radar_content_moderation_user_default_permissions() {
     'name' => 'flag abuse_whitelist_node',
     'roles' => array(
       'administrator' => 'administrator',
-      'content moderator' => 'content moderator',
     ),
     'module' => 'flag',
   );
@@ -43,7 +42,6 @@ function radar_content_moderation_user_default_permissions() {
     'name' => 'flag abuse_whitelist_user',
     'roles' => array(
       'administrator' => 'administrator',
-      'content moderator' => 'content moderator',
     ),
     'module' => 'flag',
   );
@@ -53,7 +51,6 @@ function radar_content_moderation_user_default_permissions() {
     'name' => 'unflag abuse_node',
     'roles' => array(
       'administrator' => 'administrator',
-      'content moderator' => 'content moderator',
     ),
     'module' => 'flag',
   );
@@ -63,7 +60,6 @@ function radar_content_moderation_user_default_permissions() {
     'name' => 'unflag abuse_user',
     'roles' => array(
       'administrator' => 'administrator',
-      'content moderator' => 'content moderator',
     ),
     'module' => 'flag',
   );
@@ -73,7 +69,6 @@ function radar_content_moderation_user_default_permissions() {
     'name' => 'unflag abuse_whitelist_node',
     'roles' => array(
       'administrator' => 'administrator',
-      'content moderator' => 'content moderator',
     ),
     'module' => 'flag',
   );
@@ -83,7 +78,6 @@ function radar_content_moderation_user_default_permissions() {
     'name' => 'unflag abuse_whitelist_user',
     'roles' => array(
       'administrator' => 'administrator',
-      'content moderator' => 'content moderator',
     ),
     'module' => 'flag',
   );

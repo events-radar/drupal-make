@@ -13,7 +13,9 @@ function radar_languages_user_default_permissions() {
   // Exported permission: 'administer entity translation'.
   $permissions['administer entity translation'] = array(
     'name' => 'administer entity translation',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'entity_translation',
   );
 
@@ -28,8 +30,8 @@ function radar_languages_user_default_permissions() {
   $permissions['translate admin strings'] = array(
     'name' => 'translate admin strings',
     'roles' => array(
-      'administrator' => 'administrator',
-      'content moderator' => 'content moderator',
+      'tech administrator' => 'tech administrator',
+      'translator' => 'translator',
     ),
     'module' => 'i18n_string',
   );
@@ -38,8 +40,8 @@ function radar_languages_user_default_permissions() {
   $permissions['translate any entity'] = array(
     'name' => 'translate any entity',
     'roles' => array(
-      'authenticated user' => 'authenticated user',
-      'non-authenticated user' => 'non-authenticated user',
+      'tech administrator' => 'tech administrator',
+      'translator' => 'translator',
     ),
     'module' => 'entity_translation',
   );
@@ -48,8 +50,8 @@ function radar_languages_user_default_permissions() {
   $permissions['translate content'] = array(
     'name' => 'translate content',
     'roles' => array(
-      'authenticated user' => 'authenticated user',
-      'non-authenticated user' => 'non-authenticated user',
+      'tech administrator' => 'tech administrator',
+      'translator' => 'translator',
     ),
     'module' => 'translation',
   );
@@ -57,7 +59,10 @@ function radar_languages_user_default_permissions() {
   // Exported permission: 'translate interface'.
   $permissions['translate interface'] = array(
     'name' => 'translate interface',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+      'translator' => 'translator',
+    ),
     'module' => 'locale',
   );
 
@@ -65,8 +70,8 @@ function radar_languages_user_default_permissions() {
   $permissions['translate node entities'] = array(
     'name' => 'translate node entities',
     'roles' => array(
-      'authenticated user' => 'authenticated user',
-      'non-authenticated user' => 'non-authenticated user',
+      'tech administrator' => 'tech administrator',
+      'translator' => 'translator',
     ),
     'module' => 'entity_translation',
   );
@@ -75,8 +80,8 @@ function radar_languages_user_default_permissions() {
   $permissions['translate user-defined strings'] = array(
     'name' => 'translate user-defined strings',
     'roles' => array(
-      'administrator' => 'administrator',
-      'content moderator' => 'content moderator',
+      'tech administrator' => 'tech administrator',
+      'translator' => 'translator',
     ),
     'module' => 'i18n_string',
   );

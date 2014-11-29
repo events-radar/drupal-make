@@ -106,11 +106,11 @@ class OgRadarSelectionHandler extends OgSelectionHandler {
       }
     }
     elseif ($field_mode == 'admin') {
-      // Don't show groups the user can post into.
+      // Show groups the user can is a member of but can't post into post.
       if (!empty($this->instance) && $this->instance['entity_type'] == 'node') {
         $node_type = $this->instance['bundle'];
         foreach ($user_groups as $delta => $gid) {
-          if (og_user_access($group_type, $gid, "create $node_type content")) {
+          if (!og_user_access($group_type, $gid, "create $node_type content")) {
             unset($user_groups[$delta]);
           }
         }

@@ -39,7 +39,7 @@ function radar_location_user_default_permissions() {
     'name' => 'eck administer location location entities',
     'roles' => array(
       'administrator' => 'administrator',
-      'content moderator' => 'content moderator',
+      'tech administrator' => 'tech administrator',
     ),
     'module' => 'eck',
   );
@@ -72,7 +72,6 @@ function radar_location_user_default_permissions() {
     'name' => 'eck edit location location entities',
     'roles' => array(
       'administrator' => 'administrator',
-      'content moderator' => 'content moderator',
     ),
     'module' => 'eck',
   );
@@ -89,7 +88,6 @@ function radar_location_user_default_permissions() {
     'name' => 'eck list location location entities',
     'roles' => array(
       'administrator' => 'administrator',
-      'content moderator' => 'content moderator',
     ),
     'module' => 'eck',
   );

@@ -13,7 +13,9 @@ function radar_admin_menu_user_default_permissions() {
   // Exported permission: 'access administration menu'.
   $permissions['access administration menu'] = array(
     'name' => 'access administration menu',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'admin_menu',
   );
 
@@ -22,8 +24,8 @@ function radar_admin_menu_user_default_permissions() {
     'name' => 'access toolbar',
     'roles' => array(
       'administrator' => 'administrator',
-      'content moderator' => 'content moderator',
       'list moderator' => 'list moderator',
+      'tech administrator' => 'tech administrator',
     ),
     'module' => 'toolbar',
   );
@@ -38,7 +40,9 @@ function radar_admin_menu_user_default_permissions() {
   // Exported permission: 'customize shortcut links'.
   $permissions['customize shortcut links'] = array(
     'name' => 'customize shortcut links',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'shortcut',
   );
 
@@ -52,14 +56,18 @@ function radar_admin_menu_user_default_permissions() {
   // Exported permission: 'flush caches'.
   $permissions['flush caches'] = array(
     'name' => 'flush caches',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'admin_menu',
   );
 
   // Exported permission: 'switch shortcut sets'.
   $permissions['switch shortcut sets'] = array(
     'name' => 'switch shortcut sets',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'shortcut',
   );
 

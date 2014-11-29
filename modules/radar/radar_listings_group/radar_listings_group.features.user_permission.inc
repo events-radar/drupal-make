@@ -14,6 +14,7 @@ function radar_listings_group_user_default_permissions() {
   $permissions['create listings_group content'] = array(
     'name' => 'create listings_group content',
     'roles' => array(
+      'administrator' => 'administrator',
       'list moderator' => 'list moderator',
     ),
     'module' => 'node',
@@ -22,14 +23,18 @@ function radar_listings_group_user_default_permissions() {
   // Exported permission: 'delete any listings_group content'.
   $permissions['delete any listings_group content'] = array(
     'name' => 'delete any listings_group content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own listings_group content'.
   $permissions['delete own listings_group content'] = array(
     'name' => 'delete own listings_group content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
@@ -37,6 +42,7 @@ function radar_listings_group_user_default_permissions() {
   $permissions['edit any listings_group content'] = array(
     'name' => 'edit any listings_group content',
     'roles' => array(
+      'administrator' => 'administrator',
       'list moderator' => 'list moderator',
     ),
     'module' => 'node',
@@ -46,6 +52,7 @@ function radar_listings_group_user_default_permissions() {
   $permissions['edit own listings_group content'] = array(
     'name' => 'edit own listings_group content',
     'roles' => array(
+      'administrator' => 'administrator',
       'list moderator' => 'list moderator',
     ),
     'module' => 'node',

@@ -13,9 +13,7 @@ function radar_topics_user_default_permissions() {
   // Exported permission: 'delete terms in category'.
   $permissions['delete terms in category'] = array(
     'name' => 'delete terms in category',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'taxonomy',
   );
 
@@ -31,7 +29,7 @@ function radar_topics_user_default_permissions() {
     'name' => 'edit terms in category',
     'roles' => array(
       'administrator' => 'administrator',
-      'content moderator' => 'content moderator',
+      'tech administrator' => 'tech administrator',
     ),
     'module' => 'taxonomy',
   );
@@ -39,7 +37,10 @@ function radar_topics_user_default_permissions() {
   // Exported permission: 'edit terms in topic'.
   $permissions['edit terms in topic'] = array(
     'name' => 'edit terms in topic',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'taxonomy',
   );
 

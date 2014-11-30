@@ -331,7 +331,7 @@ function radar_listings_group_views_default_views() {
   $handler->display->display_options['fields']['field_phone']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_phone']['element_wrapper_class'] = 'info';
   $handler->display->display_options['fields']['field_phone']['element_default_classes'] = FALSE;
-  /* Field: Content: area */
+  /* Field: Content: Location */
   $handler->display->display_options['fields']['field_offline']['id'] = 'field_offline';
   $handler->display->display_options['fields']['field_offline']['table'] = 'field_data_field_offline';
   $handler->display->display_options['fields']['field_offline']['field'] = 'field_offline';
@@ -468,7 +468,7 @@ function radar_listings_group_views_default_views() {
   $handler->display->display_options['fields']['field_phone']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_phone']['element_wrapper_class'] = 'info';
   $handler->display->display_options['fields']['field_phone']['element_default_classes'] = FALSE;
-  /* Field: Content: area */
+  /* Field: Content: Location */
   $handler->display->display_options['fields']['field_offline']['id'] = 'field_offline';
   $handler->display->display_options['fields']['field_offline']['table'] = 'field_data_field_offline';
   $handler->display->display_options['fields']['field_offline']['field'] = 'field_offline';

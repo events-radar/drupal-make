@@ -49,7 +49,7 @@ function radar_listings_group_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 
@@ -244,7 +244,7 @@ function radar_listings_group_field_default_field_instances() {
     'bundle' => 'listings_group',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'An additional email address to which the system sends notifications about pending events. <em>Not displayed</em>',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -262,7 +262,7 @@ function radar_listings_group_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_notifications',
-    'label' => 'Send notifications to',
+    'label' => 'email for notifications',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -275,7 +275,7 @@ function radar_listings_group_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 11,
+      'weight' => 48,
     ),
   );
 
@@ -418,13 +418,14 @@ function radar_listings_group_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('An additional email address to which the system sends notifications about pending events. <em>Not displayed</em>');
   t('Area covered, or any relevant locations.');
   t('Description');
   t('Listed groups');
-  t('Send notifications to');
   t('area');
   t('categories');
   t('email');
+  t('email for notifications');
   t('online');
   t('phone');
   t('topics');

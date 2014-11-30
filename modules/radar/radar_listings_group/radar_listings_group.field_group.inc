@@ -25,14 +25,15 @@ function radar_listings_group_field_group_info() {
     'children' => array(
       0 => 'field_email',
       1 => 'field_link',
-      2 => 'field_phone',
+      2 => 'field_notifications',
+      3 => 'field_phone',
     ),
-    'format_type' => 'tab',
+    'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'formatter' => 'collapsible',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-info field-group-tab',
+        'classes' => '',
         'required_fields' => 1,
       ),
     ),
@@ -50,13 +51,13 @@ function radar_listings_group_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Location',
-    'weight' => '9',
+    'weight' => '8',
     'children' => array(
       0 => 'field_offline',
     ),
-    'format_type' => 'tab',
+    'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'formatter' => 'collapsible',
       'instance_settings' => array(
         'description' => '',
         'classes' => '',
@@ -77,17 +78,17 @@ function radar_listings_group_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Tags',
-    'weight' => '10',
+    'weight' => '9',
     'children' => array(
       0 => 'field_category',
       1 => 'field_topic',
     ),
-    'format_type' => 'tab',
+    'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'formatter' => 'collapsible',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-tags field-group-tab',
+        'classes' => '',
         'required_fields' => 1,
       ),
     ),

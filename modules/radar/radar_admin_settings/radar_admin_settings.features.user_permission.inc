@@ -554,6 +554,8 @@ function radar_admin_settings_user_default_permissions() {
       'authenticated user' => 'authenticated user',
       'list moderator' => 'list moderator',
       'non-authenticated user' => 'non-authenticated user',
+      'tech administrator' => 'tech administrator',
+      'translator' => 'translator',
     ),
     'module' => 'filter',
   );

@@ -54,6 +54,7 @@ dependencies[] = replicate
 ; Administration
 dependencies[] = admin_menu
 dependencies[] = module_filter
+dependencies[] = rules
 
 ; Additional fields
 dependencies[] = email

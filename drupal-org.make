@@ -202,6 +202,9 @@ projects[flag][version] = "3.5"
 projects[flag_abuse][subdir] = "contrib"
 projects[flag_abuse][version] = "2.0"
 
+projects[rules][subdir] = "contrib"
+projects[rules][version] = "2.7"
+
 ;
 ;; Search
 ;

@@ -72,6 +72,8 @@ function radar_location_user_default_permissions() {
     'name' => 'eck edit location location entities',
     'roles' => array(
       'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
+      'non-authenticated user' => 'non-authenticated user',
     ),
     'module' => 'eck',
   );

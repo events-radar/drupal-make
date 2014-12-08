@@ -19,8 +19,6 @@ projects[libraries][subdir] = "contrib"
 projects[logintoboggan][subdir] = "contrib"
 projects[logintoboggan][version] = "1.4"
 projects[views][subdir] = "contrib"
-projects[redirect][subdir] = "contrib"
-projects[pathauto][subdir] = "contrib"
 projects[token][subdir] = "contrib"
 projects[variable][subdir] = "contrib"
 projects[variable][version] = "2.5"
@@ -30,6 +28,19 @@ projects[uuid_features][subdir] = "contrib"
 projects[uuid_features][version] = "1.0-alpha4"
 projects[replicate][subdir] = "contrib"
 projects[replicate][version] = "1.1"
+
+; urls
+projects[redirect][subdir] = "contrib"
+projects[redirect][version] = "1.0-rc1"
+
+projects[pathauto][subdir] = "contrib"
+projects[pathauto][version] = "1.2"
+
+projects[globalredirect][subdir] = "contrib"
+projects[globalredirect][version] = "1.5"
+
+projects[subpathauto][subdir] = "contrib"
+projects[subpathauto][version] = "1.3"
 
 ; views extension
 projects[views_litepager][subdir] = "contrib"

@@ -4,4 +4,4 @@ projects[drupal][version] = 7.34
 projects[radar][type] = "profile"
 projects[radar][download][type] = "git"
 projects[radar][download][branch] = "7.x-2.x"
-projects[radar][download][url] = "git://git.iskra.net/drupal/projects/radar"
+projects[radar][download][url] = "https://github.com/events-radar/drupal-make.git"

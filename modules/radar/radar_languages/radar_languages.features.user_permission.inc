@@ -40,6 +40,8 @@ function radar_languages_user_default_permissions() {
   $permissions['translate any entity'] = array(
     'name' => 'translate any entity',
     'roles' => array(
+      'authenticated user' => 'authenticated user',
+      'non-authenticated user' => 'non-authenticated user',
       'tech administrator' => 'tech administrator',
       'translator' => 'translator',
     ),

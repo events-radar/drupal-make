@@ -1305,6 +1305,31 @@ function radar_event_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Indexed Node: Groups */
+  $handler->display->display_options['arguments']['og_group_ref']['id'] = 'og_group_ref';
+  $handler->display->display_options['arguments']['og_group_ref']['table'] = 'search_api_index_events';
+  $handler->display->display_options['arguments']['og_group_ref']['field'] = 'og_group_ref';
+  $handler->display->display_options['arguments']['og_group_ref']['default_action'] = 'empty';
+  $handler->display->display_options['arguments']['og_group_ref']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['og_group_ref']['title'] = '%1 . Upcoming events ';
+  $handler->display->display_options['arguments']['og_group_ref']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['og_group_ref']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['og_group_ref']['summary_options']['grouping'] = array(
+    0 => array(
+      'field' => 'field_date_time_value_1',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
+  $handler->display->display_options['arguments']['og_group_ref']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['og_group_ref']['validate']['type'] = 'node';
+  $handler->display->display_options['arguments']['og_group_ref']['validate_options']['types'] = array(
+    'group' => 'group',
+    'listings_group' => 'listings_group',
+  );
+  $handler->display->display_options['arguments']['og_group_ref']['break_phrase'] = 0;
+  $handler->display->display_options['arguments']['og_group_ref']['not'] = 0;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Date & Time: Start date (indexed) */
@@ -1389,6 +1414,31 @@ function radar_event_views_default_views() {
   $handler->display->display_options['sorts']['search_api_aggregation_1']['table'] = 'search_api_index_events';
   $handler->display->display_options['sorts']['search_api_aggregation_1']['field'] = 'search_api_aggregation_1';
   $handler->display->display_options['sorts']['search_api_aggregation_1']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Indexed Node: Groups */
+  $handler->display->display_options['arguments']['og_group_ref']['id'] = 'og_group_ref';
+  $handler->display->display_options['arguments']['og_group_ref']['table'] = 'search_api_index_events';
+  $handler->display->display_options['arguments']['og_group_ref']['field'] = 'og_group_ref';
+  $handler->display->display_options['arguments']['og_group_ref']['default_action'] = 'empty';
+  $handler->display->display_options['arguments']['og_group_ref']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['og_group_ref']['title'] = '%1 . Archive';
+  $handler->display->display_options['arguments']['og_group_ref']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['og_group_ref']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['og_group_ref']['summary_options']['grouping'] = array(
+    0 => array(
+      'field' => 'field_date_time_value_1',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
+  $handler->display->display_options['arguments']['og_group_ref']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['og_group_ref']['validate']['type'] = 'node';
+  $handler->display->display_options['arguments']['og_group_ref']['validate_options']['types'] = array(
+    'group' => 'group',
+    'listings_group' => 'listings_group',
+  );
+  $handler->display->display_options['arguments']['og_group_ref']['break_phrase'] = 0;
+  $handler->display->display_options['arguments']['og_group_ref']['not'] = 0;
   $handler->display->display_options['path'] = 'node/%/archive';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Archive';

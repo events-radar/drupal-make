@@ -202,6 +202,8 @@ function radar_event_ical_views_default_views() {
   $handler->display->display_options['arguments']['gid']['field'] = 'gid';
   $handler->display->display_options['arguments']['gid']['relationship'] = 'og_membership_rel';
   $handler->display->display_options['arguments']['gid']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['gid']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['gid']['title'] = '%1 . Events ical importers';
   $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';

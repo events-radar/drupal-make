@@ -98,7 +98,6 @@ function radar_group_views_default_views() {
   $handler->display->display_options['fields']['term_node_tid_i18n']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['term_node_tid_i18n']['element_wrapper_class'] = 'info';
   $handler->display->display_options['fields']['term_node_tid_i18n']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['term_node_tid_i18n']['separator'] = ' / ';
   $handler->display->display_options['fields']['term_node_tid_i18n']['link_to_taxonomy'] = FALSE;
   $handler->display->display_options['fields']['term_node_tid_i18n']['limit'] = TRUE;
   $handler->display->display_options['fields']['term_node_tid_i18n']['vocabularies'] = array(
@@ -115,7 +114,6 @@ function radar_group_views_default_views() {
   $handler->display->display_options['fields']['term_node_tid_i18n_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['term_node_tid_i18n_1']['element_wrapper_class'] = 'info';
   $handler->display->display_options['fields']['term_node_tid_i18n_1']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['term_node_tid_i18n_1']['separator'] = ' / ';
   $handler->display->display_options['fields']['term_node_tid_i18n_1']['link_to_taxonomy'] = FALSE;
   $handler->display->display_options['fields']['term_node_tid_i18n_1']['limit'] = TRUE;
   $handler->display->display_options['fields']['term_node_tid_i18n_1']['vocabularies'] = array(
@@ -845,7 +843,7 @@ Once they are approved - or if they have been posted in a group where they don\'
   $handler->display->display_options['arguments']['gid']['relationship'] = 'og_membership_rel';
   $handler->display->display_options['arguments']['gid']['default_action'] = 'not found';
   $handler->display->display_options['arguments']['gid']['title_enable'] = TRUE;
-  $handler->display->display_options['arguments']['gid']['title'] = 'Pending events, awaiting approval to be posted in %1';
+  $handler->display->display_options['arguments']['gid']['title'] = '%1 . Pending events, awaiting approval';
   $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';

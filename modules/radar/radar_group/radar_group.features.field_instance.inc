@@ -278,7 +278,7 @@ function radar_group_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 7,
+      'weight' => 11,
     ),
   );
 
@@ -439,7 +439,7 @@ Partial address such as only a city are also possible.',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 

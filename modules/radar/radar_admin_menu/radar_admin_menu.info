@@ -16,4 +16,4 @@ features[user_permission][] = customize shortcut links
 features[user_permission][] = display drupal links
 features[user_permission][] = flush caches
 features[user_permission][] = switch shortcut sets
-mtime = 1417263018
+mtime = 1418137662

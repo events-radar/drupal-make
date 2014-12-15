@@ -26,6 +26,7 @@ function radar_admin_menu_user_default_permissions() {
       'administrator' => 'administrator',
       'list moderator' => 'list moderator',
       'tech administrator' => 'tech administrator',
+      'translator' => 'translator',
     ),
     'module' => 'toolbar',
   );

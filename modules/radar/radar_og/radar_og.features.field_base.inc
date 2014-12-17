@@ -108,9 +108,9 @@ function radar_og_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        'anyone' => 'Any site member can contribute',
-        'approval' => 'Joining requires admin approval',
-        'invitation' => 'Joining requires an invitation',
+        'anyone' => 'Any user can add events to this group.',
+        'approval' => 'Any user can propose an event, but a group member has to approve of it.',
+        'invitation' => 'Only group members can add or propose events.',
       ),
       'allowed_values_function' => '',
     ),

@@ -76,6 +76,7 @@ function radar_og_field_default_field_instances() {
   t('Group Logo');
   t('Hide contributed content from non-members');
   t('Privacy settings');
+  t('Who can add events to this group?');
 
   return $field_instances;
 }
@@ -86,11 +87,11 @@ function radar_og_field_definition_group(&$field_instances, $entity_type, $bundl
     'bundle' => $bundle,
     'default_value' => array(
       0 => array(
-        'value' => 'anyone',
+        'value' => 'approval',
       ),
     ),
     'deleted' => '0',
-    'description' => t("You can customise the posting permissions in more detail later."),
+    'description' => t("You can customise the group permissions in more detail later."),
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -108,7 +109,7 @@ function radar_og_field_definition_group(&$field_instances, $entity_type, $bundl
     ),
     'entity_type' => 'node',
     'field_name' => 'field_og_subscribe_settings',
-    'label' => 'Privacy settings',
+    'label' => 'Who can add events to this group?',
     'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,

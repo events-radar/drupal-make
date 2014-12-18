@@ -267,9 +267,7 @@ function radar_admin_settings_user_default_permissions() {
   // Exported permission: 'administer site configuration'.
   $permissions['administer site configuration'] = array(
     'name' => 'administer site configuration',
-    'roles' => array(
-      'tech administrator' => 'tech administrator',
-    ),
+    'roles' => array(),
     'module' => 'system',
   );
 
@@ -496,7 +494,9 @@ function radar_admin_settings_user_default_permissions() {
   // Exported permission: 'manage features'.
   $permissions['manage features'] = array(
     'name' => 'manage features',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'features',
   );
 

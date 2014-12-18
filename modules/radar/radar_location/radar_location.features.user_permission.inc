@@ -56,6 +56,7 @@ function radar_location_user_default_permissions() {
     'name' => 'eck delete location location entities',
     'roles' => array(
       'administrator' => 'administrator',
+      'tech administrator' => 'tech administrator',
     ),
     'module' => 'eck',
   );
@@ -90,6 +91,7 @@ function radar_location_user_default_permissions() {
     'name' => 'eck list location location entities',
     'roles' => array(
       'administrator' => 'administrator',
+      'tech administrator' => 'tech administrator',
     ),
     'module' => 'eck',
   );

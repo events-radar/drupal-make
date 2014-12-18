@@ -26,7 +26,8 @@ function radar_location_field_default_field_instances() {
     ),
     'deleted' => 0,
     'description' => 'Addresses don\'t have to be complete - just town or country is also possible. <br>
-You can either automatically add the location to the map by clicking on the <em>Find using address field</em> button, draw it onto the map directly, or leave it blank.',
+You can either automatically add the location to the map by clicking on the <em>Find using address field</em> button, draw it onto the map directly, or leave it blank.<p>
+If a marker on the map shows that the location already exist, then cancel and choose "Add existing location" instead.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -127,7 +128,7 @@ You can either automatically add the location to the map by clicking on the <em>
     'bundle' => 'location',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'If a marker shows that a location already exist, then cancel this and choose "Add an existing location" instead.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -225,7 +226,7 @@ You can either automatically add the location to the map by clicking on the <em>
             ),
           ),
         ),
-        'openlayers_map' => 'radar_location_geofield_widget_map',
+        'openlayers_map' => 'radar_all_locations_geofield_widget_map',
         'use_geocoder' => 1,
       ),
       'type' => 'geofield_openlayers',
@@ -278,8 +279,10 @@ You can either automatically add the location to the map by clicking on the <em>
   // Included for use with string extractors like potx.
   t('Address');
   t('Addresses don\'t have to be complete - just town or country is also possible. <br>
-You can either automatically add the location to the map by clicking on the <em>Find using address field</em> button, draw it onto the map directly, or leave it blank.');
+You can either automatically add the location to the map by clicking on the <em>Find using address field</em> button, draw it onto the map directly, or leave it blank.<p>
+If a marker on the map shows that the location already exist, then cancel and choose "Add existing location" instead.');
   t('Directions');
+  t('If a marker shows that a location already exist, then cancel this and choose "Add an existing location" instead.');
   t('Map');
   t('Timezone');
 

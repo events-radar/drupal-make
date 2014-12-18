@@ -66,7 +66,7 @@ function radar_search_default_search_api_index() {
         "field_category" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_offline:field_address:administrative_area" : { "type" : "list\\u003Ctext\\u003E" },
         "field_offline:field_address:country" : { "type" : "list\\u003Cstring\\u003E" },
-        "field_offline:field_address:locality" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_offline:field_address:locality" : { "type" : "list\\u003Cstring\\u003E" },
         "field_offline:field_address:organisation_name" : { "type" : "list\\u003Ctext\\u003E" },
         "field_offline:field_address:postal_code" : { "type" : "list\\u003Ctext\\u003E" },
         "field_offline:field_address:premise" : { "type" : "list\\u003Ctext\\u003E" },

@@ -130,6 +130,17 @@ h3 {
     font-weight: normal;
   }
 
+  &.map {
+    font-family: $group-font;
+    margin-bottom: 0em;
+    font-size: 1.2em;
+    font-weight: strong;
+ 
+    a {
+      color: white;
+    } 
+  }
+
  .date { 
     font-family: $group-font;
     border: $light-grey 2px solid;

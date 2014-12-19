@@ -85,11 +85,16 @@ function radar_search_strongarm() {
       'search_api_views:radar_group_search:panel_pane_1' => 'search_api_views:radar_group_search:panel_pane_1',
       'search_api_views:radar_group_search:default' => 'search_api_views:radar_group_search:default',
       'SearchApiQuery' => 'SearchApiQuery',
+      'search_api_views:radar_group_events:panel_pane_1' => 'search_api_views:radar_group_events:panel_pane_1',
+      'search_api_views:radar_group_events:panel_pane_2' => 'search_api_views:radar_group_events:panel_pane_2',
+      'search_api_views:radar_group_events:page_1' => 'search_api_views:radar_group_events:page_1',
+      'search_api_views:radar_group_events:page_2' => 'search_api_views:radar_group_events:page_2',
     ),
     'groups' => array(
       'search_api_views:radar_group_search:panel_pane_1' => 'search_api_views:radar_group_search:panel_pane_1',
       'SearchApiQuery' => 'SearchApiQuery',
       'search_api_views:radar_group_search:panel_pane_2' => 'search_api_views:radar_group_search:panel_pane_2',
+      'search_api_views:radar_group_search:openlayers_1' => 'search_api_views:radar_group_search:openlayers_1',
     ),
   );
   $export['search_api_facets_search_ids'] = $strongarm;

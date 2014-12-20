@@ -159,15 +159,15 @@ function radar_location_openlayers_maps() {
   $openlayers_maps->description = '';
   $openlayers_maps->data = array(
     'width' => 'auto',
-    'height' => '600px',
+    'height' => '400px',
     'image_path' => 'profiles/radar/modules/contrib/openlayers/themes/default_dark/img/',
     'css_path' => 'profiles/radar/modules/contrib/openlayers/themes/default_dark/style.css',
     'proxy_host' => '',
     'hide_empty_map' => 0,
     'center' => array(
       'initial' => array(
-        'centerpoint' => '8.789062476866173, 49.49667453482677',
-        'zoom' => '4',
+        'centerpoint' => '8.789062462493126, 49.49667454416194',
+        'zoom' => '2',
       ),
       'restrict' => array(
         'restrictextent' => 0,
@@ -210,6 +210,14 @@ function radar_location_openlayers_maps() {
       'openlayers_behavior_attribution' => array(
         'separator' => '',
       ),
+      'openlayers_behavior_layerswitcher' => array(
+        'ascending' => 1,
+        'sortBaseLayer' => '0',
+        'roundedCorner' => 1,
+        'roundedCornerColor' => '#222222',
+        'maximizeDefault' => 0,
+        'div' => '',
+      ),
       'openlayers_behavior_navigation' => array(
         'zoomWheelEnabled' => 1,
         'zoomBoxEnabled' => 1,
@@ -230,8 +238,9 @@ function radar_location_openlayers_maps() {
       'openlayers_behavior_zoomtolayer' => array(
         'zoomtolayer' => array(
           'radar_group_search_openlayers_1' => 'radar_group_search_openlayers_1',
-          'mapquest_openaerial' => 0,
           'osm_mapnik' => 0,
+          'osm_cycle' => 0,
+          'mapbox_world_print' => 0,
         ),
         'point_zoom_level' => '5',
         'zoomtolayer_scale' => '1',
@@ -239,8 +248,8 @@ function radar_location_openlayers_maps() {
     ),
     'default_layer' => 'osm_mapnik',
     'layers' => array(
-      'mapquest_openaerial' => 'mapquest_openaerial',
       'osm_mapnik' => 'osm_mapnik',
+      'osm_cycle' => 'osm_cycle',
       'radar_group_search_openlayers_1' => 'radar_group_search_openlayers_1',
     ),
     'layer_weight' => array(

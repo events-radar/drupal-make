@@ -39,8 +39,8 @@ function radar_location_views_default_views() {
     'other_right' => 'field_map',
     'other_bottom' => 'field_map',
     'other_left' => 'field_map',
-    'name_field' => '',
-    'description_field' => 'nothing',
+    'name_field' => 'nothing',
+    'description_field' => '',
   );
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
@@ -102,26 +102,6 @@ function radar_location_views_default_views() {
 
   /* Display: All locations OL Overlay */
   $handler = $view->new_display('openlayers', 'All locations OL Overlay', 'openlayers_1');
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'openlayers_data';
-  $handler->display->display_options['style_options']['data_source'] = array(
-    'value' => 'wkt',
-    'other_lat' => 'field_map',
-    'other_lon' => 'field_map',
-    'wkt' => 'field_map',
-    'other_top' => 'field_map',
-    'other_right' => 'field_map',
-    'other_bottom' => 'field_map',
-    'other_left' => 'field_map',
-    'name_field' => 'nothing',
-    'description_field' => '',
-  );
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
-  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $export['radar_locations'] = $view;
 
   return $export;

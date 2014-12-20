@@ -114,10 +114,27 @@ function radar_og_node_presave($node) {
     return;
   }
 
-  // If the node is not posted into a group (ie only for requested groups) unpublish it.
-  if ($node->type == 'event' && (!isset($node->og_group_ref) || !count($node->og_group_ref[LANGUAGE_NONE]))) {
-    drupal_set_message(t('Your event will be reviewed by the administrator of the group(s) that you have posted it into.'));
-    $node->status = 0;
+  if ($node->type == 'event') {
+    if (!isset($node->og_group_ref) || !count($node->og_group_ref[LANGUAGE_NONE])) {
+      // If the node is not posted into a group (ie only for requested groups) unpublish it.
+      drupal_set_message(t('Your event will be reviewed by the administrator of the group(s) that you have posted it into.'));
+      $node->status = 0;
+    }
+    else {
+      // Check the event is published into a published group.
+      $published_group = FALSE;
+      foreach($node->og_group_ref[LANGUAGE_NONE] as $entityreference) {
+        $group = node_load($entityreference['target_id']);
+        if ($group->status) {
+          $published_group = TRUE;
+          break;
+        }
+      }
+      if (!$published_group) {
+        drupal_set_message(t('Your event will be published when your group is approved.'));
+        $node->status = 0;
+      }
+    }
   }
 }
 

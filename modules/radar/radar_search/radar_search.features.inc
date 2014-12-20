@@ -221,7 +221,7 @@ function radar_search_default_search_api_index() {
         "field_offline" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "location" },
         "field_offline:field_address:administrative_area" : { "type" : "list\\u003Ctext\\u003E" },
         "field_offline:field_address:country" : { "type" : "list\\u003Cstring\\u003E" },
-        "field_offline:field_address:locality" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_offline:field_address:locality" : { "type" : "list\\u003Cstring\\u003E" },
         "field_offline:field_address:name_line" : { "type" : "list\\u003Ctext\\u003E" },
         "field_offline:field_address:postal_code" : { "type" : "list\\u003Cstring\\u003E" },
         "field_offline:field_address:premise" : { "type" : "list\\u003Cstring\\u003E" },

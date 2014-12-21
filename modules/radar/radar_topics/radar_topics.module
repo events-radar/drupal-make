@@ -5,3 +5,39 @@
  */
 
 include_once 'radar_topics.features.inc';
+
+/**
+ * Implements hook_entity_property_info_alter().
+ */
+function radar_topics_entity_property_info_alter(&$info) {
+  // Add a standard 'type' for bundle as other entities.
+  // Useful for standard entity in services.
+  $properties = &$info['taxonomy_term']['properties'];
+  $properties['type'] = array(
+    'label' => t('Type'),
+    'description' => t('The machine name of the vocabulary.'),
+    'getter callback' => 'radar_topics_term_vocabulary_get',
+    'setter callback' => 'radar_topics_term_vocabulary_set',
+    'computed' => TRUE,
+  );
+}
+
+/**
+ * Getter callback: entityapi property bundle type.
+ *
+ * @see radar_topics_entity_property_info_alter().
+ */
+function radar_topics_term_vocabulary_get($term, array $options, $name) {
+  return $term->vocabulary_machine_name;
+}
+
+/**
+ * Setter callback: entityapi property bundle type.
+ *
+ * @see radar_topics_entity_property_info_alter().
+ */
+function radar_topics_term_vocabulary_set($term, $name, $value) {
+  $term->vocabulary_machine_name = $value;
+  $vocabulary = taxonomy_vocabulary_machine_name_load($value);
+  $term->vid = $vocabulary->vid;
+}

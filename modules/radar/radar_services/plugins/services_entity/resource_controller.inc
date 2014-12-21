@@ -130,17 +130,6 @@ class RadarServicesEntityResourceController extends ServicesEntityResourceContro
         // A property causes problems - ignore that.
       }
     }
-    // If bundle = entity_type, don't send it.
-    if (method_exists($wrapper, 'entityInfo')) {
-      $entity_info = $wrapper->entityInfo();
-      if (isset($entity_info['bundle keys'])) {
-        foreach ($entity_info['bundle keys'] as $bundle_key) {
-          if (array_key_exists($bundle_key, $data) && $data[$bundle_key] == $wrapper->type()) {
-            unset($data[$bundle_key]);
-          }
-        }
-      }
-    }
     return $data;
   }
 

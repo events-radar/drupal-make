@@ -92,4 +92,12 @@ function radar_services_services_request_preprocess_alter($controller, &$args, $
   }
 }
 
-
+/**
+ * Implements hook_globalredirect_active_path().
+ *
+ * Remove the /api path from globalredirect.
+ * For hook patch see https://www.drupal.org/node/1438584.
+ */
+function radar_services_globalredirect_active_path($path, $alias) {
+  return !(strpos($path, 'api') === 0);
+}

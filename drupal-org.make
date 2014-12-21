@@ -37,7 +37,12 @@ projects[pathauto][subdir] = "contrib"
 projects[pathauto][version] = "1.2"
 
 projects[globalredirect][subdir] = "contrib"
-projects[globalredirect][version] = "1.5"
+projects[globalredirect][type] = "module"
+projects[globalredirect][download][url] = "git://git.drupal.org/project/globalredirect"
+projects[globalredirect][download][revision] = "e7debe9a90aa97e79099b721d603b8d0e967ccca"
+// Enable ignore hook to skip redirecting /api
+// https://www.drupal.org/node/1438584
+projects[globalredirect][patch][1438584] = "https://www.drupal.org/files/1438584-12_globalredirect_active_path.patch"
 
 projects[subpathauto][subdir] = "contrib"
 projects[subpathauto][version] = "1.3"

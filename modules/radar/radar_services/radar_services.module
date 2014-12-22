@@ -59,10 +59,38 @@ function radar_services_services_request_preprocess_alter($controller, &$args, $
     return;
   }
 
-  $arg_keys;
+  // Argument keys are numeric, but defined with name.
+  // Retrieve the index just to be a bit more robust.
+  $arg_keys = array();
   foreach ($controller['args'] as $key => $arg_definition) {
     $arg_keys[$arg_definition['name']] = $key;
   }
+
+  //
+  // Which date to show as default.
+  //
+
+  if ($args[$arg_keys['index']] == 'events' && (empty($args[$arg_keys['filter']]) && empty($_GET['facets']['date']))) {
+    $args[$arg_keys['filter']] = array(
+      '~and' => array(
+        'search_api_aggregation_1' => array(
+          '~gt' => time() - 60 * 60 * 4,
+        ),
+      ),
+    );
+  }
+
+  //
+  // Add a limit to the number of results returned.
+  //
+
+  if (empty($args[$arg_keys['limit']]) || $args[$arg_keys['limit']] > 500) {
+    $args[$arg_keys['limit']] = 500;
+  }
+
+  //
+  // Which fields to show as default.
+  //
 
   // Groups search. No fields defined.
   if ($args[$arg_keys['index']] == 'groups' && empty($args[$arg_keys['fields']])) {

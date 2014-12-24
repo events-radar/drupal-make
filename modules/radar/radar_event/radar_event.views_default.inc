@@ -267,6 +267,20 @@ function radar_event_views_default_views() {
   );
   $handler->display->display_options['fields']['og_group_ref']['delta_offset'] = '0';
   /* Field: Content: Date & Time */
+  $handler->display->display_options['fields']['field_date_time_1']['id'] = 'field_date_time_1';
+  $handler->display->display_options['fields']['field_date_time_1']['table'] = 'field_data_field_date_time';
+  $handler->display->display_options['fields']['field_date_time_1']['field'] = 'field_date_time';
+  $handler->display->display_options['fields']['field_date_time_1']['label'] = 'Year';
+  $handler->display->display_options['fields']['field_date_time_1']['settings'] = array(
+    'format_type' => 'year',
+    'fromto' => 'value',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_repeat_rule' => 'hide',
+  );
+  $handler->display->display_options['fields']['field_date_time_1']['delta_offset'] = '0';
+  /* Field: Content: Date & Time */
   $handler->display->display_options['fields']['field_date_time']['id'] = 'field_date_time';
   $handler->display->display_options['fields']['field_date_time']['table'] = 'field_data_field_date_time';
   $handler->display->display_options['fields']['field_date_time']['field'] = 'field_date_time';
@@ -305,6 +319,17 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['field_topic']['label'] = 'tags';
   $handler->display->display_options['fields']['field_topic']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_topic']['delta_offset'] = '0';
+  /* Field: Content: area */
+  $handler->display->display_options['fields']['field_offline']['id'] = 'field_offline';
+  $handler->display->display_options['fields']['field_offline']['table'] = 'field_data_field_offline';
+  $handler->display->display_options['fields']['field_offline']['field'] = 'field_offline';
+  $handler->display->display_options['fields']['field_offline']['label'] = 'Location ID';
+  $handler->display->display_options['fields']['field_offline']['click_sort_column'] = 'target_id';
+  $handler->display->display_options['fields']['field_offline']['type'] = 'entityreference_entity_id';
+  $handler->display->display_options['fields']['field_offline']['settings'] = array(
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['field_offline']['delta_offset'] = '0';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -447,6 +472,24 @@ function radar_event_views_default_views() {
     2 => '2',
     1 => 0,
     4 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    8 => 0,
+    7 => 0,
+  );
+  /* Filter criterion: Content: area (field_offline:target_id) */
+  $handler->display->display_options['filters']['field_offline_target_id']['id'] = 'field_offline_target_id';
+  $handler->display->display_options['filters']['field_offline_target_id']['table'] = 'field_data_field_offline';
+  $handler->display->display_options['filters']['field_offline_target_id']['field'] = 'field_offline_target_id';
+  $handler->display->display_options['filters']['field_offline_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_offline_target_id']['expose']['operator_id'] = 'field_offline_target_id_op';
+  $handler->display->display_options['filters']['field_offline_target_id']['expose']['label'] = 'Location ID';
+  $handler->display->display_options['filters']['field_offline_target_id']['expose']['operator'] = 'field_offline_target_id_op';
+  $handler->display->display_options['filters']['field_offline_target_id']['expose']['identifier'] = 'field_offline_target_id';
+  $handler->display->display_options['filters']['field_offline_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
     3 => 0,
     5 => 0,
     6 => 0,

@@ -26,5 +26,26 @@ function radar_group_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_notification_published_group'] = entity_import('rules_config', '{ "rules_notification_published_group" : {
+      "LABEL" : "Notification about published group",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "ON" : { "node_update--group" : { "bundle" : "group" } },
+      "IF" : [
+        { "NOT node_is_published" : { "node" : [ "node-unchanged" ] } },
+        { "node_is_published" : { "node" : [ "node" ] } }
+      ],
+      "DO" : [
+        { "mail" : {
+            "to" : [ "node:author:mail" ],
+            "subject" : "Radar group approved",
+            "message" : "The group [node:title] has been approved, and can be found at [node:url]\\r\\nIf you have already created events, then they are visible as well now.",
+            "language" : [ "" ]
+          }
+        }
+      ]
+    }
+  }');
   return $items;
 }

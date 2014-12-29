@@ -503,6 +503,8 @@ function radar_event_views_default_views() {
 
   /* Display: Groups table page */
   $handler = $view->new_display('page', 'Groups table page', 'page_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Groups . Bulk operations';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Bulk operations: Content */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';

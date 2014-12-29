@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Radar Vocabularies feature.
+ */
+
+include_once 'radar_vocabularies.features.inc';

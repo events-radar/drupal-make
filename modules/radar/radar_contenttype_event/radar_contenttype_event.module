@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Radar content type Event feature.
+ */
+
+include_once 'radar_contenttype_event.features.inc';

@@ -182,6 +182,12 @@ function radar_location_views_default_views() {
   $handler->display->display_options['fields']['edit_link']['table'] = 'eck_location';
   $handler->display->display_options['fields']['edit_link']['field'] = 'edit_link';
   $handler->display->display_options['fields']['edit_link']['label'] = 'Edit';
+  /* Field: Location: Delete link */
+  $handler->display->display_options['fields']['delete_link']['id'] = 'delete_link';
+  $handler->display->display_options['fields']['delete_link']['table'] = 'eck_location';
+  $handler->display->display_options['fields']['delete_link']['field'] = 'delete_link';
+  $handler->display->display_options['fields']['delete_link']['label'] = 'Delete';
+  $handler->display->display_options['fields']['delete_link']['text'] = 'delete';
   /* Filter criterion: Location: Id */
   $handler->display->display_options['filters']['id']['id'] = 'id';
   $handler->display->display_options['filters']['id']['table'] = 'eck_location';

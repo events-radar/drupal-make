@@ -245,6 +245,7 @@ function radar_admin_settings_user_default_permissions() {
   $permissions['administer permissions'] = array(
     'name' => 'administer permissions',
     'roles' => array(
+      'administrator' => 'administrator',
       'tech administrator' => 'tech administrator',
     ),
     'module' => 'user',

@@ -111,7 +111,7 @@ function radar_group_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 9,
+      'weight' => 43,
     ),
   );
 
@@ -533,7 +533,45 @@ Partial address such as only a city are also possible.',
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 10,
+      'weight' => 44,
+    ),
+  );
+
+  // Exported field_instance: 'node-group-field_type'
+  $field_instances['node-group-field_type'] = array(
+    'bundle' => 'group',
+    'default_value' => array(),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 24,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_type',
+    'label' => 'type',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 45,
     ),
   );
 
@@ -553,6 +591,7 @@ Partial address such as only a city are also possible.');
   t('opening times');
   t('phone');
   t('publicly displayed email address');
+  t('type');
 
   return $field_instances;
 }

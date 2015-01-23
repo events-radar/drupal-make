@@ -91,6 +91,16 @@ function radar_vocabularies_uuid_features_default_terms() {
     'vocabulary_machine_name' => 'category',
   );
   $terms[] = array(
+    'name' => 'children',
+    'description' => '',
+    'format' => 'plain_text',
+    'weight' => 0,
+    'uuid' => '8a5a0f5a-a8a7-4849-800b-ee9938b6d421',
+    'language' => 'und',
+    'i18n_tsid' => 0,
+    'vocabulary_machine_name' => 'category',
+  );
+  $terms[] = array(
     'name' => 'food',
     'description' => '',
     'format' => 'plain_text',

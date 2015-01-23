@@ -9,6 +9,8 @@
  */
 function radar_languages_variable_realm_default_variables() {
 $realm_variables = array();
+  $realm_variables['language']['ca'] = array();
+  $realm_variables['language']['cs'] = array();
   $realm_variables['language']['de'] = array();
   $realm_variables['language']['el'] = array();
   $realm_variables['language']['en'] = array(
@@ -20,6 +22,10 @@ $realm_variables = array();
   $realm_variables['language']['fr'] = array();
   $realm_variables['language']['it'] = array();
   $realm_variables['language']['nl'] = array();
+  $realm_variables['language']['pl'] = array();
+  $realm_variables['language']['pt-br'] = array();
+  $realm_variables['language']['ru'] = array();
+  $realm_variables['language']['tr'] = array();
 
 return $realm_variables;
 }

@@ -110,7 +110,6 @@ function radar_group_field_group_info() {
     'children' => array(
       0 => 'field_category',
       1 => 'field_topic',
-      2 => 'field_type',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

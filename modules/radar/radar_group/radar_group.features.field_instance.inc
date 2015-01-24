@@ -540,7 +540,7 @@ Partial address such as only a city are also possible.',
   // Exported field_instance: 'node-group-field_type'
   $field_instances['node-group-field_type'] = array(
     'bundle' => 'group',
-    'default_value' => array(),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(

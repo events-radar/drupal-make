@@ -13,21 +13,27 @@ function radar_search_user_default_permissions() {
   // Exported permission: 'administer facetapi pretty paths'.
   $permissions['administer facetapi pretty paths'] = array(
     'name' => 'administer facetapi pretty paths',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'facetapi_pretty_paths',
   );
 
   // Exported permission: 'administer facets'.
   $permissions['administer facets'] = array(
     'name' => 'administer facets',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'facetapi',
   );
 
   // Exported permission: 'administer search_api'.
   $permissions['administer search_api'] = array(
     'name' => 'administer search_api',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'search_api',
   );
 

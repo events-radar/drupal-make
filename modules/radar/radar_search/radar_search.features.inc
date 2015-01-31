@@ -234,7 +234,7 @@ function radar_search_default_search_api_index() {
         "field_offline:id" : { "type" : "list\\u003Cinteger\\u003E" },
         "field_offline:title" : { "type" : "list\\u003Ctext\\u003E" },
         "field_topic" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
-        "field_type" : { "type" : "integer", "entity_type" : "taxonomy_term" },
+        "field_type" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "nid" : { "type" : "integer" },
         "og_group_ref" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "node" },
         "search_api_access_node" : { "type" : "list\\u003Cstring\\u003E" },

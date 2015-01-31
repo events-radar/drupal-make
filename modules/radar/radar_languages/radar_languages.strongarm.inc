@@ -114,7 +114,7 @@ function radar_languages_strongarm() {
     'plurals' => 0,
     'formula' => '',
     'domain' => '',
-    'prefix' => '',
+    'prefix' => 'en',
     'weight' => 0,
     'javascript' => '',
   );

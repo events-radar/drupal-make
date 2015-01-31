@@ -19,6 +19,27 @@ function radar_languages_user_default_permissions() {
     'module' => 'entity_translation',
   );
 
+  // Exported permission: 'administer languages for translate set per user'.
+  $permissions['administer languages for translate set per user'] = array(
+    'name' => 'administer languages for translate set per user',
+    'roles' => array(),
+    'module' => 'translate_set',
+  );
+
+  // Exported permission: 'administer translate set settings'.
+  $permissions['administer translate set settings'] = array(
+    'name' => 'administer translate set settings',
+    'roles' => array(),
+    'module' => 'translate_set',
+  );
+
+  // Exported permission: 'manage translate set'.
+  $permissions['manage translate set'] = array(
+    'name' => 'manage translate set',
+    'roles' => array(),
+    'module' => 'translate_set',
+  );
+
   // Exported permission: 'toggle field translatability'.
   $permissions['toggle field translatability'] = array(
     'name' => 'toggle field translatability',
@@ -76,6 +97,13 @@ function radar_languages_user_default_permissions() {
       'translator' => 'translator',
     ),
     'module' => 'entity_translation',
+  );
+
+  // Exported permission: 'translate set'.
+  $permissions['translate set'] = array(
+    'name' => 'translate set',
+    'roles' => array(),
+    'module' => 'translate_set',
   );
 
   // Exported permission: 'translate user-defined strings'.

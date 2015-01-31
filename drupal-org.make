@@ -196,8 +196,8 @@ projects[lang_dropdown][subdir] = "contrib"
 projects[lang_dropdown][version] = "2.5"
 projects[title][subdir] = "contrib"
 projects[title][version] = "1.0-alpha7"
-projects[translation_table][subdir] = "contrib"
-projects[translation_table][version] = "1.0-beta1"
+projects[translate_set][subdir] = "contrib"
+projects[translate_set][version] = "1.3"
 
 ; Organic groups
 projects[entityreference][subdir] = "contrib"

@@ -36,7 +36,9 @@ function radar_languages_user_default_permissions() {
   // Exported permission: 'manage translate set'.
   $permissions['manage translate set'] = array(
     'name' => 'manage translate set',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'translate_set',
   );
 
@@ -102,7 +104,9 @@ function radar_languages_user_default_permissions() {
   // Exported permission: 'translate set'.
   $permissions['translate set'] = array(
     'name' => 'translate set',
-    'roles' => array(),
+    'roles' => array(
+      'translator' => 'translator',
+    ),
     'module' => 'translate_set',
   );
 

@@ -32,8 +32,8 @@ function radar_event_default_rules_configuration() {
             "DO" : [
               { "mail" : {
                   "to" : [ "list-item:mail" ],
-                  "subject" : "Pending event for Radar group",
-                  "message" : "A new event \\u0022[node:title]\\u0022 has been proposed for \\u0022[site:og-context--node]\\u0022 on Radar, and it awaits approval.\\r\\n\\r\\nYou can approve it on [site:url]\\/[site:og-context--node]\\/pending .\\r\\n\\r\\n",
+                  "subject" : "Pending event on Radar awaits approval",
+                  "message" : "A new event \\u0022[node:title]\\u0022 has been proposed for \\u0022[site:og-context--node]\\u0022.\\r\\n\\r\\nYou can approve it on the \\u0022Pending events\\u0022 tab of that group on  [site:url] .\\r\\n\\r\\n",
                   "from" : [ "" ],
                   "language" : [ "" ]
                 }
@@ -60,8 +60,8 @@ function radar_event_default_rules_configuration() {
       "DO" : [
         { "mail" : {
             "to" : [ "site:og-context--node:field-notifications" ],
-            "subject" : "New Radar event awaits approval",
-            "message" : "An event has been proposed for [site:og-context--node] on [site:name] and awaits approval.",
+            "subject" : "Pending event on Radar awaits approval",
+            "message" : "A new event has been proposed for \\u0022[site:og-context--node]\\u0022.\\r\\n\\r\\nYou can approve it on the \\u0022Pending events\\u0022 tab of that group on  [site:url] .",
             "language" : [ "" ]
           }
         }

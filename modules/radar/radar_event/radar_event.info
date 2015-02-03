@@ -50,6 +50,7 @@ features[field_group][] = group_tags|node|event|form
 features[field_instance][] = node-event-field_offline
 features[page_manager_handlers][] = node_view_panel_context
 features[rules_config][] = og_notification_pending_event
+features[rules_config][] = rules_get_notification_email
 features[user_permission][] = clone node
 features[user_permission][] = clone own nodes
 features[user_permission][] = create event content

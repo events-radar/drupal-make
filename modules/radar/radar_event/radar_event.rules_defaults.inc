@@ -40,6 +40,30 @@ function radar_event_default_rules_configuration() {
               }
             ]
           }
+        },
+        { "component_rules_get_notification_email" : [] }
+      ]
+    }
+  }');
+  $items['rules_get_notification_email'] = entity_import('rules_config', '{ "rules_get_notification_email" : {
+      "LABEL" : "Get notification email",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "IF" : [
+        { "entity_has_field" : {
+            "entity" : [ "site:og-context--node" ],
+            "field" : "field_notifications"
+          }
+        }
+      ],
+      "DO" : [
+        { "mail" : {
+            "to" : [ "site:og-context--node:field-notifications" ],
+            "subject" : "New Radar event awaits approval",
+            "message" : "An event has been proposed for [site:og-context--node] on [site:name] and awaits approval.",
+            "language" : [ "" ]
+          }
         }
       ]
     }

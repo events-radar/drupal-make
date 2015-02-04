@@ -4,10 +4,8 @@
  * Date repeat entity customisations.
  *
  * Callbacks to handle date sequence changing, and to update
- * events in sequence, including syncronising translations, and
+ * events in sequence, including synchronising translations, and
  * multiple language entity translation fields.
- *
- * @todo limit the number or/and length of repeats.
  */
 
 /**
@@ -198,5 +196,62 @@ function radar_date_repeat_repeating_date_update($date_entity, $updated_entity, 
           $lang_instance->$field->set($lang_updated->$field->value());
       }
     }
+  }
+}
+
+/**
+ * Implements hook_field_widget_form_alter().
+ */
+function radar_date_repeat_field_widget_form_alter(&$element, &$form_state, $context) {
+  $field = $context['field'];
+  //$instance = $context['instance'];
+  //$items = $context['items'];
+  //$delta = $context['delta'];
+
+  if (in_array($field['type'], array('date', 'datetime', 'datestamp'))) {
+    if (!empty($field['settings']['repeat'])) {
+      $element['#element_validate'][] = 'radar_date_repeat_widget_validate';
+      $element['#description'] = t("When does this event happen?<br />Does it repeat? If so for how long, or till when.<br/>Please don't post repeating events more than a year into the future.");
+    }
+  }
+
+}
+
+/**
+ * Validation callback for date repeat form element.
+ *
+ * MUST be called after date_repeat_field_widget_validate().
+ * Enforces 13 month restriction on repeating events.
+ */
+function radar_date_repeat_widget_validate($element, &$form_state) {
+  $field = field_widget_field($element, $form_state);
+
+  $parents = $element['#parents'];
+  // Knock the delta off the parents.
+  array_pop($parents);
+  $items = drupal_array_get_nested_value($form_state['values'], $parents, $input_exists);
+  if (count($items) < 2) {
+    // Single items in the future. Fine.
+    return;
+  }
+
+  $last = end($items);
+  $timezone = date_get_timezone($field['settings']['tz_handling'], $item['timezone']);
+  $timezone_db = date_get_timezone_db($field['settings']['tz_handling']);
+  $start = new DateObject($last['value'], $timezone_db, date_type_format($field['type']));
+  $now = new DateObject('now', $timezone_db, date_type_format($field['type']));
+  $difference = $start->difference($now, 'months');
+  if ($difference > 13) {
+    // Event more than 13 months into the future.
+    $item = drupal_array_get_nested_value($form_state['values'], $element['#parents'], $input_exists);
+    $input = drupal_array_get_nested_value($form_state['input'], $element['#parents'], $input_exists);
+    $rrule_values = date_repeat_merge($input['rrule'], $element['rrule']);
+    if ($rrule_values['range_of_repeat'] === 'UNTIL') {
+      $error_field = implode('][', $element['#parents']) . '][rrule][until_child][datetime][date';
+    }
+    else {
+      $error_field = implode('][', $element['#parents']) . '][rrule][count_child';
+    }
+    form_set_error($error_field, t("This event repeats for %count months into the future. Please avoid repeating events that go for more than a year. Who knows what's happening then! You can come back and tell us.", array('%count' => $difference), array('context' => 'Date repeat')));
   }
 }

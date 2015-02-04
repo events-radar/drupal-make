@@ -1,0 +1,6 @@
+name = Radar Date Repeat
+description = Hooks for Date Repeat Entity module.
+core = 7.x
+
+; dependencies
+dependencies[] = date_repeat_entity

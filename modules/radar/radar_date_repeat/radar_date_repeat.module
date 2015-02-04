@@ -1,0 +1,202 @@
+<?php
+
+/**
+ * Date repeat entity customisations.
+ *
+ * Callbacks to handle date sequence changing, and to update
+ * events in sequence, including syncronising translations, and
+ * multiple language entity translation fields.
+ *
+ * @todo limit the number or/and length of repeats.
+ */
+
+/**
+ * Determines if an entity with a repeating date has changed.
+ *
+ * @param object $original_entity
+ *   The original entity before being updated.
+ * @param object $updated_entity
+ *   The updated entity.
+ * @param string $entity_type
+ *   The entity type
+ *
+ * @return bool
+ *   indicates if the date values of an entity with a repeating date
+ *   have materially changed from original to current state.
+ */
+function radar_date_repeat_repeating_date_has_changed($original_entity, $updated_entity, $entity_type = 'node') {
+  $repeating_date_has_changed = FALSE;
+
+  // Check that entity aleady exists - we are not validating new entities.
+  if (!is_null($original_entity) && !is_null($updated_entity)) {
+
+    // Create two wrappers.
+    $original_wrapper = entity_metadata_wrapper($entity_type, $original_entity);
+    $updated_wrapper = entity_metadata_wrapper($entity_type, $updated_entity);
+
+    // Get bundle type from original entity.
+    $bundle = $original_wrapper->getBundle();
+
+    // Make sure utility functions are available.
+    module_load_include('inc', 'date_repeat_entity', 'includes/date_repeat_entity.utility');
+    $repeating_date_field = date_repeat_entity_get_repeating_date_field($entity_type, $bundle);
+
+    // Check that the entity form has a repeating date field.
+    if ($repeating_date_field != NULL) {
+
+      // Get the name of the repeating field.
+      $repeating_date_field_name = $repeating_date_field['field_name'];
+
+      // Get original date field properties.
+      $original_date = $original_wrapper->{$repeating_date_field_name}[0]->value();
+      $original_date_start_value = $original_date['value'];
+      $original_date_end_value = $original_date['value2'];
+      $original_rrule = $original_date['rrule'];
+
+      // Get updated date field properties.
+      $updated_date = $updated_wrapper->{$repeating_date_field_name}[0]->value();
+      $updated_date_start_value = $updated_date['value'];
+      $updated_date_end_value = $updated_date['value2'];
+      $updated_rrule = $updated_date['rrule'];
+
+      // Check if the entity date has changed to the extent that
+      // the repeating date series has changed and therefore dependent data
+      // like date exceptions and referencing entities will need to be reset.
+      $updated_date_data = array(
+        $updated_date_start_value,
+        $updated_date_end_value,
+        $updated_rrule,
+      );
+
+      $original_date_data = array(
+        $original_date_start_value,
+        $original_date_end_value,
+        $original_rrule,
+      );
+
+      if ($updated_date_data !== $original_date_data) {
+        $repeating_date_has_changed = TRUE;
+      }
+
+    }
+  }
+
+  return $repeating_date_has_changed;
+}
+
+/**
+ * Used to update a date instance in a date series.
+ *
+ * @param object $date_entity
+ *   An instance of a date entity in a series.
+ * @param object $updated_entity
+ *   The updated entity.
+ * @param string $entity_type
+ *   The type of entity.
+ */
+function radar_date_repeat_repeating_date_update($date_entity, $updated_entity, $entity_type = 'node') {
+  //
+  // Synchronise translations.
+  //
+  $updated_translations = entity_translation_get_handler($entity_type, $updated_entity)->getTranslations();
+  $translation_handler = entity_translation_get_handler($entity_type, $date_entity);
+  $instance_translations = $translation_handler->getTranslations();
+
+  if (array_keys($updated_translations->data) != array_keys($instance_translations->data)) {
+    // Check for any new translations on updated entity.
+    foreach ($updated_translations->data as $lang => $translation) {
+      if (!isset($instance_translations->data[$lang])) {
+        $translation_handler->setTranslation(
+          array('language' => $translation['language'],
+            'source' => $translation['source'])
+        );
+      }
+    }
+    // New languages are now there. Remove any that have been deleted.
+    foreach ($instance_translations->data as $lang => $translation) {
+      if (!isset($updated_translations->data[$lang])) {
+        $translation_handler->removeTranslation($lang);
+      }
+    }
+  }
+
+  //
+  // Synchronise properties and fields
+  //
+  $languages = array_keys($instance_translations->data);
+  $instance = entity_metadata_wrapper($entity_type, $date_entity);
+  $original = entity_metadata_wrapper($entity_type, $updated_entity->original);
+  $updated = entity_metadata_wrapper($entity_type, $updated_entity);
+
+  //
+  // Properties
+  //
+  // Check each property. If it has been changed from the original do not
+  // update (individually updated).
+  $properties = array(
+    'status',
+    'promote',
+    'sticky',
+  );
+  foreach ($properties as $property) {
+    if ($original->$property->value() == $instance->$property->value() &&
+      $updated->$property->value() != $instance->$property->value()) {
+        $instance->$property->set($updated->$property->value());
+    }
+  }
+
+  //
+  // Non-translatable fields
+  //
+  // Check each field. If the original is empty (it didn't exist)
+  // or the original value is the same as the instance value
+  // (it's not been changed individually).
+  // And if the updated value has been changed from the instance value.
+  // Then update the field.
+  $fields = array(
+    'field_category',
+    'group_content_access',
+    'og_group_ref',
+    'og_group_request',
+    'field_email',
+    'field_offline',
+    'field_phone',
+    'field_topic',
+    'field_image',
+  );
+  foreach ($fields as $field) {
+    if ((empty($original->$field->value()) || $original->$field->value() == $instance->$field->value()) &&
+      ($updated->$field->value() != $instance->$field->value())) {
+        $instance->$field->set($updated->$field->value());
+    }
+  }
+
+  //
+  // Translatable fields
+  //
+  // We don't know what language is being updated; and programatically it
+  // could maybe be more than one.
+  foreach ($languages as $language) {
+    $lang_original = $original->language($language);
+    $lang_instance = $instance->language($language);
+    $lang_updated = $updated->language($language);
+
+    // Check each field. If the original is empty (it didn't exist)
+    // or the original value is the same as the instance value
+    // (it's not been changed individually).
+    // And if the updated value has been changed from the instance value.
+    // Then update the field.
+    $fields = array(
+      'title_field',
+      'body',
+      'field_price',
+      'field_link',
+    );
+    foreach ($fields as $field) {
+      if ((empty($lang_original->$field->value()) || $lang_original->$field->value() == $lang_instance->$field->value()) &&
+        ($lang_updated->$field->value() != $lang_instance->$field->value())) {
+          $lang_instance->$field->set($lang_updated->$field->value());
+      }
+    }
+  }
+}

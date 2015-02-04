@@ -163,7 +163,8 @@ function radar_date_repeat_repeating_date_update($date_entity, $updated_entity, 
     'field_image',
   );
   foreach ($fields as $field) {
-    if ((empty($original->$field->value()) || $original->$field->value() == $instance->$field->value()) &&
+    $original_value = $original->$field->value();
+    if ((empty($original_value) || $original_value == $instance->$field->value()) &&
       ($updated->$field->value() != $instance->$field->value())) {
         $instance->$field->set($updated->$field->value());
     }
@@ -191,7 +192,8 @@ function radar_date_repeat_repeating_date_update($date_entity, $updated_entity, 
       'field_link',
     );
     foreach ($fields as $field) {
-      if ((empty($lang_original->$field->value()) || $lang_original->$field->value() == $lang_instance->$field->value()) &&
+      $original_value = $lang_original->$field->value();
+      if ((empty($original_value) || $original_value == $lang_instance->$field->value()) &&
         ($lang_updated->$field->value() != $lang_instance->$field->value())) {
           $lang_instance->$field->set($lang_updated->$field->value());
       }
@@ -204,9 +206,6 @@ function radar_date_repeat_repeating_date_update($date_entity, $updated_entity, 
  */
 function radar_date_repeat_field_widget_form_alter(&$element, &$form_state, $context) {
   $field = $context['field'];
-  //$instance = $context['instance'];
-  //$items = $context['items'];
-  //$delta = $context['delta'];
 
   if (in_array($field['type'], array('date', 'datetime', 'datestamp'))) {
     if (!empty($field['settings']['repeat'])) {
@@ -214,7 +213,6 @@ function radar_date_repeat_field_widget_form_alter(&$element, &$form_state, $con
       $element['#description'] = t("When does this event happen?<br />Does it repeat? If so for how long, or till when.<br/>Please don't post repeating events more than a year into the future.");
     }
   }
-
 }
 
 /**

@@ -105,8 +105,11 @@ function radar_date_repeat_repeating_date_update($date_entity, $updated_entity, 
     foreach ($updated_translations->data as $lang => $translation) {
       if (!isset($instance_translations->data[$lang])) {
         $translation_handler->setTranslation(
-          array('language' => $translation['language'],
-            'source' => $translation['source'])
+          array(
+            'language' => $translation['language'],
+            'source' => $translation['source'],
+            'status' => $translation['status'],
+          )
         );
       }
     }
@@ -117,7 +120,6 @@ function radar_date_repeat_repeating_date_update($date_entity, $updated_entity, 
       }
     }
   }
-
   //
   // Synchronise properties and fields
   //

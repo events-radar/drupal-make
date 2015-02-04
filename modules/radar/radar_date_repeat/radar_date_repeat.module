@@ -128,6 +128,7 @@ function radar_date_repeat_repeating_date_update($date_entity, $updated_entity, 
   $original = entity_metadata_wrapper($entity_type, $updated_entity->original);
   $updated = entity_metadata_wrapper($entity_type, $updated_entity);
 
+
   //
   // Properties
   //
@@ -201,6 +202,11 @@ function radar_date_repeat_repeating_date_update($date_entity, $updated_entity, 
       }
     }
   }
+
+  // Re-synchronise the title field.
+  // As date_repeat_entity_repeating_date_update will overwrite current
+  // translation title, label, on base entity.
+  $date_entity->title = $instance->language($date_entity->language)->title_field->value();
 }
 
 /**

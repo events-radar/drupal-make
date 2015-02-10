@@ -78,6 +78,7 @@ features[og_features_permission][] = node:group:update any event content
 features[og_features_permission][] = node:group:update group
 features[og_features_permission][] = node:group:update own event content
 features[page_manager_handlers][] = node_view_panel_context_2
+features[rules_config][] = radar_group_administrator_notification_pending_group_updated
 features[rules_config][] = rules_administrator_notification_groups_all
 features[rules_config][] = rules_notification_published_group
 features[taxonomy][] = type

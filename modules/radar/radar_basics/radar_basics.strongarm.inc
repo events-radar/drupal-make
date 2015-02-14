@@ -341,6 +341,20 @@ function radar_basics_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_punctuation_hyphen';
+  $strongarm->value = '1';
+  $export['pathauto_punctuation_hyphen'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_punctuation_slash';
+  $strongarm->value = '1';
+  $export['pathauto_punctuation_slash'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'user_cancel_method';
   $strongarm->value = 'user_cancel_block';
   $export['user_cancel_method'] = $strongarm;

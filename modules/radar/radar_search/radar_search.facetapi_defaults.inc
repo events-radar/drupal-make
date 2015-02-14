@@ -986,7 +986,7 @@ function radar_search_facetapi_default_facet_settings() {
     'default_true' => '1',
     'facet_search_ids' => array(),
     'exclude' => 0,
-    'pretty_paths_alias' => 'topic',
+    'pretty_paths_alias' => 'tag',
     'pretty_paths_taxonomy_pathauto' => 1,
     'pretty_paths_taxonomy_pathauto_vocabulary' => 'topic',
   );

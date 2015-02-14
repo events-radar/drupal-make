@@ -1876,7 +1876,7 @@ function radar_event_views_default_views() {
   $handler->display->display_options['filters']['field_date_time_value']['table'] = 'search_api_index_events';
   $handler->display->display_options['filters']['field_date_time_value']['field'] = 'field_date_time_value';
   $handler->display->display_options['filters']['field_date_time_value']['operator'] = '>=';
-  $handler->display->display_options['filters']['field_date_time_value']['value'] = '-2 hours';
+  $handler->display->display_options['filters']['field_date_time_value']['value'] = '-6 hours';
   $handler->display->display_options['pane_title'] = 'Events teaser list pane';
   $handler->display->display_options['pane_category']['name'] = 'Radar';
   $handler->display->display_options['pane_category']['weight'] = '0';
@@ -1905,7 +1905,7 @@ function radar_event_views_default_views() {
   $handler->display->display_options['use_more_text'] = 'more events';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Date & Time: Start date (indexed) */
@@ -2073,7 +2073,7 @@ function radar_event_views_default_views() {
   $handler->display->display_options['filters']['field_date_time_value']['table'] = 'search_api_index_events';
   $handler->display->display_options['filters']['field_date_time_value']['field'] = 'field_date_time_value';
   $handler->display->display_options['filters']['field_date_time_value']['operator'] = '>=';
-  $handler->display->display_options['filters']['field_date_time_value']['value'] = '-2 hours';
+  $handler->display->display_options['filters']['field_date_time_value']['value'] = '-6 hours';
   $handler->display->display_options['pane_title'] = 'Listings events teaser pane';
   $handler->display->display_options['pane_category']['name'] = 'Radar';
   $handler->display->display_options['pane_category']['weight'] = '0';

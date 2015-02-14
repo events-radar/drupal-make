@@ -188,7 +188,7 @@ function radar_search_views_default_views() {
   $handler->display->display_options['filters']['field_date_time_value']['table'] = 'search_api_index_events';
   $handler->display->display_options['filters']['field_date_time_value']['field'] = 'field_date_time_value';
   $handler->display->display_options['filters']['field_date_time_value']['operator'] = '>=';
-  $handler->display->display_options['filters']['field_date_time_value']['value'] = '-2 hours';
+  $handler->display->display_options['filters']['field_date_time_value']['value'] = '-6 hours';
 
   /* Display: Events search pane */
   $handler = $view->new_display('panel_pane', 'Events search pane', 'panel_pane_1');

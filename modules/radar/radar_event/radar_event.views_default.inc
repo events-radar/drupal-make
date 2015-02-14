@@ -92,6 +92,10 @@ function radar_event_views_default_views() {
       'empty_column' => 0,
     ),
   );
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
+  $handler->display->display_options['relationships']['og_group_ref_target_id']['table'] = 'og_membership';
+  $handler->display->display_options['relationships']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
   /* Field: Bulk operations: Content */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
   $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'node';
@@ -266,6 +270,17 @@ function radar_event_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['og_group_ref']['delta_offset'] = '0';
+  /* Field: Content: Groups audience */
+  $handler->display->display_options['fields']['og_group_ref_1']['id'] = 'og_group_ref_1';
+  $handler->display->display_options['fields']['og_group_ref_1']['table'] = 'og_membership';
+  $handler->display->display_options['fields']['og_group_ref_1']['field'] = 'og_group_ref';
+  $handler->display->display_options['fields']['og_group_ref_1']['label'] = 'Group ID';
+  $handler->display->display_options['fields']['og_group_ref_1']['click_sort_column'] = 'target_id';
+  $handler->display->display_options['fields']['og_group_ref_1']['type'] = 'entityreference_entity_id';
+  $handler->display->display_options['fields']['og_group_ref_1']['settings'] = array(
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['og_group_ref_1']['delta_offset'] = '0';
   /* Field: Content: Date & Time */
   $handler->display->display_options['fields']['field_date_time_1']['id'] = 'field_date_time_1';
   $handler->display->display_options['fields']['field_date_time_1']['table'] = 'field_data_field_date_time';
@@ -364,6 +379,45 @@ function radar_event_views_default_views() {
     8 => 0,
     7 => 0,
   );
+  /* Filter criterion: Content: Groups audience (og_group_ref:target_id) */
+  $handler->display->display_options['filters']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['group'] = 1;
+  $handler->display->display_options['filters']['og_group_ref_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['operator_id'] = 'og_group_ref_target_id_op';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['label'] = 'Group ID';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['description'] = 'Can be found on the admin links of a group.';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['operator'] = 'og_group_ref_target_id_op';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['identifier'] = 'og_group_ref_target_id';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    8 => 0,
+    7 => 0,
+  );
+  /* Filter criterion: Content: area (field_offline:target_id) */
+  $handler->display->display_options['filters']['field_offline_target_id']['id'] = 'field_offline_target_id';
+  $handler->display->display_options['filters']['field_offline_target_id']['table'] = 'field_data_field_offline';
+  $handler->display->display_options['filters']['field_offline_target_id']['field'] = 'field_offline_target_id';
+  $handler->display->display_options['filters']['field_offline_target_id']['group'] = 1;
+  $handler->display->display_options['filters']['field_offline_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_offline_target_id']['expose']['operator_id'] = 'field_offline_target_id_op';
+  $handler->display->display_options['filters']['field_offline_target_id']['expose']['label'] = 'Location ID';
+  $handler->display->display_options['filters']['field_offline_target_id']['expose']['operator'] = 'field_offline_target_id_op';
+  $handler->display->display_options['filters']['field_offline_target_id']['expose']['identifier'] = 'field_offline_target_id';
+  $handler->display->display_options['filters']['field_offline_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    8 => 0,
+    7 => 0,
+  );
   /* Filter criterion: Content: categories (field_category) */
   $handler->display->display_options['filters']['field_category_tid']['id'] = 'field_category_tid';
   $handler->display->display_options['filters']['field_category_tid']['table'] = 'field_data_field_category';
@@ -410,28 +464,6 @@ function radar_event_views_default_views() {
     7 => 0,
   );
   $handler->display->display_options['filters']['field_topic_tid']['vocabulary'] = 'topic';
-  /* Filter criterion: Content: Groups audience (og_group_ref:target_id) */
-  $handler->display->display_options['filters']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
-  $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
-  $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
-  $handler->display->display_options['filters']['og_group_ref_target_id']['group'] = 1;
-  $handler->display->display_options['filters']['og_group_ref_target_id']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['operator_id'] = 'og_group_ref_target_id_op';
-  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['label'] = 'Group ID';
-  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['description'] = 'Can be found on the admin links of a group.';
-  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['use_operator'] = TRUE;
-  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['operator'] = 'og_group_ref_target_id_op';
-  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['identifier'] = 'og_group_ref_target_id';
-  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    4 => 0,
-    3 => 0,
-    5 => 0,
-    6 => 0,
-    8 => 0,
-    7 => 0,
-  );
   /* Filter criterion: Content: Date &amp; Time -  start date (field_date_time) */
   $handler->display->display_options['filters']['field_date_time_value']['id'] = 'field_date_time_value';
   $handler->display->display_options['filters']['field_date_time_value']['table'] = 'field_data_field_date_time';
@@ -478,27 +510,10 @@ function radar_event_views_default_views() {
     8 => 0,
     7 => 0,
   );
-  /* Filter criterion: Content: area (field_offline:target_id) */
-  $handler->display->display_options['filters']['field_offline_target_id']['id'] = 'field_offline_target_id';
-  $handler->display->display_options['filters']['field_offline_target_id']['table'] = 'field_data_field_offline';
-  $handler->display->display_options['filters']['field_offline_target_id']['field'] = 'field_offline_target_id';
-  $handler->display->display_options['filters']['field_offline_target_id']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_offline_target_id']['expose']['operator_id'] = 'field_offline_target_id_op';
-  $handler->display->display_options['filters']['field_offline_target_id']['expose']['label'] = 'Location ID';
-  $handler->display->display_options['filters']['field_offline_target_id']['expose']['operator'] = 'field_offline_target_id_op';
-  $handler->display->display_options['filters']['field_offline_target_id']['expose']['identifier'] = 'field_offline_target_id';
-  $handler->display->display_options['filters']['field_offline_target_id']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    5 => 0,
-    6 => 0,
-    8 => 0,
-    7 => 0,
-  );
 
   /* Display: Events table page */
   $handler = $view->new_display('page', 'Events table page', 'page');
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['path'] = 'admin/content/events/all';
 
   /* Display: Groups table page */
@@ -704,18 +719,56 @@ function radar_event_views_default_views() {
     'group' => 'group',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Title (title_field) */
-  $handler->display->display_options['filters']['title_field_value']['id'] = 'title_field_value';
-  $handler->display->display_options['filters']['title_field_value']['table'] = 'field_data_title_field';
-  $handler->display->display_options['filters']['title_field_value']['field'] = 'title_field_value';
-  $handler->display->display_options['filters']['title_field_value']['operator'] = 'contains';
-  $handler->display->display_options['filters']['title_field_value']['group'] = 1;
-  $handler->display->display_options['filters']['title_field_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['title_field_value']['expose']['operator_id'] = 'title_field_value_op';
-  $handler->display->display_options['filters']['title_field_value']['expose']['label'] = 'Group';
-  $handler->display->display_options['filters']['title_field_value']['expose']['operator'] = 'title_field_value_op';
-  $handler->display->display_options['filters']['title_field_value']['expose']['identifier'] = 'title_field_value';
-  $handler->display->display_options['filters']['title_field_value']['expose']['remember_roles'] = array(
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['group'] = 1;
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Group';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    8 => 0,
+    7 => 0,
+  );
+  /* Filter criterion: Content: Nid */
+  $handler->display->display_options['filters']['nid']['id'] = 'nid';
+  $handler->display->display_options['filters']['nid']['table'] = 'node';
+  $handler->display->display_options['filters']['nid']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid']['group'] = 1;
+  $handler->display->display_options['filters']['nid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['nid']['expose']['operator_id'] = 'nid_op';
+  $handler->display->display_options['filters']['nid']['expose']['label'] = 'Group ID';
+  $handler->display->display_options['filters']['nid']['expose']['operator'] = 'nid_op';
+  $handler->display->display_options['filters']['nid']['expose']['identifier'] = 'nid';
+  $handler->display->display_options['filters']['nid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    8 => 0,
+    7 => 0,
+  );
+  /* Filter criterion: Content: area (field_offline:target_id) */
+  $handler->display->display_options['filters']['field_offline_target_id']['id'] = 'field_offline_target_id';
+  $handler->display->display_options['filters']['field_offline_target_id']['table'] = 'field_data_field_offline';
+  $handler->display->display_options['filters']['field_offline_target_id']['field'] = 'field_offline_target_id';
+  $handler->display->display_options['filters']['field_offline_target_id']['group'] = 1;
+  $handler->display->display_options['filters']['field_offline_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_offline_target_id']['expose']['operator_id'] = 'field_offline_target_id_op';
+  $handler->display->display_options['filters']['field_offline_target_id']['expose']['label'] = 'Location ID';
+  $handler->display->display_options['filters']['field_offline_target_id']['expose']['operator'] = 'field_offline_target_id_op';
+  $handler->display->display_options['filters']['field_offline_target_id']['expose']['identifier'] = 'field_offline_target_id';
+  $handler->display->display_options['filters']['field_offline_target_id']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
@@ -786,25 +839,6 @@ function radar_event_views_default_views() {
     2 => '2',
     1 => 0,
     4 => 0,
-    3 => 0,
-    5 => 0,
-    6 => 0,
-    8 => 0,
-    7 => 0,
-  );
-  /* Filter criterion: Content: area (field_offline:target_id) */
-  $handler->display->display_options['filters']['field_offline_target_id']['id'] = 'field_offline_target_id';
-  $handler->display->display_options['filters']['field_offline_target_id']['table'] = 'field_data_field_offline';
-  $handler->display->display_options['filters']['field_offline_target_id']['field'] = 'field_offline_target_id';
-  $handler->display->display_options['filters']['field_offline_target_id']['group'] = 1;
-  $handler->display->display_options['filters']['field_offline_target_id']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_offline_target_id']['expose']['operator_id'] = 'field_offline_target_id_op';
-  $handler->display->display_options['filters']['field_offline_target_id']['expose']['label'] = 'Location ID';
-  $handler->display->display_options['filters']['field_offline_target_id']['expose']['operator'] = 'field_offline_target_id_op';
-  $handler->display->display_options['filters']['field_offline_target_id']['expose']['identifier'] = 'field_offline_target_id';
-  $handler->display->display_options['filters']['field_offline_target_id']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
     3 => 0,
     5 => 0,
     6 => 0,

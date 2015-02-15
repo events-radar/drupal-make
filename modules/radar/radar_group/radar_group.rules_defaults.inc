@@ -20,7 +20,7 @@ function radar_group_default_rules_configuration() {
         { "mail_to_users_of_role" : {
             "roles" : { "value" : { "3" : "3" } },
             "subject" : "Radar group awaiting approval has been updated",
-            "message" : "The pending group [node:title]  has been updated. \\r\\n\\r\\nCheck https:\\/\\/new-radar.squat.net\\/admin\\/content\\/pending-groups"
+            "message" : "The pending group [node:title]  has been updated. \\r\\n\\r\\nCheck [site:url]\\/en\\/admin\\/content\\/groups"
           }
         }
       ]
@@ -37,7 +37,7 @@ function radar_group_default_rules_configuration() {
         { "mail_to_users_of_role" : {
             "roles" : { "value" : { "3" : "3" } },
             "subject" : "New group on radar waiting for approval",
-            "message" : "A new group [node:title]  has been submitted and awaits approval by an administrator.\\r\\n\\r\\nCheck https:\\/\\/new-radar.squat.net\\/admin\\/content\\/pending-groups"
+            "message" : "A new group [node:title]  has been submitted and awaits approval by an administrator.\\r\\n\\r\\nCheck [site:url]\\/en\\/admin\\/content\\/groups"
           }
         }
       ]

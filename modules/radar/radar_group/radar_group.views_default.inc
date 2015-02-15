@@ -446,7 +446,6 @@ Events can already be created, but they will not be visible until the group has 
   $handler->display->display_options['fields']['title']['label'] = 'Group';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Location: Address - Locality (i.e. City) */
   $handler->display->display_options['fields']['field_address_locality']['id'] = 'field_address_locality';
   $handler->display->display_options['fields']['field_address_locality']['table'] = 'field_data_field_address';
@@ -507,13 +506,18 @@ Events can already be created, but they will not be visible until the group has 
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'admin/content/pending-groups';
+  $handler->display->display_options['path'] = 'admin/content/groups/pending';
+  $handler->display->display_options['menu']['type'] = 'default tab';
   $handler->display->display_options['menu']['title'] = 'Pending groups';
   $handler->display->display_options['menu']['description'] = 'Publish pending groups';
-  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['weight'] = '-1';
   $handler->display->display_options['menu']['name'] = 'management';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $handler->display->display_options['tab_options']['type'] = 'tab';
+  $handler->display->display_options['tab_options']['title'] = 'Groups';
+  $handler->display->display_options['tab_options']['description'] = 'Groups moderation';
+  $handler->display->display_options['tab_options']['weight'] = '0';
   $export['radar_pending_groups'] = $view;
 
   $view = new view();

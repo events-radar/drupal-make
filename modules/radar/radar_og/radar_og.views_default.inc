@@ -228,26 +228,6 @@ function radar_og_views_default_views() {
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['path'] = 'node/%/contributors';
-  $translatables['radar_contributors_group'] = array(
-    t('Master'),
-    t('Group contributors'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('OG membership from user'),
-    t('All'),
-    t('group teaser'),
-    t('Recent contributors'),
-    t('[picture]<span>[name]</span>'),
-    t('View panes'),
-    t('group homepage'),
-    t('Contributors'),
-    t('Page'),
-    t('Contributors to %1'),
-  );
   $export['radar_contributors_group'] = $view;
 
   $view = new view();
@@ -738,11 +718,11 @@ function radar_og_views_default_views() {
     'group' => 'group',
   );
   $handler->display->display_options['path'] = 'admin/content/groups/proposed';
-  $handler->display->display_options['menu']['type'] = 'default tab';
   $handler->display->display_options['menu']['title'] = 'Proposed Groups';
   $handler->display->display_options['menu']['description'] = 'Proposed Group Moderation';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $handler->display->display_options['tab_options']['type'] = 'tab';
   $handler->display->display_options['tab_options']['title'] = 'Groups';
   $handler->display->display_options['tab_options']['description'] = 'Groups Moderation';
@@ -778,11 +758,11 @@ function radar_og_views_default_views() {
     'group' => 'group',
   );
   $handler->display->display_options['path'] = 'admin/content/groups/published';
-  $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Published';
   $handler->display->display_options['menu']['description'] = 'Manage Published Groups';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
 
   /* Display: Group Update */
   $handler = $view->new_display('page', 'Group Update', 'page_2');
@@ -838,7 +818,7 @@ function radar_og_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'group' => 'group',
   );
-  /* Filter criterion: Content: Privacy settings (field_og_subscribe_settings) */
+  /* Filter criterion: Content: Who can add events to this group? (field_og_subscribe_settings) */
   $handler->display->display_options['filters']['field_og_subscribe_settings_value']['id'] = 'field_og_subscribe_settings_value';
   $handler->display->display_options['filters']['field_og_subscribe_settings_value']['table'] = 'field_data_field_og_subscribe_settings';
   $handler->display->display_options['filters']['field_og_subscribe_settings_value']['field'] = 'field_og_subscribe_settings_value';
@@ -848,32 +828,6 @@ function radar_og_views_default_views() {
   $handler->display->display_options['menu']['weight'] = '10';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
-  $translatables['radar_group_moderation'] = array(
-    t('Master'),
-    t('Radar Group Moderation'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('author'),
-    t('Update Actions'),
-    t('Title'),
-    t('User'),
-    t('Updated'),
-    t('Operations'),
-    t('Active'),
-    t('Proposed'),
-    t('Published Groups'),
-  );
   $export['radar_group_moderation'] = $view;
 
   $view = new view();
@@ -965,20 +919,6 @@ function radar_og_views_default_views() {
   $handler->display->display_options['pane_title'] = 'Contributors (Site-wide)';
   $handler->display->display_options['pane_category']['name'] = 'Radar';
   $handler->display->display_options['pane_category']['weight'] = '0';
-  $translatables['radar_og_contributors'] = array(
-    t('Master'),
-    t('Contributors'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('OG membership from user'),
-    t('Content pane'),
-    t('Contributors (Site-wide)'),
-    t('Radar'),
-  );
   $export['radar_og_contributors'] = $view;
 
   $view = new view();
@@ -1032,14 +972,14 @@ function radar_og_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Field: Group (group_group) */
+  /* Filter criterion: Content: Group (group_group) */
   $handler->display->display_options['filters']['group_group_value']['id'] = 'group_group_value';
   $handler->display->display_options['filters']['group_group_value']['table'] = 'field_data_group_group';
   $handler->display->display_options['filters']['group_group_value']['field'] = 'group_group_value';
   $handler->display->display_options['filters']['group_group_value']['value'] = array(
     1 => '1',
   );
-  /* Filter criterion: Search: Search Terms */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['keys']['id'] = 'keys';
   $handler->display->display_options['filters']['keys']['table'] = 'search_index';
   $handler->display->display_options['filters']['keys']['field'] = 'keys';
@@ -1071,28 +1011,6 @@ function radar_og_views_default_views() {
   $handler->display->display_options['pane_category']['name'] = 'Radar';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['inherit_panels_path'] = '1';
-  $translatables['radar_og_directory'] = array(
-    t('Master'),
-    t('Groups'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('No groups have been created yet.'),
-    t('Limit to'),
-    t('Feed'),
-    t('Content pane'),
-    t('Radar'),
-  );
   $export['radar_og_directory'] = $view;
 
   $view = new view();
@@ -1171,20 +1089,6 @@ function radar_og_views_default_views() {
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $translatables['radar_og_recent_content'] = array(
-    t('Master'),
-    t('Radar Groups: Recent content'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Nobody has contributed any site content yet.'),
-    t('OG membership from node'),
-    t('All'),
-    t('Block'),
-  );
   $export['radar_og_recent_content'] = $view;
 
   $view = new view();
@@ -1243,7 +1147,7 @@ function radar_og_views_default_views() {
   $handler->display->display_options['fields']['title_field']['label'] = '';
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 1;
-  /* Field: Field: Group */
+  /* Field: Content: Group */
   $handler->display->display_options['fields']['group_group']['id'] = 'group_group';
   $handler->display->display_options['fields']['group_group']['table'] = 'field_data_group_group';
   $handler->display->display_options['fields']['group_group']['field'] = 'group_group';
@@ -1281,27 +1185,6 @@ function radar_og_views_default_views() {
       'fixed' => '',
       'label' => 'OG membership: Entity id',
     ),
-  );
-  $translatables['radar_og_user_groups'] = array(
-    t('Master'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('This person hasn\'t contributed to any groups yet.'),
-    t('Group node from OG membership'),
-    t('All'),
-    t('Content pane'),
-    t('View panes'),
   );
   $export['radar_og_user_groups'] = $view;
 

@@ -511,6 +511,16 @@ function radar_event_views_default_views() {
   $handler = $view->new_display('page', 'Events table page', 'page');
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['path'] = 'admin/content/events/all';
+  $handler->display->display_options['menu']['type'] = 'default tab';
+  $handler->display->display_options['menu']['title'] = 'Events';
+  $handler->display->display_options['menu']['description'] = 'Bulk operation for all events';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $handler->display->display_options['tab_options']['type'] = 'tab';
+  $handler->display->display_options['tab_options']['title'] = 'Events';
+  $handler->display->display_options['tab_options']['description'] = 'admin/content/groups/all';
+  $handler->display->display_options['tab_options']['weight'] = '0';
 
   /* Display: Groups table page */
   $handler = $view->new_display('page', 'Groups table page', 'page_1');

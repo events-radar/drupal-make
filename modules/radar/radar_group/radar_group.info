@@ -23,6 +23,7 @@ dependencies[] = og_context
 dependencies[] = og_ui
 dependencies[] = options
 dependencies[] = page_manager
+dependencies[] = radar_body
 dependencies[] = radar_contenttype_event
 dependencies[] = radar_event
 dependencies[] = radar_location

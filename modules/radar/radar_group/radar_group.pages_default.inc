@@ -68,6 +68,65 @@ function radar_group_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-5c8cb8f0-7763-42be-b556-1e1d77f15fae';
+    $pane->panel = 'two_66_33_first';
+    $pane->type = 'node_title';
+    $pane->subtype = 'node_title';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'link' => 0,
+      'markup' => 'h2',
+      'id' => '',
+      'class' => 'group',
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'tight',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '5c8cb8f0-7763-42be-b556-1e1d77f15fae';
+    $display->content['new-5c8cb8f0-7763-42be-b556-1e1d77f15fae'] = $pane;
+    $display->panels['two_66_33_first'][0] = 'new-5c8cb8f0-7763-42be-b556-1e1d77f15fae';
+    $pane = new stdClass();
+    $pane->pid = 'new-23ad67b7-424b-4a8d-aea4-b1cb4ca8194e';
+    $pane->panel = 'two_66_33_first';
+    $pane->type = 'node_links';
+    $pane->subtype = 'node_links';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+      'build_mode' => 'full',
+      'identifier' => '',
+      'link' => 1,
+      'context' => 'argument_entity_id:node_1',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'right tight label',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '23ad67b7-424b-4a8d-aea4-b1cb4ca8194e';
+    $display->content['new-23ad67b7-424b-4a8d-aea4-b1cb4ca8194e'] = $pane;
+    $display->panels['two_66_33_first'][1] = 'new-23ad67b7-424b-4a8d-aea4-b1cb4ca8194e';
+    $pane = new stdClass();
     $pane->pid = 'new-6e525b08-bf1b-4192-b6cb-9939a7c827f9';
     $pane->panel = 'two_66_33_first';
     $pane->type = 'views_panes';
@@ -79,13 +138,16 @@ function radar_group_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'clear',
+    );
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '6e525b08-bf1b-4192-b6cb-9939a7c827f9';
     $display->content['new-6e525b08-bf1b-4192-b6cb-9939a7c827f9'] = $pane;
-    $display->panels['two_66_33_first'][0] = 'new-6e525b08-bf1b-4192-b6cb-9939a7c827f9';
+    $display->panels['two_66_33_first'][2] = 'new-6e525b08-bf1b-4192-b6cb-9939a7c827f9';
     $pane = new stdClass();
     $pane->pid = 'new-17ab2b05-3539-44d5-b53c-0667a0e8e20f';
     $pane->panel = 'two_66_33_second';

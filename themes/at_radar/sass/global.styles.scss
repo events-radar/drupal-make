@@ -64,10 +64,11 @@
   text-transform: uppercase;
 }
 
-
 .clear {
   clear: right;
 }
+
+
 
 
 /* =============================================================================
@@ -147,8 +148,8 @@ h3 {
     padding: 0 .6em;
     -moz-border-radius: 15px;
     border-radius: 15px;
-    min-width: 14em;
-    width: 20%;
+/*    min-width: 14em;
+    width: 20%; */
     color: $grey;
     font-weight: normal;
   }
@@ -2187,6 +2188,10 @@ tr.error {
 /* ==============================
  *  Views & Panels
  * ============================== */
+
+.tight {
+  margin-bottom: .3em;
+}
 
 .results {
   margin-bottom: .8em;

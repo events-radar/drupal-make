@@ -45,15 +45,6 @@ function radar_group_views_default_views() {
   $handler->display->display_options['empty']['area']['content'] = 'This group is awaiting approval. 
 Events can already be created, but they will not be visible until the group has been published by an administrator.';
   $handler->display->display_options['empty']['area']['format'] = 'rich_text_editor';
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title_2']['id'] = 'title_2';
-  $handler->display->display_options['fields']['title_2']['table'] = 'node';
-  $handler->display->display_options['fields']['title_2']['field'] = 'title';
-  $handler->display->display_options['fields']['title_2']['label'] = '';
-  $handler->display->display_options['fields']['title_2']['element_type'] = 'h2';
-  $handler->display->display_options['fields']['title_2']['element_class'] = 'group';
-  $handler->display->display_options['fields']['title_2']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title_2']['link_to_node'] = FALSE;
   /* Field: Content: Group Logo */
   $handler->display->display_options['fields']['field_group_logo']['id'] = 'field_group_logo';
   $handler->display->display_options['fields']['field_group_logo']['table'] = 'field_data_field_group_logo';

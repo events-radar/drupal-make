@@ -141,13 +141,18 @@ function radar_event_ical_views_default_views() {
   $handler->display->display_options['relationships']['field_offline_target_id']['id'] = 'field_offline_target_id';
   $handler->display->display_options['relationships']['field_offline_target_id']['table'] = 'field_data_field_offline';
   $handler->display->display_options['relationships']['field_offline_target_id']['field'] = 'field_offline_target_id';
-  $handler->display->display_options['path'] = 'admin/content/importers';
+  $handler->display->display_options['path'] = 'admin/content/importers/all';
+  $handler->display->display_options['menu']['type'] = 'default tab';
   $handler->display->display_options['menu']['title'] = 'Event importers';
   $handler->display->display_options['menu']['description'] = 'List of Event ical importers';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'management';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $handler->display->display_options['tab_options']['type'] = 'tab';
+  $handler->display->display_options['tab_options']['title'] = 'Importers';
+  $handler->display->display_options['tab_options']['description'] = 'ical importers';
+  $handler->display->display_options['tab_options']['weight'] = '0';
 
   /* Display: Group importer page */
   $handler = $view->new_display('page', 'Group importer page', 'page_1');

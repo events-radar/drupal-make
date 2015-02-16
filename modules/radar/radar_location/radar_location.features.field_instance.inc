@@ -89,7 +89,7 @@ If a marker on the map shows that the location already exist, then cancel and ch
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'inline',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',

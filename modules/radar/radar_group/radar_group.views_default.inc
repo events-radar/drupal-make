@@ -45,15 +45,6 @@ function radar_group_views_default_views() {
   $handler->display->display_options['empty']['area']['content'] = 'This group is awaiting approval. 
 Events can already be created, but they will not be visible until the group has been published by an administrator.';
   $handler->display->display_options['empty']['area']['format'] = 'rich_text_editor';
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title_2']['id'] = 'title_2';
-  $handler->display->display_options['fields']['title_2']['table'] = 'node';
-  $handler->display->display_options['fields']['title_2']['field'] = 'title';
-  $handler->display->display_options['fields']['title_2']['label'] = '';
-  $handler->display->display_options['fields']['title_2']['element_type'] = 'h2';
-  $handler->display->display_options['fields']['title_2']['element_class'] = 'group';
-  $handler->display->display_options['fields']['title_2']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title_2']['link_to_node'] = FALSE;
   /* Field: Content: Group Logo */
   $handler->display->display_options['fields']['field_group_logo']['id'] = 'field_group_logo';
   $handler->display->display_options['fields']['field_group_logo']['table'] = 'field_data_field_group_logo';
@@ -157,7 +148,7 @@ Events can already be created, but they will not be visible until the group has 
   $handler->display->display_options['fields']['field_phone']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_phone']['element_wrapper_class'] = 'info';
   $handler->display->display_options['fields']['field_phone']['element_default_classes'] = FALSE;
-  /* Field: Content: area */
+  /* Field: Content: offline */
   $handler->display->display_options['fields']['field_offline']['id'] = 'field_offline';
   $handler->display->display_options['fields']['field_offline']['table'] = 'field_data_field_offline';
   $handler->display->display_options['fields']['field_offline']['field'] = 'field_offline';
@@ -455,7 +446,6 @@ Events can already be created, but they will not be visible until the group has 
   $handler->display->display_options['fields']['title']['label'] = 'Group';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Location: Address - Locality (i.e. City) */
   $handler->display->display_options['fields']['field_address_locality']['id'] = 'field_address_locality';
   $handler->display->display_options['fields']['field_address_locality']['table'] = 'field_data_field_address';
@@ -516,13 +506,18 @@ Events can already be created, but they will not be visible until the group has 
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'admin/content/pending-groups';
+  $handler->display->display_options['path'] = 'admin/content/groups/pending';
+  $handler->display->display_options['menu']['type'] = 'default tab';
   $handler->display->display_options['menu']['title'] = 'Pending groups';
   $handler->display->display_options['menu']['description'] = 'Publish pending groups';
-  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['weight'] = '-1';
   $handler->display->display_options['menu']['name'] = 'management';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $handler->display->display_options['tab_options']['type'] = 'tab';
+  $handler->display->display_options['tab_options']['title'] = 'Groups';
+  $handler->display->display_options['tab_options']['description'] = 'Groups moderation';
+  $handler->display->display_options['tab_options']['weight'] = '0';
   $export['radar_pending_groups'] = $view;
 
   $view = new view();

@@ -10,7 +10,7 @@
 function radar_vocabularies_taxonomy_default_vocabularies() {
   return array(
     'category' => array(
-      'name' => 'categories',
+      'name' => 'category',
       'machine_name' => 'category',
       'description' => '',
       'hierarchy' => 0,
@@ -35,7 +35,7 @@ function radar_vocabularies_taxonomy_default_vocabularies() {
       ),
     ),
     'topic' => array(
-      'name' => 'topics',
+      'name' => 'tag',
       'machine_name' => 'topic',
       'description' => '',
       'hierarchy' => 0,

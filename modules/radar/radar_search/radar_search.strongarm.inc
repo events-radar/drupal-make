@@ -89,6 +89,8 @@ function radar_search_strongarm() {
       'search_api_views:radar_group_events:panel_pane_2' => 'search_api_views:radar_group_events:panel_pane_2',
       'search_api_views:radar_group_events:page_1' => 'search_api_views:radar_group_events:page_1',
       'search_api_views:radar_group_events:page_2' => 'search_api_views:radar_group_events:page_2',
+      'search_api_views:radar_group_events:page_3' => 'search_api_views:radar_group_events:page_3',
+      'search_api_views:radar_group_events:page_4' => 'search_api_views:radar_group_events:page_4',
     ),
     'groups' => array(
       'search_api_views:radar_group_search:panel_pane_1' => 'search_api_views:radar_group_search:panel_pane_1',

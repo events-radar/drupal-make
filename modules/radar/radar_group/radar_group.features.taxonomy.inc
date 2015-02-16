@@ -10,7 +10,7 @@
 function radar_group_taxonomy_default_vocabularies() {
   return array(
     'type' => array(
-      'name' => 'type',
+      'name' => 'status',
       'machine_name' => 'type',
       'description' => '',
       'hierarchy' => 0,

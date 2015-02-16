@@ -141,8 +141,12 @@ class RadarServicesEntityResourceController extends ServicesEntityResourceContro
    * @return type
    */
   protected function get_resource_reference($resource, $id) {
+    $uri = services_resource_uri(array('entity_' . $resource, $id));
+    // locale is adding /lang/ to the beginning of the url.
+    // TODO investigate how to do this properly for /api/*
+    $uri = preg_replace(',([a-z:]+)//([^/]+)/[a-z]{2}/(.*),', '$1//$2/$3', $uri, 1);
     $return = array(
-      'uri' => services_resource_uri(array('entity_' . $resource, $id)),
+      'uri' => $uri,
       'id' => $id,
       'resource' => $resource,
     );

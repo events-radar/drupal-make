@@ -10,384 +10,15 @@
 function radar_og_field_default_field_instances() {
   $field_instances = array();
 
-  $radar_og_entity_types = radar_og_get_group_content_entity_types();
-  if (!empty($radar_og_entity_types)) {
-    foreach ($radar_og_entity_types as $entity_type => $bundles) {
-      foreach(array_keys($bundles) as $bundle) {
-        radar_og_field_definition($field_instances, $entity_type, $bundle);
-      }
-    }
-  }
-  $group_bundles = og_get_all_group_bundle();
-
-  if (empty($group_bundles['node'])) {
-    // Make sure group_bundles contains at least the group node bundle, in order
-    // to create the group audience field for it when installing the profile.
-    $group_bundles['node'] = array('group' => TRUE);
-  }
-  foreach(array_keys($group_bundles['node']) as $bundle) {
-    radar_og_field_definition_group($field_instances, 'node', $bundle);
-  }
-
-  // Exported field_instance: 'og_membership-og_membership_type_default-og_membership_request'
-  $field_instances['og_membership-og_membership_type_default-og_membership_request'] = array(
-    'bundle' => 'og_membership_type_default',
-    'default_value' => NULL,
-    'deleted' => '0',
-    'description' => 'This is the text a user may send to the group administrators.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'og_membership',
-    'field_name' => 'og_membership_request',
-    'label' => 'Request message',
-    'required' => FALSE,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 0,
-    ),
-  );
-
-  // Translatables
-  // Included for use with string extractors like potx.
-  t('Determine if this is an OG group.');
-  t('Group');
-  t('Group membership');
-  t('Group visibility');
-  t('Group content visibility');
-  t('Group roles and permissions');
-  t('Request message');
-  t('Request to be added to group');
-  t('This is the text a user may send to the group administrators.');
-  t('Group Logo');
-  t('Hide contributed content from non-members');
-  t('Privacy settings');
-  t('Who can add events to this group?');
-
-  return $field_instances;
-}
-
-function radar_og_field_definition_group(&$field_instances, $entity_type, $bundle) {
-  // Exported field_instance: 'node-group-field_og_subscribe_settings'
-  $field_instances["$entity_type-$bundle-field_og_subscribe_settings"] = array(
-    'bundle' => $bundle,
-    'default_value' => array(
-      0 => array(
-        'value' => 'approval',
-      ),
-    ),
-    'deleted' => '0',
-    'description' => t("You can customise the group permissions in more detail later."),
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 4,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_og_subscribe_settings',
-    'label' => 'Who can add events to this group?',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => '41',
-    ),
-  );
-
-  // Exported field_instance: 'node-group-og_roles_permissions'
-  $field_instances["$entity_type-$bundle-og_roles_permissions"] = array(
-    'bundle' => $bundle,
-    'default_value' => array(
-      0 => array(
-        'value' => 1,
-      ),
-    ),
-    'deleted' => '0',
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 1,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'og_roles_permissions',
-    'label' => 'Group roles and permissions',
-    'required' => TRUE,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'view modes' => array(
-      'full' => array(
-        'custom settings' => FALSE,
-        'label' => 'Full',
-        'type' => 'list_default',
-      ),
-      'teaser' => array(
-        'custom settings' => FALSE,
-        'label' => 'Teaser',
-        'type' => 'list_default',
-      ),
-    ),
-    'widget' => array(
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 1,
-    ),
-  );
-
-  // Exported field_instance: 'node-group-group_group'
-  $field_instances["$entity_type-$bundle-" . OG_GROUP_FIELD] = array(
-    'bundle' => $bundle,
-    'default_value' => array(
-      0 => array(
-        'value' => 1,
-      ),
-    ),
-    'deleted' => '0',
-    'description' => 'Determine if this is an OG group.',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'radar_og',
-        'settings' => array(
-          'field_name' => '0',
-        ),
-        'type' => 'radar_og_group_subscribe',
-        'weight' => '0',
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'display_label' => 1,
-    'entity_type' => 'node',
-    'field_name' => OG_GROUP_FIELD,
-    'label' => 'Group',
-    'required' => FALSE,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'view modes' => array(
-      'full' => array(
-        'custom settings' => FALSE,
-        'label' => 'Full',
-        'type' => 'og_group_subscribe',
-      ),
-      'teaser' => array(
-        'custom settings' => FALSE,
-        'label' => 'Teaser',
-        'type' => 'og_group_subscribe',
-      ),
-    ),
-    'widget' => array(
-      'module' => 'options',
-      'settings' => array(
-        'display_label' => 0,
-        'og_hide' => TRUE,
-      ),
-      'type' => 'options_onoff',
-      'weight' => 0,
-    ),
-  );
-
-  // Exported field_instance: 'node-group-field_group_logo'
-  $field_instances["$entity_type-$bundle-field_group_logo"] = array(
-    'bundle' => $bundle,
-    'deleted' => '0',
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '50x50',
-        ),
-        'type' => 'image',
-        'weight' => '0',
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_group_logo',
-    'label' => 'Group Logo',
-    'required' => 0,
-    'settings' => array(
-      'alt_field' => 0,
-      'default_image' => 0,
-      'file_directory' => '',
-      'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '20mb',
-      'max_resolution' => '',
-      'min_resolution' => '30x30',
-      'title_field' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'image',
-      'settings' => array(
-        'preview_image_style' => 'thumbnail',
-        'progress_indicator' => 'throbber',
-      ),
-      'type' => 'image_image',
-      'weight' => '5',
-    ),
-  );
-
-  if (module_exists('og_access')) {
-    // Exported field_instance: 'node-group-field_og_access_default_value'
-    $field_instances["$entity_type-$bundle-field_og_access_default_value"] = array(
-      'bundle' => $bundle,
-      'default_value' => array(
-        0 => array(
-          'value' => 0,
-        ),
-      ),
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'hidden',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 5,
-        ),
-        'teaser' => array(
-          'label' => 'hidden',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_og_access_default_value',
-      'label' => 'Hide contributed content from non-members',
-      'required' => 0,
-      'settings' => array(
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'options',
-        'settings' => array(
-          'display_label' => 1,
-        ),
-        'type' => 'options_onoff',
-        'weight' => '42',
-      ),
-    );
-
-    // Exported field_instance: 'node-group-group_access'
-    $field_instances["$entity_type-$bundle-group_access"] = array(
-      'bundle' => $bundle,
-      'default_value' => array(
-        0 => array(
-          'value' => 0,
-        ),
-      ),
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'hidden',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 4,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'group_access',
-      'label' => 'Group visibility',
-      'required' => TRUE,
-      'settings' => array(
-        'user_register_form' => FALSE,
-      ),
-      'view modes' => array(
-        'full' => array(
-          'label' => 'above',
-          'type' => 'options_onoff',
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'type' => 'options_onoff',
-        ),
-      ),
-      'widget' => array(
-        'module' => 'options',
-        'settings' => array(),
-        'type' => 'options_buttons',
-        'weight' => 41,
-      ),
-      'widget_type' => 'options_select',
-    );
-  }
-}
-
-function radar_og_field_definition(&$field_instances, $entity_type, $bundle) {
-  // Exported field_instance: '[entity]-[bundle]-group_content_access'
-  $field_instances["$entity_type-$bundle-group_content_access"] = array(
-    'bundle' => $bundle,
+  // Exported field_instance: 'node-event-group_content_access'
+  $field_instances['node-event-group_content_access'] = array(
+    'bundle' => 'event',
     'default_value' => array(
       0 => array(
         'value' => 0,
       ),
     ),
-    'deleted' => '0',
+    'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
@@ -403,11 +34,12 @@ function radar_og_field_definition(&$field_instances, $entity_type, $bundle) {
         'weight' => 0,
       ),
     ),
-    'entity_type' => $entity_type,
+    'entity_type' => 'node',
     'field_name' => 'group_content_access',
     'label' => 'Group content visibility',
     'required' => TRUE,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'view modes' => array(
@@ -429,13 +61,14 @@ function radar_og_field_definition(&$field_instances, $entity_type, $bundle) {
     'widget_type' => 'options_select',
   );
 
-  // Exported field_instance: 'node-post-og_group_ref'
-  $field_instances["$entity_type-$bundle-og_group_ref"] = array(
-    'bundle' => $bundle,
+  // Exported field_instance: 'node-event-og_group_ref'
+  $field_instances['node-event-og_group_ref'] = array(
+    'bundle' => 'event',
     'default_value' => NULL,
     'default_value_function' => 'entityreference_prepopulate_field_default_value',
-    'deleted' => '0',
-    'description' => 'Groups that the event is posted into.',
+    'deleted' => 0,
+    'description' => 'Groups into which you can directly post an event.
+',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -451,13 +84,15 @@ function radar_og_field_definition(&$field_instances, $entity_type, $bundle) {
         'weight' => 0,
       ),
     ),
-    'entity_type' => $entity_type,
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
     'field_name' => 'og_group_ref',
     'label' => 'Groups',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
         'og_widget' => array(
+          'access_override' => 0,
           'admin' => array(
             'widget_type' => 'entityreference_autocomplete_tags',
           ),
@@ -468,16 +103,17 @@ function radar_og_field_definition(&$field_instances, $entity_type, $bundle) {
         ),
         'prepopulate' => array(
           'action' => 'none',
+          'action_on_edit' => 0,
           'fallback' => 'none',
-          'og_context' => 0,
-          'skip_perm' => '0',
-          'status' => 1,
           'providers' => array(
             'og_context' => 0,
             'url' => 1,
           ),
+          'skip_perm' => 0,
+          'status' => 1,
         ),
       ),
+      'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'view modes' => array(
@@ -502,12 +138,14 @@ function radar_og_field_definition(&$field_instances, $entity_type, $bundle) {
   );
 
   // Exported field_instance: 'node-event-og_group_request'
-  $field_instances["$entity_type-$bundle-og_group_request"] = array(
-    'bundle' => $bundle,
+  $field_instances['node-event-og_group_request'] = array(
+    'bundle' => 'event',
     'default_value' => NULL,
     'default_value_function' => 'radar_og_entityreference_request_prepopulate',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Groups into which you cannot post events directly, but for which you want to propose this event.<br>
+The managers of these groups will be notified, and can then approve it for them.
+',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -523,9 +161,10 @@ function radar_og_field_definition(&$field_instances, $entity_type, $bundle) {
         'weight' => 0,
       ),
     ),
-    'entity_type' => $entity_type,
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
     'field_name' => 'og_group_request',
-    'label' => 'Request to be added to group',
+    'label' => 'Groups for which this event is proposed',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
@@ -541,14 +180,14 @@ function radar_og_field_definition(&$field_instances, $entity_type, $bundle) {
         ),
         'prepopulate' => array(
           'action' => 'none',
+          'action_on_edit' => 0,
           'fallback' => 'none',
-          'og_context' => 0,
-          'skip_perm' => '0',
-          'status' => 1,
           'providers' => array(
             'og_context' => 0,
             'url' => 1,
           ),
+          'skip_perm' => 0,
+          'status' => 1,
         ),
       ),
       'entity_translation_sync' => FALSE,
@@ -575,4 +214,468 @@ function radar_og_field_definition(&$field_instances, $entity_type, $bundle) {
     ),
   );
 
+  // Exported field_instance: 'node-group-field_group_logo'
+  $field_instances['node-group-field_group_logo'] = array(
+    'bundle' => 'group',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '50x50',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_group_logo',
+    'label' => 'Group Logo',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'entity_translation_sync' => FALSE,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '20mb',
+      'max_resolution' => '',
+      'min_resolution' => '30x30',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-group-field_og_subscribe_settings'
+  $field_instances['node-group-field_og_subscribe_settings'] = array(
+    'bundle' => 'group',
+    'default_value' => array(
+      0 => array(
+        'value' => 'approval',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'You can customise the group permissions in more detail later.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_og_subscribe_settings',
+    'label' => 'Who can add events to this group?',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 41,
+    ),
+  );
+
+  // Exported field_instance: 'node-group-group_group'
+  $field_instances['node-group-group_group'] = array(
+    'bundle' => 'group',
+    'default_value' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Determine if this is an OG group.',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'radar_og',
+        'settings' => array(
+          'field_name' => 0,
+        ),
+        'type' => 'radar_og_group_subscribe',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'display_label' => 1,
+    'entity_type' => 'node',
+    'field_name' => 'group_group',
+    'label' => 'Group',
+    'required' => FALSE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'view modes' => array(
+      'full' => array(
+        'custom settings' => FALSE,
+        'label' => 'Full',
+        'type' => 'og_group_subscribe',
+      ),
+      'teaser' => array(
+        'custom settings' => FALSE,
+        'label' => 'Teaser',
+        'type' => 'og_group_subscribe',
+      ),
+    ),
+    'widget' => array(
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 0,
+        'og_hide' => TRUE,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance: 'node-group-og_roles_permissions'
+  $field_instances['node-group-og_roles_permissions'] = array(
+    'bundle' => 'group',
+    'default_value' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'og_roles_permissions',
+    'label' => 'Group roles and permissions',
+    'required' => TRUE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'view modes' => array(
+      'full' => array(
+        'custom settings' => FALSE,
+        'label' => 'Full',
+        'type' => 'list_default',
+      ),
+      'teaser' => array(
+        'custom settings' => FALSE,
+        'label' => 'Teaser',
+        'type' => 'list_default',
+      ),
+    ),
+    'widget' => array(
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'node-listings_group-field_group_logo'
+  $field_instances['node-listings_group-field_group_logo'] = array(
+    'bundle' => 'listings_group',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '50x50',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_group_logo',
+    'label' => 'Group Logo',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'entity_translation_sync' => FALSE,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '20mb',
+      'max_resolution' => '',
+      'min_resolution' => '30x30',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-listings_group-field_og_subscribe_settings'
+  $field_instances['node-listings_group-field_og_subscribe_settings'] = array(
+    'bundle' => 'listings_group',
+    'default_value' => array(
+      0 => array(
+        'value' => 'approval',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'You can customise the group permissions in more detail later.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_og_subscribe_settings',
+    'label' => 'Who can add events to this group?',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 41,
+    ),
+  );
+
+  // Exported field_instance: 'node-listings_group-group_group'
+  $field_instances['node-listings_group-group_group'] = array(
+    'bundle' => 'listings_group',
+    'default_value' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Determine if this is an OG group.',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'radar_og',
+        'settings' => array(
+          'field_name' => 0,
+        ),
+        'type' => 'radar_og_group_subscribe',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'display_label' => 1,
+    'entity_type' => 'node',
+    'field_name' => 'group_group',
+    'label' => 'Group',
+    'required' => FALSE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'view modes' => array(
+      'full' => array(
+        'custom settings' => FALSE,
+        'label' => 'Full',
+        'type' => 'og_group_subscribe',
+      ),
+      'teaser' => array(
+        'custom settings' => FALSE,
+        'label' => 'Teaser',
+        'type' => 'og_group_subscribe',
+      ),
+    ),
+    'widget' => array(
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 0,
+        'og_hide' => TRUE,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance: 'node-listings_group-og_roles_permissions'
+  $field_instances['node-listings_group-og_roles_permissions'] = array(
+    'bundle' => 'listings_group',
+    'default_value' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'og_roles_permissions',
+    'label' => 'Group roles and permissions',
+    'required' => TRUE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'view modes' => array(
+      'full' => array(
+        'custom settings' => FALSE,
+        'label' => 'Full',
+        'type' => 'list_default',
+      ),
+      'teaser' => array(
+        'custom settings' => FALSE,
+        'label' => 'Teaser',
+        'type' => 'list_default',
+      ),
+    ),
+    'widget' => array(
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'og_membership-og_membership_type_default-og_membership_request'
+  $field_instances['og_membership-og_membership_type_default-og_membership_request'] = array(
+    'bundle' => 'og_membership_type_default',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'This is the text a user may send to the group administrators.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'og_membership',
+    'field_name' => 'og_membership_request',
+    'label' => 'Request message',
+    'required' => FALSE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 0,
+    ),
+  );
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Determine if this is an OG group.');
+  t('Group');
+  t('Group Logo');
+  t('Group content visibility');
+  t('Group roles and permissions');
+  t('Groups');
+  t('Groups for which this event is proposed');
+  t('Groups into which you can directly post an event.
+');
+  t('Groups into which you cannot post events directly, but for which you want to propose this event.<br>
+The managers of these groups will be notified, and can then approve it for them.
+');
+  t('Request message');
+  t('This is the text a user may send to the group administrators.');
+  t('Who can add events to this group?');
+  t('You can customise the group permissions in more detail later.');
+
+  return $field_instances;
 }

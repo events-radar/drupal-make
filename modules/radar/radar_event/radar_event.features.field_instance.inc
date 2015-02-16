@@ -15,7 +15,7 @@ function radar_event_field_default_field_instances() {
     'bundle' => 'event',
     'default_value_function' => 'radar_event_entityreference_offline_prepopulate',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'If available, the location is already filled in with the information from the group, but you can remove it and/or add another one.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -30,6 +30,7 @@ function radar_event_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_offline',
     'label' => 'Locations',
@@ -64,6 +65,7 @@ function radar_event_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('If available, the location is already filled in with the information from the group, but you can remove it and/or add another one.');
   t('Locations');
 
   return $field_instances;

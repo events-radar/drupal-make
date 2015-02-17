@@ -31,7 +31,7 @@ function radar_event_default_rules_configuration() {
             "ITEM" : { "list_item_group_requested" : "Current group requested" },
             "DO" : [
               { "mail" : {
-                  "to" : "[list-item-group-requested:field_notifications]",
+                  "to" : "[list-item-group-requested:field-notifications]\\r\\n",
                   "subject" : "Radar event awaiting approval",
                   "message" : "The event \\u0022[node:title]\\u0022 has been proposed for \\u0022[list-item-group-requested:title-field]\\u0022 and is awaiting approval.\\r\\n\\r\\nA manager of this group can approve it at [list-item-group-requested:url]\\/pending",
                   "language" : [ "" ]

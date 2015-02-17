@@ -432,7 +432,7 @@ function radar_contenttype_event_field_default_field_instances() {
   // Exported field_instance: 'node-event-field_price'
   $field_instances['node-event-field_price'] = array(
     'bundle' => 'event',
-    'default_value' => array(),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -450,6 +450,7 @@ function radar_contenttype_event_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_price',
     'label' => 'price',
@@ -464,7 +465,8 @@ function radar_contenttype_event_field_default_field_instances() {
       'module' => 'select_or_other',
       'settings' => array(
         'available_options' => 'free entrance
-by donation',
+by donation
+membership fee',
         'available_options_php' => '',
         'markup_available_options_php' => '&lt;none&gt;',
         'other' => 'Other',

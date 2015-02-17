@@ -21,7 +21,7 @@ function radar_languages_locale_default_languages() {
     'formula' => '($n>1)',
     'domain' => '',
     'prefix' => 'ca',
-    'weight' => 0,
+    'weight' => -6,
   );
   // Exported language: cs.
   $languages['cs'] = array(
@@ -34,7 +34,7 @@ function radar_languages_locale_default_languages() {
     'formula' => '(((($n%10)==1)&&(($n%100)!=11))?(0):((((($n%10)>=2)&&(($n%10)<=4))&&((($n%100)<10)||(($n%100)>=20)))?(1):2))',
     'domain' => '',
     'prefix' => 'cs',
-    'weight' => 0,
+    'weight' => -5,
   );
   // Exported language: de.
   $languages['de'] = array(
@@ -47,7 +47,7 @@ function radar_languages_locale_default_languages() {
     'formula' => '($n!=1)',
     'domain' => '',
     'prefix' => 'de',
-    'weight' => 0,
+    'weight' => -9,
   );
   // Exported language: el.
   $languages['el'] = array(
@@ -60,7 +60,7 @@ function radar_languages_locale_default_languages() {
     'formula' => '($n!=1)',
     'domain' => '',
     'prefix' => 'el',
-    'weight' => 0,
+    'weight' => -3,
   );
   // Exported language: en.
   $languages['en'] = array(
@@ -73,7 +73,7 @@ function radar_languages_locale_default_languages() {
     'formula' => '',
     'domain' => '',
     'prefix' => 'en',
-    'weight' => 0,
+    'weight' => -10,
   );
   // Exported language: es.
   $languages['es'] = array(
@@ -86,7 +86,7 @@ function radar_languages_locale_default_languages() {
     'formula' => '($n!=1)',
     'domain' => '',
     'prefix' => 'es',
-    'weight' => 0,
+    'weight' => 3,
   );
   // Exported language: eu.
   $languages['eu'] = array(
@@ -99,7 +99,7 @@ function radar_languages_locale_default_languages() {
     'formula' => '($n!=1)',
     'domain' => '',
     'prefix' => 'eu',
-    'weight' => 0,
+    'weight' => -7,
   );
   // Exported language: fr.
   $languages['fr'] = array(
@@ -112,7 +112,7 @@ function radar_languages_locale_default_languages() {
     'formula' => '($n>1)',
     'domain' => '',
     'prefix' => 'fr',
-    'weight' => 0,
+    'weight' => -4,
   );
   // Exported language: it.
   $languages['it'] = array(
@@ -125,7 +125,7 @@ function radar_languages_locale_default_languages() {
     'formula' => '($n!=1)',
     'domain' => '',
     'prefix' => 'it',
-    'weight' => 0,
+    'weight' => -2,
   );
   // Exported language: nl.
   $languages['nl'] = array(
@@ -138,7 +138,7 @@ function radar_languages_locale_default_languages() {
     'formula' => '($n!=1)',
     'domain' => '',
     'prefix' => 'nl',
-    'weight' => 0,
+    'weight' => -8,
   );
   // Exported language: pl.
   $languages['pl'] = array(
@@ -164,7 +164,7 @@ function radar_languages_locale_default_languages() {
     'formula' => '($n!=1)',
     'domain' => '',
     'prefix' => 'pt-br',
-    'weight' => 0,
+    'weight' => 1,
   );
   // Exported language: ru.
   $languages['ru'] = array(
@@ -177,7 +177,7 @@ function radar_languages_locale_default_languages() {
     'formula' => '(((($n%10)==1)&&(($n%100)!=11))?(0):((((($n%10)>=2)&&(($n%10)<=4))&&((($n%100)<10)||(($n%100)>=20)))?(1):2))',
     'domain' => '',
     'prefix' => 'ru',
-    'weight' => 0,
+    'weight' => 2,
   );
   // Exported language: tr.
   $languages['tr'] = array(
@@ -190,7 +190,7 @@ function radar_languages_locale_default_languages() {
     'formula' => '',
     'domain' => '',
     'prefix' => 'tr',
-    'weight' => 0,
+    'weight' => 4,
   );
   return $languages;
 }

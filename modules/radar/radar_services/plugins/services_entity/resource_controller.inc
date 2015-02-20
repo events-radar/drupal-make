@@ -46,15 +46,20 @@ class RadarServicesEntityResourceController extends ServicesEntityResourceContro
       // Use the helper that Services module already has.
       services_remove_user_data($entity);
     }
-    if ($entity_type == 'node') {
-      $this->removeNodeData($entity);
-    }
 
     $wrapper = entity_metadata_wrapper($entity_type, $entity);
     if ($language != LANGUAGE_NONE) {
       $wrapper->language($language);
     }
-    return $this->get_data($wrapper, $fields);
+    $data = $this->get_data($wrapper, $fields);
+
+    // Author needs to be on the entity as other fields use it to check access.
+    // But we don't display it except to users that can edit it.
+    if (!$wrapper->access('edit')) {
+      unset($data['author']);
+    }
+
+    return $data;
   }
 
  /**
@@ -261,17 +266,5 @@ class RadarServicesEntityResourceController extends ServicesEntityResourceContro
       }
     }
     return $value == $property->value();
-  }
-
-  private function removeNodeData($entity) {
-    // TODO this needs some test, like if the user can change the field.
-    $privileged_access = array(
-      'og_group_request', 'uid', 'name'
-    );
-    foreach ($privs as $field) {
-      if (isset($entity->$field)) {
-        unset($entity->$field);
-      }
-    }
   }
 }

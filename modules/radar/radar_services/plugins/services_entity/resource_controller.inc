@@ -46,6 +46,9 @@ class RadarServicesEntityResourceController extends ServicesEntityResourceContro
       // Use the helper that Services module already has.
       services_remove_user_data($entity);
     }
+    if ($entity_type == 'node') {
+      $this->removeNodeData($entity);
+    }
 
     $wrapper = entity_metadata_wrapper($entity_type, $entity);
     if ($language != LANGUAGE_NONE) {
@@ -150,7 +153,7 @@ class RadarServicesEntityResourceController extends ServicesEntityResourceContro
       'id' => $id,
       'resource' => $resource,
     );
-    if (module_exists('uuid') && entity_get_info($resource)) {
+    if (module_exists('uuid') && $info = entity_get_info($resource) && !empty($info['entity keys']['uuid'])) {
       $ids = entity_get_uuid_by_id($resource, array($id));
       if ($id = reset($ids)) {
         $return['uuid'] = $id;
@@ -182,7 +185,7 @@ class RadarServicesEntityResourceController extends ServicesEntityResourceContro
         // when attempting to access the 'book' property of a non-book node.
         // In such cases Entity API erroneously throws an exception.
         // @see https://drupal.org/node/2051087 and linked issues.
-        watchdog('services_entity', 'Exception testing access to property @p: @e', array('@p' => $name, '@e' => $e->getMessage()), WATCHDOG_WARNING);
+        watchdog('radar_services_entity', 'Exception testing access to property @p: @e', array('@p' => $name, '@e' => $e->getMessage()), WATCHDOG_WARNING);
       }
     }
     return $filtered;
@@ -258,5 +261,17 @@ class RadarServicesEntityResourceController extends ServicesEntityResourceContro
       }
     }
     return $value == $property->value();
+  }
+
+  private function removeNodeData($entity) {
+    // TODO this needs some test, like if the user can change the field.
+    $privileged_access = array(
+      'og_group_request', 'uid', 'name'
+    );
+    foreach ($privs as $field) {
+      if (isset($entity->$field)) {
+        unset($entity->$field);
+      }
+    }
   }
 }

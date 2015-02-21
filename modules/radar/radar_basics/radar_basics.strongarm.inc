@@ -262,7 +262,8 @@ function radar_basics_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_page';
   $strongarm->value = array(
-    0 => 'main-menu',
+    0 => 'menu-help-menu',
+    1 => 'main-menu',
   );
   $export['menu_options_page'] = $strongarm;
 

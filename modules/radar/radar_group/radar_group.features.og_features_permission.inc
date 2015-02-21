@@ -97,6 +97,7 @@ function radar_group_og_features_default_permissions() {
   $permissions['node:group:update any event content'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
+      'member' => 'member',
     ),
   );
 
@@ -112,6 +113,7 @@ function radar_group_og_features_default_permissions() {
     'roles' => array(
       'administrator member' => 'administrator member',
       'member' => 'member',
+      'non-member' => 'non-member',
     ),
   );
 

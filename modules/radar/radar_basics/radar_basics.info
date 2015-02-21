@@ -27,6 +27,7 @@ features[features_api][] = api:2
 features[field_instance][] = node-page-body
 features[field_instance][] = node-page-title_field
 features[menu_custom][] = main-menu
+features[menu_custom][] = menu-help-menu
 features[menu_custom][] = user-menu
 features[node][] = page
 features[user_permission][] = access content

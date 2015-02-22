@@ -107,7 +107,7 @@ function radar_services_default_services_endpoint() {
       ),
     ),
   );
-  $endpoint->debug = 1;
+  $endpoint->debug = 0;
   $export['api_1_0'] = $endpoint;
 
   return $export;

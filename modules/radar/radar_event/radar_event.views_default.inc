@@ -254,18 +254,20 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Event';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Groups */
+  /* Field: Content: Groups audience */
   $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['table'] = 'og_membership';
   $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
+  $handler->display->display_options['fields']['og_group_ref']['label'] = 'Groups';
   $handler->display->display_options['fields']['og_group_ref']['click_sort_column'] = 'target_id';
   $handler->display->display_options['fields']['og_group_ref']['settings'] = array(
     'link' => 0,
   );
   $handler->display->display_options['fields']['og_group_ref']['delta_offset'] = '0';
-  /* Field: Content: Groups */
+  /* Field: Content: Groups audience */
   $handler->display->display_options['fields']['og_group_ref_1']['id'] = 'og_group_ref_1';
   $handler->display->display_options['fields']['og_group_ref_1']['table'] = 'og_membership';
   $handler->display->display_options['fields']['og_group_ref_1']['field'] = 'og_group_ref';
@@ -353,7 +355,7 @@ function radar_event_views_default_views() {
     'event' => 'event',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Event title (title_field) */
+  /* Filter criterion: Content: Title (title_field) */
   $handler->display->display_options['filters']['title_field_value']['id'] = 'title_field_value';
   $handler->display->display_options['filters']['title_field_value']['table'] = 'field_data_title_field';
   $handler->display->display_options['filters']['title_field_value']['field'] = 'title_field_value';
@@ -374,7 +376,7 @@ function radar_event_views_default_views() {
     8 => 0,
     7 => 0,
   );
-  /* Filter criterion: Content: Groups (og_group_ref:target_id) */
+  /* Filter criterion: Content: Groups audience (og_group_ref:target_id) */
   $handler->display->display_options['filters']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
@@ -688,13 +690,14 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Group';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['label'] = 'ID';
+  $handler->display->display_options['fields']['nid']['label'] = 'Group ID';
   /* Field: Content: categories */
   $handler->display->display_options['fields']['field_category']['id'] = 'field_category';
   $handler->display->display_options['fields']['field_category']['table'] = 'field_data_field_category';
@@ -913,7 +916,7 @@ function radar_event_views_default_views() {
     'show_repeat_rule' => 'hide',
   );
   $handler->display->display_options['fields']['field_date_time']['delta_offset'] = '0';
-  /* Field: Content: Event title */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
@@ -1078,7 +1081,7 @@ function radar_event_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Full event pane', 'panel_pane_1');
   $handler->display->display_options['display_description'] = 'Event pane with all the info of an event';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Event title */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
@@ -1845,7 +1848,7 @@ function radar_event_views_default_views() {
     'title_link' => 'content',
     'title_class' => '',
   );
-  /* Field: Indexed Node: categories */
+  /* Field: Indexed Node: Category */
   $handler->display->display_options['fields']['field_category']['id'] = 'field_category';
   $handler->display->display_options['fields']['field_category']['table'] = 'search_api_index_events';
   $handler->display->display_options['fields']['field_category']['field'] = 'field_category';
@@ -1972,7 +1975,7 @@ function radar_event_views_default_views() {
     'title_link' => 'content',
     'title_class' => '',
   );
-  /* Field: Indexed Node: categories */
+  /* Field: Indexed Node: Category */
   $handler->display->display_options['fields']['field_category']['id'] = 'field_category';
   $handler->display->display_options['fields']['field_category']['table'] = 'search_api_index_events';
   $handler->display->display_options['fields']['field_category']['field'] = 'field_category';
@@ -2137,7 +2140,7 @@ function radar_event_views_default_views() {
     'title_link' => 'content',
     'title_class' => '',
   );
-  /* Field: Location » Address: Building name (indexed) */
+  /* Field: Locations » Address: Building name (indexed) */
   $handler->display->display_options['fields']['field_offline_field_address_name_line']['id'] = 'field_offline_field_address_name_line';
   $handler->display->display_options['fields']['field_offline_field_address_name_line']['table'] = 'search_api_index_events';
   $handler->display->display_options['fields']['field_offline_field_address_name_line']['field'] = 'field_offline_field_address_name_line';
@@ -2147,7 +2150,7 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['field_offline_field_address_name_line']['alter']['text'] = '[field_offline_field_address_name_line], ';
   $handler->display->display_options['fields']['field_offline_field_address_name_line']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_offline_field_address_name_line']['link_to_entity'] = 0;
-  /* Field: Location » Address: Thoroughfare (i.e. Street address) (indexed) */
+  /* Field: Locations » Address: Thoroughfare (i.e. Street address) (indexed) */
   $handler->display->display_options['fields']['field_offline_field_address_thoroughfare']['id'] = 'field_offline_field_address_thoroughfare';
   $handler->display->display_options['fields']['field_offline_field_address_thoroughfare']['table'] = 'search_api_index_events';
   $handler->display->display_options['fields']['field_offline_field_address_thoroughfare']['field'] = 'field_offline_field_address_thoroughfare';
@@ -2157,7 +2160,7 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['field_offline_field_address_thoroughfare']['alter']['text'] = '[field_offline_field_address_thoroughfare], ';
   $handler->display->display_options['fields']['field_offline_field_address_thoroughfare']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_offline_field_address_thoroughfare']['link_to_entity'] = 0;
-  /* Field: Location » Address: Locality (i.e. City) (indexed) */
+  /* Field: Locations » Address: Locality (i.e. City) (indexed) */
   $handler->display->display_options['fields']['field_offline_field_address_locality']['id'] = 'field_offline_field_address_locality';
   $handler->display->display_options['fields']['field_offline_field_address_locality']['table'] = 'search_api_index_events';
   $handler->display->display_options['fields']['field_offline_field_address_locality']['field'] = 'field_offline_field_address_locality';
@@ -2169,7 +2172,7 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['field_offline_field_address_locality']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_offline_field_address_locality']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_offline_field_address_locality']['link_to_entity'] = 0;
-  /* Field: Indexed Node: categories */
+  /* Field: Indexed Node: Category */
   $handler->display->display_options['fields']['field_category']['id'] = 'field_category';
   $handler->display->display_options['fields']['field_category']['table'] = 'search_api_index_events';
   $handler->display->display_options['fields']['field_category']['field'] = 'field_category';
@@ -2577,7 +2580,7 @@ function radar_event_views_default_views() {
     'title_link' => 'content',
     'title_class' => '',
   );
-  /* Field: Indexed Node: categories */
+  /* Field: Indexed Node: Category */
   $handler->display->display_options['fields']['field_category']['id'] = 'field_category';
   $handler->display->display_options['fields']['field_category']['table'] = 'search_api_index_events';
   $handler->display->display_options['fields']['field_category']['field'] = 'field_category';
@@ -2607,7 +2610,7 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['og_group_ref']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['og_group_ref']['view_mode'] = 'full';
   $handler->display->display_options['fields']['og_group_ref']['bypass_access'] = 0;
-  /* Field: Location » Address: Building name (indexed) */
+  /* Field: Locations » Address: Building name (indexed) */
   $handler->display->display_options['fields']['field_offline_field_address_name_line']['id'] = 'field_offline_field_address_name_line';
   $handler->display->display_options['fields']['field_offline_field_address_name_line']['table'] = 'search_api_index_events';
   $handler->display->display_options['fields']['field_offline_field_address_name_line']['field'] = 'field_offline_field_address_name_line';
@@ -2779,7 +2782,7 @@ function radar_event_views_default_views() {
     'title_link' => 'content',
     'title_class' => '',
   );
-  /* Field: Indexed Node: categories */
+  /* Field: Indexed Node: Category */
   $handler->display->display_options['fields']['field_category']['id'] = 'field_category';
   $handler->display->display_options['fields']['field_category']['table'] = 'search_api_index_events';
   $handler->display->display_options['fields']['field_category']['field'] = 'field_category';
@@ -2809,7 +2812,7 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['og_group_ref']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['og_group_ref']['view_mode'] = 'full';
   $handler->display->display_options['fields']['og_group_ref']['bypass_access'] = 0;
-  /* Field: Location » Address: Building name (indexed) */
+  /* Field: Locations » Address: Building name (indexed) */
   $handler->display->display_options['fields']['field_offline_field_address_name_line']['id'] = 'field_offline_field_address_name_line';
   $handler->display->display_options['fields']['field_offline_field_address_name_line']['table'] = 'search_api_index_events';
   $handler->display->display_options['fields']['field_offline_field_address_name_line']['field'] = 'field_offline_field_address_name_line';

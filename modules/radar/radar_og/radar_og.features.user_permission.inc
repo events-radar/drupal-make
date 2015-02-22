@@ -13,7 +13,10 @@ function radar_og_user_default_permissions() {
   // Exported permission: 'administer group'.
   $permissions['administer group'] = array(
     'name' => 'administer group',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'og',
   );
 

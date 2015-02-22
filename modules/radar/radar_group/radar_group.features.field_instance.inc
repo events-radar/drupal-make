@@ -287,7 +287,7 @@ function radar_group_field_default_field_instances() {
     'bundle' => 'group',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'An additional email address to which the system sends notifications about pending events. <em>Not displayed</em>',
+    'description' => 'email addresses for automatic notifications about pending events proposed for this group <em>Not displayed</em>',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -309,6 +309,7 @@ function radar_group_field_default_field_instances() {
         'weight' => 14,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_notifications',
     'label' => 'email for notifications',
@@ -577,7 +578,6 @@ Partial address such as only a city are also possible.',
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('An additional email address to which the system sends notifications about pending events. <em>Not displayed</em>');
   t('Description');
   t('Image');
   t('Location');
@@ -586,6 +586,7 @@ Partial address such as only a city are also possible.');
   t('additional tags');
   t('categories');
   t('email');
+  t('email addresses for automatic notifications about pending events proposed for this group <em>Not displayed</em>');
   t('email for notifications');
   t('online');
   t('opening times');

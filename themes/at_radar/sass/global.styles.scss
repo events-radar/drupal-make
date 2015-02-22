@@ -1522,6 +1522,17 @@ ul.action-links {
  */
 #block-menu-menu-NAME {}
 
+/* 
+ * Help menu block
+ */
+#block-menu-menu-help-menu h2 {
+  font-family: $typewriter;
+  color: #777777;
+  font-size: 1.7em;
+  font-weight: 400;
+  padding-top: .5em;
+}
+
 
 /*
  * "Recent content" block

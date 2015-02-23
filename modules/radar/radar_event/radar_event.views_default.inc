@@ -1557,10 +1557,6 @@ function radar_event_views_default_views() {
   );
   $handler->display->display_options['fields']['field_offline']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_offline']['separator'] = '<br>';
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['pane_title'] = 'Full event info';
 
   /* Display: Feed */
@@ -1646,6 +1642,17 @@ function radar_event_views_default_views() {
     'topic' => 'topic',
     'category' => 0,
   );
+  /* Field: Content: Price category */
+  $handler->display->display_options['fields']['field_price_category']['id'] = 'field_price_category';
+  $handler->display->display_options['fields']['field_price_category']['table'] = 'field_data_field_price_category';
+  $handler->display->display_options['fields']['field_price_category']['field'] = 'field_price_category';
+  $handler->display->display_options['fields']['field_price_category']['element_label_type'] = 'div';
+  $handler->display->display_options['fields']['field_price_category']['element_label_class'] = 'label inline';
+  $handler->display->display_options['fields']['field_price_category']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_price_category']['element_wrapper_class'] = 'info';
+  $handler->display->display_options['fields']['field_price_category']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_price_category']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_price_category']['delta_offset'] = '0';
   /* Field: Content: Other and/or price details */
   $handler->display->display_options['fields']['field_price']['id'] = 'field_price';
   $handler->display->display_options['fields']['field_price']['table'] = 'field_data_field_price';
@@ -1786,8 +1793,8 @@ function radar_event_views_default_views() {
   );
   $handler->display->display_options['path'] = 'ical/node/%';
   $handler->display->display_options['displays'] = array(
-    'panel_pane_1' => 'panel_pane_1',
     'default' => 0,
+    'panel_pane_1' => 0,
     'panel_pane_2' => 0,
   );
 

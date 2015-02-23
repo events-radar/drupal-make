@@ -458,7 +458,7 @@ function radar_search_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_entity'] = 1;
-  /* Field: Indexed Node: price */
+  /* Field: Indexed Node: Other and/or price details */
   $handler->display->display_options['fields']['field_price']['id'] = 'field_price';
   $handler->display->display_options['fields']['field_price']['table'] = 'search_api_index_default_node_index';
   $handler->display->display_options['fields']['field_price']['field'] = 'field_price';

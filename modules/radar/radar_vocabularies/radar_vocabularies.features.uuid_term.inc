@@ -31,6 +31,26 @@ function radar_vocabularies_uuid_features_default_terms() {
     'vocabulary_machine_name' => 'category',
   );
   $terms[] = array(
+    'name' => 'membership fee',
+    'description' => '',
+    'format' => 'rich_text_editor',
+    'weight' => 2,
+    'uuid' => '272bf5a8-2127-465f-9e19-f6049a58cf4b',
+    'language' => 'und',
+    'i18n_tsid' => 0,
+    'vocabulary_machine_name' => 'price',
+  );
+  $terms[] = array(
+    'name' => '3-5 CHF',
+    'description' => '',
+    'format' => 'rich_text_editor',
+    'weight' => 7,
+    'uuid' => '277c8fae-1727-4fd4-b6c8-b12ca32cac98',
+    'language' => 'und',
+    'i18n_tsid' => 0,
+    'vocabulary_machine_name' => 'price',
+  );
+  $terms[] = array(
     'name' => 'bar/cafe',
     'description' => 'somewhere were you can go for a drink and to meet people',
     'format' => 'plain_text',
@@ -61,6 +81,26 @@ function radar_vocabularies_uuid_features_default_terms() {
     'vocabulary_machine_name' => 'category',
   );
   $terms[] = array(
+    'name' => 'less than 3 CHF',
+    'description' => '',
+    'format' => 'rich_text_editor',
+    'weight' => 6,
+    'uuid' => '3b38fe7d-3641-4b7f-b559-d38f7637ed29',
+    'language' => 'und',
+    'i18n_tsid' => 0,
+    'vocabulary_machine_name' => 'price',
+  );
+  $terms[] = array(
+    'name' => 'less than 3 €',
+    'description' => '',
+    'format' => 'rich_text_editor',
+    'weight' => 3,
+    'uuid' => '5ea06cf1-c46b-46e3-9a39-556fced3b35e',
+    'language' => 'und',
+    'i18n_tsid' => 0,
+    'vocabulary_machine_name' => 'price',
+  );
+  $terms[] = array(
     'name' => 'exhibition',
     'description' => '',
     'format' => 'plain_text',
@@ -79,6 +119,26 @@ function radar_vocabularies_uuid_features_default_terms() {
     'language' => 'und',
     'i18n_tsid' => 0,
     'vocabulary_machine_name' => 'category',
+  );
+  $terms[] = array(
+    'name' => '3-5 €',
+    'description' => '',
+    'format' => 'rich_text_editor',
+    'weight' => 4,
+    'uuid' => '6f4101f4-cd9b-49f2-91a3-203d2b47a3ed',
+    'language' => 'und',
+    'i18n_tsid' => 0,
+    'vocabulary_machine_name' => 'price',
+  );
+  $terms[] = array(
+    'name' => 'other',
+    'description' => '',
+    'format' => 'rich_text_editor',
+    'weight' => 0,
+    'uuid' => '7e7e09ce-138d-4c92-8e45-a5156c2a7176',
+    'language' => 'und',
+    'i18n_tsid' => 0,
+    'vocabulary_machine_name' => 'price',
   );
   $terms[] = array(
     'name' => 'discussion/presentation',
@@ -111,6 +171,16 @@ function radar_vocabularies_uuid_features_default_terms() {
     'vocabulary_machine_name' => 'category',
   );
   $terms[] = array(
+    'name' => 'by donation',
+    'description' => '',
+    'format' => 'rich_text_editor',
+    'weight' => 1,
+    'uuid' => '9d943d0c-e2bf-408e-9110-4bfb044f60c0',
+    'language' => 'und',
+    'i18n_tsid' => 0,
+    'vocabulary_machine_name' => 'price',
+  );
+  $terms[] = array(
     'name' => 'party',
     'description' => '',
     'format' => 'plain_text',
@@ -119,6 +189,36 @@ function radar_vocabularies_uuid_features_default_terms() {
     'language' => 'und',
     'i18n_tsid' => 0,
     'vocabulary_machine_name' => 'category',
+  );
+  $terms[] = array(
+    'name' => 'more than 5 €',
+    'description' => '',
+    'format' => 'rich_text_editor',
+    'weight' => 5,
+    'uuid' => 'cbaef9d1-d187-4eb6-9e16-91ef45ab7aaa',
+    'language' => 'und',
+    'i18n_tsid' => 0,
+    'vocabulary_machine_name' => 'price',
+  );
+  $terms[] = array(
+    'name' => 'more than 5 CHF',
+    'description' => '',
+    'format' => 'rich_text_editor',
+    'weight' => 8,
+    'uuid' => 'cf950118-303f-4439-8429-17a77882ef27',
+    'language' => 'und',
+    'i18n_tsid' => 0,
+    'vocabulary_machine_name' => 'price',
+  );
+  $terms[] = array(
+    'name' => 'free',
+    'description' => '',
+    'format' => 'rich_text_editor',
+    'weight' => 0,
+    'uuid' => 'dfb542fc-f5b5-491d-87be-95f1c0813d57',
+    'language' => 'und',
+    'i18n_tsid' => 0,
+    'vocabulary_machine_name' => 'price',
   );
   $terms[] = array(
     'name' => 'action/protest/camp',

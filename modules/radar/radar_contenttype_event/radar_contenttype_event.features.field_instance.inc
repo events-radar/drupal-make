@@ -97,7 +97,7 @@ function radar_contenttype_event_field_default_field_instances() {
         'display_label' => 0,
       ),
       'type' => 'options_onoff',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -136,7 +136,7 @@ function radar_contenttype_event_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -326,7 +326,7 @@ function radar_contenttype_event_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -453,7 +453,7 @@ function radar_contenttype_event_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_price',
-    'label' => 'price',
+    'label' => 'Other and/or price details',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -476,7 +476,46 @@ membership fee',
         'sort_options' => 0,
       ),
       'type' => 'select_or_other_buttons',
-      'weight' => 4,
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_price_category'
+  $field_instances['node-event-field_price_category'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '<em>More categories will be added later.</em>',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 33,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_price_category',
+    'label' => 'Price category',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 8,
     ),
   );
 
@@ -567,6 +606,7 @@ membership fee',
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('<em>More categories will be added later.</em>');
   t('Category');
   t('Clone state (do not change)');
   t('Date & Time');
@@ -574,11 +614,12 @@ membership fee',
   t('Event title');
   t('Image');
   t('Master UUID (do not change)');
+  t('Other and/or price details');
+  t('Price category');
   t('additional tags');
   t('email');
   t('online');
   t('phone');
-  t('price');
 
   return $field_instances;
 }

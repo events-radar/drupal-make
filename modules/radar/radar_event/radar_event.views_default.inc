@@ -165,15 +165,15 @@ function radar_event_views_default_views() {
       'label' => '',
     ),
     'action::views_bulk_operations_modify_action' => array(
-      'selected' => 0,
+      'selected' => 1,
       'postpone_processing' => 0,
-      'skip_confirmation' => 0,
+      'skip_confirmation' => 1,
       'override_label' => 0,
       'label' => '',
       'settings' => array(
         'show_all_tokens' => 1,
         'display_values' => array(
-          '_all_' => '_all_',
+          'event::field_price_category' => 'event::field_price_category',
         ),
       ),
     ),
@@ -342,6 +342,17 @@ function radar_event_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['field_offline']['delta_offset'] = '0';
+  /* Field: Content: Price category */
+  $handler->display->display_options['fields']['field_price_category']['id'] = 'field_price_category';
+  $handler->display->display_options['fields']['field_price_category']['table'] = 'field_data_field_price_category';
+  $handler->display->display_options['fields']['field_price_category']['field'] = 'field_price_category';
+  $handler->display->display_options['fields']['field_price_category']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_price_category']['delta_offset'] = '0';
+  /* Field: Content: Other and/or price details */
+  $handler->display->display_options['fields']['field_price']['id'] = 'field_price';
+  $handler->display->display_options['fields']['field_price']['table'] = 'field_data_field_price';
+  $handler->display->display_options['fields']['field_price']['field'] = 'field_price';
+  $handler->display->display_options['fields']['field_price']['delta_offset'] = '0';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -461,6 +472,46 @@ function radar_event_views_default_views() {
     7 => 0,
   );
   $handler->display->display_options['filters']['field_topic_tid']['vocabulary'] = 'topic';
+  /* Filter criterion: Content: Price category (field_price_category) */
+  $handler->display->display_options['filters']['field_price_category_tid']['id'] = 'field_price_category_tid';
+  $handler->display->display_options['filters']['field_price_category_tid']['table'] = 'field_data_field_price_category';
+  $handler->display->display_options['filters']['field_price_category_tid']['field'] = 'field_price_category_tid';
+  $handler->display->display_options['filters']['field_price_category_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_price_category_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_price_category_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_price_category_tid']['expose']['operator_id'] = 'field_price_category_tid_op';
+  $handler->display->display_options['filters']['field_price_category_tid']['expose']['label'] = 'Price category';
+  $handler->display->display_options['filters']['field_price_category_tid']['expose']['operator'] = 'field_price_category_tid_op';
+  $handler->display->display_options['filters']['field_price_category_tid']['expose']['identifier'] = 'field_price_category_tid';
+  $handler->display->display_options['filters']['field_price_category_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    8 => 0,
+    7 => 0,
+  );
+  $handler->display->display_options['filters']['field_price_category_tid']['vocabulary'] = 'price';
+  /* Filter criterion: Content: Other and/or price details (field_price) */
+  $handler->display->display_options['filters']['field_price_value']['id'] = 'field_price_value';
+  $handler->display->display_options['filters']['field_price_value']['table'] = 'field_data_field_price';
+  $handler->display->display_options['filters']['field_price_value']['field'] = 'field_price_value';
+  $handler->display->display_options['filters']['field_price_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_price_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_price_value']['expose']['operator_id'] = 'field_price_value_op';
+  $handler->display->display_options['filters']['field_price_value']['expose']['label'] = 'Price details';
+  $handler->display->display_options['filters']['field_price_value']['expose']['operator'] = 'field_price_value_op';
+  $handler->display->display_options['filters']['field_price_value']['expose']['identifier'] = 'field_price_value';
+  $handler->display->display_options['filters']['field_price_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    8 => 0,
+    7 => 0,
+  );
   /* Filter criterion: Content: Date &amp; Time -  start date (field_date_time) */
   $handler->display->display_options['filters']['field_date_time_value']['id'] = 'field_date_time_value';
   $handler->display->display_options['filters']['field_date_time_value']['table'] = 'field_data_field_date_time';
@@ -986,7 +1037,7 @@ function radar_event_views_default_views() {
     'show_repeat_rule' => 'hide',
   );
   $handler->display->display_options['fields']['field_date_time_1']['delta_offset'] = '0';
-  /* Field: Content: price */
+  /* Field: Content: Other and/or price details */
   $handler->display->display_options['fields']['field_price']['id'] = 'field_price';
   $handler->display->display_options['fields']['field_price']['table'] = 'field_data_field_price';
   $handler->display->display_options['fields']['field_price']['field'] = 'field_price';
@@ -1151,7 +1202,7 @@ function radar_event_views_default_views() {
     'show_repeat_rule' => 'hide',
   );
   $handler->display->display_options['fields']['field_date_time_1']['delta_offset'] = '0';
-  /* Field: Content: price */
+  /* Field: Content: Other and/or price details */
   $handler->display->display_options['fields']['field_price']['id'] = 'field_price';
   $handler->display->display_options['fields']['field_price']['table'] = 'field_data_field_price';
   $handler->display->display_options['fields']['field_price']['field'] = 'field_price';
@@ -1307,7 +1358,7 @@ function radar_event_views_default_views() {
     'topic' => 'topic',
     'category' => 0,
   );
-  /* Field: Content: price */
+  /* Field: Content: Other and/or price details */
   $handler->display->display_options['fields']['field_price']['id'] = 'field_price';
   $handler->display->display_options['fields']['field_price']['table'] = 'field_data_field_price';
   $handler->display->display_options['fields']['field_price']['field'] = 'field_price';
@@ -1616,7 +1667,7 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['created']['custom_date_format'] = 'c';
   $handler->display->display_options['fields']['created']['second_date_format'] = 'radar_time';
   $handler->display->display_options['fields']['created']['timezone'] = 'UTC';
-  /* Field: Content: price */
+  /* Field: Content: Other and/or price details */
   $handler->display->display_options['fields']['field_price']['id'] = 'field_price';
   $handler->display->display_options['fields']['field_price']['table'] = 'field_data_field_price';
   $handler->display->display_options['fields']['field_price']['field'] = 'field_price';

@@ -165,7 +165,7 @@ function radar_event_views_default_views() {
       'label' => '',
     ),
     'action::views_bulk_operations_modify_action' => array(
-      'selected' => 1,
+      'selected' => 0,
       'postpone_processing' => 0,
       'skip_confirmation' => 1,
       'override_label' => 0,
@@ -342,17 +342,6 @@ function radar_event_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['field_offline']['delta_offset'] = '0';
-  /* Field: Content: Price category */
-  $handler->display->display_options['fields']['field_price_category']['id'] = 'field_price_category';
-  $handler->display->display_options['fields']['field_price_category']['table'] = 'field_data_field_price_category';
-  $handler->display->display_options['fields']['field_price_category']['field'] = 'field_price_category';
-  $handler->display->display_options['fields']['field_price_category']['type'] = 'taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_price_category']['delta_offset'] = '0';
-  /* Field: Content: Other and/or price details */
-  $handler->display->display_options['fields']['field_price']['id'] = 'field_price';
-  $handler->display->display_options['fields']['field_price']['table'] = 'field_data_field_price';
-  $handler->display->display_options['fields']['field_price']['field'] = 'field_price';
-  $handler->display->display_options['fields']['field_price']['delta_offset'] = '0';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -472,46 +461,6 @@ function radar_event_views_default_views() {
     7 => 0,
   );
   $handler->display->display_options['filters']['field_topic_tid']['vocabulary'] = 'topic';
-  /* Filter criterion: Content: Price category (field_price_category) */
-  $handler->display->display_options['filters']['field_price_category_tid']['id'] = 'field_price_category_tid';
-  $handler->display->display_options['filters']['field_price_category_tid']['table'] = 'field_data_field_price_category';
-  $handler->display->display_options['filters']['field_price_category_tid']['field'] = 'field_price_category_tid';
-  $handler->display->display_options['filters']['field_price_category_tid']['value'] = '';
-  $handler->display->display_options['filters']['field_price_category_tid']['group'] = 1;
-  $handler->display->display_options['filters']['field_price_category_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_price_category_tid']['expose']['operator_id'] = 'field_price_category_tid_op';
-  $handler->display->display_options['filters']['field_price_category_tid']['expose']['label'] = 'Price category';
-  $handler->display->display_options['filters']['field_price_category_tid']['expose']['operator'] = 'field_price_category_tid_op';
-  $handler->display->display_options['filters']['field_price_category_tid']['expose']['identifier'] = 'field_price_category_tid';
-  $handler->display->display_options['filters']['field_price_category_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    5 => 0,
-    6 => 0,
-    8 => 0,
-    7 => 0,
-  );
-  $handler->display->display_options['filters']['field_price_category_tid']['vocabulary'] = 'price';
-  /* Filter criterion: Content: Other and/or price details (field_price) */
-  $handler->display->display_options['filters']['field_price_value']['id'] = 'field_price_value';
-  $handler->display->display_options['filters']['field_price_value']['table'] = 'field_data_field_price';
-  $handler->display->display_options['filters']['field_price_value']['field'] = 'field_price_value';
-  $handler->display->display_options['filters']['field_price_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_price_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_price_value']['expose']['operator_id'] = 'field_price_value_op';
-  $handler->display->display_options['filters']['field_price_value']['expose']['label'] = 'Price details';
-  $handler->display->display_options['filters']['field_price_value']['expose']['operator'] = 'field_price_value_op';
-  $handler->display->display_options['filters']['field_price_value']['expose']['identifier'] = 'field_price_value';
-  $handler->display->display_options['filters']['field_price_value']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    5 => 0,
-    6 => 0,
-    8 => 0,
-    7 => 0,
-  );
   /* Filter criterion: Content: Date &amp; Time -  start date (field_date_time) */
   $handler->display->display_options['filters']['field_date_time_value']['id'] = 'field_date_time_value';
   $handler->display->display_options['filters']['field_date_time_value']['table'] = 'field_data_field_date_time';
@@ -917,6 +866,334 @@ function radar_event_views_default_views() {
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Events price table page */
+  $handler = $view->new_display('page', 'Events price table page', 'page_2');
+  $handler->display->display_options['display_description'] = 'Bulk operation to assign price categories';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'views_bulk_operations' => 'views_bulk_operations',
+    'title' => 'title',
+    'field_price_category' => 'field_price_category',
+    'field_price' => 'field_price',
+    'og_group_ref' => 'og_group_ref',
+    'og_group_ref_1' => 'og_group_ref_1',
+  );
+  $handler->display->display_options['style_options']['default'] = 'title';
+  $handler->display->display_options['style_options']['info'] = array(
+    'views_bulk_operations' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'title' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_price_category' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_price' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'og_group_ref' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'og_group_ref_1' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Bulk operations: Content */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'node';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::node_assign_owner_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::clone_action_clone' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::radar_content_moderation_delete_node_block_user' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::views_bulk_operations_delete_item' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::views_bulk_operations_delete_revision' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::views_bulk_operations_script_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::flag_node_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_make_sticky_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_make_unsticky_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::views_bulk_operations_modify_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 1,
+      'override_label' => 0,
+      'label' => '',
+      'settings' => array(
+        'show_all_tokens' => 1,
+        'display_values' => array(
+          'event::field_price' => 'event::field_price',
+          'event::field_price_category' => 'event::field_price_category',
+        ),
+      ),
+    ),
+    'action::views_bulk_operations_argument_selector_action' => array(
+      'selected' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'settings' => array(
+        'url' => '',
+      ),
+    ),
+    'action::node_promote_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_publish_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 1,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_unpromote_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_save_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::system_send_email_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_unpublish_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 1,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_unpublish_by_keyword_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::auto_entitylabel_entity_update_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::pathauto_node_update_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Event';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Price category */
+  $handler->display->display_options['fields']['field_price_category']['id'] = 'field_price_category';
+  $handler->display->display_options['fields']['field_price_category']['table'] = 'field_data_field_price_category';
+  $handler->display->display_options['fields']['field_price_category']['field'] = 'field_price_category';
+  $handler->display->display_options['fields']['field_price_category']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_price_category']['delta_offset'] = '0';
+  /* Field: Content: Other and/or price details */
+  $handler->display->display_options['fields']['field_price']['id'] = 'field_price';
+  $handler->display->display_options['fields']['field_price']['table'] = 'field_data_field_price';
+  $handler->display->display_options['fields']['field_price']['field'] = 'field_price';
+  $handler->display->display_options['fields']['field_price']['delta_offset'] = '0';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Date &amp; Time -  start date (field_date_time) */
+  $handler->display->display_options['filters']['field_date_time_value']['id'] = 'field_date_time_value';
+  $handler->display->display_options['filters']['field_date_time_value']['table'] = 'field_data_field_date_time';
+  $handler->display->display_options['filters']['field_date_time_value']['field'] = 'field_date_time_value';
+  $handler->display->display_options['filters']['field_date_time_value']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_date_time_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_date_time_value']['expose']['operator_id'] = 'field_date_time_value_op';
+  $handler->display->display_options['filters']['field_date_time_value']['expose']['label'] = 'Date';
+  $handler->display->display_options['filters']['field_date_time_value']['expose']['use_operator'] = TRUE;
+  $handler->display->display_options['filters']['field_date_time_value']['expose']['operator'] = 'field_date_time_value_op';
+  $handler->display->display_options['filters']['field_date_time_value']['expose']['identifier'] = 'field_date_time_value';
+  $handler->display->display_options['filters']['field_date_time_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    8 => 0,
+    7 => 0,
+  );
+  $handler->display->display_options['filters']['field_date_time_value']['default_date'] = 'today';
+  $handler->display->display_options['filters']['field_date_time_value']['year_range'] = '-1:+3';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator_id'] = '';
+  $handler->display->display_options['filters']['status']['expose']['label'] = 'Published';
+  $handler->display->display_options['filters']['status']['expose']['operator'] = 'status_op';
+  $handler->display->display_options['filters']['status']['expose']['identifier'] = 'status';
+  $handler->display->display_options['filters']['status']['expose']['required'] = TRUE;
+  $handler->display->display_options['filters']['status']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    8 => 0,
+    7 => 0,
+  );
+  /* Filter criterion: Content: Price category (field_price_category) */
+  $handler->display->display_options['filters']['field_price_category_tid']['id'] = 'field_price_category_tid';
+  $handler->display->display_options['filters']['field_price_category_tid']['table'] = 'field_data_field_price_category';
+  $handler->display->display_options['filters']['field_price_category_tid']['field'] = 'field_price_category_tid';
+  $handler->display->display_options['filters']['field_price_category_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_price_category_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_price_category_tid']['expose']['operator_id'] = 'field_price_category_tid_op';
+  $handler->display->display_options['filters']['field_price_category_tid']['expose']['label'] = 'Price category';
+  $handler->display->display_options['filters']['field_price_category_tid']['expose']['operator'] = 'field_price_category_tid_op';
+  $handler->display->display_options['filters']['field_price_category_tid']['expose']['identifier'] = 'field_price_category_tid';
+  $handler->display->display_options['filters']['field_price_category_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    8 => 0,
+    7 => 0,
+  );
+  $handler->display->display_options['filters']['field_price_category_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_price_category_tid']['vocabulary'] = 'price';
+  /* Filter criterion: Content: Other and/or price details (field_price) */
+  $handler->display->display_options['filters']['field_price_value']['id'] = 'field_price_value';
+  $handler->display->display_options['filters']['field_price_value']['table'] = 'field_data_field_price';
+  $handler->display->display_options['filters']['field_price_value']['field'] = 'field_price_value';
+  $handler->display->display_options['filters']['field_price_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_price_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_price_value']['expose']['operator_id'] = 'field_price_value_op';
+  $handler->display->display_options['filters']['field_price_value']['expose']['label'] = 'Other and/or price details';
+  $handler->display->display_options['filters']['field_price_value']['expose']['operator'] = 'field_price_value_op';
+  $handler->display->display_options['filters']['field_price_value']['expose']['identifier'] = 'field_price_value';
+  $handler->display->display_options['filters']['field_price_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    8 => 0,
+    7 => 0,
+  );
+  $handler->display->display_options['path'] = 'admin/content/events/price';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'Prices';
+  $handler->display->display_options['menu']['description'] = 'Bulk operation to assign price categories';
+  $handler->display->display_options['menu']['weight'] = '5';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $handler->display->display_options['tab_options']['type'] = 'tab';
+  $handler->display->display_options['tab_options']['title'] = 'Events';
+  $handler->display->display_options['tab_options']['description'] = 'admin/content/groups/all';
+  $handler->display->display_options['tab_options']['weight'] = '0';
   $export['content_bulk_operations'] = $view;
 
   $view = new view();

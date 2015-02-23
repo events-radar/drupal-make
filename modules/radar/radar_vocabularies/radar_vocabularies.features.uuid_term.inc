@@ -134,7 +134,7 @@ function radar_vocabularies_uuid_features_default_terms() {
     'name' => 'other',
     'description' => '',
     'format' => 'rich_text_editor',
-    'weight' => 0,
+    'weight' => 9,
     'uuid' => '7e7e09ce-138d-4c92-8e45-a5156c2a7176',
     'language' => 'und',
     'i18n_tsid' => 0,

@@ -462,20 +462,11 @@ function radar_contenttype_event_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'select_or_other',
+      'module' => 'text',
       'settings' => array(
-        'available_options' => 'free entrance
-by donation
-membership fee',
-        'available_options_php' => '',
-        'markup_available_options_php' => '&lt;none&gt;',
-        'other' => 'Other',
-        'other_size' => 60,
-        'other_title' => '',
-        'other_unknown_defaults' => 'other',
-        'sort_options' => 0,
+        'size' => 60,
       ),
-      'type' => 'select_or_other_buttons',
+      'type' => 'text_textfield',
       'weight' => 9,
     ),
   );

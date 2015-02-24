@@ -22,6 +22,7 @@ dependencies[] = image
 dependencies[] = inline_entity_form
 dependencies[] = link
 dependencies[] = list
+dependencies[] = node
 dependencies[] = og
 dependencies[] = options
 dependencies[] = page_manager

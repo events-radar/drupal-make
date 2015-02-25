@@ -109,3 +109,18 @@ function at_radar_preprocess_block(&$vars) {
 function at_radar_process_block(&$vars) {
 }
 // */
+
+/**
+ * Overrides theme_system_powered_by().
+ */
+function at_radar_system_powered_by() {
+  return '<span>'
+    . t('Run by the <a href="@user">community</a>, <a href="@built">built</a> with <a href="@poweredby">drupal</a>, hosted by <a href="@squat">squat.net</a>',
+      array(
+        '@user' => url('user'),
+        '@built' => 'https://github.com/events-radar',
+        '@poweredby' => 'https://www.drupal.org/',
+        '@squat' => 'https://squat.net/',
+      ))
+    . '</span>';
+}

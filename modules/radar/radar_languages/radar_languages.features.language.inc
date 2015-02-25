@@ -127,6 +127,19 @@ function radar_languages_locale_default_languages() {
     'prefix' => 'it',
     'weight' => -2,
   );
+  // Exported language: ku.
+  $languages['ku'] = array(
+    'language' => 'ku',
+    'name' => 'Kurdish',
+    'native' => 'Kurdî',
+    'direction' => 0,
+    'enabled' => 1,
+    'plurals' => 2,
+    'formula' => '($n!=1)',
+    'domain' => '',
+    'prefix' => 'ku',
+    'weight' => 0,
+  );
   // Exported language: nl.
   $languages['nl'] = array(
     'language' => 'nl',

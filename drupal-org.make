@@ -334,9 +334,6 @@ projects[adaptivetheme][type] = "theme"
 ;
 ;; Devel
 ;
-projects[devel][subdir] = "devel"
-projects[devel_themer][subdir] = "devel"
-projects[schema][subdir] = "devel"
 projects[diff][subdir] = "devel"
 projects[diff][version] = "3.2"
 projects[masquerade][subdir] = "devel"

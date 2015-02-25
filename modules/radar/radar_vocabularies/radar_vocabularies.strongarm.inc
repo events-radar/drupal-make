@@ -16,7 +16,9 @@ function radar_vocabularies_strongarm() {
   $strongarm->name = 'uuid_features_entity_taxonomy_term';
   $strongarm->value = array(
     'category' => 'category',
+    'price' => 'price',
     'topic' => 0,
+    'type' => 0,
   );
   $export['uuid_features_entity_taxonomy_term'] = $strongarm;
 
@@ -27,6 +29,8 @@ function radar_vocabularies_strongarm() {
   $strongarm->value = array(
     'category' => 0,
     'topic' => 0,
+    'type' => 0,
+    'price' => 0,
   );
   $export['uuid_features_file_taxonomy_term'] = $strongarm;
 

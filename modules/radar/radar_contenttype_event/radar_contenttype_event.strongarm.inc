@@ -50,10 +50,10 @@ function radar_contenttype_event_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '9',
+          'weight' => '10',
         ),
         'redirect' => array(
-          'weight' => '10',
+          'weight' => '11',
         ),
         'language' => array(
           'weight' => '1',

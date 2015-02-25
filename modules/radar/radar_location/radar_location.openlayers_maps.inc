@@ -206,7 +206,6 @@ function radar_location_openlayers_maps() {
         'label_high_color' => '#000000',
         'label_high_opacity' => '0.8',
       ),
-      'openlayers_behavior_keyboarddefaults' => array(),
       'openlayers_behavior_attribution' => array(
         'separator' => '',
       ),
@@ -240,7 +239,6 @@ function radar_location_openlayers_maps() {
           'radar_group_search_openlayers_1' => 'radar_group_search_openlayers_1',
           'osm_mapnik' => 0,
           'osm_cycle' => 0,
-          'mapbox_world_print' => 0,
         ),
         'point_zoom_level' => '5',
         'zoomtolayer_scale' => '1',

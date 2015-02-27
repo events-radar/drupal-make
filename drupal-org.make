@@ -12,7 +12,11 @@ projects[captcha_pack][version] = "1.0-alpha1"
 projects[ctools][subdir] = "contrib"
 projects[ds][subdir] = "contrib"
 projects[ds][version] = "2.6"
+
 projects[entity][subdir] = "contrib"
+projects[entity][version] = "1.5"
+projects[entity][patch][925212] = "https://www.drupal.org/files/925212-3-user-role-list.patch"
+
 projects[features][subdir] = "contrib"
 projects[strongarm][subdir] = "contrib"
 projects[libraries][subdir] = "contrib"

@@ -121,7 +121,7 @@ function radar_search_default_search_api_index() {
         },
         "field_offline:id" : { "type" : "list\\u003Cinteger\\u003E" },
         "field_offline:title" : { "type" : "list\\u003Ctext\\u003E" },
-        "field_price" : { "type" : "list\\u003Cstring\\u003E" },
+        "field_price" : { "type" : "string" },
         "field_price_category" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_topic" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "nid" : { "type" : "integer" },

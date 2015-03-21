@@ -70,7 +70,7 @@ function radar_listings_group_views_pre_view(&$view, &$display_id, &$args) {
  * all of the og links code :-(
  */
 function radar_listings_group_panels_pane_content_alter($content, $pane, $args, $contexts) {
-  if ($content->module == 'og' && $content->type == 'node_create_links') {
+  if (!empty($content) && $content->module == 'og' && $content->type == 'node_create_links') {
     // Retrieve the og from the context. It's the first one.
     $context = reset($contexts);
     $group = $context->data;

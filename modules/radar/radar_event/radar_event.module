@@ -26,7 +26,9 @@ function radar_event_entity_property_info_alter(&$info) {
   $properties = &$info['node']['bundles']['event']['properties'];
 
   $properties['field_date_time']['property info']['time_start']['getter callback'] = 'radar_event_date_entity_metadata_struct_getter';
+  $properties['field_date_time']['property info']['time_start']['label'] = 'Start time ISO format';
   $properties['field_date_time']['property info']['time_end']['getter callback'] = 'radar_event_date_entity_metadata_struct_getter';
+  $properties['field_date_time']['property info']['time_end']['label'] = 'End time ISO format';
   $properties['field_date_time']['property info']['rrule'] = array(
     'type' => 'text',
     'label' => 'Repeat rule',

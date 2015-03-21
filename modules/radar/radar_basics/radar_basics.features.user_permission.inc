@@ -17,6 +17,7 @@ function radar_basics_user_default_permissions() {
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
       'non-authenticated user' => 'non-authenticated user',
+      'tech administrator' => 'tech administrator',
     ),
     'module' => 'node',
   );
@@ -35,6 +36,7 @@ function radar_basics_user_default_permissions() {
     'name' => 'create page content',
     'roles' => array(
       'administrator' => 'administrator',
+      'tech administrator' => 'tech administrator',
     ),
     'module' => 'node',
   );
@@ -44,6 +46,7 @@ function radar_basics_user_default_permissions() {
     'name' => 'delete any page content',
     'roles' => array(
       'administrator' => 'administrator',
+      'tech administrator' => 'tech administrator',
     ),
     'module' => 'node',
   );
@@ -53,6 +56,7 @@ function radar_basics_user_default_permissions() {
     'name' => 'delete own page content',
     'roles' => array(
       'administrator' => 'administrator',
+      'tech administrator' => 'tech administrator',
     ),
     'module' => 'node',
   );
@@ -62,6 +66,7 @@ function radar_basics_user_default_permissions() {
     'name' => 'edit any page content',
     'roles' => array(
       'administrator' => 'administrator',
+      'tech administrator' => 'tech administrator',
       'translator' => 'translator',
     ),
     'module' => 'node',
@@ -72,6 +77,7 @@ function radar_basics_user_default_permissions() {
     'name' => 'edit own page content',
     'roles' => array(
       'administrator' => 'administrator',
+      'tech administrator' => 'tech administrator',
     ),
     'module' => 'node',
   );
@@ -92,6 +98,7 @@ function radar_basics_user_default_permissions() {
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
       'non-authenticated user' => 'non-authenticated user',
+      'tech administrator' => 'tech administrator',
     ),
     'module' => 'node',
   );
@@ -102,6 +109,7 @@ function radar_basics_user_default_permissions() {
     'roles' => array(
       'authenticated user' => 'authenticated user',
       'non-authenticated user' => 'non-authenticated user',
+      'tech administrator' => 'tech administrator',
     ),
     'module' => 'system',
   );

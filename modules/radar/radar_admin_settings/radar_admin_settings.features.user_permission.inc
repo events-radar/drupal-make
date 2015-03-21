@@ -34,6 +34,7 @@ function radar_admin_settings_user_default_permissions() {
     'name' => 'access content overview',
     'roles' => array(
       'administrator' => 'administrator',
+      'tech administrator' => 'tech administrator',
     ),
     'module' => 'node',
   );
@@ -50,7 +51,9 @@ function radar_admin_settings_user_default_permissions() {
   // Exported permission: 'access dashboard'.
   $permissions['access dashboard'] = array(
     'name' => 'access dashboard',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'dashboard',
   );
 
@@ -86,77 +89,99 @@ function radar_admin_settings_user_default_permissions() {
   // Exported permission: 'administer actions'.
   $permissions['administer actions'] = array(
     'name' => 'administer actions',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'system',
   );
 
   // Exported permission: 'administer advanced pane settings'.
   $permissions['administer advanced pane settings'] = array(
     'name' => 'administer advanced pane settings',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'panels',
   );
 
   // Exported permission: 'administer blocks'.
   $permissions['administer blocks'] = array(
     'name' => 'administer blocks',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'block',
   );
 
   // Exported permission: 'administer content translations'.
   $permissions['administer content translations'] = array(
     'name' => 'administer content translations',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'i18n_node',
   );
 
   // Exported permission: 'administer content types'.
   $permissions['administer content types'] = array(
     'name' => 'administer content types',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'administer features'.
   $permissions['administer features'] = array(
     'name' => 'administer features',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'features',
   );
 
   // Exported permission: 'administer feeds'.
   $permissions['administer feeds'] = array(
     'name' => 'administer feeds',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'feeds',
   );
 
   // Exported permission: 'administer fieldgroups'.
   $permissions['administer fieldgroups'] = array(
     'name' => 'administer fieldgroups',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'field_group',
   );
 
   // Exported permission: 'administer filters'.
   $permissions['administer filters'] = array(
     'name' => 'administer filters',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'filter',
   );
 
   // Exported permission: 'administer flags'.
   $permissions['administer flags'] = array(
     'name' => 'administer flags',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'flag',
   );
 
   // Exported permission: 'administer image styles'.
   $permissions['administer image styles'] = array(
     'name' => 'administer image styles',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'image',
   );
 
@@ -181,21 +206,27 @@ function radar_admin_settings_user_default_permissions() {
   // Exported permission: 'administer message types'.
   $permissions['administer message types'] = array(
     'name' => 'administer message types',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'message',
   );
 
   // Exported permission: 'administer module filter'.
   $permissions['administer module filter'] = array(
     'name' => 'administer module filter',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'module_filter',
   );
 
   // Exported permission: 'administer modules'.
   $permissions['administer modules'] = array(
     'name' => 'administer modules',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'system',
   );
 
@@ -204,6 +235,7 @@ function radar_admin_settings_user_default_permissions() {
     'name' => 'administer nodes',
     'roles' => array(
       'administrator' => 'administrator',
+      'tech administrator' => 'tech administrator',
     ),
     'module' => 'node',
   );
@@ -211,35 +243,45 @@ function radar_admin_settings_user_default_permissions() {
   // Exported permission: 'administer page manager'.
   $permissions['administer page manager'] = array(
     'name' => 'administer page manager',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'page_manager',
   );
 
   // Exported permission: 'administer pane access'.
   $permissions['administer pane access'] = array(
     'name' => 'administer pane access',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'panels',
   );
 
   // Exported permission: 'administer panels layouts'.
   $permissions['administer panels layouts'] = array(
     'name' => 'administer panels layouts',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'panels',
   );
 
   // Exported permission: 'administer panels styles'.
   $permissions['administer panels styles'] = array(
     'name' => 'administer panels styles',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'panels',
   );
 
   // Exported permission: 'administer pathauto'.
   $permissions['administer pathauto'] = array(
     'name' => 'administer pathauto',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'pathauto',
   );
 
@@ -256,49 +298,63 @@ function radar_admin_settings_user_default_permissions() {
   // Exported permission: 'administer radioactivity'.
   $permissions['administer radioactivity'] = array(
     'name' => 'administer radioactivity',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'radioactivity',
   );
 
   // Exported permission: 'administer redirects'.
   $permissions['administer redirects'] = array(
     'name' => 'administer redirects',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'redirect',
   );
 
   // Exported permission: 'administer site configuration'.
   $permissions['administer site configuration'] = array(
     'name' => 'administer site configuration',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'system',
   );
 
   // Exported permission: 'administer software updates'.
   $permissions['administer software updates'] = array(
     'name' => 'administer software updates',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'system',
   );
 
   // Exported permission: 'administer taxonomy'.
   $permissions['administer taxonomy'] = array(
     'name' => 'administer taxonomy',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'taxonomy',
   );
 
   // Exported permission: 'administer themes'.
   $permissions['administer themes'] = array(
     'name' => 'administer themes',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'system',
   );
 
   // Exported permission: 'administer url aliases'.
   $permissions['administer url aliases'] = array(
     'name' => 'administer url aliases',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'path',
   );
 
@@ -315,7 +371,9 @@ function radar_admin_settings_user_default_permissions() {
   // Exported permission: 'administer uuid'.
   $permissions['administer uuid'] = array(
     'name' => 'administer uuid',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'uuid',
   );
 
@@ -331,7 +389,9 @@ function radar_admin_settings_user_default_permissions() {
   // Exported permission: 'block IP addresses'.
   $permissions['block IP addresses'] = array(
     'name' => 'block IP addresses',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'system',
   );
 
@@ -340,6 +400,7 @@ function radar_admin_settings_user_default_permissions() {
     'name' => 'bypass node access',
     'roles' => array(
       'administrator' => 'administrator',
+      'tech administrator' => 'tech administrator',
     ),
     'module' => 'node',
   );
@@ -350,6 +411,7 @@ function radar_admin_settings_user_default_permissions() {
     'roles' => array(
       'authenticated user' => 'authenticated user',
       'non-authenticated user' => 'non-authenticated user',
+      'tech administrator' => 'tech administrator',
     ),
     'module' => 'user',
   );
@@ -360,6 +422,7 @@ function radar_admin_settings_user_default_permissions() {
     'roles' => array(
       'authenticated user' => 'authenticated user',
       'non-authenticated user' => 'non-authenticated user',
+      'tech administrator' => 'tech administrator',
     ),
     'module' => 'user',
   );
@@ -369,6 +432,7 @@ function radar_admin_settings_user_default_permissions() {
     'name' => 'delete revisions',
     'roles' => array(
       'administrator' => 'administrator',
+      'tech administrator' => 'tech administrator',
     ),
     'module' => 'node',
   );
@@ -376,105 +440,135 @@ function radar_admin_settings_user_default_permissions() {
   // Exported permission: 'eck add bundles'.
   $permissions['eck add bundles'] = array(
     'name' => 'eck add bundles',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'eck',
   );
 
   // Exported permission: 'eck add entities'.
   $permissions['eck add entities'] = array(
     'name' => 'eck add entities',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'eck',
   );
 
   // Exported permission: 'eck add entity types'.
   $permissions['eck add entity types'] = array(
     'name' => 'eck add entity types',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'eck',
   );
 
   // Exported permission: 'eck administer bundles'.
   $permissions['eck administer bundles'] = array(
     'name' => 'eck administer bundles',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'eck',
   );
 
   // Exported permission: 'eck administer entities'.
   $permissions['eck administer entities'] = array(
     'name' => 'eck administer entities',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'eck',
   );
 
   // Exported permission: 'eck administer entity types'.
   $permissions['eck administer entity types'] = array(
     'name' => 'eck administer entity types',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'eck',
   );
 
   // Exported permission: 'eck delete bundles'.
   $permissions['eck delete bundles'] = array(
     'name' => 'eck delete bundles',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'eck',
   );
 
   // Exported permission: 'eck delete entities'.
   $permissions['eck delete entities'] = array(
     'name' => 'eck delete entities',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'eck',
   );
 
   // Exported permission: 'eck delete entity types'.
   $permissions['eck delete entity types'] = array(
     'name' => 'eck delete entity types',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'eck',
   );
 
   // Exported permission: 'eck edit bundles'.
   $permissions['eck edit bundles'] = array(
     'name' => 'eck edit bundles',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'eck',
   );
 
   // Exported permission: 'eck edit entities'.
   $permissions['eck edit entities'] = array(
     'name' => 'eck edit entities',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'eck',
   );
 
   // Exported permission: 'eck edit entity types'.
   $permissions['eck edit entity types'] = array(
     'name' => 'eck edit entity types',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'eck',
   );
 
   // Exported permission: 'eck list bundles'.
   $permissions['eck list bundles'] = array(
     'name' => 'eck list bundles',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'eck',
   );
 
   // Exported permission: 'eck list entities'.
   $permissions['eck list entities'] = array(
     'name' => 'eck list entities',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'eck',
   );
 
   // Exported permission: 'eck list entity types'.
   $permissions['eck list entity types'] = array(
     'name' => 'eck list entity types',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'eck',
   );
 
@@ -485,6 +579,7 @@ function radar_admin_settings_user_default_permissions() {
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
       'non-authenticated user' => 'non-authenticated user',
+      'tech administrator' => 'tech administrator',
     ),
     'module' => 'eck',
   );
@@ -492,7 +587,9 @@ function radar_admin_settings_user_default_permissions() {
   // Exported permission: 'generate features'.
   $permissions['generate features'] = array(
     'name' => 'generate features',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'features',
   );
 
@@ -508,7 +605,9 @@ function radar_admin_settings_user_default_permissions() {
   // Exported permission: 'rename features'.
   $permissions['rename features'] = array(
     'name' => 'rename features',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'features',
   );
 
@@ -517,6 +616,7 @@ function radar_admin_settings_user_default_permissions() {
     'name' => 'revert revisions',
     'roles' => array(
       'administrator' => 'administrator',
+      'tech administrator' => 'tech administrator',
     ),
     'module' => 'node',
   );
@@ -524,14 +624,18 @@ function radar_admin_settings_user_default_permissions() {
   // Exported permission: 'select account cancellation method'.
   $permissions['select account cancellation method'] = array(
     'name' => 'select account cancellation method',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'user',
   );
 
   // Exported permission: 'show text format dropdown'.
   $permissions['show text format dropdown'] = array(
     'name' => 'show text format dropdown',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'hide_formats',
   );
 
@@ -545,35 +649,45 @@ function radar_admin_settings_user_default_permissions() {
   // Exported permission: 'use flag import'.
   $permissions['use flag import'] = array(
     'name' => 'use flag import',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'flag',
   );
 
   // Exported permission: 'use page manager'.
   $permissions['use page manager'] = array(
     'name' => 'use page manager',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'page_manager',
   );
 
   // Exported permission: 'use panels caching features'.
   $permissions['use panels caching features'] = array(
     'name' => 'use panels caching features',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'panels',
   );
 
   // Exported permission: 'use panels dashboard'.
   $permissions['use panels dashboard'] = array(
     'name' => 'use panels dashboard',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'panels',
   );
 
   // Exported permission: 'use text format full_html'.
   $permissions['use text format full_html'] = array(
     'name' => 'use text format full_html',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'filter',
   );
 
@@ -594,7 +708,9 @@ function radar_admin_settings_user_default_permissions() {
   // Exported permission: 'view pane admin links'.
   $permissions['view pane admin links'] = array(
     'name' => 'view pane admin links',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'panels',
   );
 
@@ -603,6 +719,7 @@ function radar_admin_settings_user_default_permissions() {
     'name' => 'view revisions',
     'roles' => array(
       'administrator' => 'administrator',
+      'tech administrator' => 'tech administrator',
     ),
     'module' => 'node',
   );

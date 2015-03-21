@@ -22,14 +22,18 @@ function radar_languages_user_default_permissions() {
   // Exported permission: 'administer languages for translate set per user'.
   $permissions['administer languages for translate set per user'] = array(
     'name' => 'administer languages for translate set per user',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'translate_set',
   );
 
   // Exported permission: 'administer translate set settings'.
   $permissions['administer translate set settings'] = array(
     'name' => 'administer translate set settings',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'translate_set',
   );
 
@@ -45,7 +49,9 @@ function radar_languages_user_default_permissions() {
   // Exported permission: 'toggle field translatability'.
   $permissions['toggle field translatability'] = array(
     'name' => 'toggle field translatability',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'entity_translation',
   );
 
@@ -105,6 +111,7 @@ function radar_languages_user_default_permissions() {
   $permissions['translate set'] = array(
     'name' => 'translate set',
     'roles' => array(
+      'tech administrator' => 'tech administrator',
       'translator' => 'translator',
     ),
     'module' => 'translate_set',

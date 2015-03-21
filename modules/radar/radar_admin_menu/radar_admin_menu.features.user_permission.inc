@@ -34,7 +34,9 @@ function radar_admin_menu_user_default_permissions() {
   // Exported permission: 'administer shortcuts'.
   $permissions['administer shortcuts'] = array(
     'name' => 'administer shortcuts',
-    'roles' => array(),
+    'roles' => array(
+      'tech administrator' => 'tech administrator',
+    ),
     'module' => 'shortcut',
   );
 

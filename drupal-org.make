@@ -294,6 +294,9 @@ projects[services_search_api][patch][2072691] = "https://www.drupal.org/files/is
 projects[node_clone][subdir] = "contrib"
 projects[node_clone][version] = "1.0-rc2"
 
+projects[flood_control][subdir] = "contrib"
+projects[flood_control][version] = "1.0"
+
 ;
 ;; Layout
 ;

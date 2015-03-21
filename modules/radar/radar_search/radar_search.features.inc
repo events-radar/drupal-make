@@ -134,7 +134,6 @@ function radar_search_default_search_api_index() {
         "uuid" : { "type" : "string" }
       },
       "data_alter_callbacks" : {
-        "search_api_ranges_alter" : { "status" : 1, "weight" : "-50", "settings" : { "fields" : [] } },
         "search_api_alter_bundle_filter" : {
           "status" : 1,
           "weight" : "-10",

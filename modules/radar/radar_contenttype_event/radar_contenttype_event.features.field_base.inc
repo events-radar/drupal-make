@@ -17,7 +17,6 @@ function radar_contenttype_event_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'date_repeat_entity_clone_state',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -44,14 +43,6 @@ function radar_contenttype_event_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'date_repeat_entity_master_uuid',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -74,7 +65,6 @@ function radar_contenttype_event_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_date_time',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',

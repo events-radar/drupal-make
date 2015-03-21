@@ -17,7 +17,6 @@ function radar_location_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_address',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'addressfield',
@@ -35,14 +34,6 @@ function radar_location_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_directions',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -65,7 +56,6 @@ function radar_location_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_map',
-    'foreign keys' => array(),
     'indexes' => array(
       'bbox' => array(
         0 => 'top',
@@ -117,14 +107,6 @@ function radar_location_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_offline',
-    'foreign keys' => array(
-      'eck_location' => array(
-        'columns' => array(
-          'target_id' => 'id',
-        ),
-        'table' => 'eck_location',
-      ),
-    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -164,7 +146,6 @@ function radar_location_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_timezone',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',

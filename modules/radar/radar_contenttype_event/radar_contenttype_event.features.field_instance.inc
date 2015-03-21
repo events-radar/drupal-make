@@ -432,7 +432,7 @@ function radar_contenttype_event_field_default_field_instances() {
   // Exported field_instance: 'node-event-field_price'
   $field_instances['node-event-field_price'] = array(
     'bundle' => 'event',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(

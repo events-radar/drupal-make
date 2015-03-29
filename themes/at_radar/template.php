@@ -118,7 +118,7 @@ function at_radar_system_powered_by() {
     . t('Run by the <a href="@user">community</a>, <a href="@built">built</a> with <a href="@poweredby">drupal</a>, hosted by <a href="@squat">squat.net</a>',
       array(
         '@user' => url('user'),
-        '@built' => 'https://github.com/events-radar',
+        '@built' => 'https://git.codecoop.org/groups/radar',
         '@poweredby' => 'https://www.drupal.org/',
         '@squat' => 'https://squat.net/',
       ))

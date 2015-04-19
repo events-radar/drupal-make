@@ -269,7 +269,7 @@ projects[facetapi_pretty_paths][version] = "1.1"
 ;; Services
 ;
 projects[services][subdir] = "contrib"
-projects[services][version] = "3.7"
+projects[services][version] = "3.12"
 
 projects[services_views][subdir] = "contrib"
 ; dev has basic argument handling added.

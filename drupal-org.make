@@ -12,7 +12,7 @@ projects[captcha_pack][version] = "1.0-alpha1"
 projects[ctools][subdir] = "contrib"
 projects[ctools][version] = "1.7"
 projects[ds][subdir] = "contrib"
-projects[ds][version] = "2.6"
+projects[ds][version] = "2.8"
 
 projects[entity][subdir] = "contrib"
 projects[entity][version] = "1.6"

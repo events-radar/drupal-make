@@ -12,10 +12,10 @@ projects[captcha_pack][version] = "1.0-alpha1"
 projects[ctools][subdir] = "contrib"
 projects[ctools][version] = "1.7"
 projects[ds][subdir] = "contrib"
-projects[ds][version] = "2.6"
+projects[ds][version] = "2.8"
 
 projects[entity][subdir] = "contrib"
-projects[entity][version] = "1.5"
+projects[entity][version] = "1.6"
 projects[entity][patch][925212] = "https://www.drupal.org/files/925212-3-user-role-list.patch"
 
 projects[features][subdir] = "contrib"
@@ -269,7 +269,7 @@ projects[facetapi_pretty_paths][version] = "1.1"
 ;; Services
 ;
 projects[services][subdir] = "contrib"
-projects[services][version] = "3.7"
+projects[services][version] = "3.12"
 
 projects[services_views][subdir] = "contrib"
 ; dev has basic argument handling added.

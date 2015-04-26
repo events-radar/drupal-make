@@ -130,6 +130,8 @@ Events can already be created, but they will not be visible until the group has 
   $handler->display->display_options['fields']['field_link']['element_wrapper_class'] = 'info';
   $handler->display->display_options['fields']['field_link']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_link']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_link']['type'] = 'radar_socialmedia_link';
+  $handler->display->display_options['fields']['field_link']['delta_offset'] = '0';
   /* Field: Content: email */
   $handler->display->display_options['fields']['field_email']['id'] = 'field_email';
   $handler->display->display_options['fields']['field_email']['table'] = 'field_data_field_email';

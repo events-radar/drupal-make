@@ -190,9 +190,9 @@ function radar_listings_group_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'link',
+        'module' => 'radar_socialmedia',
         'settings' => array(),
-        'type' => 'link_default',
+        'type' => 'radar_socialmedia_link',
         'weight' => 6,
       ),
       'teaser' => array(

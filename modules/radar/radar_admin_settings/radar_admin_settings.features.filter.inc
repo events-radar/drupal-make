@@ -35,19 +35,24 @@ function radar_admin_settings_filter_default_formats() {
     'weight' => -9,
     'filters' => array(
       'filter_html_escape' => array(
-        'weight' => 0,
+        'weight' => -49,
         'status' => 1,
         'settings' => array(),
       ),
       'filter_url' => array(
-        'weight' => 1,
+        'weight' => -48,
         'status' => 1,
         'settings' => array(
           'filter_url_length' => 72,
         ),
       ),
       'filter_autop' => array(
-        'weight' => 2,
+        'weight' => -47,
+        'status' => 1,
+        'settings' => array(),
+      ),
+      'radar_socialmedia_corp' => array(
+        'weight' => 0,
         'status' => 1,
         'settings' => array(),
       ),
@@ -63,7 +68,7 @@ function radar_admin_settings_filter_default_formats() {
     'weight' => -10,
     'filters' => array(
       'filter_html' => array(
-        'weight' => -10,
+        'weight' => -50,
         'status' => 1,
         'settings' => array(
           'allowed_html' => '<em> <strong> <blockquote> <ul> <ol> <li> <h3> <h4> <a> <p> <br>',
@@ -72,19 +77,24 @@ function radar_admin_settings_filter_default_formats() {
         ),
       ),
       'filter_autop' => array(
-        'weight' => 0,
+        'weight' => -48,
         'status' => 1,
         'settings' => array(),
       ),
       'filter_url' => array(
-        'weight' => 0,
+        'weight' => -47,
         'status' => 1,
         'settings' => array(
           'filter_url_length' => 72,
         ),
       ),
       'filter_htmlcorrector' => array(
-        'weight' => 10,
+        'weight' => -46,
+        'status' => 1,
+        'settings' => array(),
+      ),
+      'radar_socialmedia_corp' => array(
+        'weight' => 0,
         'status' => 1,
         'settings' => array(),
       ),

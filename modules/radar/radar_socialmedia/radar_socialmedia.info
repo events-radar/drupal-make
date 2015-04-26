@@ -1,0 +1,9 @@
+name = Radar Social Media integration
+description = For now just the anti-facebook feature.
+core = 7.x
+
+; additional files
+stylesheets[all][] = 'radar_socialmedia.css'
+
+; dependencies
+dependencies[] = radar_body

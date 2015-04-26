@@ -1,0 +1,250 @@
+<?php
+
+/**
+ * @file
+ * Social media (anti-)integration.
+ *
+ * Could also contain pro-non-corp stuff in the future.
+ */
+
+/**
+ *
+ * Common hooks and callbacks.
+ *
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function radar_socialmedia_menu() {
+  $items['corporate-social-media'] = array(
+    'page callback' => 'radar_socialmedia_explain_page',
+    'title' => 'Corporate social media',
+    'access callback' => TRUE,
+    //'type' => MENU_CALLBACK,
+  );
+  // Can use variable to alter by site later.
+  $items['corporate-social-media/%'] = array(
+    'title' => 'Corporate social media',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+/**
+ * Page callback.
+ */
+function radar_socialmedia_explain_page() {
+  // @todo move to multilingual variables?
+  return array(
+    '#markup' => '<p>' .
+      t('Radar is <a href="@why-radar">tool designed not to track its users,
+        but break from the \'facebook-like\' gated communities</a> and to promote open sharing.<br />
+        Promote Radar and other open alternatives. Don\'t promote Facebook (link <em>from it</em> if you must, not <em>to it</em>).<br />
+        Remember not everyone is on Facebook, nor do they want to be <a href="@more-info">learn more about the problems here</a>.',
+        array('@why-radar' => url('why-radar'), '@more-info' => url('https://stallman.org/facebook.html', array('absolute' => TRUE)))
+      ) . '</p>',
+  );
+}
+
+/**
+ *
+ * Field link handling.
+ *
+ * @todo could add a checkbox to opt-in to the filtering for the link field.
+ *   Presently hard coded to our field_link and link_field widget.
+ *   Though for good output you still need to select the field formatter.
+ *
+ */
+
+/**
+ * Implements hook_field_formatter_info().
+ */
+function radar_socialmedia_field_formatter_info() {
+  return array(
+    'radar_socialmedia_link' => array(
+      'label' => t('Link reformatted for radar social media'),
+      'field types' => array('link_field'),
+      'multiple values' => FIELD_BEHAVIOR_DEFAULT,
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function radar_socialmedia_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  $elements = array();
+  if ($display['type'] == 'radar_socialmedia_link') {
+    foreach ($items as $delta => $item) {
+      $elements[$delta] = array(
+        '#theme' => 'radar_socialmedia_link_formatter',
+        '#element' => $item,
+        '#field' => $instance,
+        '#display' => $display,
+      );
+    }
+  }
+
+  return $elements;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function radar_socialmedia_theme() {
+  return array(
+    'radar_socialmedia_link_formatter' => array(
+      'variables' => array('element' => NULL, 'field' => NULL),
+    ),
+  );
+}
+
+/**
+ * Formats a link, default or social media.
+ */
+function theme_radar_socialmedia_link_formatter($vars) {
+  $image = '/' . drupal_get_path('module', 'radar_socialmedia') . '/fb-dislike.svg';
+  if ($vars['element']['url'] == '/corporate-social-media/facebook') {
+    return '<a href="/corporate-social-media" title="'. t('A note about links to corporate social media') .'" class="corp-social-media facebook"><img src="' . $image . '" /></a> ' . check_plain($vars['element']['title']);
+  }
+  else {
+    return theme('link_formatter_link_default', $vars);
+  }
+}
+
+/**
+ *
+ * Filter handling.
+ *
+ */
+
+/**
+ * Implements hook_filter().
+ */
+function radar_socialmedia_filter_info() {
+  $filters['radar_socialmedia_corp'] = array(
+    'title' => t('Break corporate social media links'),
+    'process callback' => 'radar_socialmedia_replace_in_text',
+  );
+
+  return $filters;
+}
+
+/**
+ * Implements hook_entity_presave().
+ *
+ * Alter contents of fields for FB links.
+ *
+ * This can't (only) be done with form validation as there is
+ * plenty of content saved programatically. It would be nice
+ * to hook into field validation, but outside form level this
+ * seems more work taking over the field.
+ */
+function radar_socialmedia_entity_presave($entity, $type) {
+  if (!empty($entity->field_link)) {
+    foreach ($entity->field_link as $lang => $links) {
+      foreach ($links as $delta => $link) {
+        if (radar_socialmedia_link_is_fb($link['url'])) {
+          $entity->field_link[$lang][$delta]['title'] .= ' [' . $link['url'] . ']';
+          $entity->field_link[$lang][$delta]['url'] = '/corporate-social-media/facebook';
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ *
+ * Undoes the work in radar_socialmedia_entity_presave().
+ * Can't think of a better place to do this.
+ */
+function radar_socialmedia_field_widget_link_field_form_alter(&$element, &$form_state, $context) {
+  if (!empty($element['#default_value']) && $element['#default_value']['url'] == '/corporate-social-media/facebook') {
+    $title = $context['items'][$element['#delta']]['title'];
+    $matches = array();
+    if (preg_match('/(.*)\[(.+)]$/', $title, $matches)) {
+      $element['#default_value']['title'] = trim($matches[1]);
+      $element['#default_value']['url'] = $matches[2];
+    }
+  }
+}
+
+/**
+ * Hook_filter_info() process callback.
+ *
+ * Replace corporate social media links.
+ *
+ * @see radar_socialmedia_filter_info()
+ */
+function radar_socialmedia_replace_in_text($text, stdClass $filter) {
+  $document = filter_dom_load($text);
+
+  $links = $document->getElementsByTagName('a');
+  foreach ($links as $a) {
+    if ($href = $a->getAttribute('href')) {
+      if (! radar_socialmedia_link_is_fb($href)) {
+        continue;
+      }
+      // Don't want anything actually like a proper link,
+      // also handles http/s later.
+      $href = preg_replace("(^https?://)", "", $href);
+      // Create a replacement to start moving useful information
+      // out of the link.
+      $replacement = $a->parentNode->insertBefore($document->createTextNode(" [$href]"), $a->nextSibling);
+      $a->setAttribute('href', '/corporate-social-media');
+      $a->setAttribute('title', t('A note about links to corporate social media'));
+      $a->setAttribute('class', 'corp-social-media facebook');
+      // Now move the contents of the link out and with replacement.
+      $children = iterator_to_array($a->childNodes);
+      foreach ($children as $child) {
+        $child_text = preg_replace("(^https?://)", "", $document->saveXML($child));
+        if ($child_text != $href) {
+          // If it's not just a repetition of the url.
+          $a->parentNode->insertBefore($child, $replacement);
+        }
+        else {
+          $a->removeChild($child);
+        }
+      }
+      // And finally put the our text into the link.
+      $fb_dislike = $document->createElement('img');
+      $fb_dislike->setAttribute('src', '/' . drupal_get_path('module', 'radar_socialmedia') . '/fb-dislike.svg');
+      $a->appendChild($fb_dislike);
+    }
+  }
+
+  return filter_dom_serialize($document);
+}
+
+/**
+ *
+ * Common functions.
+ *
+ */
+
+/**
+ * Ascertains if a link is a FB link.
+ *
+ * We'll just regex known links for now. Quicker and more
+ * secure than resolving every link, but less effective.
+ */
+function radar_socialmedia_link_is_fb($url) {
+  // Will no doubt need expanding, but to get going.
+  $domain_expressions = array(
+    '|(https?://)?([^.]*\.)*facebook\.com(/.*)?$|',
+    '|(https?://)?([^.]*\.)*fb\.com(/.*)?$|',
+    '|(https?://)?([^.]*\.)*fb\.me(/.*)?$|',
+  );
+
+  foreach ($domain_expressions as $expression) {
+    if (preg_match($expression, $url)) {
+      return TRUE;
+    }
+  }
+
+  return FALSE;
+}

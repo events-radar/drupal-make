@@ -10,9 +10,9 @@ projects[captcha][version] ="1.1"
 projects[captcha_pack][subdir] ="contrib"
 projects[captcha_pack][version] = "1.0-alpha1"
 projects[ctools][subdir] = "contrib"
-projects[ctools][version] = "1.7"
+projects[ctools][version] = "1.9"
 projects[ds][subdir] = "contrib"
-projects[ds][version] = "2.8"
+projects[ds][version] = "2.11"
 
 projects[entity][subdir] = "contrib"
 projects[entity][version] = "1.6"
@@ -36,7 +36,7 @@ projects[replicate][version] = "1.1"
 
 ; urls
 projects[redirect][subdir] = "contrib"
-projects[redirect][version] = "1.0-rc1"
+projects[redirect][version] = "1.0-rc3"
 
 projects[pathauto][subdir] = "contrib"
 projects[pathauto][version] = "1.2"
@@ -272,12 +272,9 @@ projects[services][subdir] = "contrib"
 projects[services][version] = "3.12"
 
 projects[services_views][subdir] = "contrib"
-; dev has basic argument handling added.
-projects[services_views][type] = "module"
-projects[services_views][download][url] = "git://git.drupal.org/project/services_views.git"
-projects[services_views][download][revision] = "e30674c31c07ec11b530bc2741f8ef677d4ae9d2"
+projects[services_views][version] = "1.1"
 ; patch to extend argument handling.
-projects[services_views][patch][2330187] = "https://www.drupal.org/files/issues/2330187-02-arguments-declared-to-services.patch"
+projects[services_views][patch][2330187] = "https://www.drupal.org/files/issues/2330187-06-arguments-declared-to-services.patch"
 
 ; stop-gap search_api solution
 projects[services_entity][subdir] = "contrib"

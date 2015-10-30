@@ -110,16 +110,11 @@ projects[eck][subdir] = "contrib"
 ; Git version patch is applied against.
 projects[eck][type] = "module"
 projects[eck][download][url] = "git://git.drupal.org/project/eck"
-projects[eck][download][revision] = "6b2be8f39e976260df1a30a8dda73f6ede3a5c6a"
-; UUID patch https://www.drupal.org/node/2037281#comment-9104489
-projects[eck][patch][2037281] = "https://www.drupal.org/files/issues/eck-uuid-default-property-2037281-26.patch"
+; Translatability, and fixes, in dev version.
+projects[eck][download][revision] = "bb3e722bc638a9fe037abc8f97f1e97c74a2022e"
 
 projects[auto_entitylabel][subdir] = "contrib"
-projects[auto_entitylabel][type] = "module"
-projects[auto_entitylabel][download][url] = "git://git.drupal.org/project/auto_entitylabel.git"
-projects[auto_entitylabel][download][revision] = "baf64896565faa5efe38900a8c881e17cef2499e"
-; Work around for eck update https://www.drupal.org/node/2329729
-projects[auto_entitylabel][patch][2329729] = "https://www.drupal.org/files/issues/2329729-01-auto_entitylabel_eck.patch"
+projects[auto_entitylabel][version] = "1.3"
 ; UUID for entityreference
 projects[entityreference_uuid][subdir] = "contrib"
 projects[entityreference_uuid][type] = "module"
@@ -146,19 +141,14 @@ projects[date_ical][subdir] = "contrib"
 
 ; timezone field - attached to locations
 projects[tzfield][subdir] = "contrib"
-projects[tzfield][type] = "module"
-projects[tzfield][download][url] = "git://git.drupal.org/project/tzfield.git"
-projects[tzfield][download][revision] = "7ceb3474405e6fccaa7d53b4161fe62fab73718a"
-; Entity API patch
-projects[tzfield][patch][1824306] = "https://www.drupal.org/files/allow_tzfield_to_work_with_entity_api-1824306-1.patch"
-; Use core TZ list
-projects[tzfield][patch][1952050] = "https://www.drupal.org/files/1952050-1-tzfield-system_time_zone.patch"
+projects[tzfield][version] = "1.1"
 
 ;
 ;; Feeds
 ;
 
 projects[feeds][subdir] = "contrib"
+; todo upgrade to 7.x-2.0-beta1
 ; Need dev version for this issue now committed.
 ; https://www.drupal.org/node/1989196
 projects[feeds][type] = "module"
@@ -185,16 +175,14 @@ projects[phone][subdir] = "contrib"
 
 ; multilingual
 projects[entity_translation][subdir] = "contrib"
-projects[entity_translation][type] = "module"
-projects[entity_translation][download][url] = "git://git.drupal.org/project/entity_translation"
-projects[entity_translation][download][revision] = "182739794291db83ee7d2a74bfb2ae2a83d5bcea"
+projects[entity_translation][version] = "1.0-beta4"
 
 projects[i18n][subdir] = "contrib"
 projects[i18nviews][subdir] = "contrib"
-; No release availabel.
+; No release available.
 projects[i18nviews][type] = "module"
 projects[i18nviews][download][url] = "git://git.drupal.org/project/i18nviews.git"
-projects[i18nviews][download][revision] = "26bd52c4664b0fec8155273f0c0f3ab8a5a2ef66"
+projects[i18nviews][download][revision] = "fdc8c33f91d4e8161cec5a857da4eec95bf8843e"
 projects[l10n_update][subdir] = "contrib"
 projects[l10n_update][version] = "1.0"
 projects[lang_dropdown][subdir] = "contrib"
@@ -235,11 +223,11 @@ projects[search_api_solr][subdir] = "contrib"
 ;libraries[SolrPhpClient][download][type] = "file"
 ;libraries[SolrPhpClient][download][url] = "http://solr-php-client.googlecode.com/files/SolrPhpClient.r60.2011-05-04.tgz"
 
-; Search API location - dev includes distance for results.
+; Search API location - dev includes distance and boundingbox.
 projects[search_api_location][subdir] = "contrib"
 projects[search_api_location][type] = "module"
 projects[search_api_location][download][url] = "git://git.drupal.org/project/search_api_location.git"
-projects[search_api_location][download][revision] = "e7624bab910bd2ec4dccd0490e1cf762adc3d2cb"
+projects[search_api_location][download][revision] = "7b6754d596f885433495e13e9550a1b2ad3081f5"
 
 ; Search API sorts - so we can show things in date order.
 projects[search_api_sorts][subdir] = "contrib"

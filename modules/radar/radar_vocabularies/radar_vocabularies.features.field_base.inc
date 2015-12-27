@@ -10,7 +10,7 @@
 function radar_vocabularies_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_category'
+  // Exported field_base: 'field_category'.
   $field_bases['field_category'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -38,7 +38,7 @@ function radar_vocabularies_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_price_category'
+  // Exported field_base: 'field_price_category'.
   $field_bases['field_price_category'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -66,7 +66,7 @@ function radar_vocabularies_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_topic'
+  // Exported field_base: 'field_topic'.
   $field_bases['field_topic'] = array(
     'active' => 1,
     'cardinality' => -1,

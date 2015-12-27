@@ -131,6 +131,16 @@ function radar_vocabularies_uuid_features_default_terms() {
     'vocabulary_machine_name' => 'price',
   );
   $terms[] = array(
+    'name' => 'radio',
+    'description' => '',
+    'format' => 'rich_text_editor',
+    'weight' => 0,
+    'uuid' => '7a5fcb74-5a3b-49fa-9ffd-e4ca1a3eb936',
+    'language' => 'und',
+    'i18n_tsid' => 0,
+    'vocabulary_machine_name' => 'category',
+  );
+  $terms[] = array(
     'name' => 'other',
     'description' => '',
     'format' => 'rich_text_editor',

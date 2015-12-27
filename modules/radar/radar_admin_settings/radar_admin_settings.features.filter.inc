@@ -71,7 +71,7 @@ function radar_admin_settings_filter_default_formats() {
         'weight' => -50,
         'status' => 1,
         'settings' => array(
-          'allowed_html' => '<em> <strong> <blockquote> <ul> <ol> <li> <h3> <h4> <a> <p> <br>',
+          'allowed_html' => '<em> <strong> <blockquote> <ul> <ol> <li> <h3> <h4> <a> <p> <br> <pre>',
           'filter_html_help' => 0,
           'filter_html_nofollow' => 0,
         ),

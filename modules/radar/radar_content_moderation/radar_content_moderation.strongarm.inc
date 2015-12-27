@@ -16,13 +16,13 @@ function radar_content_moderation_strongarm() {
   $strongarm->name = 'flag_abuse_flags';
   $strongarm->value = array(
     'inappropriate_node' => 'inappropriate_node',
-    'inappropriate_comment' => 'inappropriate_comment',
-    'radar_follow_user' => 0,
-    'radar_follow_term' => 0,
-    'radar_follow_group' => 0,
-    'radar_follow_node' => 0,
-    'bookmarks' => 0,
     'abuse_user' => 0,
+    'abuse_node' => 0,
+    'abuse_comment' => 0,
+    'notification_groups_all' => 0,
+    'abuse_whitelist_user' => 0,
+    'abuse_whitelist_comment' => 0,
+    'abuse_whitelist_node' => 0,
   );
   $export['flag_abuse_flags'] = $strongarm;
 

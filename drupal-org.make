@@ -100,9 +100,10 @@ projects[proj4js][version] = "1.2"
 
 ; leaflet for front end.
 projects[leaflet][subdir] = "contrib"
+projects[leaflet][version] = "1.3"
 libraries[leaflet][type] = "libraries"
 libraries[leaflet][download][type] = "file"
-libraries[leaflet][download][url] = "http://leaflet-cdn.s3.amazonaws.com/build/leaflet-0.7.3.zip"
+libraries[leaflet][download][url] = "http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.zip"
 projects[leaflet_geojson][subdir] = "contrib"
 
 ; location entity, and autopopulation of location.

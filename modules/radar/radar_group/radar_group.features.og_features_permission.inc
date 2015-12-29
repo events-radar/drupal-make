@@ -76,9 +76,7 @@ function radar_group_og_features_default_permissions() {
 
   // Exported og permission: 'node:group:subscribe'
   $permissions['node:group:subscribe'] = array(
-    'roles' => array(
-      'non-member' => 'non-member',
-    ),
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:group:subscribe without approval'

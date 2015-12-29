@@ -10,7 +10,7 @@
 function radar_group_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-group-body'
+  // Exported field_instance: 'node-group-body'.
   $field_instances['node-group-body'] = array(
     'bundle' => 'group',
     'default_value' => NULL,
@@ -62,7 +62,7 @@ function radar_group_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-group-field_category'
+  // Exported field_instance: 'node-group-field_category'.
   $field_instances['node-group-field_category'] = array(
     'bundle' => 'group',
     'default_value' => NULL,
@@ -115,7 +115,7 @@ function radar_group_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-group-field_email'
+  // Exported field_instance: 'node-group-field_email'.
   $field_instances['node-group-field_email'] = array(
     'bundle' => 'group',
     'default_value' => NULL,
@@ -161,7 +161,7 @@ function radar_group_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-group-field_image'
+  // Exported field_instance: 'node-group-field_image'.
   $field_instances['node-group-field_image'] = array(
     'bundle' => 'group',
     'deleted' => 0,
@@ -218,7 +218,7 @@ function radar_group_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-group-field_link'
+  // Exported field_instance: 'node-group-field_link'.
   $field_instances['node-group-field_link'] = array(
     'bundle' => 'group',
     'default_value' => NULL,
@@ -245,6 +245,7 @@ function radar_group_field_default_field_instances() {
         'weight' => 18,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_link',
     'label' => 'online',
@@ -271,7 +272,7 @@ function radar_group_field_default_field_instances() {
       'title_value' => '',
       'url' => 0,
       'user_register_form' => FALSE,
-      'validate_url' => 1,
+      'validate_url' => 0,
     ),
     'widget' => array(
       'active' => 0,
@@ -282,7 +283,7 @@ function radar_group_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-group-field_notifications'
+  // Exported field_instance: 'node-group-field_notifications'.
   $field_instances['node-group-field_notifications'] = array(
     'bundle' => 'group',
     'default_value' => NULL,
@@ -329,7 +330,7 @@ function radar_group_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-group-field_offline'
+  // Exported field_instance: 'node-group-field_offline'.
   $field_instances['node-group-field_offline'] = array(
     'bundle' => 'group',
     'default_value_function' => '',
@@ -395,7 +396,7 @@ Partial address such as only a city are also possible.',
     ),
   );
 
-  // Exported field_instance: 'node-group-field_opening_times'
+  // Exported field_instance: 'node-group-field_opening_times'.
   $field_instances['node-group-field_opening_times'] = array(
     'bundle' => 'group',
     'default_value' => NULL,
@@ -444,7 +445,7 @@ Partial address such as only a city are also possible.',
     ),
   );
 
-  // Exported field_instance: 'node-group-field_phone'
+  // Exported field_instance: 'node-group-field_phone'.
   $field_instances['node-group-field_phone'] = array(
     'bundle' => 'group',
     'default_value' => NULL,
@@ -491,7 +492,7 @@ Partial address such as only a city are also possible.',
     ),
   );
 
-  // Exported field_instance: 'node-group-field_topic'
+  // Exported field_instance: 'node-group-field_topic'.
   $field_instances['node-group-field_topic'] = array(
     'bundle' => 'group',
     'default_value' => NULL,
@@ -538,7 +539,7 @@ Partial address such as only a city are also possible.',
     ),
   );
 
-  // Exported field_instance: 'node-group-field_type'
+  // Exported field_instance: 'node-group-field_type'.
   $field_instances['node-group-field_type'] = array(
     'bundle' => 'group',
     'default_value' => NULL,

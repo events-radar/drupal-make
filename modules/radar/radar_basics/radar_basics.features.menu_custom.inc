@@ -43,6 +43,5 @@ function radar_basics_menu_default_menu_custom() {
   t('The <em>User</em> menu contains links related to the user\'s account, as well as the \'Log out\' link.');
   t('User menu');
 
-
   return $menus;
 }

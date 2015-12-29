@@ -10,7 +10,7 @@
 function radar_contenttype_event_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-event-body'
+  // Exported field_instance: 'node-event-body'.
   $field_instances['node-event-body'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -53,7 +53,7 @@ function radar_contenttype_event_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-date_repeat_entity_clone_state'
+  // Exported field_instance: 'node-event-date_repeat_entity_clone_state'.
   $field_instances['node-event-date_repeat_entity_clone_state'] = array(
     'bundle' => 'event',
     'default_value' => array(
@@ -101,7 +101,7 @@ function radar_contenttype_event_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-date_repeat_entity_master_uuid'
+  // Exported field_instance: 'node-event-date_repeat_entity_master_uuid'.
   $field_instances['node-event-date_repeat_entity_master_uuid'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -140,7 +140,7 @@ function radar_contenttype_event_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_category'
+  // Exported field_instance: 'node-event-field_category'.
   $field_instances['node-event-field_category'] = array(
     'bundle' => 'event',
     'default_value' => array(),
@@ -181,7 +181,7 @@ function radar_contenttype_event_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_date_time'
+  // Exported field_instance: 'node-event-field_date_time'.
   $field_instances['node-event-field_date_time'] = array(
     'bundle' => 'event',
     'default_value_function' => 'radar_event_date_time_prepopulate',
@@ -197,6 +197,7 @@ function radar_contenttype_event_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
           'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
@@ -239,7 +240,7 @@ function radar_contenttype_event_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_email'
+  // Exported field_instance: 'node-event-field_email'.
   $field_instances['node-event-field_email'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -279,7 +280,7 @@ function radar_contenttype_event_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_image'
+  // Exported field_instance: 'node-event-field_image'.
   $field_instances['node-event-field_image'] = array(
     'bundle' => 'event',
     'deleted' => 0,
@@ -330,7 +331,7 @@ function radar_contenttype_event_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_link'
+  // Exported field_instance: 'node-event-field_link'.
   $field_instances['node-event-field_link'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -351,6 +352,7 @@ function radar_contenttype_event_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_link',
     'label' => 'online',
@@ -377,7 +379,7 @@ function radar_contenttype_event_field_default_field_instances() {
       'title_value' => '',
       'url' => 0,
       'user_register_form' => FALSE,
-      'validate_url' => 1,
+      'validate_url' => 0,
     ),
     'widget' => array(
       'active' => 0,
@@ -388,7 +390,7 @@ function radar_contenttype_event_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_phone'
+  // Exported field_instance: 'node-event-field_phone'.
   $field_instances['node-event-field_phone'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -429,7 +431,7 @@ function radar_contenttype_event_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_price'
+  // Exported field_instance: 'node-event-field_price'.
   $field_instances['node-event-field_price'] = array(
     'bundle' => 'event',
     'default_value' => array(),
@@ -471,7 +473,7 @@ function radar_contenttype_event_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_price_category'
+  // Exported field_instance: 'node-event-field_price_category'.
   $field_instances['node-event-field_price_category'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -510,7 +512,7 @@ function radar_contenttype_event_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_topic'
+  // Exported field_instance: 'node-event-field_topic'.
   $field_instances['node-event-field_topic'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -551,7 +553,7 @@ function radar_contenttype_event_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-title_field'
+  // Exported field_instance: 'node-event-title_field'.
   $field_instances['node-event-title_field'] = array(
     'bundle' => 'event',
     'default_value' => NULL,

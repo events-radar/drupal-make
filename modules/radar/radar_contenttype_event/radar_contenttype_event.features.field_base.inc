@@ -10,7 +10,7 @@
 function radar_contenttype_event_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'date_repeat_entity_clone_state'
+  // Exported field_base: 'date_repeat_entity_clone_state'.
   $field_bases['date_repeat_entity_clone_state'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -36,7 +36,7 @@ function radar_contenttype_event_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'date_repeat_entity_master_uuid'
+  // Exported field_base: 'date_repeat_entity_master_uuid'.
   $field_bases['date_repeat_entity_master_uuid'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -58,7 +58,7 @@ function radar_contenttype_event_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_date_time'
+  // Exported field_base: 'field_date_time'.
   $field_bases['field_date_time'] = array(
     'active' => 1,
     'cardinality' => -1,

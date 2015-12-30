@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * radar_group.features.taxonomy.inc
+ * radar_location.features.taxonomy.inc
  */
 
 /**
  * Implements hook_taxonomy_default_vocabularies().
  */
-function radar_group_taxonomy_default_vocabularies() {
+function radar_location_taxonomy_default_vocabularies() {
   return array(
     'type' => array(
       'name' => 'status',

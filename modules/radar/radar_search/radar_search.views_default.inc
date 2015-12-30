@@ -381,10 +381,15 @@ function radar_search_views_default_views() {
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'search_api_index_groups';
   $handler->display->display_options['sorts']['title']['field'] = 'title';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'OR',
+    2 => 'OR',
+  );
   /* Filter criterion: Search: Fulltext search */
   $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
   $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_groups';
   $handler->display->display_options['filters']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['group'] = 1;
   $handler->display->display_options['filters']['search_api_views_fulltext']['exposed'] = TRUE;
   $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator_id'] = 'search_api_views_fulltext_op';
   $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['label'] = 'Search by name, building name or street';
@@ -402,6 +407,21 @@ function radar_search_views_default_views() {
   $handler->display->display_options['filters']['search_api_views_fulltext']['fields'] = array(
     'search_api_aggregation_1' => 'search_api_aggregation_1',
   );
+  /* Filter criterion: Indexed Node: Active */
+  $handler->display->display_options['filters']['field_active']['id'] = 'field_active';
+  $handler->display->display_options['filters']['field_active']['table'] = 'search_api_index_groups';
+  $handler->display->display_options['filters']['field_active']['field'] = 'field_active';
+  $handler->display->display_options['filters']['field_active']['value'] = array(
+    0 => '0',
+  );
+  $handler->display->display_options['filters']['field_active']['group'] = 2;
+  /* Filter criterion: Indexed Node: Active */
+  $handler->display->display_options['filters']['field_active_1']['id'] = 'field_active_1';
+  $handler->display->display_options['filters']['field_active_1']['table'] = 'search_api_index_groups';
+  $handler->display->display_options['filters']['field_active_1']['field'] = 'field_active';
+  $handler->display->display_options['filters']['field_active_1']['operator'] = 'empty';
+  $handler->display->display_options['filters']['field_active_1']['value'] = array();
+  $handler->display->display_options['filters']['field_active_1']['group'] = 2;
 
   /* Display: Groups search pane */
   $handler = $view->new_display('panel_pane', 'Groups search pane', 'panel_pane_1');

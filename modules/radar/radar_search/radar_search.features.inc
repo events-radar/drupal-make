@@ -217,6 +217,7 @@ function radar_search_default_search_api_index() {
       "cron_limit" : "50",
       "fields" : {
         "author" : { "type" : "integer", "entity_type" : "user" },
+        "field_active" : { "type" : "boolean" },
         "field_category" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_offline" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "location" },
         "field_offline:field_address:administrative_area" : { "type" : "list\\u003Ctext\\u003E" },

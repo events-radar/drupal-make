@@ -17,6 +17,7 @@ dependencies[] = i18n_taxonomy
 dependencies[] = image
 dependencies[] = inline_entity_form
 dependencies[] = link
+dependencies[] = list
 dependencies[] = node
 dependencies[] = og
 dependencies[] = og_context

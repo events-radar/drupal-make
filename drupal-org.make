@@ -318,6 +318,9 @@ libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEd
 projects[hide_formats][subdir] = "contrib"
 projects[hide_formats][version]  = "1.1"
 
+projects[better_exposed_filters][subir] = "contrib"
+projects[better_exposed_filters][version] = "3.2"
+
 ; Migrate
 projects[migrate][subdir] = "migrate"
 projects[migrate_extras][subdir] = "migrate"

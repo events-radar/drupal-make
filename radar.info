@@ -115,6 +115,7 @@ dependencies[] = geocoder
 ; UI Enhancement
 dependencies[] = wysiwyg
 dependencies[] = hide_formats
+dependencies[] = better_exposed_filters
 
 ; Radar features
 dependencies[] = radar_admin_settings

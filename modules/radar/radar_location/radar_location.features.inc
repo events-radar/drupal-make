@@ -11,6 +11,9 @@ function radar_location_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "openlayers" && $api == "openlayers_maps") {
     return array("version" => "1");
   }
+  if ($module == "openlayers" && $api == "openlayers_styles") {
+    return array("version" => "1");
+  }
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -33,6 +36,7 @@ function radar_location_eck_bundle_info() {
       'entity_type' => 'location',
       'name' => 'location',
       'label' => 'Location',
+      'config' => array(),
     ),
   );
   return $items;

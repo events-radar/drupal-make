@@ -10,7 +10,7 @@
 function radar_location_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'location-location-field_address'
+  // Exported field_instance: 'location-location-field_address'.
   $field_instances['location-location-field_address'] = array(
     'bundle' => 'location',
     'default_value' => array(
@@ -81,7 +81,7 @@ If a marker on the map shows that the location already exist, then cancel and ch
     ),
   );
 
-  // Exported field_instance: 'location-location-field_directions'
+  // Exported field_instance: 'location-location-field_directions'.
   $field_instances['location-location-field_directions'] = array(
     'bundle' => 'location',
     'default_value' => NULL,
@@ -123,7 +123,7 @@ If a marker on the map shows that the location already exist, then cancel and ch
     ),
   );
 
-  // Exported field_instance: 'location-location-field_map'
+  // Exported field_instance: 'location-location-field_map'.
   $field_instances['location-location-field_map'] = array(
     'bundle' => 'location',
     'default_value' => NULL,
@@ -192,6 +192,7 @@ If a marker on the map shows that the location already exist, then cancel and ch
         'weight' => 3,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'location',
     'field_name' => 'field_map',
     'label' => 'Map',
@@ -226,7 +227,7 @@ If a marker on the map shows that the location already exist, then cancel and ch
             ),
           ),
         ),
-        'openlayers_map' => 'radar_all_locations_geofield_widget_map',
+        'openlayers_map' => 'existing_locations_geofield_widget_map',
         'use_geocoder' => 1,
       ),
       'type' => 'geofield_openlayers',
@@ -234,7 +235,7 @@ If a marker on the map shows that the location already exist, then cancel and ch
     ),
   );
 
-  // Exported field_instance: 'location-location-field_timezone'
+  // Exported field_instance: 'location-location-field_timezone'.
   $field_instances['location-location-field_timezone'] = array(
     'bundle' => 'location',
     'default_value' => array(

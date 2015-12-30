@@ -26,6 +26,7 @@ function radar_location_nominatim_lookup($address, $options = array()) {
   $geocoder_settings = variable_get("geocoder_settings", array());
   $api_url = "http://open.mapquestapi.com/nominatim/v1/search";
   $params = array(
+    'key' => variable_get('radar_location_key'),
     'q' => $address,
     'format' => 'json',
     'addressdetails' => 0,

@@ -238,6 +238,7 @@ function radar_search_default_search_api_index() {
         "nid" : { "type" : "integer" },
         "og_group_ref" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "node" },
         "search_api_access_node" : { "type" : "list\\u003Cstring\\u003E" },
+        "search_api_aggregation_1" : { "type" : "text", "boost" : "0.8" },
         "search_api_language" : { "type" : "string" },
         "status" : { "type" : "boolean" },
         "title" : { "type" : "string" },
@@ -258,7 +259,23 @@ function radar_search_default_search_api_index() {
         },
         "search_api_alter_add_viewed_entity" : { "status" : 0, "weight" : "0", "settings" : { "mode" : "full" } },
         "search_api_alter_add_url" : { "status" : 0, "weight" : "0", "settings" : [] },
-        "search_api_alter_add_aggregation" : { "status" : 1, "weight" : "0", "settings" : [] },
+        "search_api_alter_add_aggregation" : {
+          "status" : 1,
+          "weight" : "0",
+          "settings" : { "fields" : { "search_api_aggregation_1" : {
+                "name" : "Group fulltext",
+                "type" : "fulltext",
+                "fields" : [
+                  "title",
+                  "field_offline:field_address:name_line",
+                  "field_offline:field_address:locality",
+                  "field_offline:field_address:thoroughfare"
+                ],
+                "description" : "A Fulltext aggregation of the following fields: Title, Locations \\u00bb Address \\u00bb Building name, Locations \\u00bb Address \\u00bb Locality (i.e. City), Locations \\u00bb Address \\u00bb Thoroughfare (i.e. Street address)."
+              }
+            }
+          }
+        },
         "search_api_alter_add_hierarchy" : { "status" : 0, "weight" : "0", "settings" : { "fields" : [] } }
       },
       "processors" : {

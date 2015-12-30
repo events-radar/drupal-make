@@ -46,7 +46,7 @@ function radar_search_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
-  /* Field: Date & Time: Start date (indexed) */
+  /* Field: Date &amp; Time: Start date (indexed) */
   $handler->display->display_options['fields']['field_date_time_value_1']['id'] = 'field_date_time_value_1';
   $handler->display->display_options['fields']['field_date_time_value_1']['table'] = 'search_api_index_events';
   $handler->display->display_options['fields']['field_date_time_value_1']['field'] = 'field_date_time_value';
@@ -147,7 +147,7 @@ function radar_search_views_default_views() {
   $handler->display->display_options['fields']['field_topic']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_topic']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_topic']['bypass_access'] = 0;
-  /* Field: Indexed Node: Date & Time */
+  /* Field: Indexed Node: Date &amp; Time */
   $handler->display->display_options['fields']['field_date_time_1']['id'] = 'field_date_time_1';
   $handler->display->display_options['fields']['field_date_time_1']['table'] = 'search_api_index_events';
   $handler->display->display_options['fields']['field_date_time_1']['field'] = 'field_date_time';
@@ -164,7 +164,7 @@ function radar_search_views_default_views() {
     'show_repeat_rule' => 'hide',
   );
   $handler->display->display_options['fields']['field_date_time_1']['delta_offset'] = '0';
-  /* Field: Indexed Node: Date & Time */
+  /* Field: Indexed Node: Date &amp; Time */
   $handler->display->display_options['fields']['field_date_time']['id'] = 'field_date_time';
   $handler->display->display_options['fields']['field_date_time']['table'] = 'search_api_index_events';
   $handler->display->display_options['fields']['field_date_time']['field'] = 'field_date_time';
@@ -183,7 +183,7 @@ function radar_search_views_default_views() {
     'show_repeat_rule' => 'hide',
   );
   $handler->display->display_options['fields']['field_date_time']['delta_offset'] = '0';
-  /* Filter criterion: Date & Time: Start date (indexed) */
+  /* Filter criterion: Date &amp; Time: Start date (indexed) */
   $handler->display->display_options['filters']['field_date_time_value']['id'] = 'field_date_time_value';
   $handler->display->display_options['filters']['field_date_time_value']['table'] = 'search_api_index_events';
   $handler->display->display_options['filters']['field_date_time_value']['field'] = 'field_date_time_value';
@@ -214,7 +214,93 @@ function radar_search_views_default_views() {
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'A-Z';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Z-A';
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'allow_secondary' => 0,
+      'secondary_label' => 'Advanced options',
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'search_api_aggregation_1' => array(
+      'bef_format' => 'default',
+      'slider_options' => array(
+        'bef_slider_min' => '0',
+        'bef_slider_max' => '99999',
+        'bef_slider_step' => '1',
+        'bef_slider_animate' => '',
+        'bef_slider_orientation' => 'horizontal',
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'bef_filter_description' => NULL,
+        'any_label' => NULL,
+        'filter_rewrite_values' => NULL,
+      ),
+      'more_options' => array(
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
+          ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+        ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
+      ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'secondary_label' => NULL,
+    'collapsible_label' => NULL,
+    'combine_rewrite' => NULL,
+    'reset_label' => NULL,
+    'bef_filter_description' => NULL,
+    'any_label' => NULL,
+    'filter_rewrite_values' => NULL,
+  );
+  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
+  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'rich_text_editor';
   $handler->display->display_options['pager']['type'] = 'load_more';
   $handler->display->display_options['pager']['options']['items_per_page'] = '20';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -233,6 +319,10 @@ function radar_search_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
   /* Field: Indexed Node: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'search_api_index_groups';
@@ -291,10 +381,43 @@ function radar_search_views_default_views() {
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'search_api_index_groups';
   $handler->display->display_options['sorts']['title']['field'] = 'title';
+  /* Filter criterion: Search: Fulltext search */
+  $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_groups';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator_id'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['label'] = 'Search by name, building name or street';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['identifier'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    8 => 0,
+    7 => 0,
+  );
+  $handler->display->display_options['filters']['search_api_views_fulltext']['fields'] = array(
+    'search_api_aggregation_1' => 'search_api_aggregation_1',
+  );
 
   /* Display: Groups search pane */
   $handler = $view->new_display('panel_pane', 'Groups search pane', 'panel_pane_1');
+  $handler->display->display_options['exposed_block'] = TRUE;
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['label'] = 'No result message';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'Sorry, there\'s no group under that name (yet). 
+But if you are involved with it, then you can easily add it here.';
+  $handler->display->display_options['empty']['area']['format'] = 'rich_text_editor';
   $handler->display->display_options['pane_title'] = 'Group search pane';
+  $handler->display->display_options['inherit_panels_path'] = '1';
 
   /* Display: OpenLayers Data Overlay */
   $handler = $view->new_display('openlayers', 'OpenLayers Data Overlay', 'openlayers_1');
@@ -390,8 +513,10 @@ function radar_search_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['pane_title'] = 'Map with all groups';
+  $handler->display->display_options['inherit_panels_path'] = '0';
   $export['radar_group_search'] = $view;
 
   $view = new view();
@@ -470,7 +595,7 @@ function radar_search_views_default_views() {
   $handler->display->display_options['fields']['field_price']['element_class'] = 'inline';
   $handler->display->display_options['fields']['field_price']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_price']['element_default_classes'] = FALSE;
-  /* Field: Indexed Node: Date & Time » Start date */
+  /* Field: Indexed Node: Date &amp; Time » Start date */
   $handler->display->display_options['fields']['field_date_time_value']['id'] = 'field_date_time_value';
   $handler->display->display_options['fields']['field_date_time_value']['table'] = 'search_api_index_default_node_index';
   $handler->display->display_options['fields']['field_date_time_value']['field'] = 'field_date_time_value';

@@ -134,7 +134,7 @@ If a marker on the map shows that the location already exist, then cancel and ch
         'label' => 'hidden',
         'module' => 'leaflet',
         'settings' => array(
-          'height' => 200,
+          'height' => 400,
           'icon' => array(
             'html' => '',
             'htmlClass' => '',
@@ -180,6 +180,7 @@ If a marker on the map shows that the location already exist, then cancel and ch
             'initialZoom' => -1,
             'maxZoom' => -1,
             'minZoom' => 1,
+            'scrollWheelZoom' => 1,
           ),
         ),
         'type' => 'geofield_leaflet',

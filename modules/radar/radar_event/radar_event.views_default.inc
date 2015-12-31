@@ -1205,21 +1205,43 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['field_date_time_1']['id'] = 'field_date_time_1';
   $handler->display->display_options['fields']['field_date_time_1']['table'] = 'field_data_field_date_time';
   $handler->display->display_options['fields']['field_date_time_1']['field'] = 'field_date_time';
-  $handler->display->display_options['fields']['field_date_time_1']['label'] = 'open at';
+  $handler->display->display_options['fields']['field_date_time_1']['label'] = 'from';
   $handler->display->display_options['fields']['field_date_time_1']['element_label_type'] = 'div';
   $handler->display->display_options['fields']['field_date_time_1']['element_label_class'] = 'label inline';
   $handler->display->display_options['fields']['field_date_time_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_date_time_1']['element_wrapper_class'] = 'info';
   $handler->display->display_options['fields']['field_date_time_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_date_time_1']['settings'] = array(
-    'format_type' => 'radar_time',
-    'fromto' => 'both',
+    'format_type' => 'medium',
+    'fromto' => 'value',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
+    'show_remaining_days' => 0,
     'show_repeat_rule' => 'hide',
   );
   $handler->display->display_options['fields']['field_date_time_1']['delta_offset'] = '0';
+  /* Field: Content: Date & Time */
+  $handler->display->display_options['fields']['field_date_time']['id'] = 'field_date_time';
+  $handler->display->display_options['fields']['field_date_time']['table'] = 'field_data_field_date_time';
+  $handler->display->display_options['fields']['field_date_time']['field'] = 'field_date_time';
+  $handler->display->display_options['fields']['field_date_time']['label'] = 'to';
+  $handler->display->display_options['fields']['field_date_time']['element_label_type'] = 'div';
+  $handler->display->display_options['fields']['field_date_time']['element_label_class'] = 'label inline';
+  $handler->display->display_options['fields']['field_date_time']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_date_time']['element_wrapper_class'] = 'info';
+  $handler->display->display_options['fields']['field_date_time']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_date_time']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_date_time']['settings'] = array(
+    'format_type' => 'medium',
+    'fromto' => 'value2',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+    'show_repeat_rule' => 'hide',
+  );
+  $handler->display->display_options['fields']['field_date_time']['delta_offset'] = '0';
   /* Field: Content: Price category */
   $handler->display->display_options['fields']['field_price_category']['id'] = 'field_price_category';
   $handler->display->display_options['fields']['field_price_category']['table'] = 'field_data_field_price_category';
@@ -1837,6 +1859,7 @@ function radar_event_views_default_views() {
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
+    'show_remaining_days' => 0,
     'show_repeat_rule' => 'hide',
   );
   $handler->display->display_options['fields']['field_date_time']['delta_offset'] = '0';

@@ -244,10 +244,9 @@ If a marker on the map shows that the location already exist, then cancel and ch
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'i18n_taxonomy',
+        'label' => 'hidden',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
+        'type' => 'hidden',
         'weight' => 4,
       ),
       'teaser' => array(

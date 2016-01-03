@@ -17,7 +17,9 @@ function radar_basics_date_format_types() {
 }
 
 /**
- * Implements hook_date_formats() {
+ * Implements hook_date_formats().
+ *
+ * @see radar_event_preprocess_date_display_combination().
  */
 function radar_basics_date_formats() {
   return array(
@@ -33,6 +35,39 @@ function radar_basics_date_formats() {
     ),
   );
 }
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * If 'radar_day' format is used, and the date spans day, week, or year,
+ * add additional granularity.
+ */
+function radar_basics_preprocess_date_display_combination(&$variables) {
+  if ($variables['display']['settings']['format_type'] == 'radar_time') {
+    $dates =& $variables['dates'];
+    if ($dates['value']['formatted_iso'] != $dates['value2']['formatted_iso']) {
+      $start = $dates['value']['local']['object'];
+      $end = $dates['value2']['local']['object'];
+      $granularity = '';
+      if ($start->format('Y') != $end->format('Y')) {
+        $granularity = 'D, d M Y';
+      }
+      elseif ($start->format('m') != $end->format('m')) {
+        $granularity = 'D, d M';
+      }
+      elseif ($start->format('d') != $end->format('d')) {
+        $granularity = 'D, d';
+      }
+      if ($granularity) {
+        $dates['value']['formatted_date'] = $start->format($granularity);
+        $dates['value2']['formatted_date'] = $end->format($granularity);
+        $dates['value']['formatted'] = $dates['value']['formatted_date'] . ' - ' . $dates['value']['formatted_time'];
+        $dates['value2']['formatted'] = $dates['value2']['formatted_date'] . ' - ' . $dates['value2']['formatted_time'];
+      }
+    }
+  }
+}
+
 
 /**
  * Implements hook_pathauto_alias_alter().

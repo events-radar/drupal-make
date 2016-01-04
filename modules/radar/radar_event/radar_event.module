@@ -183,3 +183,31 @@ function radar_event_day_start_or_today($entity, $output) {
 
   return $output;
 }
+
+/**
+ * Sort callback: Re-order a days events.
+ *
+ * Long events already begun are moved to the bottom and ordered by their end
+ * time.
+ */
+function radar_event_sort_day_events($a, $b, $rows) {
+  $a_weight = $rows[$a]->_entity_properties['field_date_time:value'];
+  if ($rows[$a]->_entity_properties['field_date_time:value'] < time()) {
+    // Already begun.
+    if ($rows[$a]->_entity_properties['field_date_time:duration'] > 86340) {
+      // Long event, use end time.
+      $a_weight = $rows[$a]->_entity_properties['field_date_time:value2'];
+    }
+  }
+
+  $b_weight = $rows[$b]->_entity_properties['field_date_time:value'];
+  if ($rows[$b]->_entity_properties['field_date_time:value'] < time()) {
+    // Already begun.
+    if ($rows[$b]->_entity_properties['field_date_time:duration'] > 86340) {
+      // Long event, use end time.
+      $b_weight = $rows[$b]->_entity_properties['field_date_time:value2'];
+    }
+  }
+
+  return $a_weight == $b_weight ? 0 : $a_weight > $b_weight ? 1 : -1;
+}

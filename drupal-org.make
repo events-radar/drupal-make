@@ -275,6 +275,17 @@ projects[services_search_api][download][revision] = "a868e7a197925e36f01f3057a9f
 projects[services_search_api][patch][2072691] = "https://www.drupal.org/files/issues/services_search_api-2072691-6.patch"
 
 ;
+;; Metadata
+;
+projects[schemaorg][subdir] = "contrib"
+projects[schemaorg][version] = "1.0-rc1"
+; no tagged version
+projects[rdfa][subdir] = "contrib"
+projects[rdfa][type] = "module"
+projects[rdfa][download][url] = "git://git.drupal.org/project/rdfa.git"
+projects[rdfa][download][revision] = "24063287edfec1d6c426620e5b2ccab22ff33b10"
+
+;
 ;; Admin helpers.
 ;
 projects[node_clone][subdir] = "contrib"

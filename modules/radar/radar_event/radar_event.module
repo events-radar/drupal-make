@@ -160,3 +160,54 @@ function radar_event_date_entity_metadata_struct_getter($item, array $options, $
   }
   return !empty($date) ? date_format_date($date, 'custom', 'c') : NULL;
 }
+
+/**
+ * Helper function: reset day to today, if event started in past.
+ *
+ * Used on views grouping so first date is today, even if events
+ * started previously.
+ *
+ * @see views-view-field--radar-event-search--field-date-time-value-1.tpl.php
+ * @see views-view-field--radar-group-events--field-date-time-value-1.tpl.php
+ */
+function radar_event_day_start_or_today($entity, $output) {
+  $wrapper = entity_metadata_wrapper('node', $entity);
+  $date = $wrapper->field_date_time->value()[0];
+  if ($date['value'] != $date['value2']) {
+    $start = new DateObject($date['value'], $date['timezone']);
+    $now = new DateObject();
+    if ($now > $start) {
+      $output = format_date(time(), 'radar_day');
+    }
+  }
+
+  return $output;
+}
+
+/**
+ * Sort callback: Re-order a days events.
+ *
+ * Long events already begun are moved to the bottom and ordered by their end
+ * time.
+ */
+function radar_event_sort_day_events($a, $b, $rows) {
+  $a_weight = $rows[$a]->_entity_properties['field_date_time:value'];
+  if ($rows[$a]->_entity_properties['field_date_time:value'] < time()) {
+    // Already begun.
+    if ($rows[$a]->_entity_properties['field_date_time:duration'] > 86340) {
+      // Long event, use end time.
+      $a_weight = $rows[$a]->_entity_properties['field_date_time:value2'];
+    }
+  }
+
+  $b_weight = $rows[$b]->_entity_properties['field_date_time:value'];
+  if ($rows[$b]->_entity_properties['field_date_time:value'] < time()) {
+    // Already begun.
+    if ($rows[$b]->_entity_properties['field_date_time:duration'] > 86340) {
+      // Long event, use end time.
+      $b_weight = $rows[$b]->_entity_properties['field_date_time:value2'];
+    }
+  }
+
+  return $a_weight == $b_weight ? 0 : $a_weight > $b_weight ? 1 : -1;
+}

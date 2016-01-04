@@ -128,6 +128,7 @@ function radar_search_default_search_api_index() {
         "og_group_ref" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "node" },
         "search_api_access_node" : { "type" : "list\\u003Cstring\\u003E" },
         "search_api_aggregation_1" : { "type" : "date" },
+        "search_api_aggregation_3" : { "type" : "date" },
         "search_api_language" : { "type" : "string" },
         "status" : { "type" : "boolean" },
         "title_field" : { "type" : "text" },
@@ -146,21 +147,28 @@ function radar_search_default_search_api_index() {
           "weight" : "0",
           "settings" : { "lang_field" : "", "languages" : [] }
         },
-        "search_api_alter_add_hierarchy" : { "status" : 0, "weight" : "0", "settings" : { "fields" : [] } },
+        "search_api_alter_add_viewed_entity" : { "status" : 0, "weight" : "0", "settings" : { "mode" : "full" } },
         "search_api_alter_add_url" : { "status" : 0, "weight" : "0", "settings" : [] },
         "search_api_alter_add_aggregation" : {
           "status" : 1,
           "weight" : "0",
-          "settings" : { "fields" : { "search_api_aggregation_1" : {
+          "settings" : { "fields" : {
+              "search_api_aggregation_1" : {
                 "name" : "first_start_date",
                 "type" : "min",
                 "fields" : [ "field_date_time:value" ],
-                "description" : "A Minimum aggregation of the following fields: Date \\u0026amp; Time \\u00bb Start date."
+                "description" : "A Minimum aggregation of the following fields: Date \\u0026amp;amp; Time \\u00bb Start date."
+              },
+              "search_api_aggregation_3" : {
+                "name" : "first_end_date",
+                "type" : "min",
+                "fields" : [ "field_date_time:value2" ],
+                "description" : "A Minimum aggregation of the following fields: Date \\u0026amp;amp; Time \\u00bb End date."
               }
             }
           }
         },
-        "search_api_alter_add_viewed_entity" : { "status" : 0, "weight" : "0", "settings" : { "mode" : "full" } }
+        "search_api_alter_add_hierarchy" : { "status" : 0, "weight" : "0", "settings" : { "fields" : [] } }
       },
       "processors" : {
         "search_api_case_ignore" : { "status" : 1, "weight" : "0", "settings" : { "fields" : [] } },
@@ -346,7 +354,7 @@ function radar_search_default_search_api_server() {
       "scheme" : "http",
       "host" : "localhost",
       "port" : "8983",
-      "path" : "\\/solr\\/radar_prod",
+      "path" : "\\/solr\\/core0",
       "http_user" : "",
       "http_pass" : "",
       "excerpt" : 0,

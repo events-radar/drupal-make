@@ -66,3 +66,32 @@ function radar_location_eck_entity_type_info() {
   );
   return $items;
 }
+
+/**
+ * Implements hook_rdf_default_mappings().
+ */
+function radar_location_rdf_default_mappings() {
+  $schemaorg = array();
+
+  // Exported RDF mapping: location
+  $schemaorg['location']['location'] = array(
+    'field_address' => array(
+      'predicates' => array(
+        0 => 'schema:address',
+      ),
+    ),
+    'url' => array(
+      'predicates' => array(
+        0 => 'schema:url',
+      ),
+      'type' => 'rel',
+    ),
+    'field_map' => array(
+      'predicates' => array(
+        0 => 'schema:geo',
+      ),
+    ),
+  );
+
+  return $schemaorg;
+}

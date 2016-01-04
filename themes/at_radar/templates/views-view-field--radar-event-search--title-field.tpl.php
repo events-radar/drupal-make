@@ -4,7 +4,7 @@
  * @file
  *  Hackish solution to remove content types from the entity reference list.
  */
-$output = "<strong>$output</strong>";
+$output = '<h4 class="event-list-event-title" property="schema:name">' . $output . '</h4>';
 
 $groups = array();
 // Ah the quick fix.

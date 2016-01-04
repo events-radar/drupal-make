@@ -54,6 +54,7 @@ If a marker on the map shows that the location already exist, then cancel and ch
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'location',
     'field_name' => 'field_address',
     'label' => 'Address',

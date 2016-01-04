@@ -160,3 +160,26 @@ function radar_event_date_entity_metadata_struct_getter($item, array $options, $
   }
   return !empty($date) ? date_format_date($date, 'custom', 'c') : NULL;
 }
+
+/**
+ * Helper function: reset day to today, if event started in past.
+ *
+ * Used on views grouping so first date is today, even if events
+ * started previously.
+ *
+ * @see views-view-field--radar-event-search--field-date-time-value-1.tpl.php
+ * @see views-view-field--radar-group-events--field-date-time-value-1.tpl.php
+ */
+function radar_event_day_start_or_today($entity, $output) {
+  $wrapper = entity_metadata_wrapper('node', $entity);
+  $date = $wrapper->field_date_time->value()[0];
+  if ($date['value'] != $date['value2']) {
+    $start = new DateObject($date['value'], $date['timezone']);
+    $now = new DateObject();
+    if ($now > $start) {
+      $output = format_date(time(), 'radar_day');
+    }
+  }
+
+  return $output;
+}

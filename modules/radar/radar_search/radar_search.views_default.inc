@@ -93,14 +93,24 @@ function radar_search_views_default_views() {
   $handler->display->display_options['fields']['og_group_ref']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['og_group_ref']['view_mode'] = 'full';
   $handler->display->display_options['fields']['og_group_ref']['bypass_access'] = 0;
+  /* Field: Indexed Node: URL */
+  $handler->display->display_options['fields']['url']['id'] = 'url';
+  $handler->display->display_options['fields']['url']['table'] = 'search_api_index_events';
+  $handler->display->display_options['fields']['url']['field'] = 'url';
+  $handler->display->display_options['fields']['url']['label'] = '';
+  $handler->display->display_options['fields']['url']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['url']['display_as_link'] = FALSE;
+  $handler->display->display_options['fields']['url']['link_to_entity'] = 0;
   /* Field: Indexed Node: Event title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'search_api_index_events';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['label'] = '';
+  $handler->display->display_options['fields']['title_field']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title_field']['alter']['text'] = '<a href="[url]" property="schema:url">[title_field]</a>';
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_field']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['title_field']['type'] = 'title_linked';
   $handler->display->display_options['fields']['title_field']['settings'] = array(
     'title_style' => '_none',
     'title_link' => 'content',
@@ -141,12 +151,47 @@ function radar_search_views_default_views() {
   $handler->display->display_options['fields']['field_offline_field_address_locality']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_offline_field_address_locality']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_offline_field_address_locality']['link_to_entity'] = 0;
+  /* Field: Locations » Address: Administrative area (i.e. State / Province) (indexed) */
+  $handler->display->display_options['fields']['field_offline_field_address_administrative_area']['id'] = 'field_offline_field_address_administrative_area';
+  $handler->display->display_options['fields']['field_offline_field_address_administrative_area']['table'] = 'search_api_index_events';
+  $handler->display->display_options['fields']['field_offline_field_address_administrative_area']['field'] = 'field_offline_field_address_administrative_area';
+  $handler->display->display_options['fields']['field_offline_field_address_administrative_area']['label'] = '';
+  $handler->display->display_options['fields']['field_offline_field_address_administrative_area']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_offline_field_address_administrative_area']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_offline_field_address_administrative_area']['alter']['text'] = '<meta property="schema:addressRegion" content=[field_offline_field_address_administrative_area] />';
+  $handler->display->display_options['fields']['field_offline_field_address_administrative_area']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_offline_field_address_administrative_area']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_offline_field_address_administrative_area']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_offline_field_address_administrative_area']['link_to_entity'] = 0;
+  /* Field: Locations » Address: Postal code (indexed) */
+  $handler->display->display_options['fields']['field_offline_field_address_postal_code']['id'] = 'field_offline_field_address_postal_code';
+  $handler->display->display_options['fields']['field_offline_field_address_postal_code']['table'] = 'search_api_index_events';
+  $handler->display->display_options['fields']['field_offline_field_address_postal_code']['field'] = 'field_offline_field_address_postal_code';
+  $handler->display->display_options['fields']['field_offline_field_address_postal_code']['label'] = '';
+  $handler->display->display_options['fields']['field_offline_field_address_postal_code']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_offline_field_address_postal_code']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_offline_field_address_postal_code']['alter']['text'] = '<meta property="schema:addressCode" content="[field_offline_field_address_postal_code]" />';
+  $handler->display->display_options['fields']['field_offline_field_address_postal_code']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_offline_field_address_postal_code']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_offline_field_address_postal_code']['link_to_entity'] = 0;
+  /* Field: Locations » Address: Country (indexed) */
+  $handler->display->display_options['fields']['field_offline_field_address_country']['id'] = 'field_offline_field_address_country';
+  $handler->display->display_options['fields']['field_offline_field_address_country']['table'] = 'search_api_index_events';
+  $handler->display->display_options['fields']['field_offline_field_address_country']['field'] = 'field_offline_field_address_country';
+  $handler->display->display_options['fields']['field_offline_field_address_country']['label'] = '';
+  $handler->display->display_options['fields']['field_offline_field_address_country']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_offline_field_address_country']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_offline_field_address_country']['alter']['text'] = '<meta property="schema:addressCountry" content="[field_offline_field_address_country]" />';
+  $handler->display->display_options['fields']['field_offline_field_address_country']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_offline_field_address_country']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_offline_field_address_country']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['field_offline_field_address_country']['format_name'] = 0;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="grey" property="schema:location" typeof="PostalAddress">[field_offline_field_address_name_line][field_offline_field_address_thoroughfare][field_offline_field_address_locality]</div>';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="grey" property="schema:location" typeof="Place">[field_offline_field_address_name_line]<span property="address" typeof="PostalAddress">[field_offline_field_address_thoroughfare][field_offline_field_address_locality][field_offline_field_address_administrative_area][field_offline_field_address_postal_code][field_offline_field_address_country]</span></div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Field: Indexed Node: Date &amp; Time */
   $handler->display->display_options['fields']['field_date_time']['id'] = 'field_date_time';

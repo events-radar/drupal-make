@@ -170,7 +170,7 @@ function radar_search_views_default_views() {
   $handler->display->display_options['fields']['field_offline_field_address_postal_code']['label'] = '';
   $handler->display->display_options['fields']['field_offline_field_address_postal_code']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_offline_field_address_postal_code']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_offline_field_address_postal_code']['alter']['text'] = '<meta property="schema:addressCode" content="[field_offline_field_address_postal_code]" />';
+  $handler->display->display_options['fields']['field_offline_field_address_postal_code']['alter']['text'] = '<meta property="schema:postalCode" content="[field_offline_field_address_postal_code]" />';
   $handler->display->display_options['fields']['field_offline_field_address_postal_code']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_offline_field_address_postal_code']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_offline_field_address_postal_code']['link_to_entity'] = 0;

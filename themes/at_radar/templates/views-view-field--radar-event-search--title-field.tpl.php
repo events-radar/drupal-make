@@ -15,11 +15,29 @@ foreach ($group_ids as $gid){
   $node = entity_load_single('node', $gid);
   if ($node->type == 'group') {
     // If it's a group well put it in.
-    $groups[] = l($node->title, 'node/' . $node->nid);
+    $groups[] = l(
+      '<span property="schema:name">' . check_plain($node->title) . '</span>',
+      'node/' . $node->nid,
+      array(
+        'attributes' => array('property' => 'schema:url'),
+        'html' => TRUE
+      )
+    );
   }
 }
-if (count($groups)) {
-  $output .= ' <span class="group"> ~ ' . implode(', ', $groups) . '</span>';
+$groups_string = '';
+if (count($groups) > 1) {
+  foreach ($groups as $delta => $group) {
+    $groups[$delta] = '<span property="itemListElement" typeof="Organization">' . $group . '</span>';
+  }
+  $groups_string = implode(', ', $groups);
+  $groups_string = '<span property="schema:organizer" typeof="itemList">' . $groups_string . '</span>';
 }
-?>
-<?php print $output; ?>
+else {
+  $groups_string = '<span property="schema:organizer" typeof="Organization">' . $groups[0] . '</span>';
+}
+if ($groups_string) {
+  $output .= '<span class="group"> ~ ' . $groups_string . '</span>';
+}
+
+print $output;

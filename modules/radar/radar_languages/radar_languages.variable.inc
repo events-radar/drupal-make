@@ -14,8 +14,8 @@ $realm_variables = array();
   $realm_variables['language']['de'] = array();
   $realm_variables['language']['el'] = array();
   $realm_variables['language']['en'] = array(
-  'site_name' => '｟(･)｠ r a d a r . s q u a t . n e t ᴺᴱᵂ',
-  'site_slogan' => '',
+  'site_name' => 'radar.squat.net',
+  'site_slogan' => 'Radical events agenda',
 );
   $realm_variables['language']['es'] = array();
   $realm_variables['language']['eu'] = array();

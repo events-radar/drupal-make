@@ -53,8 +53,8 @@ function at_radar_process_html(&$vars) {
 /**
  * Override or insert variables for the page templates.
  */
-/* -- Delete this line if you want to use these functions
 function at_radar_preprocess_page(&$vars) {
+  $vars['site_logo'] = '<a href="/">｟(･)｠</a>';
 }
 function at_radar_process_page(&$vars) {
 }

@@ -438,11 +438,11 @@ var {
  * Logo
  */
 #logo {
-  padding: 10px 0;
-
-  img {
-    vertical-align: bottom;
-  }
+  display: inline-block;
+  float: left;
+  font-family: $typewriter;
+  font-size: 2em;
+  padding: 0 0.8em 0 0.1em;
 }
 
 
@@ -460,7 +460,11 @@ var {
   margin: 0;
   font-family: $typewriter;
   font-weight: bold;
+  letter-spacing: 0.45em;
+}
 
+#site-name,
+#logo {
   a {
     &:link,
     &:visited {

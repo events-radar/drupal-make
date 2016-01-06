@@ -17,6 +17,40 @@ function radar_basics_date_format_types() {
 }
 
 /**
+ *
+ * RDFa / schema.org alterations.
+ *
+ */
+
+/**
+ * Implements hook_entity_view_alter().
+ */
+function radar_basics_entity_view($entity, $type, $view_mode, $langcode) {
+  // schemaorg module 'helpfully' makes sure that the name is
+  // completed. With our titles this often ends up as the user name.
+  // Not something we ever want to get out.
+  // We take responsibility for correct markup.
+  unset($entity->content['schemaorg_name']);
+}
+
+/**
+ * Implements hook_module_implements_alter().
+ */
+function radar_basics_module_implements_alter(&$implementations, $hook) {
+  if ($hook == 'entity_view' || $hook == 'preprocess_node') {
+    $group = $implementations['radar_basics'];
+    unset($implementations['radar_basics']);
+    $implementations['radar_basics'] = $group;
+  }
+}
+
+/**
+ *
+ * Custom date format.
+ *
+ */
+
+/**
  * Implements hook_date_formats().
  *
  * @see radar_event_preprocess_date_display_combination().

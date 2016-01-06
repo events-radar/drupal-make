@@ -123,6 +123,36 @@ function radar_event_default_page_manager_handlers() {
     $display->content['new-271ca3f4-2ee1-4983-a168-bfc32a28f008'] = $pane;
     $display->panels['two_66_33_first'][1] = 'new-271ca3f4-2ee1-4983-a168-bfc32a28f008';
     $pane = new stdClass();
+    $pane->pid = 'new-c1823f10-1c81-4bcd-b742-1874cb0558a4';
+    $pane->panel = 'two_66_33_first';
+    $pane->type = 'node_content';
+    $pane->subtype = 'node_content';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'links' => 0,
+      'no_extras' => 0,
+      'override_title' => 0,
+      'override_title_text' => '%title',
+      'identifier' => 'event',
+      'link' => 0,
+      'leave_node_title' => 0,
+      'build_mode' => 'full',
+      'context' => 'argument_entity_id:node_1',
+      'override_title_heading' => 'h1',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = 'c1823f10-1c81-4bcd-b742-1874cb0558a4';
+    $display->content['new-c1823f10-1c81-4bcd-b742-1874cb0558a4'] = $pane;
+    $display->panels['two_66_33_first'][2] = 'new-c1823f10-1c81-4bcd-b742-1874cb0558a4';
+    $pane = new stdClass();
     $pane->pid = 'new-f98d3b40-9af2-4684-8e7c-e540fa80fac4';
     $pane->panel = 'two_66_33_first';
     $pane->type = 'views_panes';
@@ -139,11 +169,11 @@ function radar_event_default_page_manager_handlers() {
       'css_class' => 'clear',
     );
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = 'f98d3b40-9af2-4684-8e7c-e540fa80fac4';
     $display->content['new-f98d3b40-9af2-4684-8e7c-e540fa80fac4'] = $pane;
-    $display->panels['two_66_33_first'][2] = 'new-f98d3b40-9af2-4684-8e7c-e540fa80fac4';
+    $display->panels['two_66_33_first'][3] = 'new-f98d3b40-9af2-4684-8e7c-e540fa80fac4';
     $pane = new stdClass();
     $pane->pid = 'new-23db92f7-26c5-4c09-b375-2f45cc1aea23';
     $pane->panel = 'two_66_33_second';

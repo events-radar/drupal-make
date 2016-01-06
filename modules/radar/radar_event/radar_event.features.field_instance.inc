@@ -23,6 +23,12 @@ function radar_event_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 29,
       ),
+      'full' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),

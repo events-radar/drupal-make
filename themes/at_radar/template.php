@@ -21,7 +21,6 @@
  * 2. Uncomment the required function to use.
  */
 
-
 /**
  * Preprocess variables for the html template.
  */
@@ -39,7 +38,6 @@ function at_radar_preprocess_html(&$vars) {
 
 }
 // */
-
 
 /**
  * Process variables for the html template.
@@ -64,10 +62,30 @@ function at_radar_process_page(&$vars) {
 /**
  * Override or insert variables into the node templates.
  */
-/* -- Delete this line if you want to use these functions
 function at_radar_preprocess_node(&$vars) {
+  // Google schema.org parser isn't recognising @about
+  // This is almost certainly breaking foaf and sioc
+  // @todo Work out what actually is supposed to happen here.
+  unset($vars['attributes_array']['about']);
 }
+
 function at_radar_process_node(&$vars) {
+  if (in_array('node__panel__event', $vars['theme_hook_suggestions'])) {
+    $vars['content']['field_topic']['#title'] = t('Topics');
+    if (!empty($vars['content']['field_price_category'])) {
+      $vars['content']['field_price_category']['#title'] = t('Price');
+      if (!empty($vars['content']['field_price'])) {
+        $vars['content']['field_price']['#label_display'] = 'hidden';
+        $vars['content']['field_price'][0]['#markup'] = ' - ' . $vars['content']['field_price'][0]['#markup'];
+        $price = render($vars['content']['field_price']);
+        $vars['content']['field_price_category']['#prefix'] = '<div>';
+        $vars['content']['field_price_category']['#suffix'] = $price . '</div>';
+      }
+    }
+    else {
+      $vars['content']['field_price']['#title'] = t('Price');
+    }
+  }
 }
 // */
 
@@ -99,6 +117,14 @@ function at_radar_process_comment(&$vars) {
 }
 // */
 
+function at_radar_preprocess_panels_pane(&$vars) {
+  if ($vars['pane']->type == 'node_content' && !empty($vars['title'])) {
+    $vars['title_heading'] = 'h1';
+  }
+  if ($vars['pane']->type == 'views_panes' && $vars['pane']->subtype == 'radar_event-panel_pane_1') {
+    $vars['attributes_array']['property'] = array('schema:location');
+  }
+}
 
 /**
  * Override or insert variables into the block templates.
@@ -123,4 +149,32 @@ function at_radar_system_powered_by() {
         '@squat' => 'https://squat.net/',
       ))
     . '</span>';
+}
+
+function at_radar_preprocess_two_66_33(&$vars) {
+  $context = current($vars['display']->context);
+  if (is_object($context) && get_class($context) == 'ctools_context' && $context->is_type('node')) {
+    $node = $context->data;
+    $uri = entity_uri('node', $node);
+
+    // Load RDF mapping to get the RDF type.
+    $mapping = rdf_mapping_load('node', $node->type);
+    if (!empty($mapping['rdftype'])) {
+      // Adds RDFa markup to the panel container like in rdf_preprocess_node().
+      // The about attribute specifies the URI of the resource described within
+      // the HTML element (panel), while the @typeof attribute indicates its
+      // RDF type (e.g., foaf:Document, sioc:Person, and so on).
+      $vars['attributes_array']['about'] = url($uri['path'], $uri['options']);
+      $vars['attributes_array']['typeof'] = $mapping['rdftype'];
+    }
+  }
+
+  $vars['panel_prefix'] = '';
+  $vars['panel_suffix'] = '';
+}
+
+function at_radar_panels_default_style_render_region($vars) {
+  $output = '';
+  $output .= implode('<div class="panel-separator"></div>', $vars['panes']);
+  return $output;
 }

@@ -130,7 +130,7 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = 'Event';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Groups */
+  /* Field: Content: Groups audience */
   $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['table'] = 'og_membership';
   $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
@@ -139,7 +139,7 @@ function radar_event_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['og_group_ref']['delta_offset'] = '0';
-  /* Field: Content: Groups */
+  /* Field: Content: Groups audience */
   $handler->display->display_options['fields']['og_group_ref_1']['id'] = 'og_group_ref_1';
   $handler->display->display_options['fields']['og_group_ref_1']['table'] = 'og_membership';
   $handler->display->display_options['fields']['og_group_ref_1']['field'] = 'og_group_ref';
@@ -203,7 +203,7 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['field_topic']['label'] = 'tags';
   $handler->display->display_options['fields']['field_topic']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_topic']['delta_offset'] = '0';
-  /* Field: Content: area */
+  /* Field: Content: offline */
   $handler->display->display_options['fields']['field_offline']['id'] = 'field_offline';
   $handler->display->display_options['fields']['field_offline']['table'] = 'field_data_field_offline';
   $handler->display->display_options['fields']['field_offline']['field'] = 'field_offline';
@@ -231,7 +231,7 @@ function radar_event_views_default_views() {
     'event' => 'event',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Event title (title_field) */
+  /* Filter criterion: Content: Title (title_field) */
   $handler->display->display_options['filters']['title_field_value']['id'] = 'title_field_value';
   $handler->display->display_options['filters']['title_field_value']['table'] = 'field_data_title_field';
   $handler->display->display_options['filters']['title_field_value']['field'] = 'title_field_value';
@@ -252,7 +252,7 @@ function radar_event_views_default_views() {
     8 => 0,
     7 => 0,
   );
-  /* Filter criterion: Content: Groups (og_group_ref:target_id) */
+  /* Filter criterion: Content: Groups audience (og_group_ref:target_id) */
   $handler->display->display_options['filters']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
@@ -272,7 +272,7 @@ function radar_event_views_default_views() {
     8 => 0,
     7 => 0,
   );
-  /* Filter criterion: Content: area (field_offline:target_id) */
+  /* Filter criterion: Content: offline (field_offline:target_id) */
   $handler->display->display_options['filters']['field_offline_target_id']['id'] = 'field_offline_target_id';
   $handler->display->display_options['filters']['field_offline_target_id']['table'] = 'field_data_field_offline';
   $handler->display->display_options['filters']['field_offline_target_id']['field'] = 'field_offline_target_id';
@@ -460,7 +460,7 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['field_topic']['label'] = 'tags';
   $handler->display->display_options['fields']['field_topic']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_topic']['delta_offset'] = '0';
-  /* Field: Content: area */
+  /* Field: Content: offline */
   $handler->display->display_options['fields']['field_offline']['id'] = 'field_offline';
   $handler->display->display_options['fields']['field_offline']['table'] = 'field_data_field_offline';
   $handler->display->display_options['fields']['field_offline']['field'] = 'field_offline';
@@ -521,7 +521,7 @@ function radar_event_views_default_views() {
     8 => 0,
     7 => 0,
   );
-  /* Filter criterion: Content: area (field_offline:target_id) */
+  /* Filter criterion: Content: offline (field_offline:target_id) */
   $handler->display->display_options['filters']['field_offline_target_id']['id'] = 'field_offline_target_id';
   $handler->display->display_options['filters']['field_offline_target_id']['table'] = 'field_data_field_offline';
   $handler->display->display_options['filters']['field_offline_target_id']['field'] = 'field_offline_target_id';
@@ -732,7 +732,7 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['field_price']['table'] = 'field_data_field_price';
   $handler->display->display_options['fields']['field_price']['field'] = 'field_price';
   $handler->display->display_options['fields']['field_price']['delta_offset'] = '0';
-  /* Field: Content: Groups */
+  /* Field: Content: Groups audience */
   $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['table'] = 'og_membership';
   $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
@@ -840,7 +840,7 @@ function radar_event_views_default_views() {
     8 => 0,
     7 => 0,
   );
-  /* Filter criterion: Content: Groups (og_group_ref:target_id) */
+  /* Filter criterion: Content: Groups audience (og_group_ref:target_id) */
   $handler->display->display_options['filters']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
@@ -983,7 +983,7 @@ function radar_event_views_default_views() {
     'show_repeat_rule' => 'hide',
   );
   $handler->display->display_options['fields']['field_date_time']['delta_offset'] = '0';
-  /* Field: Content: Event title */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
@@ -1102,7 +1102,7 @@ function radar_event_views_default_views() {
     'image_style' => 'large',
     'image_link' => '',
   );
-  /* Field: Content: area */
+  /* Field: Content: offline */
   $handler->display->display_options['fields']['field_offline']['id'] = 'field_offline';
   $handler->display->display_options['fields']['field_offline']['table'] = 'field_data_field_offline';
   $handler->display->display_options['fields']['field_offline']['field'] = 'field_offline';
@@ -1148,161 +1148,7 @@ function radar_event_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Full event pane', 'panel_pane_1');
   $handler->display->display_options['display_description'] = 'Event pane with all the info of an event';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Event title */
-  $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
-  $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
-  $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
-  $handler->display->display_options['fields']['title_field']['label'] = '';
-  $handler->display->display_options['fields']['title_field']['element_type'] = 'h2';
-  $handler->display->display_options['fields']['title_field']['element_class'] = 'event';
-  $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title_field']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
-  /* Field: Content: Description */
-  $handler->display->display_options['fields']['body']['id'] = 'body';
-  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
-  $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['element_type'] = 'p';
-  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
-  /* Field: Content: All taxonomy terms (translated) */
-  $handler->display->display_options['fields']['term_node_tid_i18n']['id'] = 'term_node_tid_i18n';
-  $handler->display->display_options['fields']['term_node_tid_i18n']['table'] = 'node';
-  $handler->display->display_options['fields']['term_node_tid_i18n']['field'] = 'term_node_tid_i18n';
-  $handler->display->display_options['fields']['term_node_tid_i18n']['label'] = 'categories';
-  $handler->display->display_options['fields']['term_node_tid_i18n']['element_label_type'] = 'div';
-  $handler->display->display_options['fields']['term_node_tid_i18n']['element_label_class'] = 'label inline';
-  $handler->display->display_options['fields']['term_node_tid_i18n']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['term_node_tid_i18n']['element_wrapper_class'] = 'info';
-  $handler->display->display_options['fields']['term_node_tid_i18n']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['term_node_tid_i18n']['separator'] = ' / ';
-  $handler->display->display_options['fields']['term_node_tid_i18n']['link_to_taxonomy'] = FALSE;
-  $handler->display->display_options['fields']['term_node_tid_i18n']['limit'] = TRUE;
-  $handler->display->display_options['fields']['term_node_tid_i18n']['vocabularies'] = array(
-    'category' => 'category',
-    'topic' => 0,
-  );
-  /* Field: Content: All taxonomy terms (translated) */
-  $handler->display->display_options['fields']['term_node_tid_i18n_1']['id'] = 'term_node_tid_i18n_1';
-  $handler->display->display_options['fields']['term_node_tid_i18n_1']['table'] = 'node';
-  $handler->display->display_options['fields']['term_node_tid_i18n_1']['field'] = 'term_node_tid_i18n';
-  $handler->display->display_options['fields']['term_node_tid_i18n_1']['label'] = 'topics';
-  $handler->display->display_options['fields']['term_node_tid_i18n_1']['element_label_type'] = 'div';
-  $handler->display->display_options['fields']['term_node_tid_i18n_1']['element_label_class'] = 'label inline';
-  $handler->display->display_options['fields']['term_node_tid_i18n_1']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['term_node_tid_i18n_1']['element_wrapper_class'] = 'info';
-  $handler->display->display_options['fields']['term_node_tid_i18n_1']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['term_node_tid_i18n_1']['link_to_taxonomy'] = FALSE;
-  $handler->display->display_options['fields']['term_node_tid_i18n_1']['limit'] = TRUE;
-  $handler->display->display_options['fields']['term_node_tid_i18n_1']['vocabularies'] = array(
-    'topic' => 'topic',
-    'category' => 0,
-  );
-  /* Field: Content: Date & Time */
-  $handler->display->display_options['fields']['field_date_time_1']['id'] = 'field_date_time_1';
-  $handler->display->display_options['fields']['field_date_time_1']['table'] = 'field_data_field_date_time';
-  $handler->display->display_options['fields']['field_date_time_1']['field'] = 'field_date_time';
-  $handler->display->display_options['fields']['field_date_time_1']['label'] = 'from';
-  $handler->display->display_options['fields']['field_date_time_1']['element_label_type'] = 'div';
-  $handler->display->display_options['fields']['field_date_time_1']['element_label_class'] = 'label inline';
-  $handler->display->display_options['fields']['field_date_time_1']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_date_time_1']['element_wrapper_class'] = 'info';
-  $handler->display->display_options['fields']['field_date_time_1']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_date_time_1']['settings'] = array(
-    'format_type' => 'medium',
-    'fromto' => 'value',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_remaining_days' => 0,
-    'show_repeat_rule' => 'hide',
-  );
-  $handler->display->display_options['fields']['field_date_time_1']['delta_offset'] = '0';
-  /* Field: Content: Date & Time */
-  $handler->display->display_options['fields']['field_date_time']['id'] = 'field_date_time';
-  $handler->display->display_options['fields']['field_date_time']['table'] = 'field_data_field_date_time';
-  $handler->display->display_options['fields']['field_date_time']['field'] = 'field_date_time';
-  $handler->display->display_options['fields']['field_date_time']['label'] = 'to';
-  $handler->display->display_options['fields']['field_date_time']['element_label_type'] = 'div';
-  $handler->display->display_options['fields']['field_date_time']['element_label_class'] = 'label inline';
-  $handler->display->display_options['fields']['field_date_time']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_date_time']['element_wrapper_class'] = 'info';
-  $handler->display->display_options['fields']['field_date_time']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_date_time']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_date_time']['settings'] = array(
-    'format_type' => 'medium',
-    'fromto' => 'value2',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_remaining_days' => 0,
-    'show_repeat_rule' => 'hide',
-  );
-  $handler->display->display_options['fields']['field_date_time']['delta_offset'] = '0';
-  /* Field: Content: Price category */
-  $handler->display->display_options['fields']['field_price_category']['id'] = 'field_price_category';
-  $handler->display->display_options['fields']['field_price_category']['table'] = 'field_data_field_price_category';
-  $handler->display->display_options['fields']['field_price_category']['field'] = 'field_price_category';
-  $handler->display->display_options['fields']['field_price_category']['element_label_type'] = 'div';
-  $handler->display->display_options['fields']['field_price_category']['element_label_class'] = 'label inline';
-  $handler->display->display_options['fields']['field_price_category']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_price_category']['element_wrapper_class'] = 'info';
-  $handler->display->display_options['fields']['field_price_category']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_price_category']['type'] = 'taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_price_category']['delta_offset'] = '0';
-  /* Field: Content: Other and/or price details */
-  $handler->display->display_options['fields']['field_price']['id'] = 'field_price';
-  $handler->display->display_options['fields']['field_price']['table'] = 'field_data_field_price';
-  $handler->display->display_options['fields']['field_price']['field'] = 'field_price';
-  $handler->display->display_options['fields']['field_price']['element_label_type'] = 'div';
-  $handler->display->display_options['fields']['field_price']['element_label_class'] = 'label inline';
-  $handler->display->display_options['fields']['field_price']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_price']['element_wrapper_class'] = 'info';
-  $handler->display->display_options['fields']['field_price']['element_default_classes'] = FALSE;
-  /* Field: Content: online */
-  $handler->display->display_options['fields']['field_link']['id'] = 'field_link';
-  $handler->display->display_options['fields']['field_link']['table'] = 'field_data_field_link';
-  $handler->display->display_options['fields']['field_link']['field'] = 'field_link';
-  $handler->display->display_options['fields']['field_link']['element_label_type'] = 'span';
-  $handler->display->display_options['fields']['field_link']['element_label_class'] = 'label inline';
-  $handler->display->display_options['fields']['field_link']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_link']['element_wrapper_class'] = 'info';
-  $handler->display->display_options['fields']['field_link']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_link']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_link']['type'] = 'radar_socialmedia_link';
-  $handler->display->display_options['fields']['field_link']['delta_offset'] = '0';
-  /* Field: Content: email */
-  $handler->display->display_options['fields']['field_email']['id'] = 'field_email';
-  $handler->display->display_options['fields']['field_email']['table'] = 'field_data_field_email';
-  $handler->display->display_options['fields']['field_email']['field'] = 'field_email';
-  $handler->display->display_options['fields']['field_email']['element_label_type'] = 'div';
-  $handler->display->display_options['fields']['field_email']['element_label_class'] = 'label inline';
-  $handler->display->display_options['fields']['field_email']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_email']['element_wrapper_class'] = 'info';
-  $handler->display->display_options['fields']['field_email']['element_default_classes'] = FALSE;
-  /* Field: Content: phone */
-  $handler->display->display_options['fields']['field_phone']['id'] = 'field_phone';
-  $handler->display->display_options['fields']['field_phone']['table'] = 'field_data_field_phone';
-  $handler->display->display_options['fields']['field_phone']['field'] = 'field_phone';
-  $handler->display->display_options['fields']['field_phone']['element_label_type'] = 'div';
-  $handler->display->display_options['fields']['field_phone']['element_label_class'] = 'label inline';
-  $handler->display->display_options['fields']['field_phone']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_phone']['element_wrapper_class'] = 'info';
-  $handler->display->display_options['fields']['field_phone']['element_default_classes'] = FALSE;
-  /* Field: Content: Image */
-  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
-  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['label'] = '';
-  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'large',
-    'image_link' => '',
-  );
-  /* Field: Content: area */
+  /* Field: Content: offline */
   $handler->display->display_options['fields']['field_offline']['id'] = 'field_offline';
   $handler->display->display_options['fields']['field_offline']['table'] = 'field_data_field_offline';
   $handler->display->display_options['fields']['field_offline']['field'] = 'field_offline';
@@ -1313,6 +1159,7 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['field_offline']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_offline']['element_wrapper_class'] = 'address-map';
   $handler->display->display_options['fields']['field_offline']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_offline']['click_sort_column'] = 'target_id';
   $handler->display->display_options['fields']['field_offline']['type'] = 'entityreference_entity_view';
   $handler->display->display_options['fields']['field_offline']['settings'] = array(
     'view_mode' => 'default',
@@ -1674,7 +1521,7 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['uuid']['label'] = '';
   $handler->display->display_options['fields']['uuid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uuid']['element_default_classes'] = FALSE;
-  /* Field: Content: area */
+  /* Field: Content: offline */
   $handler->display->display_options['fields']['field_offline']['id'] = 'field_offline';
   $handler->display->display_options['fields']['field_offline']['table'] = 'field_data_field_offline';
   $handler->display->display_options['fields']['field_offline']['field'] = 'field_offline';

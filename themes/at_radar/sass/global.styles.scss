@@ -2215,6 +2215,11 @@ tr.error {
   margin-bottom: .8em;
 }
 
+/*
+ * Label and info were used on node panels
+ * views panes. Once replaced by rendered
+ * entities may become obsolete.
+ */
 .label {
   font-style: italic;
 }
@@ -2225,6 +2230,33 @@ tr.error {
 
 .address-map {
   margin: .83em 1em;
+}
+
+/*
+ * Rendered entity on own panel page.
+ */
+.panel-pane .node-content {
+  h2 {
+    font-size: 1em;
+    font-weight: normal;
+    font-style: italic;
+  }
+  section.field {
+    margin: .3em 0 .3em 1em;
+  }
+  .field-name-field-price-category {
+    display: inline-block;
+    float: left;
+  }
+  div.field-name-field-price {
+    padding-top: .3em;
+    margin-left: -1em;
+    font-style: italic;
+  }
+  .field-name-field-offline {
+    clear: left;
+    margin: 1em 0 .3em 1em;
+  }
 }
 
 .list {

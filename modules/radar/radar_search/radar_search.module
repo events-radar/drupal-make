@@ -76,3 +76,35 @@ function radar_search_views_data_alter(&$data) {
     }
   }
 }
+
+/**
+ * Implements hook_preprocess_page().
+ *
+ * Adds any selected facets to the page title.
+ */
+function radar_search_preprocess_page(&$vars) {
+  $facets_list = radar_search_page_facets();
+  if ($facets_list) {
+    $title = drupal_set_title();
+    if (empty($title)) {
+      $title = menu_get_active_title();
+    }
+    drupal_set_title($title . ': ' . implode(', ', $facets_list));
+  }
+}
+
+/**
+ * Retrieve human readable names of the active facets on current page.
+ */
+function radar_search_page_facets() {
+  $facets = array();
+  if ($searchers = facetapi_get_active_searchers()) {
+    $searcher = reset($searchers);
+    $adapter = facetapi_adapter_load($searcher);
+    foreach ($adapter->getAllActiveItems() as $item) {
+      $markup = $adapter->getMappedValue($item['facets'][0], $item['value']);
+      $facets[] = empty($markup['#html']) ? check_plain($markup['#markup']) : strip_tags($markup['#markup']);
+    }
+  }
+  return $facets;
+}

@@ -165,13 +165,20 @@ function at_radar_preprocess_two_66_33(&$vars) {
       // The about attribute specifies the URI of the resource described within
       // the HTML element (panel), while the @typeof attribute indicates its
       // RDF type (e.g., foaf:Document, sioc:Person, and so on).
-      $vars['attributes_array']['about'] = url($uri['path'], $uri['options']);
+
+      // @see at_radar_preprocess_node() for removal and investigation.
+      // $vars['attributes_array']['about'] = url($uri['path'], $uri['options']);
+
       $vars['attributes_array']['typeof'] = $mapping['rdftype'];
     }
-  }
 
-  $vars['panel_prefix'] = '';
-  $vars['panel_suffix'] = '';
+    $vars['panel_prefix'] = '<article>';
+    $vars['panel_suffix'] = '</article>';
+  }
+  else {
+    $vars['panel_prefix'] = '';
+    $vars['panel_suffix'] = '';
+  }
 }
 
 function at_radar_panels_default_style_render_region($vars) {

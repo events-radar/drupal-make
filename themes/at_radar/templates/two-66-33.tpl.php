@@ -25,7 +25,7 @@ $panel_prefix = isset($panel_prefix) ? $panel_prefix : '';
 $panel_suffix = isset($panel_suffix) ? $panel_suffix : '';
 ?>
 <?php print $panel_prefix; ?>
-<div class="two-66-33 at-panel panel-display clearfix"><article <?php if (!empty($attributes)): print $attributes; endif; if (!empty($css_id)): print "id=\"$css_id\""; endif; ?>>
+<div class="two-66-33 at-panel panel-display clearfix" <?php if (!empty($attributes)): print $attributes; endif; if (!empty($css_id)): print "id=\"$css_id\""; endif; ?>>
   <?php if ($content['two_66_33_top']): ?>
     <div class="region region-two-66-33-top region-conditional-stack">
       <div class="region-inner clearfix">
@@ -50,5 +50,5 @@ $panel_suffix = isset($panel_suffix) ? $panel_suffix : '';
       </div>
     </div>
   <?php endif; ?>
-</article></div>
+</div>
 <?php print $panel_suffix; ?>

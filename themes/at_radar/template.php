@@ -78,9 +78,10 @@ function at_radar_process_node(&$vars) {
         $vars['content']['field_price']['#label_display'] = 'hidden';
         $vars['content']['field_price'][0]['#markup'] = ' - ' . $vars['content']['field_price'][0]['#markup'];
         $price = render($vars['content']['field_price']);
-        $vars['content']['field_price_category']['#prefix'] = '<div>';
-        $vars['content']['field_price_category']['#suffix'] = $price . '</div>';
+        $vars['content']['field_price_category']['#suffix'] = $price;
       }
+      $vars['content']['field_price_category']['#prefix'] = '<div class="clearfix">';
+      $vars['content']['field_price_category']['#suffix'] .= '</div>';
     }
     else {
       $vars['content']['field_price']['#title'] = t('Price');

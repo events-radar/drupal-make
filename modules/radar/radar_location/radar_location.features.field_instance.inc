@@ -53,6 +53,30 @@ If a marker on the map shows that the location already exist, then cancel and ch
         'type' => 'addressfield_default',
         'weight' => 0,
       ),
+      'with_map' => array(
+        'label' => 'hidden',
+        'module' => 'addressfield',
+        'settings' => array(
+          'format_handlers' => array(
+            'address' => 'address',
+          ),
+          'use_widget_handlers' => 1,
+        ),
+        'type' => 'addressfield_default',
+        'weight' => 0,
+      ),
+      'without_map' => array(
+        'label' => 'hidden',
+        'module' => 'addressfield',
+        'settings' => array(
+          'format_handlers' => array(
+            0 => 'address',
+          ),
+          'use_widget_handlers' => 1,
+        ),
+        'type' => 'addressfield_default',
+        'weight' => 0,
+      ),
     ),
     'ds_extras_field_template' => '',
     'entity_type' => 'location',
@@ -103,7 +127,22 @@ If a marker on the map shows that the location already exist, then cancel and ch
         'type' => 'text_default',
         'weight' => 1,
       ),
+      'with_map' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_plain',
+        'weight' => 1,
+      ),
+      'without_map' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_plain',
+        'weight' => 1,
+      ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'location',
     'field_name' => 'field_directions',
     'label' => 'Directions',
@@ -193,6 +232,22 @@ If a marker on the map shows that the location already exist, then cancel and ch
         'type' => 'hidden',
         'weight' => 3,
       ),
+      'with_map' => array(
+        'label' => 'hidden',
+        'module' => 'geofield',
+        'settings' => array(
+          'data' => 'full',
+          'map_preset' => 'geofield_formatter_map',
+        ),
+        'type' => 'geofield_openlayers',
+        'weight' => 3,
+      ),
+      'without_map' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
     ),
     'ds_extras_field_template' => '',
     'entity_type' => 'location',
@@ -250,8 +305,16 @@ If a marker on the map shows that the location already exist, then cancel and ch
         'type' => 'hidden',
         'weight' => 4,
       ),
-      'teaser' => array(
+      'with_map' => array(
+        'label' => 'hidden',
+        'module' => 'i18n_field',
+        'settings' => array(),
+        'type' => 'i18n_list_default',
+        'weight' => 2,
+      ),
+      'without_map' => array(
         'label' => 'above',
+        'module' => 'i18n_field',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
@@ -298,6 +361,18 @@ If a marker on the map shows that the location already exist, then cancel and ch
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'with_map' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
+      'without_map' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
     ),
     'entity_type' => 'location',
     'field_name' => 'field_timezone',
@@ -312,7 +387,7 @@ If a marker on the map shows that the location already exist, then cancel and ch
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 4,
+      'weight' => 3,
     ),
   );
 

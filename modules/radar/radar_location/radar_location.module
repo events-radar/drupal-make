@@ -11,6 +11,20 @@ include_once 'radar_location.features.inc';
  */
 
 /**
+* Implements hook_entity_info_alter().
+*/
+function radar_location_entity_info_alter(&$entity_info) {
+  $entity_info['location']['view modes']['with_map'] = array(
+    'label' => t('With map'),
+    'custom settings' => TRUE,
+  );
+  $entity_info['location']['view modes']['without_map'] = array(
+    'label' => t('Without map'),
+    'custom settings' => TRUE,
+  );
+}
+
+/**
  * Implements hook_ctools_plugin_directory().
  */
 function radar_location_ctools_plugin_directory($module, $plugin) {

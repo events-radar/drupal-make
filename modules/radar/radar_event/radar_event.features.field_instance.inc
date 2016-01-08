@@ -18,16 +18,24 @@ function radar_event_field_default_field_instances() {
     'description' => 'If available, the location is already filled in with the information from the group, but you can remove it and/or add another one.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 29,
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 0,
+          'view_mode' => 'without_map',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 12,
       ),
       'full' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 11,
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 0,
+          'view_mode' => 'without_map',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -57,6 +65,7 @@ function radar_event_field_default_field_instances() {
         'fields' => array(),
         'type_settings' => array(
           'allow_existing' => 1,
+          'allow_new' => 1,
           'delete_references' => 0,
           'label_plural' => 'entities',
           'label_singular' => 'entity',

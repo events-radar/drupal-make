@@ -325,6 +325,11 @@ function radar_location_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  /* Relationship: Entity Reference: Referencing entity */
+  $handler->display->display_options['relationships']['reverse_field_offline_node']['id'] = 'reverse_field_offline_node';
+  $handler->display->display_options['relationships']['reverse_field_offline_node']['table'] = 'eck_location';
+  $handler->display->display_options['relationships']['reverse_field_offline_node']['field'] = 'reverse_field_offline_node';
+  $handler->display->display_options['relationships']['reverse_field_offline_node']['required'] = TRUE;
   /* Field: Location: Map */
   $handler->display->display_options['fields']['field_map']['id'] = 'field_map';
   $handler->display->display_options['fields']['field_map']['table'] = 'field_data_field_map';
@@ -372,6 +377,16 @@ function radar_location_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<strong>[field_address_name_line]</strong>[field_address_thoroughfare][field_address_locality]';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'reverse_field_offline_node';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   /* Filter criterion: Location: location type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'eck_location';
@@ -386,6 +401,34 @@ function radar_location_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+
+  /* Display: field_offline Locations OL Overlay */
+  $handler = $view->new_display('openlayers', 'field_offline Locations OL Overlay', 'openlayers_2');
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+
+  /* Display: field_offline Locations Pane */
+  $handler = $view->new_display('panel_pane', 'field_offline Locations Pane', 'panel_pane_1');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'openlayers_map';
+  $handler->display->display_options['style_options']['map'] = 'radar_node_field_offline';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['pane_category']['name'] = 'Radar';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['argument_input'] = array(
+    'nid' => array(
+      'type' => 'context',
+      'context' => 'entity:node.nid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Content: Nid',
+    ),
+  );
   $export['radar_locations'] = $view;
 
   return $export;

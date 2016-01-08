@@ -15,6 +15,7 @@ dependencies[] = date_repeat_field
 dependencies[] = ds
 dependencies[] = email
 dependencies[] = entity
+dependencies[] = entityreference
 dependencies[] = features
 dependencies[] = field_group
 dependencies[] = i18n_taxonomy

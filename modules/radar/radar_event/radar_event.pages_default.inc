@@ -136,7 +136,7 @@ function radar_event_default_page_manager_handlers() {
       'override_title_text' => '%title',
       'identifier' => 'event',
       'link' => 0,
-      'leave_node_title' => 0,
+      'leave_node_title' => 1,
       'build_mode' => 'full',
       'context' => 'argument_entity_id:node_1',
       'override_title_heading' => 'h1',
@@ -153,27 +153,31 @@ function radar_event_default_page_manager_handlers() {
     $display->content['new-c1823f10-1c81-4bcd-b742-1874cb0558a4'] = $pane;
     $display->panels['two_66_33_first'][2] = 'new-c1823f10-1c81-4bcd-b742-1874cb0558a4';
     $pane = new stdClass();
-    $pane->pid = 'new-f98d3b40-9af2-4684-8e7c-e540fa80fac4';
+    $pane->pid = 'new-c708e50a-1008-4449-b38b-da72d5668fc6';
     $pane->panel = 'two_66_33_first';
     $pane->type = 'views_panes';
-    $pane->subtype = 'radar_event-panel_pane_1';
+    $pane->subtype = 'radar_locations-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array();
+    $pane->configuration = array(
+      'context' => array(
+        0 => 'argument_entity_id:node_1',
+      ),
+    );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'clear',
+      'css_class' => 'address-map',
     );
     $pane->extras = array();
     $pane->position = 3;
     $pane->locks = array();
-    $pane->uuid = 'f98d3b40-9af2-4684-8e7c-e540fa80fac4';
-    $display->content['new-f98d3b40-9af2-4684-8e7c-e540fa80fac4'] = $pane;
-    $display->panels['two_66_33_first'][3] = 'new-f98d3b40-9af2-4684-8e7c-e540fa80fac4';
+    $pane->uuid = 'c708e50a-1008-4449-b38b-da72d5668fc6';
+    $display->content['new-c708e50a-1008-4449-b38b-da72d5668fc6'] = $pane;
+    $display->panels['two_66_33_first'][3] = 'new-c708e50a-1008-4449-b38b-da72d5668fc6';
     $pane = new stdClass();
     $pane->pid = 'new-23db92f7-26c5-4c09-b375-2f45cc1aea23';
     $pane->panel = 'two_66_33_second';
@@ -210,7 +214,7 @@ function radar_event_default_page_manager_handlers() {
     $display->content['new-23db92f7-26c5-4c09-b375-2f45cc1aea23'] = $pane;
     $display->panels['two_66_33_second'][0] = 'new-23db92f7-26c5-4c09-b375-2f45cc1aea23';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-f98d3b40-9af2-4684-8e7c-e540fa80fac4';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['node_view_panel_context'] = $handler;
 

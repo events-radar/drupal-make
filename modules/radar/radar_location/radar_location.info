@@ -23,6 +23,7 @@ dependencies[] = openlayers_views
 dependencies[] = options
 dependencies[] = rdf
 dependencies[] = schemaorg
+dependencies[] = schemaorg_contrib
 dependencies[] = strongarm
 dependencies[] = taxonomy
 dependencies[] = text

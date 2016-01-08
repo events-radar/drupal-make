@@ -37,7 +37,7 @@ function radar_basics_entity_view($entity, $type, $view_mode, $langcode) {
  * Implements hook_module_implements_alter().
  */
 function radar_basics_module_implements_alter(&$implementations, $hook) {
-  if ($hook == 'entity_view' || $hook == 'preprocess_node') {
+  if ($hook == 'entity_view') {
     $group = $implementations['radar_basics'];
     unset($implementations['radar_basics']);
     $implementations['radar_basics'] = $group;

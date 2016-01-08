@@ -82,10 +82,33 @@ function radar_location_form_ctools_export_ui_edit_item_form_alter(&$form, &$for
 }
 
 /**
+ * Implements hook_entity_view().
+ */
+function radar_location_entity_view($entity, $type, $view_mode, $langcode) {
+  if ($type == 'location' && isset($entity->field_address[LANGUAGE_NONE][0])) {
+    $subfields = array('name_line', 'thoroughfare', 'locality', 'country');
+    foreach ($subfields as $field_name) {
+      if (!empty($entity->field_address[LANGUAGE_NONE][0][$field_name])) {
+        $title = $entity->field_address[LANGUAGE_NONE][0][$field_name];
+        break;
+      }
+    }
+    $attributes = array(
+      'property' => array('schema:name'),
+      'content' => $title,
+    );
+    $entity->content['radar_location_name'] = array(
+      '#markup' => theme('rdf_metadata', array('metadata' => array('meta' => $attributes))),
+      '#weight' => 100,
+    );
+  }
+}
+
+/**
  * Implements hook_preprocess_entity().
  *
  * Schemaorg, and rdf modules don't yet support adding to entities.
- * Doing it manually here.
+ * Doing it manually here. @todo add to the rdf_mapping.
  */
 function radar_location_preprocess_entity(&$vars) {
   if ($vars['entity_type'] == 'location') {

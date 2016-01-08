@@ -64,12 +64,13 @@ function at_radar_process_page(&$vars) {
  */
 function at_radar_preprocess_node(&$vars) {
   // Google schema.org parser isn't recognising @about
-  // This is almost certainly breaking foaf and sioc
+  // This is almost certainly breaking foaf and sioc.
   // @todo Work out what actually is supposed to happen here.
   unset($vars['attributes_array']['about']);
 }
 
 function at_radar_process_node(&$vars) {
+  // Combine the two price fields into 'one' for display
   if (in_array('node__panel__event', $vars['theme_hook_suggestions'])) {
     $vars['content']['field_topic']['#title'] = t('Topics');
     if (!empty($vars['content']['field_price_category'])) {
@@ -94,6 +95,11 @@ function at_radar_process_node(&$vars) {
  * Override variables in entity templates.
  */
 function at_radar_preprocess_entity(&$vars) {
+  // Google schema.org parser isn't recognising @about
+  // This is almost certainly breaking foaf and sioc.
+  // @todo Work out what actually is supposed to happen here.
+  unset($vars['attributes_array']['about']);
+
   if ($vars['entity_type'] == 'location') {
     at_radar_preprocess_entity_location($vars);
   }
@@ -121,9 +127,7 @@ function at_radar_process_comment(&$vars) {
 function at_radar_preprocess_panels_pane(&$vars) {
   if ($vars['pane']->type == 'node_content' && !empty($vars['title'])) {
     $vars['title_heading'] = 'h1';
-  }
-  if ($vars['pane']->type == 'views_panes' && $vars['pane']->subtype == 'radar_event-panel_pane_1') {
-    $vars['attributes_array']['property'] = array('schema:location');
+    $vars['title_attributes_array']['property'][] = 'schema:name';
   }
 }
 

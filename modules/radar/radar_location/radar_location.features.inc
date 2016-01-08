@@ -94,6 +94,11 @@ function radar_location_rdf_default_mappings() {
     'field_squat' => array(
       'predicates' => array(),
     ),
+    'field_directions' => array(
+      'predicates' => array(
+        0 => 'schema:description',
+      ),
+    ),
   );
 
   return $schemaorg;

@@ -116,6 +116,16 @@ function radar_contenttype_event_rdf_default_mappings() {
         0 => 'schema:name',
       ),
     ),
+    'og_group_ref' => array(
+      'predicates' => array(
+        0 => 'schema:organizer',
+      ),
+    ),
+    'field_offline' => array(
+      'predicates' => array(
+        0 => 'schema:location',
+      ),
+    ),
   );
 
   return $schemaorg;

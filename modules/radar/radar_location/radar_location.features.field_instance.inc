@@ -292,17 +292,18 @@ If a marker on the map shows that the location already exist, then cancel and ch
     ),
   );
 
-  // Exported field_instance: 'location-location-field_status'.
-  $field_instances['location-location-field_status'] = array(
+  // Exported field_instance: 'location-location-field_squat'.
+  $field_instances['location-location-field_squat'] = array(
     'bundle' => 'location',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
+        'module' => 'list',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'list_default',
         'weight' => 4,
       ),
       'with_map' => array(
@@ -316,14 +317,14 @@ If a marker on the map shows that the location already exist, then cancel and ch
         'label' => 'above',
         'module' => 'i18n_field',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'i18n_list_default',
+        'weight' => 2,
       ),
     ),
     'ds_extras_field_template' => '',
     'entity_type' => 'location',
-    'field_name' => 'field_status',
-    'label' => 'Is or was this a squat?',
+    'field_name' => 'field_squat',
+    'label' => 'Squat',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -333,8 +334,8 @@ If a marker on the map shows that the location already exist, then cancel and ch
       'active' => 1,
       'module' => 'options',
       'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 3,
+      'type' => 'options_buttons',
+      'weight' => 4,
     ),
   );
 
@@ -399,8 +400,8 @@ You can either automatically add the location to the map by clicking on the <em>
 If a marker on the map shows that the location already exist, then cancel and choose "Add existing location" instead.');
   t('Directions');
   t('If a marker shows that a location already exist, then cancel this and choose "Add an existing location" instead.');
-  t('Is or was this a squat?');
   t('Map');
+  t('Squat');
   t('Timezone');
 
   return $field_instances;

@@ -139,32 +139,31 @@ function radar_location_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_status'.
-  $field_bases['field_status'] = array(
+  // Exported field_base: 'field_squat'.
+  $field_bases['field_squat'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_status',
+    'field_name' => 'field_squat',
     'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
+      'value' => array(
+        0 => 'value',
       ),
     ),
     'locked' => 0,
-    'module' => 'taxonomy',
+    'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'type',
-          'parent' => 0,
-        ),
+        'squat' => 'Presently squatted',
+        'former' => 'Former squat, now legalised',
+        'evicted' => 'Evicted squat',
       ),
+      'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,
-      'options_list_callback' => 'i18n_taxonomy_allowed_values',
     ),
     'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
+    'type' => 'list_text',
   );
 
   // Exported field_base: 'field_timezone'.

@@ -252,7 +252,7 @@ function radar_group_field_default_field_instances() {
         'weight' => 20,
       ),
       'full' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'image_link' => '',

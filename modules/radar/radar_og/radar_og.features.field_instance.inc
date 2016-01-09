@@ -10,7 +10,7 @@
 function radar_og_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-event-group_content_access'
+  // Exported field_instance: 'node-event-group_content_access'.
   $field_instances['node-event-group_content_access'] = array(
     'bundle' => 'event',
     'default_value' => array(
@@ -25,7 +25,13 @@ function radar_og_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 13,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -61,7 +67,7 @@ function radar_og_field_default_field_instances() {
     'widget_type' => 'options_select',
   );
 
-  // Exported field_instance: 'node-event-og_group_ref'
+  // Exported field_instance: 'node-event-og_group_ref'.
   $field_instances['node-event-og_group_ref'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -75,7 +81,13 @@ function radar_og_field_default_field_instances() {
         'module' => 'og_ui',
         'settings' => array(),
         'type' => 'og_list_default',
-        'weight' => 11,
+        'weight' => 0,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -137,7 +149,7 @@ function radar_og_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-og_group_request'
+  // Exported field_instance: 'node-event-og_group_request'.
   $field_instances['node-event-og_group_request'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -152,7 +164,13 @@ The managers of these groups will be notified, and can then approve it for them.
         'module' => 'og_ui',
         'settings' => array(),
         'type' => 'og_list_default',
-        'weight' => 23,
+        'weight' => 7,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -214,7 +232,7 @@ The managers of these groups will be notified, and can then approve it for them.
     ),
   );
 
-  // Exported field_instance: 'node-group-field_group_logo'
+  // Exported field_instance: 'node-group-field_group_logo'.
   $field_instances['node-group-field_group_logo'] = array(
     'bundle' => 'group',
     'deleted' => 0,
@@ -226,6 +244,16 @@ The managers of these groups will be notified, and can then approve it for them.
         'settings' => array(
           'image_link' => '',
           'image_style' => '50x50',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'thumbnail',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -265,7 +293,7 @@ The managers of these groups will be notified, and can then approve it for them.
     ),
   );
 
-  // Exported field_instance: 'node-group-field_og_subscribe_settings'
+  // Exported field_instance: 'node-group-field_og_subscribe_settings'.
   $field_instances['node-group-field_og_subscribe_settings'] = array(
     'bundle' => 'group',
     'default_value' => array(
@@ -282,6 +310,12 @@ The managers of these groups will be notified, and can then approve it for them.
         'settings' => array(),
         'type' => 'list_default',
         'weight' => 4,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -307,7 +341,7 @@ The managers of these groups will be notified, and can then approve it for them.
     ),
   );
 
-  // Exported field_instance: 'node-group-group_group'
+  // Exported field_instance: 'node-group-group_group'.
   $field_instances['node-group-group_group'] = array(
     'bundle' => 'group',
     'default_value' => array(
@@ -326,6 +360,12 @@ The managers of these groups will be notified, and can then approve it for them.
         ),
         'type' => 'radar_og_group_subscribe',
         'weight' => 0,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -366,7 +406,7 @@ The managers of these groups will be notified, and can then approve it for them.
     ),
   );
 
-  // Exported field_instance: 'node-group-og_roles_permissions'
+  // Exported field_instance: 'node-group-og_roles_permissions'.
   $field_instances['node-group-og_roles_permissions'] = array(
     'bundle' => 'group',
     'default_value' => array(
@@ -383,6 +423,12 @@ The managers of these groups will be notified, and can then approve it for them.
         'settings' => array(),
         'type' => 'list_default',
         'weight' => 1,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -419,7 +465,7 @@ The managers of these groups will be notified, and can then approve it for them.
     ),
   );
 
-  // Exported field_instance: 'node-listings_group-field_group_logo'
+  // Exported field_instance: 'node-listings_group-field_group_logo'.
   $field_instances['node-listings_group-field_group_logo'] = array(
     'bundle' => 'listings_group',
     'deleted' => 0,
@@ -470,7 +516,7 @@ The managers of these groups will be notified, and can then approve it for them.
     ),
   );
 
-  // Exported field_instance: 'node-listings_group-field_og_subscribe_settings'
+  // Exported field_instance: 'node-listings_group-field_og_subscribe_settings'.
   $field_instances['node-listings_group-field_og_subscribe_settings'] = array(
     'bundle' => 'listings_group',
     'default_value' => array(
@@ -512,7 +558,7 @@ The managers of these groups will be notified, and can then approve it for them.
     ),
   );
 
-  // Exported field_instance: 'node-listings_group-group_group'
+  // Exported field_instance: 'node-listings_group-group_group'.
   $field_instances['node-listings_group-group_group'] = array(
     'bundle' => 'listings_group',
     'default_value' => array(
@@ -571,7 +617,7 @@ The managers of these groups will be notified, and can then approve it for them.
     ),
   );
 
-  // Exported field_instance: 'node-listings_group-og_roles_permissions'
+  // Exported field_instance: 'node-listings_group-og_roles_permissions'.
   $field_instances['node-listings_group-og_roles_permissions'] = array(
     'bundle' => 'listings_group',
     'default_value' => array(
@@ -624,7 +670,8 @@ The managers of these groups will be notified, and can then approve it for them.
     ),
   );
 
-  // Exported field_instance: 'og_membership-og_membership_type_default-og_membership_request'
+  // Exported field_instance:
+  // 'og_membership-og_membership_type_default-og_membership_request'.
   $field_instances['og_membership-og_membership_type_default-og_membership_request'] = array(
     'bundle' => 'og_membership_type_default',
     'default_value' => NULL,

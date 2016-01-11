@@ -656,6 +656,7 @@ Once they are approved - or if they have been posted in a group where they don\'
   $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
   $handler->display->display_options['filters']['type_1']['table'] = 'og_membership';
   $handler->display->display_options['filters']['type_1']['field'] = 'type';
+  $handler->display->display_options['filters']['type_1']['relationship'] = 'og_membership_rel';
   $handler->display->display_options['filters']['type_1']['value'] = array(
     'og_group_request' => 'og_group_request',
   );

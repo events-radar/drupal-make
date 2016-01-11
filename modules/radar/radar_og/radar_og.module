@@ -183,11 +183,17 @@ function radar_og_action_info() {
       'type' => 'og_membership',
       'label' => t('Accept request to group.'),
       'configurable' => FALSE,
+      // This action is only offered to users who should
+      // do the action. The point is that they should
+      // be able to accept it into their group (at which
+      // point they get permissions over it).
+      'behavior' => array('override permissions'),
     ),
     'radar_og_moderate_reject_action' => array(
       'type' => 'og_membership',
       'label' => t('Reject request to group.'),
       'configurable' => FALSE,
+      'behavior' => array('override permissions'),
     ),
   );
 }

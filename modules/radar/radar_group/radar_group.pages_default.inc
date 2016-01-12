@@ -43,6 +43,26 @@ function radar_group_default_page_manager_handlers() {
       ),
       'logic' => 'and',
     ),
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(
+        'title' => array(
+          'value' => '[node:title], [node:field-offline:0:field-address:locality] [node:field-offline:0:field-address:country] | [site:name]',
+        ),
+        'description' => array(
+          'value' => 'Events at [node:title]. [node:summary]',
+        ),
+        'rating' => array(
+          'value' => 'general',
+        ),
+        'referrer' => array(
+          'value' => 'no-referrer',
+        ),
+        'geo.position' => array(
+          'value' => '[node:field-offline:0:field-map:lat],[node:field-offline:0:field-map:lon]',
+        ),
+      ),
+    ),
   );
   $display = new panels_display();
   $display->layout = 'two_66_33';

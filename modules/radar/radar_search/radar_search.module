@@ -80,7 +80,7 @@ function radar_search_views_data_alter(&$data) {
 /**
  * Implements hook_preprocess_page().
  *
- * Adds any selected facets to the page title.
+ * Adds any selected facets to the page title and description.
  */
 function radar_search_preprocess_page(&$vars) {
   $facets_list = radar_search_page_facets();
@@ -89,7 +89,52 @@ function radar_search_preprocess_page(&$vars) {
     if (empty($title)) {
       $title = menu_get_active_title();
     }
-    drupal_set_title($title . ': ' . implode(', ', $facets_list));
+    $facets_title = array();
+    $facets_meta = array();
+    foreach ($facets_list as $field_name => $facet_items) {
+      $these_items = implode(', ', $facet_items);
+      $facets_title[] = $these_items;
+      if ($field_name == 'field_category' || $field_name == 'field_topic') {
+        $facets_meta['topic'][] = $these_items;
+      }
+      if ($field_name == 'search_api_aggregation_1') {
+        $facets_meta['date'][] = $these_items;
+      }
+      if ($field_name == 'day') {
+        $facets_meta['day'][] = $these_items;
+      }
+       if ($field_name == 'og_group_ref') {
+        $facets_meta['group'][] = $these_items;
+      }
+      if (substr($field_name, 0, 13) == 'field_offline') {
+        $facets_meta['location'][] = $these_items;
+      }
+    }
+    $facets_string = '';
+    if (!empty($facets_meta['location'])) {
+      $facets_string .= t('in @location', array('@location' => implode(', ', $facets_meta['location']))) . ' ';
+    }
+    if (!empty($facets_meta['date'])) {
+      $facets_string .= t('in @year_or_month', array('@year_or_month' => implode(', ', $facets_meta['date']))) . ' ';
+    }
+    if (!empty($facets_meta['day'])) {
+      $facets_string .= t('on @day', array('@day' => implode(', ', $facets_meta['day']))) . ' ';
+    }
+    if (!empty($facets_meta['group'])) {
+      $facets_string .= t('organised, published or involving @group', array('@group' => implode(', ', $facets_meta['group']))) . ' ';
+    }
+    if (!empty($facets_meta['topic'])) {
+      $facets_string .= ': ' . implode(' - ', $facets_meta['topic']);
+    }
+    $element = array(
+      '#tag' => 'meta',
+      '#attributes' => array(
+        'property' => 'description',
+        'content' => t('Alternative and radical @type @facets_string', array('@type' => strtolower($title), '@facets_string' => $facets_string)),
+      ),
+    );
+    drupal_set_title($title . ': ' . implode(', ', $facets_title));
+    drupal_add_html_head($element, 'radar_search:description');
   }
 }
 
@@ -103,7 +148,13 @@ function radar_search_page_facets() {
     $adapter = facetapi_adapter_load($searcher);
     foreach ($adapter->getAllActiveItems() as $item) {
       $markup = $adapter->getMappedValue($item['facets'][0], $item['value']);
-      $facets[] = empty($markup['#html']) ? check_plain($markup['#markup']) : strip_tags($markup['#markup']);
+      // Special case day.
+      if ($item['field alias'] == 'search_api_aggregation_1' && strlen($item['value']) == 10) {
+        $facets['day'][] = empty($markup['#html']) ? check_plain($markup['#markup']) : strip_tags($markup['#markup']);
+      }
+      else {
+        $facets[$item['field alias']][] = empty($markup['#html']) ? check_plain($markup['#markup']) : strip_tags($markup['#markup']);
+      }
     }
   }
   return $facets;

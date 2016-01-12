@@ -52,6 +52,29 @@ function radar_event_default_page_manager_handlers() {
       ),
       'logic' => 'and',
     ),
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(
+        'title' => array(
+          'value' => '[node:title-field], [node:og-group-ref:0] @ [node:field_date_time] | [site:name]',
+        ),
+        'description' => array(
+          'value' => '[node:summary]',
+        ),
+        'rating' => array(
+          'value' => 'general',
+        ),
+        'referrer' => array(
+          'value' => 'no-referrer',
+        ),
+        'image_src' => array(
+          'value' => '[node:field_image]',
+        ),
+        'geo.position' => array(
+          'value' => '[node:field-offline:0:field-map:lat],[node:field-offline:0:field-map:lon]',
+        ),
+      ),
+    ),
   );
   $display = new panels_display();
   $display->layout = 'two_66_33';

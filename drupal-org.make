@@ -289,6 +289,9 @@ projects[rdfa_entityreference][subdir] = "contrib"
 projects[rdfa_entityreference][type] = "module"
 projects[rdfa_entityreference][download][url] = "git://git.drupal.org/sandbox/ekes/rdfa_entityreference.git"
 projects[rdfa_entityreference][download][revision] = "d531c5309d69512dea663a6794a7de956978f4d7"
+;
+projects[metatag][subdir] = "contrib"
+projects[metatag][version] = "1.7"
 
 ;
 ;; Admin helpers.

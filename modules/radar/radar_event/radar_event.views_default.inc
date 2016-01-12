@@ -203,7 +203,7 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['field_topic']['label'] = 'tags';
   $handler->display->display_options['fields']['field_topic']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_topic']['delta_offset'] = '0';
-  /* Field: Content: offline */
+  /* Field: Content: area */
   $handler->display->display_options['fields']['field_offline']['id'] = 'field_offline';
   $handler->display->display_options['fields']['field_offline']['table'] = 'field_data_field_offline';
   $handler->display->display_options['fields']['field_offline']['field'] = 'field_offline';
@@ -272,7 +272,7 @@ function radar_event_views_default_views() {
     8 => 0,
     7 => 0,
   );
-  /* Filter criterion: Content: offline (field_offline:target_id) */
+  /* Filter criterion: Content: area (field_offline:target_id) */
   $handler->display->display_options['filters']['field_offline_target_id']['id'] = 'field_offline_target_id';
   $handler->display->display_options['filters']['field_offline_target_id']['table'] = 'field_data_field_offline';
   $handler->display->display_options['filters']['field_offline_target_id']['field'] = 'field_offline_target_id';
@@ -460,7 +460,7 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['field_topic']['label'] = 'tags';
   $handler->display->display_options['fields']['field_topic']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_topic']['delta_offset'] = '0';
-  /* Field: Content: offline */
+  /* Field: Content: area */
   $handler->display->display_options['fields']['field_offline']['id'] = 'field_offline';
   $handler->display->display_options['fields']['field_offline']['table'] = 'field_data_field_offline';
   $handler->display->display_options['fields']['field_offline']['field'] = 'field_offline';
@@ -521,7 +521,7 @@ function radar_event_views_default_views() {
     8 => 0,
     7 => 0,
   );
-  /* Filter criterion: Content: offline (field_offline:target_id) */
+  /* Filter criterion: Content: area (field_offline:target_id) */
   $handler->display->display_options['filters']['field_offline_target_id']['id'] = 'field_offline_target_id';
   $handler->display->display_options['filters']['field_offline_target_id']['table'] = 'field_data_field_offline';
   $handler->display->display_options['filters']['field_offline_target_id']['field'] = 'field_offline_target_id';
@@ -1102,7 +1102,7 @@ function radar_event_views_default_views() {
     'image_style' => 'large',
     'image_link' => '',
   );
-  /* Field: Content: offline */
+  /* Field: Content: area */
   $handler->display->display_options['fields']['field_offline']['id'] = 'field_offline';
   $handler->display->display_options['fields']['field_offline']['table'] = 'field_data_field_offline';
   $handler->display->display_options['fields']['field_offline']['field'] = 'field_offline';
@@ -1148,7 +1148,7 @@ function radar_event_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Full event pane', 'panel_pane_1');
   $handler->display->display_options['display_description'] = 'Event pane with all the info of an event';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: offline */
+  /* Field: Content: area */
   $handler->display->display_options['fields']['field_offline']['id'] = 'field_offline';
   $handler->display->display_options['fields']['field_offline']['table'] = 'field_data_field_offline';
   $handler->display->display_options['fields']['field_offline']['field'] = 'field_offline';
@@ -1521,7 +1521,7 @@ function radar_event_views_default_views() {
   $handler->display->display_options['fields']['uuid']['label'] = '';
   $handler->display->display_options['fields']['uuid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uuid']['element_default_classes'] = FALSE;
-  /* Field: Content: offline */
+  /* Field: Content: area */
   $handler->display->display_options['fields']['field_offline']['id'] = 'field_offline';
   $handler->display->display_options['fields']['field_offline']['table'] = 'field_data_field_offline';
   $handler->display->display_options['fields']['field_offline']['field'] = 'field_offline';

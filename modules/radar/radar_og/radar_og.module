@@ -1087,18 +1087,24 @@ function radar_og_node_create_links($group_type, $gid, $field_name, $destination
 
   $items = array();
   foreach ($names as $type => $name) {
+    $create_permission = og_user_access('node', $gid, "Create $type content");
     // If this is a radar og type then there is the option to propose content.
-    $permission = og_user_access('node', $gid, "Create $type content")
-      && (og_user_access('node', $gid, 'subscribe') || og_user_access('node', $gid, 'subscribe without approval'));
     if (isset($group_content_entity_types['node'][$type])) {
-      // theme_item_list's 'data' items isn't a render element, so use l().
-      // http://drupal.org/node/891112
       $name = drupal_strtolower($name);
-      $link_text = $permission ? t("Create new %name in group", array('%name' => $name)) : t("Propose new %name to group", array('%name' => $name));
-      $items[] = array('data' => l($link_text, 'node/add/' . str_replace('_', '-', $type), $options));
+      if ($create_permission) {
+        $link_text = t("Create new %name in group", array('%name' => $name));
+      }
+      elseif (og_user_access('node', $gid, 'subscribe') || og_user_access('node', $gid, 'subscribe without approval')) {
+        $link_text = t("Propose new %name to group", array('%name' => $name));
+      }
+      if (isset($link_text)) {
+        // theme_item_list's 'data' items isn't a render element, so use l().
+        // http://drupal.org/node/891112
+        $items[] = array('data' => l($link_text, 'node/add/' . str_replace('_', '-', $type), $options));
+      }
     }
     // Otherwise it's just post if you are allowed.
-    elseif ($permission) {
+    elseif ($create_permission) {
       $link_text = t("Create new %name in group", array('%name' => $name));
       $items[] = array('data' => l($link_text, 'node/add/' . str_replace('_', '-', $type), $options));
     }

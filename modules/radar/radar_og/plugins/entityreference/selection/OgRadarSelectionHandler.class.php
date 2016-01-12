@@ -49,7 +49,9 @@ class OgRadarSelectionHandler extends OgSelectionHandler {
     // This is the same behaviour as the admin field. Which makes the admin version
     // of the field suck a bit, but first use case covered.
     $field_mode = $this->instance['field_mode'];
-    $field_mode = $this->field['settings']['handler_settings']['membership_type'] == 'og_group_request' ? 'admin' : $field_mode;
+    if ($field_mode != 'admin' && $this->field['settings']['handler_settings']['membership_type'] == 'og_group_request') {
+      $field_mode =  'proposal';
+    }
 
     // If user has permission to edit entity, let the values stay the same.
     $field_groups = array();
@@ -128,6 +130,34 @@ class OgRadarSelectionHandler extends OgSelectionHandler {
         $query->propertyCondition($entity_info['entity keys']['id'], $ids, 'NOT IN');
       }
     }
+    elseif ($field_mode == 'proposal') {
+      $propose_groups = $this->getGidsForPropose();
+      $user_post_groups = array();
+      foreach ($user_groups as $gid) {
+        // Check if user has "create" permissions on those groups.
+        // If the user doesn't have create permission, check if perhaps the
+        // content already exists and the user has edit permission.
+        if (og_user_access($group_type, $gid, "create $node_type content")) {
+          $user_post_groups[] = $gid;
+        }
+        elseif (!empty($node->nid) && (og_user_access($group_type, $gid, "update any $node_type content") || ($user->uid == $node->uid && og_user_access($group_type, $gid, "update own $node_type content")))) {
+          $node_groups = isset($node_groups) ? $node_groups : og_get_entity_groups('node', $node->nid);
+          if (in_array($gid, $node_groups['node'])) {
+            $user_post_groups[] = $gid;
+          }
+        }
+      }
+      // remove any the user can post into.
+      $ids = array_diff($propose_groups, $user_post_groups);
+      if ($ids) {
+        $query->propertyCondition($entity_info['entity keys']['id'], $ids, 'IN');
+      }
+      else {
+        // User doesn't have permission to select any group so falsify this
+        // query.
+        $query->propertyCondition($entity_info['entity keys']['id'], -1, '=');
+      }
+    }
     return $query;
   }
 
@@ -163,6 +193,26 @@ class OgRadarSelectionHandler extends OgSelectionHandler {
     $query = db_query(
       'SELECT gid FROM {og_role_permission} p INNER JOIN {og_role} r ON r.rid = p.rid where p.permission = :permission AND r.name = :role_name',
       array(':permission' => "create $node_type content", 'role_name' => 'non-member'));
+    $ids = $query->fetchCol();
+    return $ids;
+  }
+
+  /**
+   * List of groups non-members can propose content to.
+   *
+   * Based on the ability to join without
+   */
+  private function getGidsForPropose() {
+    if ($this->instance['entity_type'] != 'node') {
+      return array();
+    }
+
+    $node_type = $this->instance['bundle'];
+
+    // Permissions 'subscribe' or 'subscribe without approval'
+    $query = db_query(
+      'SELECT gid FROM {og_role_permission} p INNER JOIN {og_role} r ON r.rid = p.rid where (p.permission = :permission_1 OR p.permission = :permission_2) AND r.name = :role_name',
+      array(':permission_1' => 'subscribe', ':permission_2' => 'subscribe without approval', 'role_name' => 'non-member'));
     $ids = $query->fetchCol();
     return $ids;
   }

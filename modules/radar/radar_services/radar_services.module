@@ -6,6 +6,7 @@
 
 include_once 'radar_services.features.inc';
 
+
 /**
  * Implements hook_services_resources_alter().
  */
@@ -73,8 +74,9 @@ function radar_services_services_request_preprocess_alter($controller, &$args, $
   if ($args[$arg_keys['index']] == 'events' && (empty($args[$arg_keys['filter']]) && empty($_GET['facets']['date']))) {
     $args[$arg_keys['filter']] = array(
       '~and' => array(
-        'search_api_aggregation_1' => array(
-          '~gt' => time() - 60 * 60 * 4,
+        // End time (which if not set is the same as Start Time) 2 hours ago.
+        'search_api_aggregation_3' => array(
+          '~gt' => time() - 60 * 60 * 2,
         ),
       ),
     );

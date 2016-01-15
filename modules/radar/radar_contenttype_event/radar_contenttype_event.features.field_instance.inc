@@ -29,7 +29,7 @@ function radar_contenttype_event_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -56,7 +56,7 @@ function radar_contenttype_event_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 3,
+      'weight' => 5,
     ),
   );
 
@@ -81,7 +81,7 @@ function radar_contenttype_event_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 17,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -110,7 +110,7 @@ function radar_contenttype_event_field_default_field_instances() {
         'display_label' => 0,
       ),
       'type' => 'options_onoff',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -131,7 +131,7 @@ function radar_contenttype_event_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -155,7 +155,7 @@ function radar_contenttype_event_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -178,7 +178,7 @@ function radar_contenttype_event_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_plain',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -242,7 +242,7 @@ function radar_contenttype_event_field_default_field_instances() {
           'show_repeat_rule' => 'hide',
         ),
         'type' => 'date_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -300,7 +300,7 @@ function radar_contenttype_event_field_default_field_instances() {
         'module' => 'email',
         'settings' => array(),
         'type' => 'email_default',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -324,7 +324,53 @@ function radar_contenttype_event_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 8,
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_event_status'.
+  $field_instances['node-event-field_event_status'] = array(
+    'bundle' => 'event',
+    'default_value' => array(),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 18,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'i18n_field',
+        'settings' => array(),
+        'type' => 'i18n_list_default',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_event_status',
+    'label' => 'Event status',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 9,
     ),
   );
 
@@ -352,7 +398,7 @@ function radar_contenttype_event_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 9,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -385,7 +431,7 @@ function radar_contenttype_event_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 6,
+      'weight' => 8,
     ),
   );
 
@@ -408,7 +454,7 @@ function radar_contenttype_event_field_default_field_instances() {
         'module' => 'radar_socialmedia',
         'settings' => array(),
         'type' => 'radar_socialmedia_link',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -451,7 +497,7 @@ function radar_contenttype_event_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -474,7 +520,7 @@ function radar_contenttype_event_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -522,7 +568,7 @@ function radar_contenttype_event_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -548,7 +594,7 @@ function radar_contenttype_event_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -571,7 +617,7 @@ function radar_contenttype_event_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_plain',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -617,7 +663,7 @@ function radar_contenttype_event_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_plain',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -642,7 +688,7 @@ function radar_contenttype_event_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -663,7 +709,7 @@ function radar_contenttype_event_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -703,6 +749,7 @@ function radar_contenttype_event_field_default_field_instances() {
   t('Clone state (do not change)');
   t('Date & Time');
   t('Description');
+  t('Event status');
   t('Event title');
   t('Image');
   t('Master UUID (do not change)');

@@ -89,5 +89,30 @@ function radar_contenttype_event_field_default_field_bases() {
     'type' => 'datetime',
   );
 
+  // Exported field_base: 'field_event_status'.
+  $field_bases['field_event_status'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_event_status',
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'cancelled' => 'Cancelled',
+      ),
+      'allowed_values_function' => '',
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
+  );
+
   return $field_bases;
 }

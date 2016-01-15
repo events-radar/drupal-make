@@ -47,6 +47,17 @@ function radar_search_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  /* Field: Indexed Node: Event status */
+  $handler->display->display_options['fields']['field_event_status']['id'] = 'field_event_status';
+  $handler->display->display_options['fields']['field_event_status']['table'] = 'search_api_index_events';
+  $handler->display->display_options['fields']['field_event_status']['field'] = 'field_event_status';
+  $handler->display->display_options['fields']['field_event_status']['label'] = '';
+  $handler->display->display_options['fields']['field_event_status']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_event_status']['alter']['text'] = '[field_event_status]: ';
+  $handler->display->display_options['fields']['field_event_status']['element_type'] = 'em';
+  $handler->display->display_options['fields']['field_event_status']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_event_status']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_event_status']['type'] = 'i18n_list_default';
   /* Field: Date &amp; Time: Start date (indexed) */
   $handler->display->display_options['fields']['field_date_time_value_1']['id'] = 'field_date_time_value_1';
   $handler->display->display_options['fields']['field_date_time_value_1']['table'] = 'search_api_index_events';

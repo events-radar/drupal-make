@@ -29,43 +29,36 @@ function radar_event_ical_feeds_presave($source, $entity, $item, $entity_id) {
 
   // Retrieve the first date's timezone and compare with the first related
   // location's timezone.
-  $date = $wrapper->field_date_time[0]->value();
-  $date_timezone = $date['timezone'];
   $location_timezone = $wrapper->field_offline[0]->field_timezone->value();
-  if ($date_timezone != $location_timezone) {
-    try {
-      $timezone = new DateTimeZone($location_timezone);
-    }
-    catch(Exception $e) {
-      watchdog_exception('radar_event', $e);
-      return;
-    }
-    $info = field_info_field('field_date_time');
-    // Update each instance.
-    foreach ($wrapper->field_date_time as $key => $date_wrapper) {
-      $data = $date_wrapper->raw();
-      $data['timezone'] = $location_timezone;
+  try {
+    $timezone = new DateTimeZone($location_timezone);
+  }
+  catch(Exception $e) {
+    watchdog_exception('radar_event', $e);
+    return;
+  }
+  $info = field_info_field('field_date_time');
+  // Check each date instance and make consistent local time events.
+  foreach ($wrapper->field_date_time as $key => $date_wrapper) {
+    $data = $date_wrapper->raw();
+    if ($data['timezone'] != $location_timezone) {
       if (isset($data['date'])) {
-        // Set timezone and offset for date.
-        // The actual values are stored in UTC (for the settings for our field).
+          //if (isset($data['value2']) && date_is_all_day($data['value'], $data['value2'])) {
+        $date = new DateTime($data['value'], new DateTimezone($data['timezone']));
+        $date->setTimezone($timezone);
+        $data['value'] = $date->format(date_type_format($info['type']));
         $data['date']->setTimezone($timezone);
         $data['offset'] = $data['date']->getOffset();
-        if (isset($data['date2'])) {
+        if (isset($data['value2'])) {
+          $date2 = new DateTime($data['value2'], new DateTimezone($data['timezone']));
+          $date2->setTimezone($timezone);
+          $data['value2'] = $date2->format(date_type_format($info['type']));
           $data['offset2'] = $data['date']->getOffset();
         }
-        if (isset($data['value2']) && date_is_all_day($data['value'], $data['value2'])) {
-          // Because all day events are stored at midnight - for the timezone,
-          // the values here need to be corrected to whatever midnight in that timzone
-          // is in UTC.
-          $date = new FeedsDateTime($data['value'], $timezone);
-          $date->setTimezone(new DateTimeZone('UTC'));
-          $data['value'] = $date->format(date_type_format($info['type']));
-          $date2 = new FeedsDateTime($data['value2'], $timezone);
-          $date2->setTimezone(new DateTimeZone('UTC'));
-          $data['value2'] = $date2->format(date_type_format($info['type']));
-        }
+        $data['timezone'] = $location_timezone;
+        $date_wrapper->set($data);
       }
-      $date_wrapper->set($data);
     }
+    $data = $date_wrapper->raw();
   }
 }

@@ -21,7 +21,7 @@ function radar_event_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Info',
-    'weight' => '7',
+    'weight' => '9',
     'children' => array(
       0 => 'field_email',
       1 => 'field_link',
@@ -50,7 +50,7 @@ function radar_event_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Price',
-    'weight' => '4',
+    'weight' => '6',
     'children' => array(
       0 => 'field_price',
       1 => 'field_price_category',
@@ -78,7 +78,7 @@ function radar_event_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Tags',
-    'weight' => '9',
+    'weight' => '10',
     'children' => array(
       0 => 'field_category',
       1 => 'field_topic',

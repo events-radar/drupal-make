@@ -35,7 +35,7 @@ function radar_event_field_default_field_instances() {
           'view_mode' => 'without_map',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 10,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',

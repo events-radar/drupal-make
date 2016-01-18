@@ -129,7 +129,7 @@ function radar_search_preprocess_page(&$vars) {
     $element = array(
       '#tag' => 'meta',
       '#attributes' => array(
-        'property' => 'description',
+        'name' => 'description',
         'content' => t('Alternative and radical @type @facets_string', array('@type' => strtolower($title), '@facets_string' => $facets_string)),
       ),
     );

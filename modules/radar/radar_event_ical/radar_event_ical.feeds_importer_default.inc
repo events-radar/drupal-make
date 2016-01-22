@@ -25,6 +25,7 @@ function radar_event_ical_feeds_importer_default() {
         'designated_hub' => '',
         'request_timeout' => NULL,
         'auto_scheme' => 'http',
+        'accept_invalid_cert' => FALSE,
       ),
     ),
     'parser' => array(
@@ -33,6 +34,7 @@ function radar_event_ical_feeds_importer_default() {
         'indefinite_count' => '52',
         'until_not_utc' => FALSE,
         'skip_days' => NULL,
+        'indefinite_message_display' => TRUE,
       ),
     ),
     'processor' => array(
@@ -92,6 +94,16 @@ function radar_event_ical_feeds_importer_default() {
             'target' => 'title_field',
             'unique' => FALSE,
           ),
+          10 => array(
+            'source' => 'SUMMARY',
+            'target' => 'title',
+            'unique' => FALSE,
+          ),
+          11 => array(
+            'source' => 'STATUS',
+            'target' => 'field_event_status',
+            'unique' => FALSE,
+          ),
         ),
         'update_existing' => '2',
         'input_format' => 'plain_text',
@@ -104,6 +116,9 @@ function radar_event_ical_feeds_importer_default() {
           'og_group_ref' => 'og_group_ref',
           'field_offline' => 'field_offline',
         ),
+        'insert_new' => 1,
+        'update_non_existent' => 'skip',
+        'language' => 'und',
       ),
     ),
     'content_type' => 'event_ical_importer',

@@ -139,6 +139,10 @@ projects[calendar][subdir] = "contrib"
 
 ; ical
 projects[date_ical][subdir] = "contrib"
+projects[date_ical][download][url] = "git://git.drupal.org/project/date_ical.git"
+projects[date_ical][download][revision] = "df3d0bd9e88a4f47861cf1c77e119a5a0c1d40b3"
+; Patch for X-PROP and STATUS
+projects[date_ical][patch][2483097] = "https://www.drupal.org/files/issues/2483097-05-X-PROP.patch"
 
 ; timezone field - attached to locations
 projects[tzfield][subdir] = "contrib"

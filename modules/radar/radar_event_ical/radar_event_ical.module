@@ -7,6 +7,45 @@
 include_once 'radar_event_ical.features.inc';
 
 /**
+ * Implements hook_date_ical_mapping_sources_alter().
+ */
+function radar_event_ical_date_ical_mapping_sources_alter(&$sources) {
+  $sources['STATUS'] = array(
+    'name' => t('Status'),
+    'description' => t('If the event is confirmed, provisional or cancelled.'),
+    'date_ical_parse_handler' => 'parseTextProperty',
+    'date_ical_preprocess_callbacks' => array('radar_event_ical_status_preprocess_callback'),
+  );
+  $sources['X-RDR-COST'] = array(
+    'name' => t('Cost: Text'),
+    'description' => t('Cost - custom radar parameter'),
+    'date_ical_parse_contrib_handler' => 'radar_event_ical_xprop_callback',
+  );
+}
+
+/**
+ * iCal parser process callback for X-RDR-COST
+ */
+function radar_event_ical_xprop_callback($property_key, calendarComponent $vcalendar_component) {
+  $value = $vcalendar_component->getProperty($property_key);
+  if (!empty($value[1])) {
+    return $value[1];
+  }
+}
+
+/**
+ * iCal parser preprocess callback for STATUS.
+ *
+ * Validates the field so only known, valid, strings are saved in the field.
+ */
+function radar_event_ical_status_preprocess_callback(array $raw_components, $ndx, $property_key, calendarComponent $raw_component, &$mapping) {
+  if (!empty($raw_component->status['value'])
+    && !in_array($raw_component->status['value'], array('TENTATIVE', 'CONFIRMED', 'CANCELLED'))) {
+      $raw_component->status['value'] = NULL;
+  }
+}
+
+/**
  * Implements hook_feeds_presave().
  *
  * Correct timezone such that the date field timezone is the timezone of the event.
@@ -26,7 +65,6 @@ function radar_event_ical_feeds_presave($source, $entity, $item, $entity_id) {
     // no location.
     return;
   }
-
   // Retrieve the first date's timezone and compare with the first related
   // location's timezone.
   $location_timezone = $wrapper->field_offline[0]->field_timezone->value();

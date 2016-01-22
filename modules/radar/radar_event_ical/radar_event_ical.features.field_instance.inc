@@ -10,7 +10,7 @@
 function radar_event_ical_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-event_ical_importer-field_offline'
+  // Exported field_instance: 'node-event_ical_importer-field_offline'.
   $field_instances['node-event_ical_importer-field_offline'] = array(
     'bundle' => 'event_ical_importer',
     'default_value_function' => 'entityreference_prepopulate_field_default_value',
@@ -73,7 +73,7 @@ function radar_event_ical_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event_ical_importer-og_group_ref'
+  // Exported field_instance: 'node-event_ical_importer-og_group_ref'.
   $field_instances['node-event_ical_importer-og_group_ref'] = array(
     'bundle' => 'event_ical_importer',
     'default_value' => NULL,

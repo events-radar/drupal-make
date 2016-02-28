@@ -23,8 +23,7 @@ function radar_contenttype_event_field_group_info() {
     'label' => 'Status',
     'weight' => '3',
     'children' => array(
-      0 => 'field_cancelled',
-      1 => 'field_event_status',
+      0 => 'field_event_status',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

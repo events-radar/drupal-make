@@ -105,7 +105,9 @@ function radar_contenttype_event_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
+        'confirmed' => '',
         'cancelled' => 'Cancelled',
+        'tentative' => 'Proposed',
       ),
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,

@@ -67,6 +67,9 @@ function at_radar_preprocess_node(&$vars) {
   // This is almost certainly breaking foaf and sioc.
   // @todo Work out what actually is supposed to happen here.
   unset($vars['attributes_array']['about']);
+  if (!empty($vars['field_event_status'][0]['value'])) {
+    $vars['classes_array'][] = check_plain($vars['field_event_status'][0]['value']);
+  }
 }
 
 function at_radar_process_node(&$vars) {
@@ -125,9 +128,16 @@ function at_radar_process_comment(&$vars) {
 // */
 
 function at_radar_preprocess_panels_pane(&$vars) {
-  if ($vars['pane']->type == 'node_content' && !empty($vars['title'])) {
-    $vars['title_heading'] = 'h1';
-    $vars['title_attributes_array']['property'][] = 'schema:name';
+  if ($vars['pane']->type == 'node_content') {
+    if (!empty($vars['content']['field_event_status']['#items'][0])) {
+      $status = $vars['content']['field_event_status']['#items'][0]['value'];
+      $vars['classes_array'][] = $status;
+      $vars['attributes_array']['class'][] = $status;
+    }
+    if (!empty($vars['title'])) {
+      $vars['title_heading'] = 'h1';
+      $vars['title_attributes_array']['property'][] = 'schema:name';
+    }
   }
 }
 

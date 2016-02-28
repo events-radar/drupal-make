@@ -40,8 +40,14 @@ function radar_event_ical_xprop_callback($property_key, calendarComponent $vcale
  */
 function radar_event_ical_status_preprocess_callback(array $raw_components, $ndx, $property_key, calendarComponent $raw_component, &$mapping) {
   if (!empty($raw_component->status['value'])
-    && !in_array($raw_component->status['value'], array('TENTATIVE', 'CONFIRMED', 'CANCELLED'))) {
+    && !in_array($raw_component->status['value'], array('TENTATIVE', 'CONFIRMED', 'CANCELLED'))
+  ) {
       $raw_component->status['value'] = NULL;
+  }
+  else {
+    // Field it is mapped to uses lower case keys. It would be more correct
+    // to do this is a target callback, but as we're already manipulating it.
+    $raw_component->status['value'] = strtolower($raw_component->status['value']);
   }
 }
 

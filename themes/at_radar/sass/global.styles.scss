@@ -2293,6 +2293,35 @@ tr.error {
   display: inline;
 }
 
+.cancelled {
+  /* front page list */
+  .event-list-event-title {
+    text-decoration: line-through;
+    font-weight: lighter;
+  }
+
+  /* event page */
+  h1.pane-title,
+  .field-name-body,
+  .field-name-field-date-time .field-item {
+    text-decoration: line-through;
+  }
+}
+
+/* group event tab table */
+tr.cancelled td {
+  text-decoration: line-through;
+  &.views-field-edit-node {
+    text-decoration: none;
+  }
+}
+
+.tentative {
+  .event-list-event-title {
+    font-weight: lighter;
+  }
+}
+
 /* 
  * Facets
  */

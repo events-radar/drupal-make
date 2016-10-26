@@ -28,6 +28,17 @@ function radar_og_modules_enabled($modules) {
 }
 
 /**
+ * Implements hook_node_access().
+ */
+function radar_og_node_access($node, $op, $account) {
+  // If non-group members are able to update their posts og_node_access() allows
+  // anonymous to do the same. This fallback counteracts this logic.
+  if ($account->uid == 0 && in_array($op, array('update', delete))) {
+    return NODE_ACCESS_DENY;
+  }
+}
+
+/**
  * Implements hook_entity_view().
  */
 function radar_og_entity_view($entity, $type, $view_mode, $langcode) {

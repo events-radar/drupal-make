@@ -10,7 +10,7 @@ projects[captcha][version] ="1.1"
 projects[captcha_pack][subdir] ="contrib"
 projects[captcha_pack][version] = "1.0-alpha1"
 projects[ctools][subdir] = "contrib"
-projects[ctools][version] = "1.9"
+projects[ctools][version] = "1.11"
 projects[ds][subdir] = "contrib"
 projects[ds][version] = "2.11"
 

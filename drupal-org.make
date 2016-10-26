@@ -193,6 +193,8 @@ projects[title][subdir] = "contrib"
 projects[title][version] = "1.0-alpha7"
 projects[translate_set][subdir] = "contrib"
 projects[translate_set][version] = "1.3"
+projects[transliteration][subdir] = "contrib"
+projects[transliteration][version] = "3.2"
 
 ; Organic groups
 projects[entityreference][subdir] = "contrib"

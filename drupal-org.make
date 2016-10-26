@@ -177,7 +177,7 @@ projects[phone][subdir] = "contrib"
 
 ; multilingual
 projects[entity_translation][subdir] = "contrib"
-projects[entity_translation][version] = "1.0-beta4"
+projects[entity_translation][version] = "1.0-beta5"
 
 projects[i18n][subdir] = "contrib"
 projects[i18nviews][subdir] = "contrib"
@@ -208,7 +208,7 @@ projects[radioactivity][version] = "2.9"
 
 ; contrib moderation
 projects[flag][subdir] = "contrib"
-projects[flag][version] = "3.5"
+projects[flag][version] = "3.9"
 
 projects[flag_abuse][subdir] = "contrib"
 projects[flag_abuse][version] = "2.0"
@@ -233,10 +233,7 @@ projects[search_api_location][download][revision] = "7b6754d596f885433495e13e955
 
 ; Search API sorts - so we can show things in date order.
 projects[search_api_sorts][subdir] = "contrib"
-; Fixes broken list page from version 1.5
-projects[search_api_sorts][type] = "module"
-projects[search_api_sorts][download][url] = "git://git.drupal.org/project/search_api_sorts.git"
-projects[search_api_sorts][download][revision] = "de8b6feaea76aa27cf549c60221fea2b53f0d111"
+projects[search_api_sorts][version] = "1.6"
 
 ; facet_api
 projects[facetapi][subdir] = "contrib"
@@ -321,7 +318,7 @@ projects[message][subdir] = "contrib"
 projects[message][version] = "1.9"
 
 projects[field_group][subdir] = "contrib"
-projects[field_group][version] = "1.4"
+projects[field_group][version] = "1.5"
 
 projects[select_or_other][subdir] = "contrib"
 projects[select_or_other][version] = "2.20"

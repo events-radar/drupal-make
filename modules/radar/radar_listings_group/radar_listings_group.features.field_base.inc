@@ -10,7 +10,7 @@
 function radar_listings_group_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_groups_listed'
+  // Exported field_base: 'field_groups_listed'.
   $field_bases['field_groups_listed'] = array(
     'active' => 1,
     'cardinality' => -1,

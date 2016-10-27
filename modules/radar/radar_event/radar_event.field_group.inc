@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function radar_event_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -37,7 +37,7 @@ function radar_event_field_group_info() {
       ),
     ),
   );
-  $export['group_info|node|event|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -65,7 +65,7 @@ function radar_event_field_group_info() {
       ),
     ),
   );
-  $export['group_price|node|event|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -93,7 +93,13 @@ function radar_event_field_group_info() {
       ),
     ),
   );
-  $export['group_tags|node|event|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Info');
+  t('Price');
+  t('Tags');
+
+  return $field_groups;
 }

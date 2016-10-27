@@ -339,6 +339,56 @@ If a marker on the map shows that the location already exist, then cancel and ch
     ),
   );
 
+  // Exported field_instance: 'location-location-field_status'.
+  $field_instances['location-location-field_status'] = array(
+    'bundle' => 'location',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'with_map' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'without_map' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'location',
+    'field_name' => 'field_status',
+    'label' => 'Is or was this a squat?',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 3,
+    ),
+  );
+
   // Exported field_instance: 'location-location-field_timezone'.
   $field_instances['location-location-field_timezone'] = array(
     'bundle' => 'location',
@@ -400,6 +450,7 @@ You can either automatically add the location to the map by clicking on the <em>
 If a marker on the map shows that the location already exist, then cancel and choose "Add existing location" instead.');
   t('Directions');
   t('If a marker shows that a location already exist, then cancel this and choose "Add an existing location" instead.');
+  t('Is or was this a squat?');
   t('Map');
   t('Squat');
   t('Timezone');

@@ -615,7 +615,8 @@ But if you are involved with it, then you can easily add it here.';
   /* Display: Groups search map */
   $handler = $view->new_display('panel_pane', 'Groups search map', 'panel_pane_2');
   $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '100';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'openlayers_map';

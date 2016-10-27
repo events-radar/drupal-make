@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function radar_listings_group_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -38,7 +38,7 @@ function radar_listings_group_field_group_info() {
       ),
     ),
   );
-  $export['group_info|node|listings_group|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -65,7 +65,7 @@ function radar_listings_group_field_group_info() {
       ),
     ),
   );
-  $export['group_location|node|listings_group|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -93,7 +93,13 @@ function radar_listings_group_field_group_info() {
       ),
     ),
   );
-  $export['group_tags|node|listings_group|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Info');
+  t('Location');
+  t('Tags');
+
+  return $field_groups;
 }

@@ -10,7 +10,7 @@
 function radar_listings_group_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-listings_group-body'
+  // Exported field_instance: 'node-listings_group-body'.
   $field_instances['node-listings_group-body'] = array(
     'bundle' => 'listings_group',
     'default_value' => NULL,
@@ -23,6 +23,12 @@ function radar_listings_group_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 5,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -53,7 +59,7 @@ function radar_listings_group_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-listings_group-field_category'
+  // Exported field_instance: 'node-listings_group-field_category'.
   $field_instances['node-listings_group-field_category'] = array(
     'bundle' => 'listings_group',
     'default_value' => NULL,
@@ -66,6 +72,12 @@ function radar_listings_group_field_default_field_instances() {
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
         'weight' => 9,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -91,7 +103,7 @@ function radar_listings_group_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-listings_group-field_email'
+  // Exported field_instance: 'node-listings_group-field_email'.
   $field_instances['node-listings_group-field_email'] = array(
     'bundle' => 'listings_group',
     'default_value' => NULL,
@@ -104,6 +116,12 @@ function radar_listings_group_field_default_field_instances() {
         'settings' => array(),
         'type' => 'email_default',
         'weight' => 7,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -131,7 +149,7 @@ function radar_listings_group_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-listings_group-field_groups_listed'
+  // Exported field_instance: 'node-listings_group-field_groups_listed'.
   $field_instances['node-listings_group-field_groups_listed'] = array(
     'bundle' => 'listings_group',
     'default_value' => array(),
@@ -147,6 +165,12 @@ function radar_listings_group_field_default_field_instances() {
         ),
         'type' => 'entityreference_label',
         'weight' => 13,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -181,7 +205,7 @@ function radar_listings_group_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-listings_group-field_link'
+  // Exported field_instance: 'node-listings_group-field_link'.
   $field_instances['node-listings_group-field_link'] = array(
     'bundle' => 'listings_group',
     'default_value' => NULL,
@@ -194,6 +218,12 @@ function radar_listings_group_field_default_field_instances() {
         'settings' => array(),
         'type' => 'radar_socialmedia_link',
         'weight' => 6,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -239,7 +269,7 @@ function radar_listings_group_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-listings_group-field_notifications'
+  // Exported field_instance: 'node-listings_group-field_notifications'.
   $field_instances['node-listings_group-field_notifications'] = array(
     'bundle' => 'listings_group',
     'default_value' => NULL,
@@ -252,6 +282,12 @@ function radar_listings_group_field_default_field_instances() {
         'settings' => array(),
         'type' => 'email_default',
         'weight' => 12,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -279,7 +315,7 @@ function radar_listings_group_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-listings_group-field_offline'
+  // Exported field_instance: 'node-listings_group-field_offline'.
   $field_instances['node-listings_group-field_offline'] = array(
     'bundle' => 'listings_group',
     'default_value_function' => '',
@@ -294,6 +330,12 @@ function radar_listings_group_field_default_field_instances() {
         ),
         'type' => 'entityreference_label',
         'weight' => 11,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -334,7 +376,7 @@ function radar_listings_group_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-listings_group-field_phone'
+  // Exported field_instance: 'node-listings_group-field_phone'.
   $field_instances['node-listings_group-field_phone'] = array(
     'bundle' => 'listings_group',
     'default_value' => NULL,
@@ -347,6 +389,12 @@ function radar_listings_group_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 8,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -375,7 +423,7 @@ function radar_listings_group_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-listings_group-field_topic'
+  // Exported field_instance: 'node-listings_group-field_topic'.
   $field_instances['node-listings_group-field_topic'] = array(
     'bundle' => 'listings_group',
     'default_value' => NULL,
@@ -388,6 +436,12 @@ function radar_listings_group_field_default_field_instances() {
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
         'weight' => 10,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',

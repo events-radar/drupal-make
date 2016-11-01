@@ -36,6 +36,9 @@ function _radar_services_search_api_resource_retrieve($index, $filter, $sort, $l
       $query->sort($field, $mode);
     }
   }
+  else {
+    $query->sort('search_api_aggregation_1', 'asc');
+  }
 
   $result = $query->execute();
   return _radar_services_search_api_process_results($result, $query, $fields, $language);

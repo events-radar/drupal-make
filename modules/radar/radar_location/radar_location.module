@@ -192,7 +192,7 @@ function radar_location_countries_alter(&$countries) {
   // Adding Catalonia to the country list.
   $countries['XC'] = $t('Catalonia');
   // Basque - Euskadi (hence E)
-  $countries['XE'] = $t('Basque');
+  $countries['XE'] = $t('Basque Country');
   // Kosovo
   $countries['XK'] = $t('Kosovo');
   // Renaming Palestine.
